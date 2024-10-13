@@ -1,0 +1,14 @@
+1, Gigica, 1111111111111
+2, The Nun, decent, Horror
+4, Marcelina, 1111111111116
+5, Gaga, nasol, Action
+3, Gucci, 1111111111113
+6, Bam bam, naspa, horror masiv
+5, Baba, 1111111111115
+3, HAHA, bunicel, gagaga
+1, Gigica, 1111111111111
+5, Gaga, nasol, Action
+5, Baba, 1111111111115
+1, Harry Potter, foarte bun, Sf
+5, Baba, 1111111111115
+6, Bam bam, naspa, horror masiv
