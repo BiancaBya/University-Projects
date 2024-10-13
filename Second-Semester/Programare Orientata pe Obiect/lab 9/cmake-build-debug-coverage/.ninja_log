@@ -1,0 +1,15 @@
+# ninja log v5
+8	575	7356089196334949	CMakeFiles/lab9.dir/carte.cpp.obj	9fd0fa660a51c682
+1713	1991	7356144567353456	lab9.exe	3d9c0d1c9283ad7a
+17	550	7356138793807803	CMakeFiles/lab9.dir/undo.cpp.obj	f6e5895e577ef91b
+8	820	7356138796497438	CMakeFiles/lab9.dir/repository.cpp.obj	b944375f989fe02d
+11	1486	7356138803143995	CMakeFiles/lab9.dir/service.cpp.obj	febbe7484b0adbbe
+14	1712	7356144564551696	CMakeFiles/lab9.dir/teste.cpp.obj	8ea0431e0b9739ca
+10	1516	7356144562618840	CMakeFiles/lab9.dir/main.cpp.obj	9d174c03cd319d77
+13	476	7356145422092507	CMakeFiles/lab9.dir/carte.cpp.obj	9fd0fa660a51c682
+23	534	7356145422684210	CMakeFiles/lab9.dir/undo.cpp.obj	f6e5895e577ef91b
+15	809	7356145425422815	CMakeFiles/lab9.dir/repository.cpp.obj	b944375f989fe02d
+17	1607	7356145433374936	CMakeFiles/lab9.dir/service.cpp.obj	febbe7484b0adbbe
+9	1799	7356145435296273	CMakeFiles/lab9.dir/main.cpp.obj	9d174c03cd319d77
+20	2148	7356145438743581	CMakeFiles/lab9.dir/teste.cpp.obj	8ea0431e0b9739ca
+2148	2406	7356145441354172	lab9.exe	3d9c0d1c9283ad7a

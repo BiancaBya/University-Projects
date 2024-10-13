@@ -1,0 +1,397 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/cos.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\teste.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef QT1_COS_H
+        -:    2:#define QT1_COS_H
+        -:    3:
+        -:    4:
+        -:    5:#include "carte.h"
+        -:    6:#include <vector>
+        -:    7:#include <random>
+        -:    8:#include <chrono>
+        -:    9:#include <fstream>
+        -:   10:
+        -:   11:class Cos{
+        -:   12:
+        -:   13:private:
+        -:   14:
+        -:   15:    vector<Carte> cos;
+        -:   16:
+        -:   17:public:
+        -:   18:
+        -:   19:    Cos()=default;
+        -:   20:
+function _ZN3Cos7get_cosEv called 0 returned 0% blocks executed 0%
+    #####:   21:    const vector<Carte>& get_cos(){
+    #####:   22:        return this->cos;
+    %%%%%:   22-block  0
+        -:   23:    }
+        -:   24:
+        -:   25:
+        -:   26:
+function _ZN3Cos15adaugare_in_cosERK5Carte called 0 returned 0% blocks executed 0%
+    #####:   27:    void adaugare_in_cos(const Carte& carte){
+        -:   28:
+    #####:   29:        this->cos.push_back(carte);
+    %%%%%:   29-block  0
+call    0 never executed
+        -:   30:
+    #####:   31:    }
+        -:   32:
+function _ZN3Cos10golire_cosEv called 0 returned 0% blocks executed 0%
+    #####:   33:    void golire_cos(){
+        -:   34:
+    #####:   35:        this->cos.clear();
+    %%%%%:   35-block  0
+call    0 never executed
+        -:   36:
+    #####:   37:    }
+        -:   38:
+function _ZN3Cos12random_cartiESt6vectorI5CarteSaIS1_EEi called 0 returned 0% blocks executed 0%
+    #####:   39:    void random_carti(vector<Carte> lista_carti, int nr) {
+        -:   40:
+    #####:   41:        shuffle(lista_carti.begin(), lista_carti.end(), std::default_random_engine(std::random_device{}()));
+    %%%%%:   41-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   41-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   41-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   41-block  3
+call    9 never executed
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   41-block  4
+call   14 never executed
+    $$$$$:   41-block  5
+call   15 never executed
+    $$$$$:   41-block  6
+    #####:   42:        while (cos.size() < nr && lista_carti.size() > 0) {
+    %%%%%:   42-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    %%%%%:   42-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    %%%%%:   42-block  2
+    %%%%%:   42-block  3
+    %%%%%:   42-block  4
+branch  6 never executed
+branch  7 never executed (fallthrough)
+    #####:   43:            cos.push_back(lista_carti.back());
+    %%%%%:   43-block  0
+call    0 never executed
+call    1 never executed
+    #####:   44:            lista_carti.pop_back();
+call    0 never executed
+        -:   45:        }
+        -:   46:
+    #####:   47:    }
+    %%%%%:   47-block  0
+        -:   48:
+function _ZN3Cos11export_htmlERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   49:    void export_html(const string& file_name){
+        -:   50:
+    #####:   51:        std::ofstream file(file_name);
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   52:
+    #####:   53:        file << "<html>\n";
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   54:        file << "<head><title>Export cos</title></head>\n";
+    %%%%%:   54-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   55:        file << "<style>\n";
+    %%%%%:   55-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   56:        file << "body {";
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   57:        file << "    background-color: #c8fab8;";
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   58:        file << "    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   59:        file << "}";
+    %%%%%:   59-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   60:        file << "h1 {";
+    %%%%%:   60-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   61:        file << "    color: #058322;";
+    %%%%%:   61-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   62:        file << "}";
+    %%%%%:   62-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   63:        file << "table {";
+    %%%%%:   63-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   64:        file << "    border-collapse: collapse;";
+    %%%%%:   64-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   65:        file << "    width: 100%;";
+    %%%%%:   65-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   66:        file << "    border-radius: 8px;";
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   67:        file << "}";
+    %%%%%:   67-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   68:        file << "th, td {";
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   69:        file << "    padding: 12px;";
+    %%%%%:   69-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   70:        file << "    text-align: left;";
+    %%%%%:   70-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   71:        file << "}";
+    %%%%%:   71-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   72:        file << "th {";
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   73:        file << "    background-color: #30ef88;";
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   74:        file << "    color: #08803b;";
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   75:        file << "}";
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   76:        file << "tr:nth-child(even) {";
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   77:        file << "    background-color: #30ef88;";
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   78:        file << "}";
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   79:        file << "tr:hover {";
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   80:        file << "    background-color: #30ef88;";
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   81:        file << "}";
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   82:        file << "</style>\n";
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   83:        file << "<body>\n";
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   84:        file << "<h1>Shopping cart:</h1>\n";
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   85:        file << "<table>\n";
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   86:        file << "<tr><th>Titlu</th><th>Autor</th><th>Gen</th><th>An</th><tr>\n";
+    %%%%%:   86-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   87:
+    #####:   88:        const vector<Carte>& cos_carti = get_cos();
+    %%%%%:   88-block  0
+call    0 never executed
+        -:   89:
+    #####:   90:        for(const Carte& carte : cos_carti){
+call    0 never executed
+call    1 never executed
+    %%%%%:   90-block  0
+call    2 never executed
+    %%%%%:   90-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed (fallthrough)
+    #####:   91:            file << "<tr><td> " << carte.get_titlu() << " </td><td> " << carte.get_autor() << " </td><td> " << carte.get_gen() << " </td><td> " << carte.get_an() <<" </td><tr>\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   91-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   91-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   91-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   91-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:   91-block  4
+call   15 never executed
+branch 16 never executed (fallthrough)
+branch 17 never executed (throw)
+    %%%%%:   91-block  5
+call   18 never executed
+branch 19 never executed (fallthrough)
+branch 20 never executed (throw)
+    %%%%%:   91-block  6
+call   21 never executed
+branch 22 never executed (fallthrough)
+branch 23 never executed (throw)
+    %%%%%:   91-block  7
+call   24 never executed
+branch 25 never executed (fallthrough)
+branch 26 never executed (throw)
+    %%%%%:   91-block  8
+call   27 never executed
+branch 28 never executed (fallthrough)
+branch 29 never executed (throw)
+    %%%%%:   91-block  9
+call   30 never executed
+branch 31 never executed (fallthrough)
+branch 32 never executed (throw)
+    %%%%%:   91-block 10
+call   33 never executed
+branch 34 never executed (fallthrough)
+branch 35 never executed (throw)
+    %%%%%:   91-block 11
+call   36 never executed
+branch 37 never executed (fallthrough)
+branch 38 never executed (throw)
+    %%%%%:   91-block 12
+call   39 never executed
+call   40 never executed
+call   41 never executed
+call   42 never executed
+    $$$$$:   91-block 13
+call   43 never executed
+    $$$$$:   91-block 14
+    $$$$$:   91-block 15
+call   44 never executed
+    $$$$$:   91-block 16
+    $$$$$:   91-block 17
+call   45 never executed
+    $$$$$:   91-block 18
+        -:   92:        }
+        -:   93:
+    #####:   94:        file << "</table>\n";
+    %%%%%:   94-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   95:        file << "</body>\n";
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   96:        file << "<html>\n";
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   97:
+    #####:   98:        file.close();
+    %%%%%:   98-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   99:
+    #####:  100:    }
+    %%%%%:  100-block  0
+call    0 never executed
+    $$$$$:  100-block  1
+call    1 never executed
+        -:  101:
+        -:  102:};
+        -:  103:
+        -:  104:
+        -:  105:#endif //QT1_COS_H
+        -:  106:
+        -:  107:

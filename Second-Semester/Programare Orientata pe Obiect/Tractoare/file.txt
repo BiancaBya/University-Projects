@@ -1,0 +1,7 @@
+1 tractor1 tip_1 4
+2 tractor2 tip_1 4
+3 tractor3 tip_2 6
+7 tractor7 tip_1 6
+4 tractor4 tip_1 10
+5 tractor5 tip_2 6
+6 tractor6 tip_3 4

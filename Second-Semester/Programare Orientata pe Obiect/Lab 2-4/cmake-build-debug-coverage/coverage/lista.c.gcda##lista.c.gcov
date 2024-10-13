@@ -1,0 +1,82 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/OOP_lab2/lista.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\lista.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\lista.c.gcda
+        -:    0:Runs:1
+        -:    1://#include "lista.h"
+        -:    2:#include "oferta.h"
+        -:    3:#include "stdlib.h"
+        -:    4:#include "stdio.h"
+        -:    5:
+        -:    6:
+function creare_lista called 16 returned 100% blocks executed 100%
+       16:    7:my_list creare_lista(my_list *lista){
+        -:    8:
+        -:    9:    /*
+        -:   10:        Functia primeste o lista ca parametru si initializeaza valorile sale, alocand spatiu pentru lista de oferte
+        -:   11:    */
+        -:   12:
+       16:   13:    lista->lungime = 0;
+       16:   14:    lista->dimensiune = 100;
+       16:   15:    lista->lista_oferte = (oferta*)malloc(sizeof(oferta)*lista->dimensiune);
+       16:   16:    return *lista;
+       16:   16-block  0
+        -:   17:
+        -:   18:}
+        -:   19:
+        -:   20:
+        -:   21:/*
+        -:   22:my_list* redimensionare(my_list *lista){
+        -:   23:
+        -:   24:    my_list *lista_noua = (my_list*)malloc(sizeof(my_list));
+        -:   25:    lista_noua->dimensiune = lista->dimensiune * 2;
+        -:   26:    lista_noua->lungime = lista->lungime;
+        -:   27:    lista_noua->lista_oferte = (oferta*) malloc(sizeof(oferta)*lista_noua->dimensiune);
+        -:   28:    for (int i=0; i<lista_noua->lungime; i++)
+        -:   29:        lista_noua->lista_oferte[i] = lista->lista_oferte[i];
+        -:   30:
+        -:   31:    return lista_noua;
+        -:   32:
+        -:   33:}
+        -:   34:*/
+        -:   35:
+        -:   36:
+function get_lista_index called 14 returned 100% blocks executed 100%
+       14:   37:oferta* get_lista_index(my_list* lista, int index){
+        -:   38:
+        -:   39:    /*
+        -:   40:        Functia returneaza oferta de la indexul primit ca parametru din lista de oferte
+        -:   41:    */
+        -:   42:
+       14:   43:    return &lista->lista_oferte[index];
+       14:   43-block  0
+        -:   44:
+        -:   45:}
+        -:   46:
+        -:   47:
+function free_lista called 3 returned 100% blocks executed 100%
+        3:   48:void free_lista(my_list *lista){
+        -:   49:
+        -:   50:    /*
+        -:   51:        Functia care elibereaza memoria pentru o variabila de tip lista
+        -:   52:    */
+        -:   53:
+        3:   54:    free(lista->lista_oferte);
+        -:   55:
+        3:   56:}
+        -:   57:
+function resize called 1 returned 100% blocks executed 100%
+        1:   58:void resize(my_list *lista){
+        -:   59:
+        -:   60:    /*
+        -:   61:        Functia redimensioneaza lista primita ca parametru, alocand memorie dublra fata de capacitatea sa initiala
+        -:   62:    */
+        -:   63:
+        1:   64:    lista->dimensiune = 2 * lista->dimensiune;
+        1:   65:    int new_capacity = lista->dimensiune;
+        1:   66:    lista->lista_oferte = (oferta *)realloc(lista->lista_oferte, sizeof(oferta ) * new_capacity);
+        -:   67:
+        1:   68:}
+        -:   69:
+        -:   70:
+        -:   71:
+        -:   72:

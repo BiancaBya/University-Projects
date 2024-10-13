@@ -1,0 +1,388 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/repository.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\teste.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB9_REPOSITORY_H
+        -:    2:#define LAB9_REPOSITORY_H
+        -:    3:#include "carte.h"
+        -:    4:#include <string>
+        -:    5:#include <vector>
+        -:    6:#include <unordered_map>
+        -:    7:
+        -:    8:using namespace std;
+        -:    9:
+        -:   10:class RepoAbstract{
+        -:   11:
+        -:   12:public:
+        -:   13:
+        -:   14:    virtual void add_carte(const Carte& carte) = 0;
+        -:   15:    virtual void modificare_carte(const Carte& carte_cautata, const Carte& carte_modificat) = 0;
+        -:   16:    virtual void sterge_carte(const Carte& carte) = 0;
+        -:   17:    virtual const Carte* find_carte(const string& titlu, const string& autor, const string& gen, int an) const = 0;
+        -:   18:    virtual vector<Carte>& get_all() = 0;
+        -:   19:    virtual int get_lungime() const = 0;
+        -:   20:
+function _ZN12RepoAbstractD2Ev called 0 returned 0% blocks executed 0%
+    #####:   21:    virtual ~RepoAbstract() = default;
+        -:   22:};
+        -:   23:
+        -:   24:
+        -:   25:
+        -:   26:class ListaCarti : public RepoAbstract
+        -:   27:{
+        -:   28:
+        -:   29:private:
+        -:   30:
+        -:   31:    vector<Carte> lista_carti;
+        -:   32:
+        -:   33:public:
+        -:   34:
+        -:   35:    ListaCarti(const ListaCarti& ot) = default;
+        -:   36:
+function _ZN10ListaCartiC2Ev called 3 returned 100% blocks executed 100%
+        3:   37:    ListaCarti() = default;
+        3:   37-block  0
+call    0 returned 3
+call    1 returned 3
+        -:   38:    /*
+        -:   39:        constructorul listei
+        -:   40:        lista_carti -> lista de carti de tip vector<Carte>
+        -:   41:    */
+        -:   42:
+        -:   43:    int get_lungime() const override;
+        -:   44:    /*
+        -:   45:        Returneaza lungimea listei de carti
+        -:   46:    */
+        -:   47:
+        -:   48:    void add_carte(const Carte& carte) override;
+        -:   49:    /*
+        -:   50:        adauga o carte la lista de carti
+        -:   51:        carte -> cartea adaugata, de tip Carte
+        -:   52:    */
+        -:   53:
+        -:   54:    void modificare_carte(const Carte& carte_stearsa, const Carte& carte_noua) override;
+        -:   55:    /*
+        -:   56:        modifica cartea de la pozitia poz cu cartea primita ca parametru
+        -:   57:        poz -> pozitia cartii de modificat
+        -:   58:        carte -> cartea de adaugat
+        -:   59:    */
+        -:   60:
+        -:   61:    void sterge_carte(const Carte& carte) override;
+        -:   62:    /*
+        -:   63:        sterge cartea de la pozitia poz din lista de carti
+        -:   64:        poz -> pozitia cartii de sters
+        -:   65:    */
+        -:   66:
+        -:   67:    [[nodiscard]] const Carte* find_carte(const string& titlu, const string& autor, const string& gen, int an) const override;
+        -:   68:    /*
+        -:   69:        Functia de gasire a unei carti dupa titlu, autor, gen si an
+        -:   70:    */
+        -:   71:
+        -:   72:
+function _ZN10ListaCarti7get_allEv called 0 returned 0% blocks executed 0%
+    #####:   73:    vector<Carte>& get_all() override {
+    #####:   74:        return lista_carti;
+    %%%%%:   74-block  0
+        -:   75:    }
+        -:   76:
+        -:   77:};
+        -:   78:
+        -:   79:
+        -:   80:class RepoInFile : public ListaCarti{
+        -:   81:
+        -:   82:private:
+        -:   83:
+        -:   84:    string file_name;
+        -:   85:    void ReadFromFile();
+        -:   86:    void WriteToFile();
+        -:   87:
+        -:   88:public:
+        -:   89:
+function _ZN10RepoInFileC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 62%
+        3:   90:    explicit RepoInFile(string filename) : ListaCarti(), file_name(filename){
+        3:   90-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   91:        ReadFromFile();
+        3:   91-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   92:    }
+        3:   92-block  0
+    $$$$$:   92-block  1
+call    0 never executed
+    $$$$$:   92-block  2
+call    1 never executed
+        -:   93:
+function _ZN10RepoInFile9add_carteERK5Carte called 5 returned 100% blocks executed 100%
+        5:   94:    void add_carte(const Carte& carte) override{
+        -:   95:
+        5:   96:        ListaCarti::add_carte(carte);
+        5:   96-block  0
+call    0 returned 5
+        5:   97:        WriteToFile();
+call    0 returned 5
+        -:   98:
+        5:   99:    }
+        -:  100:
+function _ZN10RepoInFile16modificare_carteERK5CarteS2_ called 1 returned 100% blocks executed 100%
+        1:  101:    void modificare_carte(const Carte& carte_stearsa, const Carte& carte_noua) override{
+        -:  102:
+        1:  103:        ListaCarti::modificare_carte(carte_stearsa, carte_noua);
+        1:  103-block  0
+call    0 returned 1
+        1:  104:        WriteToFile();
+call    0 returned 1
+        -:  105:
+        1:  106:    }
+        -:  107:
+function _ZN10RepoInFile12sterge_carteERK5Carte called 2 returned 100% blocks executed 100%
+        2:  108:    void sterge_carte(const Carte& carte) override{
+        -:  109:
+        2:  110:        ListaCarti::sterge_carte(carte);
+        2:  110-block  0
+call    0 returned 2
+        2:  111:        WriteToFile();
+call    0 returned 2
+        -:  112:
+        2:  113:    }
+        -:  114:
+        -:  115:};
+        -:  116:
+        -:  117:
+        -:  118:
+        -:  119:
+        -:  120:
+        -:  121:class RepoDictionar : public RepoAbstract{
+        -:  122:
+        -:  123:private:
+        -:  124:
+        -:  125:    unordered_map<string, Carte> dictionar; // cheia este titlul cartii si valoarea e cartea
+        -:  126:
+        -:  127:public:
+        -:  128:
+function _ZN13RepoDictionarC1Ev called 0 returned 0% blocks executed 0%
+    #####:  129:    RepoDictionar() = default;
+    %%%%%:  129-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  130:
+function _ZN13RepoDictionar9add_carteERK5Carte called 0 returned 0% blocks executed 0%
+    #####:  131:    void add_carte(const Carte& carte) override{
+    #####:  132:        dictionar.insert(make_pair(carte.get_titlu(), carte));
+    %%%%%:  132-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  132-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  132-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  132-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:  132-block  4
+call   11 never executed
+    $$$$$:  132-block  5
+call   12 never executed
+    $$$$$:  132-block  6
+    $$$$$:  132-block  7
+    #####:  133:    }
+        -:  134:
+function _ZN13RepoDictionar16modificare_carteERK5CarteS2_ called 0 returned 0% blocks executed 0%
+    #####:  135:    void modificare_carte(const Carte& carte_cautata, const Carte& carte_modificat) override{
+    #####:  136:        dictionar.erase(carte_cautata.get_titlu());
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  136-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  136-block  2
+call    6 never executed
+    $$$$$:  136-block  3
+call    7 never executed
+    $$$$$:  136-block  4
+call    8 never executed
+    #####:  137:        dictionar.insert(make_pair(carte_modificat.get_titlu(), carte_modificat));
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  137-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  137-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  137-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  137-block  3
+call   11 never executed
+    $$$$$:  137-block  4
+call   12 never executed
+    $$$$$:  137-block  5
+    $$$$$:  137-block  6
+    #####:  138:    }
+        -:  139:
+function _ZN13RepoDictionar12sterge_carteERK5Carte called 0 returned 0% blocks executed 0%
+    #####:  140:    void sterge_carte(const Carte& carte) override{
+    #####:  141:        dictionar.erase(carte.get_titlu());
+    %%%%%:  141-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  141-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  141-block  2
+call    6 never executed
+    $$$$$:  141-block  3
+call    7 never executed
+    #####:  142:    }
+        -:  143:
+function _ZNK13RepoDictionar11get_lungimeEv called 0 returned 0% blocks executed 0%
+    #####:  144:    int get_lungime() const override {
+    #####:  145:        return dictionar.size();
+    %%%%%:  145-block  0
+call    0 never executed
+        -:  146:    }
+        -:  147:
+function _ZNK13RepoDictionar10find_carteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 0 returned 0% blocks executed 0%
+    #####:  148:    const Carte* find_carte(const string& titlu, const string& autor, const string& gen, int an) const override{
+        -:  149:
+    #####:  150:        for (const auto& pereche : dictionar)
+    %%%%%:  150-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  150-block  1
+call    2 never executed
+    %%%%%:  150-block  2
+call    3 never executed
+    %%%%%:  150-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed (fallthrough)
+    #####:  151:            if (pereche.second.get_titlu() == titlu and pereche.second.get_autor() == autor and pereche.second.get_gen() == gen and pereche.second.get_an() == an)
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  151-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    %%%%%:  151-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  151-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed
+    %%%%%:  151-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:  151-block  4
+call   15 never executed
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    %%%%%:  151-block  5
+call   18 never executed
+branch 19 never executed (fallthrough)
+branch 20 never executed (throw)
+    %%%%%:  151-block  6
+branch 21 never executed (fallthrough)
+branch 22 never executed
+    %%%%%:  151-block  7
+    %%%%%:  151-block  8
+    %%%%%:  151-block  9
+branch 23 never executed (fallthrough)
+branch 24 never executed
+    %%%%%:  151-block 10
+call   25 never executed
+    %%%%%:  151-block 11
+branch 26 never executed (fallthrough)
+branch 27 never executed
+    %%%%%:  151-block 12
+call   28 never executed
+    %%%%%:  151-block 13
+branch 29 never executed (fallthrough)
+branch 30 never executed
+    %%%%%:  151-block 14
+call   31 never executed
+    %%%%%:  151-block 15
+branch 32 never executed (fallthrough)
+branch 33 never executed
+    $$$$$:  151-block 16
+branch 34 never executed (fallthrough)
+branch 35 never executed
+    $$$$$:  151-block 17
+call   36 never executed
+    $$$$$:  151-block 18
+    $$$$$:  151-block 19
+branch 37 never executed (fallthrough)
+branch 38 never executed
+    $$$$$:  151-block 20
+call   39 never executed
+    $$$$$:  151-block 21
+    $$$$$:  151-block 22
+branch 40 never executed (fallthrough)
+branch 41 never executed
+    $$$$$:  151-block 23
+call   42 never executed
+    $$$$$:  151-block 24
+    #####:  152:                return &pereche.second;
+    %%%%%:  152-block  0
+        -:  153:
+    #####:  154:        return nullptr;
+    %%%%%:  154-block  0
+        -:  155:    }
+        -:  156:
+        -:  157:    vector<Carte> carti;
+        -:  158:
+function _ZN13RepoDictionar7get_allEv called 0 returned 0% blocks executed 0%
+    #####:  159:    vector<Carte>& get_all() override{
+        -:  160:
+    #####:  161:        carti.clear();
+    %%%%%:  161-block  0
+call    0 never executed
+        -:  162:
+    #####:  163:        for (const auto& pereche : dictionar)
+call    0 never executed
+call    1 never executed
+    %%%%%:  163-block  0
+call    2 never executed
+    %%%%%:  163-block  1
+call    3 never executed
+    %%%%%:  163-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed (fallthrough)
+    #####:  164:            carti.push_back(pereche.second);
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  165:
+    #####:  166:        return carti;
+    %%%%%:  166-block  0
+    %%%%%:  166-block  1
+        -:  167:    }
+        -:  168:
+        -:  169:};
+        -:  170:
+        -:  171:
+        -:  172:#endif //LAB9_REPOSITORY_H

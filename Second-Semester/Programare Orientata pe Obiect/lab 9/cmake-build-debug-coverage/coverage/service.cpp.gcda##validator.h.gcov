@@ -1,0 +1,268 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/validator.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB9_VALIDATOR_H
+        -:    2:#define LAB9_VALIDATOR_H
+        -:    3:#include <string>
+        -:    4:#include "exceptions.h"
+        -:    5:#include "vector_dinamic.h"
+        -:    6:#include "repository.h"
+        -:    7:
+        -:    8:class Validator{
+        -:    9:
+        -:   10:public:
+        -:   11:
+        -:   12:    Validator() = default;
+        -:   13:
+function _ZN9Validator13validare_dateERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 32 returned 84% blocks executed 100%
+       32:   14:    static void validare_date(const std::string& titlu, const std::string& autor, const std::string& gen, int an){
+        -:   15:
+       32:   16:        if (titlu.size() < 2)
+       32:   16-block  0
+call    0 returned 32
+branch  1 taken 2 (fallthrough)
+branch  2 taken 30
+        2:   17:            throw Dateinvalide();
+        2:   17-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 0
+        -:   18:
+       30:   19:        if (autor.size() < 2)
+       30:   19-block  0
+call    0 returned 30
+branch  1 taken 1 (fallthrough)
+branch  2 taken 29
+        1:   20:            throw Dateinvalide();
+        1:   20-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 0
+        -:   21:
+       29:   22:        if (gen.size() < 2)
+       29:   22-block  0
+call    0 returned 29
+branch  1 taken 1 (fallthrough)
+branch  2 taken 28
+        1:   23:            throw Dateinvalide();
+        1:   23-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 0
+        -:   24:
+       28:   25:        if (an < 1500)
+       28:   25-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 27
+        1:   26:            throw Dateinvalide();
+        1:   26-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 0
+       27:   27:    }
+        -:   28:
+        -:   29:    static void validare_index(int index, int lungime){
+        -:   30:
+        -:   31:        if (index < 0 or index >= lungime)
+        -:   32:            throw IndexInvalid();
+        -:   33:
+        -:   34:    }
+        -:   35:
+function _ZN9Validator14validare_carteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_iSt6vectorI5CarteSaIS9_EE called 26 returned 96% blocks executed 72%
+       26:   36:    static void validare_carte(const std::string& titlu, const std::string& autor, const std::string& gen, int an, vector<Carte> lista){
+        -:   37:
+       41:   38:        for (const auto & i : lista)
+       26:   38-block  0
+call    0 returned 26
+call    1 returned 26
+       16:   38-block  1
+call    2 returned 16
+       15:   38-block  2
+call    3 returned 15
+       41:   38-block  3
+call    4 returned 41
+branch  5 taken 16
+branch  6 taken 25 (fallthrough)
+       16:   39:            if (i.get_titlu() == titlu and i.get_autor() == autor and i.get_gen() == gen and i.get_an() == an)
+call    0 returned 16
+branch  1 taken 16 (fallthrough)
+branch  2 taken 0 (throw)
+       16:   39-block  0
+call    3 returned 16
+branch  4 taken 4 (fallthrough)
+branch  5 taken 12
+        4:   39-block  1
+call    6 returned 4
+branch  7 taken 4 (fallthrough)
+branch  8 taken 0 (throw)
+        4:   39-block  2
+call    9 returned 4
+branch 10 taken 1 (fallthrough)
+branch 11 taken 3
+        1:   39-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   39-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0
+        1:   39-block  5
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   39-block  6
+branch 21 taken 1 (fallthrough)
+branch 22 taken 0
+        1:   39-block  7
+       15:   39-block  8
+       16:   39-block  9
+branch 23 taken 1 (fallthrough)
+branch 24 taken 15
+        1:   39-block 10
+call   25 returned 1
+       16:   39-block 11
+branch 26 taken 4 (fallthrough)
+branch 27 taken 12
+        4:   39-block 12
+call   28 returned 4
+       16:   39-block 13
+branch 29 taken 16 (fallthrough)
+branch 30 taken 0
+       16:   39-block 14
+call   31 returned 16
+       16:   39-block 15
+branch 32 taken 1 (fallthrough)
+branch 33 taken 15
+    $$$$$:   39-block 16
+branch 34 never executed (fallthrough)
+branch 35 never executed
+    $$$$$:   39-block 17
+call   36 never executed
+    $$$$$:   39-block 18
+    $$$$$:   39-block 19
+branch 37 never executed (fallthrough)
+branch 38 never executed
+    $$$$$:   39-block 20
+call   39 never executed
+    $$$$$:   39-block 21
+    $$$$$:   39-block 22
+branch 40 never executed (fallthrough)
+branch 41 never executed
+    $$$$$:   39-block 23
+call   42 never executed
+    $$$$$:   39-block 24
+        1:   40:                throw CarteExistenta();
+        1:   40-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        -:   41:
+       25:   42:    }
+       25:   42-block  0
+        -:   43:
+function _ZN9Validator24validare_carte_nu_existaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_iSt6vectorI5CarteSaIS9_EE called 5 returned 80% blocks executed 73%
+        5:   44:    static void validare_carte_nu_exista(const std::string& titlu, const std::string& autor, const std::string& gen, int an, vector<Carte> lista){
+        -:   45:
+        5:   46:        int ok = 0;
+       12:   47:        for (const auto & i : lista)
+        5:   47-block  0
+call    0 returned 5
+call    1 returned 5
+        7:   47-block  1
+call    2 returned 7
+        7:   47-block  2
+call    3 returned 7
+       12:   47-block  3
+call    4 returned 12
+branch  5 taken 7
+branch  6 taken 5 (fallthrough)
+        7:   48:            if (i.get_titlu() == titlu and i.get_autor() == autor and i.get_gen() == gen and i.get_an() == an)
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:   48-block  0
+call    3 returned 7
+branch  4 taken 4 (fallthrough)
+branch  5 taken 3
+        4:   48-block  1
+call    6 returned 4
+branch  7 taken 4 (fallthrough)
+branch  8 taken 0 (throw)
+        4:   48-block  2
+call    9 returned 4
+branch 10 taken 4 (fallthrough)
+branch 11 taken 0
+        4:   48-block  3
+call   12 returned 4
+branch 13 taken 4 (fallthrough)
+branch 14 taken 0 (throw)
+        4:   48-block  4
+call   15 returned 4
+branch 16 taken 4 (fallthrough)
+branch 17 taken 0
+        4:   48-block  5
+call   18 returned 4
+branch 19 taken 4 (fallthrough)
+branch 20 taken 0 (throw)
+        4:   48-block  6
+branch 21 taken 4 (fallthrough)
+branch 22 taken 0
+        4:   48-block  7
+        3:   48-block  8
+        7:   48-block  9
+branch 23 taken 4 (fallthrough)
+branch 24 taken 3
+        4:   48-block 10
+call   25 returned 4
+        7:   48-block 11
+branch 26 taken 4 (fallthrough)
+branch 27 taken 3
+        4:   48-block 12
+call   28 returned 4
+        7:   48-block 13
+branch 29 taken 7 (fallthrough)
+branch 30 taken 0
+        7:   48-block 14
+call   31 returned 7
+        7:   48-block 15
+branch 32 taken 4 (fallthrough)
+branch 33 taken 3
+    $$$$$:   48-block 16
+branch 34 never executed (fallthrough)
+branch 35 never executed
+    $$$$$:   48-block 17
+call   36 never executed
+    $$$$$:   48-block 18
+    $$$$$:   48-block 19
+branch 37 never executed (fallthrough)
+branch 38 never executed
+    $$$$$:   48-block 20
+call   39 never executed
+    $$$$$:   48-block 21
+    $$$$$:   48-block 22
+branch 40 never executed (fallthrough)
+branch 41 never executed
+    $$$$$:   48-block 23
+call   42 never executed
+    $$$$$:   48-block 24
+        4:   49:                ok = 1;
+        4:   49-block  0
+        -:   50:
+        5:   51:        if(!ok)
+        5:   51-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        1:   52:            throw CarteaNuExista();
+        1:   52-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 0
+        4:   53:    }
+        4:   53-block  0
+        -:   54:
+        -:   55:    ~Validator() = default;
+        -:   56:
+        -:   57:};
+        -:   58:#endif //LAB9_VALIDATOR_H

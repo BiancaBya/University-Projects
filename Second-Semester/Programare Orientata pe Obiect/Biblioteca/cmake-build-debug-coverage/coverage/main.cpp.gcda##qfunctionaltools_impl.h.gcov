@@ -1,0 +1,181 @@
+        -:    0:Source:C:/QTbun/6.8.0/mingw_64/include/QtCore/qfunctionaltools_impl.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2023 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#if 0
+        -:    5:#pragma qt_sync_skip_header_check
+        -:    6:#pragma qt_sync_stop_processing
+        -:    7:#endif
+        -:    8:
+        -:    9:#ifndef QFUNCTIONALTOOLS_IMPL_H
+        -:   10:#define QFUNCTIONALTOOLS_IMPL_H
+        -:   11:
+        -:   12:#include <QtCore/qtconfigmacros.h>
+        -:   13:
+        -:   14:#include <type_traits>
+        -:   15:#include <utility>
+        -:   16:
+        -:   17:QT_BEGIN_NAMESPACE
+        -:   18:
+        -:   19:namespace QtPrivate {
+        -:   20:
+        -:   21:namespace detail {
+        -:   22:
+        -:   23:#define FOR_EACH_CVREF(op) \
+        -:   24:    op(&) \
+        -:   25:    op(const &) \
+        -:   26:    op(&&) \
+        -:   27:    op(const &&) \
+        -:   28:    /* end */
+        -:   29:
+        -:   30:
+        -:   31:template <typename Object, typename = void>
+        -:   32:struct StorageByValue
+        -:   33:{
+        -:   34:    Object o;
+        -:   35:#define MAKE_GETTER(cvref) \
+        -:   36:    constexpr Object cvref object() cvref noexcept \
+        -:   37:    { return static_cast<Object cvref>(o); }
+       1*:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlP15QListWidgetItemE_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlP15QListWidgetItemE_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN7Sortare11initConnectEvEUlvE_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN7Sortare11initConnectEvEUlvE_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN7Sortare11initConnectEvEUlvE0_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN7Sortare11initConnectEvEUlvE0_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN7Sortare11initConnectEvEUlvE1_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN7Sortare11initConnectEvEUlvE1_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN8Filtrare11initConnectEvEUlvE_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN8Filtrare11initConnectEvEUlvE_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN8Filtrare11initConnectEvEUlvE0_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN8Filtrare11initConnectEvEUlvE0_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE0_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE0_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE1_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE1_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE2_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN5Cosul11initConnectEvEUlvE2_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE8_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE8_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE_vE6objectEv called 1 returned 100% blocks executed 100%
+        1:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+        1:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE0_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE0_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE1_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE1_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE2_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE2_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE3_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE3_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE4_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE4_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE5_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE5_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE6_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE6_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+_ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE7_vE6objectEv:
+function _ZNR9QtPrivate6detail14StorageByValueIZN3GUI11initConnectEvEUlvE7_vE6objectEv called 0 returned 0% blocks executed 0%
+    #####:   38:    FOR_EACH_CVREF(MAKE_GETTER)
+    %%%%%:   38-block  0
+------------------
+        -:   39:#undef MAKE_GETTER
+        -:   40:};
+        -:   41:
+        -:   42:template <typename Object, typename Tag = void>
+        -:   43:struct StorageEmptyBaseClassOptimization : Object
+        -:   44:{
+        -:   45:    StorageEmptyBaseClassOptimization(Object &&o)
+        -:   46:        : Object(std::move(o))
+        -:   47:    {}
+        -:   48:    StorageEmptyBaseClassOptimization(const Object &o)
+        -:   49:        : Object(o)
+        -:   50:    {}
+        -:   51:
+        -:   52:#define MAKE_GETTER(cvref) \
+        -:   53:    constexpr Object cvref object() cvref noexcept \
+        -:   54:    { return static_cast<Object cvref>(*this); }
+        -:   55:    FOR_EACH_CVREF(MAKE_GETTER)
+        -:   56:#undef MAKE_GETTER
+        -:   57:};
+        -:   58:} // namespace detail
+        -:   59:
+        -:   60:template <typename Object, typename Tag = void>
+        -:   61:using CompactStorage = typename std::conditional_t<
+        -:   62:        std::conjunction_v<
+        -:   63:            std::is_empty<Object>,
+        -:   64:            std::negation<std::is_final<Object>>
+        -:   65:        >,
+        -:   66:        detail::StorageEmptyBaseClassOptimization<Object, Tag>,
+        -:   67:        detail::StorageByValue<Object, Tag>
+        -:   68:    >;
+        -:   69:
+        -:   70:} // namespace QtPrivate
+        -:   71:
+        -:   72:#undef FOR_EACH_CVREF
+        -:   73:
+        -:   74:QT_END_NAMESPACE
+        -:   75:
+        -:   76:#endif // QFUNCTIONALTOOLS_IMPL_H

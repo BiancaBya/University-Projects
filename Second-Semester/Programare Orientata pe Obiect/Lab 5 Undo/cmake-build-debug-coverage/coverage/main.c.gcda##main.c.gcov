@@ -1,0 +1,521 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/buget_bun/main.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\buget_bun\cmake-build-debug-coverage\CMakeFiles\buget_bun.dir\main.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\buget_bun\cmake-build-debug-coverage\CMakeFiles\buget_bun.dir\main.c.gcda
+        -:    0:Runs:1
+        -:    1://#include "buget.h"
+        -:    2://#include "MyList.h"
+        -:    3:#include "service.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include <string.h>
+        -:    7:#define _CRTDBG_MAP_ALLOC
+        -:    8:#include <crtdbg.h>
+        -:    9:
+function getAllBuget called 0 returned 0% blocks executed 0%
+    #####:   10:void getAllBuget(MyList* l)
+        -:   11:{
+        -:   12:    int i;
+    #####:   13:    for(i=0;i<size(l);i++)
+    %%%%%:   13-block  0
+    %%%%%:   13-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+        -:   14:    {
+    #####:   15:        Buget *b = get(l, i);
+    %%%%%:   15-block  0
+call    0 never executed
+    #####:   16:        printf("Type: %s\n Zi: %d\n Suma: %.2f\n\n", b->type, b->zi, b->suma);
+call    0 never executed
+        -:   17:    }
+    #####:   18:}
+        -:   19:
+        -:   20:
+function afisare_lista_liste called 0 returned 0% blocks executed 0%
+    #####:   21:void afisare_lista_liste(MyList* l){
+        -:   22:
+    #####:   23:    for (int i=0; i < l->lg ; i++){
+    %%%%%:   23-block  0
+    %%%%%:   23-block  1
+    %%%%%:   23-block  2
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   24:        MyList *lista = l->elems[i];
+    #####:   25:        for (int j=0; j < lista->lg; j++){
+    %%%%%:   25-block  0
+    %%%%%:   25-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:   26:
+    #####:   27:            Buget *b = get(lista, j);
+    %%%%%:   27-block  0
+call    0 never executed
+    #####:   28:            printf("Type: %s\n Zi: %d\n Suma: %.2f\n\n", b->type, b->zi, b->suma);
+call    0 never executed
+        -:   29:
+        -:   30:        }
+        -:   31:    }
+        -:   32:
+    #####:   33:}
+        -:   34:
+        -:   35:
+function addBuget called 0 returned 0% blocks executed 0%
+    #####:   36:int addBuget(ManagerBuget* buget, char* type, int zi, float suma)
+        -:   37:{
+    #####:   38:    Buget *p = createBuget(type, zi, suma);
+    %%%%%:   38-block  0
+call    0 never executed
+    #####:   39:    int succ = valideaza(p, buget->allbugets);
+call    0 never executed
+    #####:   40:    if (succ != 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:   41:    {
+    #####:   42:        if(succ == 4) printf("Exista deja aceasta cheltuiala in ziua respectiva!\n");
+    %%%%%:   42-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   42-block  1
+call    2 never executed
+    #####:   43:        if(succ == 1) printf("Nu exista ziua respectiva!\n");
+    %%%%%:   43-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   43-block  1
+call    2 never executed
+    #####:   44:        if(succ == 2) printf("Nu exista tipul respectiv!\n");
+    %%%%%:   44-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   44-block  1
+call    2 never executed
+    #####:   45:        if(succ == 3) printf("Suma trebuie sa fie pozitiva!\n");
+    %%%%%:   45-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   45-block  1
+call    2 never executed
+    #####:   46:        return succ;
+    %%%%%:   46-block  0
+        -:   47:    }
+        -:   48:
+    #####:   49:    MyList  *toUndo = copyList(buget->allbugets, (CopyFct) copyBuget);
+    %%%%%:   49-block  0
+call    0 never executed
+    #####:   50:    add(buget->undolist, toUndo);
+call    0 never executed
+    #####:   51:    add(buget->allbugets, p);
+call    0 never executed
+        -:   52:
+    #####:   53:    return 0;
+        -:   54:}
+        -:   55:
+        -:   56:
+        -:   57:
+function test_getAllBuget called 1 returned 100% blocks executed 79%
+        1:   58:void test_getAllBuget()
+        -:   59:{
+        1:   60:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:   60-block  0
+call    0 returned 1
+        1:   61:    Buget *p = createBuget("altele", 2, 2);
+call    0 returned 1
+        1:   62:    add(l, p);
+call    0 returned 1
+       1*:   63:    assert(size(l) == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   63-block  0
+call    3 never executed
+        1:   63-block  1
+        1:   64:    Buget *b = get(l, 0);
+        1:   64-block  0
+call    0 returned 1
+       1*:   65:    assert(strcmp(b->type,"altele") == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   65-block  0
+call    2 never executed
+        1:   65-block  1
+       1*:   66:    assert(b->zi == 2);
+        1:   66-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   66-block  1
+call    2 never executed
+        1:   66-block  2
+       1*:   67:    assert(b->suma == 2);
+        1:   67-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   67-block  1
+call    2 never executed
+        1:   67-block  2
+        1:   68:    destroyList(l);
+        1:   68-block  0
+call    0 returned 1
+        1:   69:}
+        -:   70:
+function undo_ui called 0 returned 0% blocks executed 0%
+    #####:   71:void undo_ui(ManagerBuget* buget){
+        -:   72:
+    #####:   73:    int ok = undo(buget);
+    %%%%%:   73-block  0
+call    0 never executed
+    #####:   74:    if (ok)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   75:        printf("Undo realizat cu succes.\n");
+    %%%%%:   75-block  0
+call    0 never executed
+        -:   76:    else
+    #####:   77:        printf("Nu se poate face undo.\n");
+    %%%%%:   77-block  0
+call    0 never executed
+        -:   78:
+    #####:   79:}
+        -:   80:
+function test_all called 1 returned 100% blocks executed 100%
+        1:   81:void test_all()
+        -:   82:{
+        1:   83:    testBuget();
+        1:   83-block  0
+call    0 returned 1
+        1:   84:    testValidare();
+call    0 returned 1
+        1:   85:    test_destroy();
+call    0 returned 1
+        1:   86:    test_resize();
+call    0 returned 1
+        1:   87:    test_getAllBuget();
+call    0 returned 1
+        1:   88:    test_modificare();
+call    0 returned 1
+        1:   89:    testCreateEmpty();
+call    0 returned 1
+        1:   90:    test_set();
+call    0 returned 1
+        1:   91:    test_delete();
+call    0 returned 1
+        1:   92:    test_sort_list();
+call    0 returned 1
+        1:   93:    test_filtrare_type();
+call    0 returned 1
+        1:   94:    test_filtrare_zi();
+call    0 returned 1
+        1:   95:    test_filtrare_suma();
+call    0 returned 1
+        1:   96:    test_filtrare_suma_mai_mare();
+call    0 returned 1
+        1:   97:    testCopyList();
+call    0 returned 1
+        1:   98:    test_deep_copy();
+call    0 returned 1
+        1:   99:    test_delete_cmd();
+call    0 returned 1
+        1:  100:    test_find();
+call    0 returned 1
+        1:  101:    test_delete_undo();
+call    0 returned 1
+        1:  102:    test_undo();
+call    0 returned 1
+        1:  103:}
+        -:  104:
+function start called 1 returned 100% blocks executed 16%
+        1:  105:void start()
+        -:  106:{
+        -:  107:    //MyList *Bugete = createEmpty((DestroyFct) destroyBuget);
+        1:  108:    ManagerBuget buget = createManagerBuget();
+        1:  108-block  0
+call    0 returned 1
+        1:  109:    int ok = 1;
+        1:  110:    while(ok)
+        1:  110-block  0
+branch  0 taken 1
+branch  1 taken 0 (fallthrough)
+        -:  111:    {
+        1:  112:        printf("1. Add\n2. Modify\n3. Delete\n4. Afisare dupa o proprietate(tip,zi,suma)\n5. Afisare ordonate dupa o proprietate(suma,tip,zi)\n6.Undo\n0. Iesire\n");
+        1:  112-block  0
+call    0 returned 1
+        1:  113:        int cmd = 0;
+        1:  114:        scanf_s("%ld", &cmd);
+call    0 returned 1
+        1:  115:        if(cmd == 1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  116:        {
+    #####:  117:            printf("Tip:");
+    %%%%%:  117-block  0
+call    0 never executed
+        -:  118:            char type[30];
+    #####:  119:            scanf_s("%s", type, 30);
+call    0 never executed
+    #####:  120:            printf("Zi:");
+call    0 never executed
+        -:  121:            int zi;
+    #####:  122:            scanf_s("%ld", &zi);
+call    0 never executed
+    #####:  123:            printf("Suma:");
+call    0 never executed
+        -:  124:            float suma;
+    #####:  125:            scanf_s("%f", &suma);
+call    0 never executed
+    #####:  126:            addBuget(&buget, type, zi, suma);
+call    0 never executed
+        -:  127:        }
+        1:  128:        else if(cmd == 2)
+        1:  128-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  129:        {
+    #####:  130:            printf("Tip:");
+    %%%%%:  130-block  0
+call    0 never executed
+        -:  131:            char tip[30];
+    #####:  132:            scanf_s("%s", tip, 30);
+call    0 never executed
+    #####:  133:            printf("Zi:");
+call    0 never executed
+        -:  134:            int zi;
+    #####:  135:            scanf_s("%ld", &zi);
+call    0 never executed
+    #####:  136:            printf("Suma:");
+call    0 never executed
+        -:  137:            float suma;
+    #####:  138:            scanf_s("%f", &suma);
+call    0 never executed
+    #####:  139:            printf("Tipul pe care vrei sa-l pui:");
+call    0 never executed
+        -:  140:            char type[30];
+    #####:  141:            scanf_s("%s", type, 30);
+call    0 never executed
+    #####:  142:            printf("Ziua pe care vrei sa o pui:");
+call    0 never executed
+        -:  143:            int day;
+    #####:  144:            scanf_s("%ld", &day);
+call    0 never executed
+    #####:  145:            printf("Suma pe care vrei sa o pui:");
+call    0 never executed
+        -:  146:            float sum;
+    #####:  147:            scanf_s("%f", &sum);
+call    0 never executed
+        -:  148:
+    #####:  149:            MyList  *toUndo = copyList(buget.allbugets, (CopyFct) copyBuget);
+call    0 never executed
+    #####:  150:            add(buget.undolist, toUndo);
+call    0 never executed
+        -:  151:
+    #####:  152:            modificare(&buget,tip,zi,suma,type,day,sum);
+call    0 never executed
+        -:  153:        }
+        1:  154:        else if(cmd == 3)
+        1:  154-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  155:        {
+    #####:  156:            printf("Tip:");
+    %%%%%:  156-block  0
+call    0 never executed
+        -:  157:            char tip[30];
+    #####:  158:            scanf_s("%s", tip, 30);
+call    0 never executed
+    #####:  159:            printf("Zi:");
+call    0 never executed
+        -:  160:            int zi;
+    #####:  161:            scanf_s("%ld", &zi);
+call    0 never executed
+    #####:  162:            printf("Suma:");
+call    0 never executed
+        -:  163:            float suma;
+    #####:  164:            scanf_s("%f", &suma);
+call    0 never executed
+    #####:  165:            int poz = FindBuget(buget.allbugets, tip, zi, suma);
+call    0 never executed
+    #####:  166:            Buget *p = get(buget.allbugets, poz);
+call    0 never executed
+        -:  167:
+    #####:  168:            MyList  *toUndo = copyList(buget.allbugets, (CopyFct) copyBuget);
+call    0 never executed
+    #####:  169:            add(buget.undolist, toUndo);
+call    0 never executed
+        -:  170:
+    #####:  171:            delete_cmd(&buget, p);
+call    0 never executed
+        -:  172:        }
+        1:  173:        else if(cmd == 4)
+        1:  173-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  174:        {
+        -:  175:            char cuvant[30], criteriu[30];
+        -:  176:            int numar;
+        -:  177:            float sum;
+    #####:  178:            printf("Criteriu de filtrare:");
+    %%%%%:  178-block  0
+call    0 never executed
+    #####:  179:            scanf_s("%s",cuvant,30);
+call    0 never executed
+    #####:  180:            MyList *rez = copyList(buget.allbugets, (CopyFct) copyBuget);
+call    0 never executed
+    #####:  181:            if(strcmp(cuvant,"type") == 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  182:            {
+    #####:  183:                printf("Alege tipul:");
+    %%%%%:  183-block  0
+call    0 never executed
+    #####:  184:                scanf_s("%s", criteriu, 30);
+call    0 never executed
+    #####:  185:                filtrare_type(rez, criteriu);
+call    0 never executed
+        -:  186:            }
+    #####:  187:            if(strcmp(cuvant,"zi") == 0)
+    %%%%%:  187-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  188:            {
+    #####:  189:                printf("Alege ziua:");
+    %%%%%:  189-block  0
+call    0 never executed
+    #####:  190:                scanf_s("%ld", &numar);
+call    0 never executed
+    #####:  191:                filtrare_zi(rez, numar);
+call    0 never executed
+        -:  192:            }
+    #####:  193:            if(strcmp(cuvant,"suma") == 0)
+    %%%%%:  193-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  194:            {
+    #####:  195:                printf("Alege suma:");
+    %%%%%:  195-block  0
+call    0 never executed
+    #####:  196:                scanf_s("%f", &sum);
+call    0 never executed
+    #####:  197:                filtrare_suma(rez, sum);
+call    0 never executed
+        -:  198:            }
+    #####:  199:            if(strcmp(cuvant,"suma_mare") == 0){
+    %%%%%:  199-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  200:                printf("Alege suma:");
+    %%%%%:  200-block  0
+call    0 never executed
+    #####:  201:                scanf_s("%f", &sum);
+call    0 never executed
+    #####:  202:                filtrare_suma_mai_mare(rez, sum);
+call    0 never executed
+        -:  203:            }
+    #####:  204:            getAllBuget(rez);
+    %%%%%:  204-block  0
+call    0 never executed
+    #####:  205:            printf("\n");
+call    0 never executed
+        -:  206:        }
+        1:  207:        else if(cmd == 5)
+        1:  207-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        -:  208:        {
+        -:  209:            char cuvant[30];
+        -:  210:            int sortare;
+    #####:  211:            printf("Criteriu de sortare:");
+    %%%%%:  211-block  0
+call    0 never executed
+    #####:  212:            scanf_s("%s", cuvant, 30);
+call    0 never executed
+    #####:  213:            MyList *rez = copyList(buget.allbugets, (CopyFct) copyBuget);
+call    0 never executed
+    #####:  214:            if (strcmp(cuvant, "type") == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  215:                printf("Alegere sortare: ");
+    %%%%%:  215-block  0
+call    0 never executed
+    #####:  216:                scanf_s("%ld", &sortare);
+call    0 never executed
+    #####:  217:                sort_list(rez, cmptype, sortare);
+call    0 never executed
+        -:  218:            }
+    #####:  219:            if (strcmp(cuvant, "zi") == 0)
+    %%%%%:  219-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  220:            {
+    #####:  221:                printf("Alegere sortare: ");
+    %%%%%:  221-block  0
+call    0 never executed
+    #####:  222:                scanf_s("%ld", &sortare);
+call    0 never executed
+    #####:  223:                sort_list(rez, cmpzi, sortare);
+call    0 never executed
+        -:  224:            }
+    #####:  225:            if (strcmp(cuvant, "suma") == 0) {
+    %%%%%:  225-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  226:                printf("Alegere sortare: ");
+    %%%%%:  226-block  0
+call    0 never executed
+    #####:  227:                scanf_s("%ld", &sortare);
+call    0 never executed
+    #####:  228:                sort_list(rez, cmpsuma, sortare);
+call    0 never executed
+        -:  229:            }
+    #####:  230:            getAllBuget(rez);
+    %%%%%:  230-block  0
+call    0 never executed
+    #####:  231:            printf("\n");
+call    0 never executed
+        -:  232:        }
+        1:  233:        else if(cmd == 6){
+        1:  233-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  234:            undo_ui(&buget);
+    %%%%%:  234-block  0
+call    0 never executed
+        -:  235:        }
+        1:  236:        else if(cmd == 0) break;
+        1:  236-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  236-block  1
+    #####:  237:        else printf("Comanda invalida!");
+    %%%%%:  237-block  0
+call    0 never executed
+        -:  238:    }
+        1:  239:    destroyManagerBuget(&buget);
+        1:  239-block  0
+call    0 returned 1
+        1:  240:}
+        -:  241:
+function main called 1 returned 100% blocks executed 100%
+        1:  242:int main(){
+        1:  243:    test_all();
+        1:  243-block  0
+call    0 returned 1
+        -:  244:    _CrtDumpMemoryLeaks();
+        1:  245:    start();
+call    0 returned 1
+        -:  246:    _CrtDumpMemoryLeaks();
+        1:  247:    return 0;
+        -:  248:}
+        -:  249:
+        -:  250:
+        -:  251:/*
+        -:  252:3 Buget de familie
+        -:  253:
+        -:  254:Creati o aplicatie care permite gestiunea bugetului pentru o familie. Aplicatia trebuie sa
+        -:  255:stocheze cheltuielile pe o luna. Fiecare cheltuiala are: zi (ziua in care s-a efectuat), suma,
+        -:  256:tip (mancare, transport, telefon&internet,inbracaminte,altele)
+        -:  257:Aplicatia permite:
+        -:  258:a) Adaugarea de cheltuieli noi (cand familia cumpara ceva sau plateste o factura)
+        -:  259:b) Modificarea unei cheltuieli existente (ziua, tipul, suma)
+        -:  260:c) Stergere cheltuiala
+        -:  261:d) Vizualizare lista de cheltuieli filtrat dupa o proprietate (suma, ziua, tipul)
+        -:  262:e) Vizualizare lista de cheltuieli ordonat dupa suma sau tip (crescator/descrescator)
+        -:  263: */
+        -:  264:

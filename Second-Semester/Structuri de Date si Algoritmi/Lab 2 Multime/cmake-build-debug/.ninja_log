@@ -1,0 +1,7 @@
+# ninja log v5
+3	373	7344510525885016	CMakeFiles/Multime.dir/IteratorMultime.cpp.obj	6e1cca32ed29267f
+12	583	7344527254821473	CMakeFiles/Multime.dir/Multime.cpp.obj	52b35383738ddf16
+6	127	7344527950301579	CMakeFiles/Multime.dir/TestScurt.cpp.obj	5a147aa653ad84f7
+7	444	7344546138771658	CMakeFiles/Multime.dir/App.cpp.obj	765586880f301f67
+445	561	7344546139892880	Multime.exe	997f538b89129a25
+12	410	7344510526277757	CMakeFiles/Multime.dir/TestExtins.cpp.obj	527f19123049cae

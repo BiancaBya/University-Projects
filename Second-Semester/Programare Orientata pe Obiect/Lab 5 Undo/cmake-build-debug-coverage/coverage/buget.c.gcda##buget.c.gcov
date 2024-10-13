@@ -1,0 +1,101 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/buget_bun/buget.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\buget_bun\cmake-build-debug-coverage\CMakeFiles\buget_bun.dir\buget.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\buget_bun\cmake-build-debug-coverage\CMakeFiles\buget_bun.dir\buget.c.gcda
+        -:    0:Runs:1
+        -:    1:#pragma warning(disable: 4996)
+        -:    2:#include "buget.h"
+        -:    3:#include <string.h>
+        -:    4:#include <assert.h>
+        -:    5:#include <stdio.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+function createBuget called 93 returned 100% blocks executed 100%
+       93:    8:Buget *createBuget(char* type, int zi, float suma)
+        -:    9:{
+       93:   10:    Buget *rez = malloc(sizeof(Buget));
+       93:   11:    strcpy(rez->type, type);
+       93:   12:    rez->zi = zi;
+       93:   13:    rez->suma = suma;
+       93:   14:    return rez;
+       93:   14-block  0
+        -:   15:}
+        -:   16:
+function testBuget called 1 returned 100% blocks executed 75%
+        1:   17:void testBuget()
+        -:   18:{
+        1:   19:    Buget *p = createBuget("telefon", 12, 10);
+        1:   19-block  0
+call    0 returned 1
+       1*:   20:    assert(strcmp(p->type, "telefon") == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   20-block  0
+call    2 never executed
+        1:   20-block  1
+       1*:   21:    assert(p->zi == 12);
+        1:   21-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   21-block  1
+call    2 never executed
+        1:   21-block  2
+       1*:   22:    assert(p->suma == 10);
+        1:   22-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   22-block  1
+call    2 never executed
+        1:   22-block  2
+        1:   23:    destroyBuget(p);
+        1:   23-block  0
+call    0 returned 1
+        1:   24:}
+        -:   25:
+function destroyBuget called 92 returned 100% blocks executed 100%
+       92:   26:void destroyBuget(Buget* p) {
+       92:   27:    free(p);
+       92:   28:}
+        -:   29:
+        -:   30:// create deep copy
+function copyBuget called 4 returned 100% blocks executed 100%
+        4:   31:Buget *copyBuget(Buget* buget){
+        4:   32:    return createBuget(buget->type, buget->zi, buget->suma);
+        4:   32-block  0
+call    0 returned 4
+        -:   33:}
+        -:   34:
+function test_deep_copy called 1 returned 100% blocks executed 79%
+        1:   35:void test_deep_copy(){
+        -:   36:
+        1:   37:    Buget *p = createBuget("telefon", 12, 10);
+        1:   37-block  0
+call    0 returned 1
+        1:   38:    Buget *buget = copyBuget(p);
+call    0 returned 1
+       1*:   39:    assert(strcmp(buget->type, "telefon") == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   39-block  0
+call    2 never executed
+        1:   39-block  1
+       1*:   40:    assert(buget->zi == 12);
+        1:   40-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   40-block  1
+call    2 never executed
+        1:   40-block  2
+       1*:   41:    assert(buget->suma == 10);
+        1:   41-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   41-block  1
+call    2 never executed
+        1:   41-block  2
+        1:   42:    destroyBuget(p);
+        1:   42-block  0
+call    0 returned 1
+        1:   43:    destroyBuget(buget);
+call    0 returned 1
+        1:   44:}
+        -:   45:

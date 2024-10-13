@@ -1,0 +1,8 @@
+# ninja log v5
+2	86	7329080139493551	CMakeFiles/OOP_lab2.dir/oferta.c.obj	8f06ed0292bd3cb7
+8	86	7329080139493551	CMakeFiles/OOP_lab2.dir/main.c.obj	dbc789734b44e706
+11	84	7329080139453566	CMakeFiles/OOP_lab2.dir/lista.c.obj	2297716a05b19624
+102	343	7329080141888440	OOP_lab2.exe	485de89251105430
+22	70	7329080139328156	CMakeFiles/OOP_lab2.dir/customsort.c.obj	ef23c933af171815
+14	102	7329080139649651	CMakeFiles/OOP_lab2.dir/teste.c.obj	d1a0dd1244af8f56
+18	88	7329080139516408	CMakeFiles/OOP_lab2.dir/service.c.obj	c15b8519726f83c8

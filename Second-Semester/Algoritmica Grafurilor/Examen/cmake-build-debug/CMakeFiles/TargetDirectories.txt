@@ -1,0 +1,3 @@
+C:/Users/Next/CLionProjects/grafuritest/cmake-build-debug/CMakeFiles/grafuritest.dir
+C:/Users/Next/CLionProjects/grafuritest/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Next/CLionProjects/grafuritest/cmake-build-debug/CMakeFiles/rebuild_cache.dir

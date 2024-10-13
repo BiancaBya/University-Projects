@@ -1,0 +1,5 @@
+C:/Users/Next/CLionProjects/tractor/cmake-build-debug/CMakeFiles/tractor.dir
+C:/Users/Next/CLionProjects/tractor/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Next/CLionProjects/tractor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Next/CLionProjects/tractor/cmake-build-debug/CMakeFiles/tractor_autogen_timestamp_deps.dir
+C:/Users/Next/CLionProjects/tractor/cmake-build-debug/CMakeFiles/tractor_autogen.dir

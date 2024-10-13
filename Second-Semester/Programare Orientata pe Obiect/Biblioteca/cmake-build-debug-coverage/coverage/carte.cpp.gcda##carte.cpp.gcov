@@ -1,0 +1,117 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/carte.cpp
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\carte.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\carte.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "carte.h"
+        -:    2:#include <string>
+        -:    3:#include <iostream>
+        -:    4:using namespace std;
+        -:    5:
+        -:    6:
+function _ZN5CarteC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_RKi called 985 returned 100% blocks executed 62%
+      985:    7:Carte::Carte(const string& titlu, const string& autor, const string& gen, const int& an) {
+      985:    7-block  0
+call    0 returned 985
+call    1 returned 985
+call    2 returned 985
+        -:    8:
+      985:    9:    this->titlu = titlu;
+call    0 returned 985
+branch  1 taken 985 (fallthrough)
+branch  2 taken 0 (throw)
+      985:   10:    this->autor = autor;
+      985:   10-block  0
+call    0 returned 985
+branch  1 taken 985 (fallthrough)
+branch  2 taken 0 (throw)
+      985:   11:    this->gen = gen;
+      985:   11-block  0
+call    0 returned 985
+branch  1 taken 985 (fallthrough)
+branch  2 taken 0 (throw)
+      985:   12:    this->an = an;
+        -:   13:
+      985:   14:}
+      985:   14-block  0
+    $$$$$:   14-block  1
+call    0 never executed
+    $$$$$:   14-block  2
+call    1 never executed
+    $$$$$:   14-block  3
+call    2 never executed
+        -:   15:
+function _ZN5CarteC2ERKS_ called 4477 returned 100% blocks executed 55%
+     4477:   16:Carte::Carte(const Carte& other) {
+     4477:   16-block  0
+call    0 returned 4477
+call    1 returned 4477
+call    2 returned 4477
+     4477:   17:    *this = other;
+call    0 returned 4477
+branch  1 taken 4477 (fallthrough)
+branch  2 taken 0 (throw)
+     4477:   18:}
+     4477:   18-block  0
+    $$$$$:   18-block  1
+call    0 never executed
+    $$$$$:   18-block  2
+call    1 never executed
+    $$$$$:   18-block  3
+call    2 never executed
+        -:   19:
+function _ZNK5Carte9get_titluB5cxx11Ev called 3234 returned 100% blocks executed 100%
+     3234:   20:string Carte::get_titlu() const{
+     3234:   21:    return this->titlu;
+     3234:   21-block  0
+call    0 returned 3234
+        -:   22:}
+        -:   23:
+function _ZNK5Carte9get_autorB5cxx11Ev called 1969 returned 100% blocks executed 100%
+     1969:   24:string Carte::get_autor() const{
+     1969:   25:    return this->autor;
+     1969:   25-block  0
+call    0 returned 1969
+        -:   26:}
+        -:   27:
+function _ZNK5Carte7get_genB5cxx11Ev called 1947 returned 100% blocks executed 100%
+     1947:   28:string Carte::get_gen() const{
+     1947:   29:    return this->gen;
+     1947:   29-block  0
+call    0 returned 1947
+        -:   30:}
+        -:   31:
+function _ZNK5Carte6get_anEv called 1952 returned 100% blocks executed 100%
+     1952:   32:int Carte::get_an() const {
+     1952:   33:    return this->an;
+     1952:   33-block  0
+        -:   34:}
+        -:   35:
+function _ZN5Carte9set_titluERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 6 returned 100% blocks executed 100%
+        6:   36:void Carte::set_titlu(const string& titlul){
+        6:   37:    this->titlu = titlul;
+        6:   37-block  0
+call    0 returned 6
+        6:   38:}
+        -:   39:
+        -:   40:
+function _ZN5Carte9set_autorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 6 returned 100% blocks executed 100%
+        6:   41:void Carte::set_autor(const string& autorul){
+        6:   42:    this->autor = autorul;
+        6:   42-block  0
+call    0 returned 6
+        6:   43:}
+        -:   44:
+function _ZN5Carte7set_genERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 6 returned 100% blocks executed 100%
+        6:   45:void Carte::set_gen(const string& genul){
+        6:   46:    this->gen = genul;
+        6:   46-block  0
+call    0 returned 6
+        6:   47:}
+        -:   48:
+function _ZN5Carte6set_anEi called 6 returned 100% blocks executed 100%
+        6:   49:void Carte::set_an(int anul){
+        6:   50:    this->an = anul;
+        6:   51:}
+        -:   52:
+        -:   53:
+        -:   54:

@@ -1,0 +1,6 @@
+# ninja log v5
+2	56	7330954508638012	CMakeFiles/buget_bun.dir/buget.c.obj	a37efda12f8407a5
+4	56	7330956823620028	CMakeFiles/buget_bun.dir/service.c.obj	ad7d0393a067dacc
+0	56	7330956823632571	CMakeFiles/buget_bun.dir/main.c.obj	c91d4bb33486ce72
+0	52	7330955967364108	CMakeFiles/buget_bun.dir/MyList.c.obj	9f19e1f5abb80c4a
+56	138	7330956824249436	buget_bun.exe	f49b986dd25c0a09

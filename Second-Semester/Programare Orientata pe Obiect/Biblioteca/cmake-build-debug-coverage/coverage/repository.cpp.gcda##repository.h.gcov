@@ -1,0 +1,213 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/repository.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\repository.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef QT1_REPOSITORY_H
+        -:    2:#define QT1_REPOSITORY_H
+        -:    3:
+        -:    4:#include "carte.h"
+        -:    5:#include "exceptions.h"
+        -:    6:#include <string>
+        -:    7:#include <vector>
+        -:    8:#include <unordered_map>
+        -:    9:#include <random>
+        -:   10:#include <algorithm>
+        -:   11:
+        -:   12:using namespace std;
+        -:   13:
+        -:   14:class RepoAbstract{
+        -:   15:
+        -:   16:public:
+        -:   17:
+        -:   18:    virtual void add_carte(const Carte& carte) = 0;
+        -:   19:    virtual void modificare_carte(const Carte& carte_cautata, const Carte& carte_modificat) = 0;
+        -:   20:    virtual void sterge_carte(const Carte& carte) = 0;
+        -:   21:    virtual const Carte* find_carte(const string& titlu, const string& autor, const string& gen, int an) const = 0;
+        -:   22:    virtual vector<Carte>& get_all() = 0;
+        -:   23:    virtual int get_lungime() const = 0;
+        -:   24:
+function _ZN12RepoAbstractD2Ev called 0 returned 0% blocks executed 0%
+    #####:   25:    virtual ~RepoAbstract() = default;
+        -:   26:};
+        -:   27:
+        -:   28:
+        -:   29:
+        -:   30:class ListaCarti : public RepoAbstract
+        -:   31:{
+        -:   32:
+        -:   33:private:
+        -:   34:
+        -:   35:    vector<Carte> lista_carti;
+        -:   36:
+        -:   37:public:
+        -:   38:
+        -:   39:    ListaCarti(const ListaCarti& ot) = default;
+        -:   40:
+        -:   41:    ListaCarti() = default;
+        -:   42:    /*
+        -:   43:        constructorul listei
+        -:   44:        lista_carti -> lista de carti de tip vector<Carte>
+        -:   45:    */
+        -:   46:
+        -:   47:    int get_lungime() const override;
+        -:   48:    /*
+        -:   49:        Returneaza lungimea listei de carti
+        -:   50:    */
+        -:   51:
+        -:   52:    void add_carte(const Carte& carte) override;
+        -:   53:    /*
+        -:   54:        adauga o carte la lista de carti
+        -:   55:        carte -> cartea adaugata, de tip Carte
+        -:   56:    */
+        -:   57:
+        -:   58:    void modificare_carte(const Carte& carte_stearsa, const Carte& carte_noua) override;
+        -:   59:    /*
+        -:   60:        modifica cartea de la pozitia poz cu cartea primita ca parametru
+        -:   61:        poz -> pozitia cartii de modificat
+        -:   62:        carte -> cartea de adaugat
+        -:   63:    */
+        -:   64:
+        -:   65:    void sterge_carte(const Carte& carte) override;
+        -:   66:    /*
+        -:   67:        sterge cartea de la pozitia poz din lista de carti
+        -:   68:        poz -> pozitia cartii de sters
+        -:   69:    */
+        -:   70:
+        -:   71:    [[nodiscard]] const Carte* find_carte(const string& titlu, const string& autor, const string& gen, int an) const override;
+        -:   72:    /*
+        -:   73:        Functia de gasire a unei carti dupa titlu, autor, gen si an
+        -:   74:    */
+        -:   75:
+        -:   76:
+function _ZN10ListaCarti7get_allEv called 0 returned 0% blocks executed 0%
+    #####:   77:    vector<Carte>& get_all() override {
+    #####:   78:        return lista_carti;
+    %%%%%:   78-block  0
+        -:   79:    }
+        -:   80:
+        -:   81:};
+        -:   82:
+        -:   83:
+        -:   84:class RepoInFile : public ListaCarti{
+        -:   85:
+        -:   86:private:
+        -:   87:
+        -:   88:    string file_name;
+        -:   89:    void ReadFromFile();
+        -:   90:    void WriteToFile();
+        -:   91:
+        -:   92:public:
+        -:   93:
+        -:   94:    explicit RepoInFile(string filename) : ListaCarti(), file_name(filename){
+        -:   95:        ReadFromFile();
+        -:   96:    }
+        -:   97:
+        -:   98:    void add_carte(const Carte& carte) override{
+        -:   99:
+        -:  100:        ListaCarti::add_carte(carte);
+        -:  101:        WriteToFile();
+        -:  102:
+        -:  103:    }
+        -:  104:
+        -:  105:    void modificare_carte(const Carte& carte_stearsa, const Carte& carte_noua) override{
+        -:  106:
+        -:  107:        ListaCarti::modificare_carte(carte_stearsa, carte_noua);
+        -:  108:        WriteToFile();
+        -:  109:
+        -:  110:    }
+        -:  111:
+        -:  112:    void sterge_carte(const Carte& carte) override{
+        -:  113:
+        -:  114:        ListaCarti::sterge_carte(carte);
+        -:  115:        WriteToFile();
+        -:  116:
+        -:  117:    }
+        -:  118:
+        -:  119:};
+        -:  120:
+        -:  121:
+        -:  122:
+        -:  123:
+        -:  124:
+        -:  125:class RepoDictionar : public RepoAbstract{
+        -:  126:
+        -:  127:private:
+        -:  128:
+        -:  129:    unordered_map<string, Carte> dictionar; // cheia este titlul cartii si valoarea e cartea
+        -:  130:    double probabilitate;
+        -:  131:
+        -:  132:public:
+        -:  133:
+        -:  134:    RepoDictionar() {
+        -:  135:
+        -:  136:        probabilitate = 0.5;
+        -:  137:
+        -:  138:    };
+        -:  139:
+        -:  140:    void set_probabilitate(double prob){
+        -:  141:
+        -:  142:        probabilitate = prob;
+        -:  143:    }
+        -:  144:
+        -:  145:    void add_carte(const Carte& carte) override{
+        -:  146:
+        -:  147:        random_prob();
+        -:  148:        dictionar.insert(make_pair(carte.get_titlu(), carte));
+        -:  149:    }
+        -:  150:
+        -:  151:    void modificare_carte(const Carte& carte_cautata, const Carte& carte_modificat) override{
+        -:  152:
+        -:  153:        random_prob();
+        -:  154:        dictionar.erase(carte_cautata.get_titlu());
+        -:  155:        dictionar.insert(make_pair(carte_modificat.get_titlu(), carte_modificat));
+        -:  156:    }
+        -:  157:
+        -:  158:    void sterge_carte(const Carte& carte) override{
+        -:  159:
+        -:  160:        random_prob();
+        -:  161:        dictionar.erase(carte.get_titlu());
+        -:  162:    }
+        -:  163:
+        -:  164:    int get_lungime() const override {
+        -:  165:        return dictionar.size();
+        -:  166:    }
+        -:  167:
+        -:  168:    const Carte* find_carte(const string& titlu, const string& autor, const string& gen, int an) const override{
+        -:  169:
+        -:  170:        random_prob();
+        -:  171:        for (const auto& pereche : dictionar)
+        -:  172:            if (pereche.second.get_titlu() == titlu and pereche.second.get_autor() == autor and pereche.second.get_gen() == gen and pereche.second.get_an() == an)
+        -:  173:                return &pereche.second;
+        -:  174:
+        -:  175:        return nullptr;
+        -:  176:    }
+        -:  177:
+        -:  178:    vector<Carte> carti;
+        -:  179:
+        -:  180:    vector<Carte>& get_all() override{
+        -:  181:
+        -:  182:        carti.clear();
+        -:  183:
+        -:  184:        for (const auto& pereche : dictionar)
+        -:  185:            carti.push_back(pereche.second);
+        -:  186:
+        -:  187:        return carti;
+        -:  188:    }
+        -:  189:
+        -:  190:    void random_prob() const{
+        -:  191:
+        -:  192:        random_device rd;
+        -:  193:        mt19937 gen(rd());
+        -:  194:        uniform_real_distribution<double> dis(0.0, 1.0);
+        -:  195:        double prob = dis(gen);
+        -:  196:        if (prob > probabilitate){
+        -:  197:            throw Probabilitate();
+        -:  198:        }
+        -:  199:
+        -:  200:    }
+        -:  201:
+        -:  202:};
+        -:  203:
+        -:  204:#endif //QT1_REPOSITORY_H
+        -:  205:
+        -:  206:

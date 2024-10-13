@@ -1,0 +1,444 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/sortare.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef QT1_SORTARE_H
+        -:    2:#define QT1_SORTARE_H
+        -:    3:
+        -:    4:#include <QtWidgets>
+        -:    5:#include "service.h"
+        -:    6:
+        -:    7:class Sortare : public QWidget{
+        -:    8:
+        -:    9:public:
+        -:   10:
+function _ZN7SortareC1ER12CarteService called 1 returned 100% blocks executed 65%
+        1:   11:    explicit Sortare(CarteService& service): service(service){
+        1:   11-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   11-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   11-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   11-block  3
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   11-block  4
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   11-block  5
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:   11-block  6
+call   19 returned 1
+call   20 returned 1
+branch 21 taken 1 (fallthrough)
+branch 22 taken 0 (throw)
+        1:   11-block  7
+call   23 returned 1
+branch 24 taken 1 (fallthrough)
+branch 25 taken 0 (throw)
+        1:   11-block  8
+call   26 returned 1
+branch 27 taken 1 (fallthrough)
+branch 28 taken 0 (throw)
+        1:   11-block  9
+call   29 returned 1
+call   30 returned 1
+branch 31 taken 1 (fallthrough)
+branch 32 taken 0 (throw)
+        1:   11-block 10
+call   33 returned 1
+branch 34 taken 1 (fallthrough)
+branch 35 taken 0 (throw)
+        1:   11-block 11
+call   36 returned 1
+branch 37 taken 1 (fallthrough)
+branch 38 taken 0 (throw)
+        1:   11-block 12
+call   39 returned 1
+    $$$$$:   11-block 13
+call   40 never executed
+    $$$$$:   11-block 14
+call   41 never executed
+    $$$$$:   11-block 15
+    $$$$$:   11-block 16
+call   42 never executed
+    $$$$$:   11-block 17
+    $$$$$:   11-block 18
+call   43 never executed
+    $$$$$:   11-block 19
+        1:   12:        initSortare();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13:        initConnect();
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   14:    };
+        1:   14-block  0
+    $$$$$:   14-block  1
+call    0 never executed
+        -:   15:
+        -:   16:private:
+        -:   17:
+        -:   18:    CarteService& service;
+        -:   19:
+        -:   20:    QListWidget* lista = new QListWidget;
+        -:   21:
+        -:   22:    QPushButton* btnTitlu = new QPushButton(" Sortare &Titlu ");
+        -:   23:    QPushButton* btnAutor = new QPushButton(" Sortare &Autor ");
+        -:   24:    QPushButton* btnAn = new QPushButton(" Sortare &An ");
+        -:   25:
+function _ZN7Sortare11initSortareEv called 1 returned 100% blocks executed 61%
+        1:   26:    void initSortare(){
+        -:   27:
+        1:   28:        setWindowTitle("Sortare Carti");
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   28-block  2
+call    6 returned 1
+    $$$$$:   28-block  3
+call    7 never executed
+    $$$$$:   28-block  4
+call    8 never executed
+        -:   29:
+        1:   30:        auto* lyMain = new QHBoxLayout{};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   30-block  0
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:   30-block  1
+call    6 never executed
+        1:   31:        setLayout(lyMain);
+        1:   31-block  0
+call    0 returned 1
+        -:   32:
+        1:   33:        auto* lyButoane = new QVBoxLayout{};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   33-block  0
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    $$$$$:   33-block  1
+call    6 never executed
+        -:   34:
+        1:   35:        lyButoane->addWidget(btnTitlu);
+        1:   35-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   35-block  1
+call    4 never executed
+        1:   36:        lyButoane->addWidget(btnAutor);
+        1:   36-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   36-block  1
+call    4 never executed
+        1:   37:        lyButoane->addWidget(btnAn);
+        1:   37-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   37-block  1
+call    4 never executed
+        -:   38:
+        1:   39:        lyMain->addWidget(lista);
+        1:   39-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   40:        lyMain->addLayout(lyButoane);
+        1:   40-block  0
+call    0 returned 1
+        -:   41:
+        1:   42:    }
+        -:   43:
+function _ZN7Sortare9loadListaERKSt6vectorI5CarteSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:   44:    void loadLista(const vector<Carte>& carti){
+        -:   45:
+    #####:   46:        lista->clear();
+    %%%%%:   46-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   47:        QString titlu, autor, gen, an;
+        -:   48:
+    #####:   49:        for (const auto& carte : carti){
+    %%%%%:   49-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   49-block  1
+call    2 never executed
+call    3 never executed
+    %%%%%:   49-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed (fallthrough)
+        -:   50:
+    #####:   51:            QString element;
+        -:   52:
+    #####:   53:            titlu = (QString::fromStdString(carte.get_titlu()));
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   53-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   53-block  1
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   53-block  2
+call    9 never executed
+    $$$$$:   53-block  3
+    $$$$$:   53-block  4
+    #####:   54:            autor = (QString::fromStdString(carte.get_autor()));
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   54-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   54-block  1
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   54-block  2
+call    9 never executed
+    $$$$$:   54-block  3
+    $$$$$:   54-block  4
+    #####:   55:            gen = (QString::fromStdString(carte.get_gen()));
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   55-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   55-block  1
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:   55-block  2
+call    9 never executed
+    $$$$$:   55-block  3
+    $$$$$:   55-block  4
+    #####:   56:            an = (QString::number(carte.get_an()));
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   56-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   56-block  1
+call    6 never executed
+call    7 never executed
+    $$$$$:   56-block  2
+        -:   57:
+    #####:   58:            element = titlu + " | " + autor + " | " + gen + " | " + an;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   58-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   58-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   58-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   58-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:   58-block  4
+call   15 never executed
+branch 16 never executed (fallthrough)
+branch 17 never executed (throw)
+    %%%%%:   58-block  5
+call   18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+call   23 never executed
+call   24 never executed
+    $$$$$:   58-block  6
+call   25 never executed
+    $$$$$:   58-block  7
+call   26 never executed
+    $$$$$:   58-block  8
+call   27 never executed
+    $$$$$:   58-block  9
+call   28 never executed
+    $$$$$:   58-block 10
+call   29 never executed
+    $$$$$:   58-block 11
+    $$$$$:   58-block 12
+    $$$$$:   58-block 13
+    $$$$$:   58-block 14
+    $$$$$:   58-block 15
+    $$$$$:   58-block 16
+    #####:   59:            lista->addItem(element);
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   60:        }
+    %%%%%:   60-block  0
+call    0 never executed
+    $$$$$:   60-block  1
+call    1 never executed
+        -:   61:
+    #####:   62:    }
+    %%%%%:   62-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    $$$$$:   62-block  1
+call    4 never executed
+    $$$$$:   62-block  2
+call    5 never executed
+    $$$$$:   62-block  3
+call    6 never executed
+    $$$$$:   62-block  4
+call    7 never executed
+        -:   63:
+function _ZN7Sortare11initConnectEv called 1 returned 100% blocks executed 62%
+        1:   64:    void initConnect(){
+        -:   65:
+function _ZZN7Sortare11initConnectEvENKUlvE_clEv called 0 returned 0% blocks executed 0%
+       1*:   66:        QObject::connect(btnTitlu, &QPushButton::clicked, [&](){
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   66-block  1
+call    3 returned 1
+    $$$$$:   66-block  2
+    $$$$$:   66-block  3
+call    4 never executed
+        -:   67:
+    #####:   68:            vector<Carte> copie;
+    #####:   69:            int lungime = 0;
+        -:   70:
+    #####:   71:            service.sortare(CarteService::cmp_titlu, copie, lungime);
+    %%%%%:   71-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   72:            loadLista(copie);
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   73:
+    #####:   74:        });
+    %%%%%:   74-block  0
+call    0 never executed
+    $$$$$:   74-block  1
+call    1 never executed
+        -:   75:
+function _ZZN7Sortare11initConnectEvENKUlvE0_clEv called 0 returned 0% blocks executed 0%
+       1*:   76:        QObject::connect(btnAutor, &QPushButton::clicked, [&](){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76-block  0
+call    3 returned 1
+    $$$$$:   76-block  1
+    $$$$$:   76-block  2
+call    4 never executed
+        -:   77:
+    #####:   78:            vector<Carte> copie;
+    #####:   79:            int lungime = 0;
+        -:   80:
+    #####:   81:            service.sortare(CarteService::cmp_autor, copie, lungime);
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   82:            loadLista(copie);
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   83:
+    #####:   84:        });
+    %%%%%:   84-block  0
+call    0 never executed
+    $$$$$:   84-block  1
+call    1 never executed
+        -:   85:
+function _ZZN7Sortare11initConnectEvENKUlvE1_clEv called 0 returned 0% blocks executed 0%
+       1*:   86:        QObject::connect(btnAn, &QPushButton::clicked, [&](){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   86-block  0
+call    3 returned 1
+    $$$$$:   86-block  1
+        -:   87:
+    #####:   88:            vector<Carte> copie;
+    #####:   89:            int lungime = 0;
+        -:   90:
+    #####:   91:            service.sortare(CarteService::cmp_an, copie, lungime);
+    %%%%%:   91-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   92:            loadLista(copie);
+    %%%%%:   92-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   93:
+    #####:   94:        });
+    %%%%%:   94-block  0
+call    0 never executed
+    $$$$$:   94-block  1
+call    1 never executed
+        -:   95:
+        1:   96:    }
+        -:   97:
+        -:   98:};
+        -:   99:
+        -:  100:#endif //QT1_SORTARE_H
+        -:  101:
