@@ -1,0 +1,87 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/main.cpp
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <QApplication>
+        -:    2:#include <QtWidgets/qlabel.h>
+        -:    3:#include <QtWidgets/qpushbutton.h>
+        -:    4:#include <QtWidgets/qboxlayout.h>
+        -:    5:#include <QtWidgets/qlineedit.h>
+        -:    6:#include <QtWidgets/qformlayout.h>
+        -:    7:#include <QtWidgets/qlistwidget.h>
+        -:    8:#include <GUI.h>
+        -:    9:#include "service.h"
+        -:   10:#include "teste.h"
+        -:   11:#include <vector>
+        -:   12:#include <string>
+        -:   13:using std::vector;
+        -:   14:using std::string;
+        -:   15:
+        -:   16:
+        -:   17:
+function main called 1 returned 100% blocks executed 59%
+        1:   18:int main(int argc, char *argv[])
+        -:   19:{
+        1:   20:    QApplication a(argc, argv);
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   21:
+        1:   22:    Test::test_all();
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   23:
+        1:   24:    RepoInFile carti("C:/Users/Next/CLionProjects/qt1/fisier.txt");
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   24-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   24-block  2
+call    6 returned 1
+    $$$$$:   24-block  3
+call    7 never executed
+    $$$$$:   24-block  4
+    $$$$$:   24-block  5
+        1:   25:    CarteService service(carti);
+        1:   25-block  0
+call    0 returned 1
+        -:   26:
+        1:   27:    GUI gui(service);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   28:    gui.show();
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   29:
+        1:   30:    return a.exec();
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  1
+        1:   31:}
+        1:   31-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:   31-block  1
+call    4 never executed
+    $$$$$:   31-block  2
+call    5 never executed
+    $$$$$:   31-block  3
+call    6 never executed
+    $$$$$:   31-block  4
+call    7 never executed
+        -:   32:
+        -:   33:

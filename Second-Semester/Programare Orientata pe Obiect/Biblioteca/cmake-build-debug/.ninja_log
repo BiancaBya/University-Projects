@@ -1,0 +1,13 @@
+# ninja log v5
+173	221	7367025785601477	CMakeFiles/qt1.dir/qt1_autogen/mocs_compilation.cpp.obj	7360d3515449ac1b
+16	105	7368768461113527	qt1_autogen/timestamp	28bab4fc1006265c
+16	105	7368768461113527	C:/Users/Next/CLionProjects/qt1/cmake-build-debug/qt1_autogen/mocs_compilation.cpp	28bab4fc1006265c
+16	105	7368768461113527	qt1_autogen/mocs_compilation.cpp	28bab4fc1006265c
+2840	3244	7368768491510554	qt1.exe	6973bf00b7314a42
+16	105	7368768461113527	C:/Users/Next/CLionProjects/qt1/cmake-build-debug/qt1_autogen/timestamp	28bab4fc1006265c
+107	2840	7368768488465580	CMakeFiles/qt1.dir/main.cpp.obj	d22c2907d71c4da
+5	607	7505333062854251	build.ninja	eecf1ad5d236b9d0
+110	603	7368768466101583	CMakeFiles/qt1.dir/carte.cpp.obj	b672c3dbe4d81d11
+113	1068	7368768470734125	CMakeFiles/qt1.dir/repository.cpp.obj	ba8bd31ba5e4ea19
+115	1457	7368768474633762	CMakeFiles/qt1.dir/service.cpp.obj	cab9ce6e0340c662
+118	1859	7368768478650500	CMakeFiles/qt1.dir/teste.cpp.obj	f133e1a0d87e3122

@@ -1,0 +1,815 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/OOP_lab2/teste.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\teste.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\teste.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "oferta.h"
+        -:    2:#include "service.h"
+        -:    3:#include "lista.h"
+        -:    4:#include "assert.h"
+        -:    5:#include "string.h"
+        -:    6:#include "stdlib.h"
+        -:    7:#include "stdio.h"
+        -:    8:#include <stdbool.h>
+        -:    9:
+        -:   10:
+        -:   11:
+function test_creare_oferta called 1 returned 100% blocks executed 78%
+        1:   12:void test_creare_oferta(){
+        -:   13:
+        1:   14:    char tip[12] = "teren";
+        1:   15:    char adresa[30] = "Cluj";
+        1:   16:    float pret = 2000;
+        1:   17:    float suprafata = 3000;
+        -:   18:
+        -:   19:    oferta oferta;
+        1:   20:    oferta = creare_oferta(tip, adresa, pret, suprafata);
+        1:   20-block  0
+call    0 returned 1
+        -:   21:
+       1*:   22:    assert(strcmp(get_tip(&oferta), tip) == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   22-block  0
+call    3 never executed
+        1:   22-block  1
+       1*:   23:    assert(strcmp(get_adresa(&oferta), adresa) == 0);
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   23-block  1
+call    3 never executed
+        1:   23-block  2
+       1*:   24:    assert(get_pret(&oferta) == pret);
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   24-block  1
+call    3 never executed
+        1:   24-block  2
+       1*:   25:    assert(get_suprafata(&oferta) == suprafata);
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   25-block  1
+call    3 never executed
+        1:   25-block  2
+        -:   26:
+        1:   27:    free(oferta.tip);
+        1:   28:    free(oferta.adresa);
+        -:   29:
+        1:   30:}
+        -:   31:
+        -:   32:
+function test_creare_lista called 1 returned 100% blocks executed 80%
+        1:   33:void test_creare_lista(){
+        -:   34:
+        -:   35:    my_list lista;
+        1:   36:    lista = creare_lista(&lista);
+        1:   36-block  0
+call    0 returned 1
+        -:   37:
+       1*:   38:    assert(lista.lungime == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   38-block  0
+call    2 never executed
+        1:   38-block  1
+        -:   39:
+        1:   40:    free(lista.lista_oferte);
+        -:   41:
+        1:   42:}
+        -:   43:
+        -:   44:
+function test_validare_date called 1 returned 100% blocks executed 71%
+        1:   45:void test_validare_date(){
+        -:   46:
+        1:   47:    char tip[12] = "baban";
+        1:   48:    char adresa[30] = "Cluj";
+        1:   49:    float pret = -123;
+        1:   50:    float suprafata = -123;
+        -:   51:
+        1:   52:    char erori[100] = {"\n"};
+        1:   53:    int ok = 1;
+        -:   54:
+        1:   55:    validare_date(erori, &ok, tip, adresa, pret, suprafata);
+        1:   55-block  0
+call    0 returned 1
+       1*:   56:    assert(strstr(erori, "Tip invalid"));
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   56-block  0
+call    2 never executed
+        1:   56-block  1
+       1*:   57:    assert(strstr(erori, "Pretul trebuie sa fie mai mare decat 0"));
+        1:   57-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   57-block  1
+call    2 never executed
+        1:   57-block  2
+       1*:   58:    assert(strstr(erori, "Suprafata trebuie sa fie mai mare decat 0"));
+        1:   58-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   58-block  1
+call    2 never executed
+        1:   58-block  2
+       1*:   59:    assert(ok == 0);
+        1:   59-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   59-block  1
+call    2 never executed
+        1:   59-block  2
+        -:   60:
+        -:   61:
+        1:   62:}
+        -:   63:
+        -:   64:
+function test_validare_index called 1 returned 100% blocks executed 81%
+        1:   65:void test_validare_index(){
+        -:   66:
+        1:   67:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:   68:    *lista = creare_lista(lista);
+        1:   68-block  0
+call    0 returned 1
+        1:   69:    char erori[100] = {"\n"};
+        1:   70:    int ok = 1;
+        -:   71:    oferta oferta_noua;
+        -:   72:
+        1:   73:    oferta_noua = creare_oferta("teren", "Cluj", 100, 100);
+call    0 returned 1
+        -:   74:
+        1:   75:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        -:   76:
+        1:   77:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        1:   78:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        1:   79:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        -:   80:
+        1:   81:    validare_index(lista, 0, erori, &ok);
+call    0 returned 1
+       1*:   82:    assert(ok == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   82-block  0
+call    2 never executed
+        1:   82-block  1
+       1*:   83:    assert(strstr(erori, "Index out of range"));
+        1:   83-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   83-block  1
+call    2 never executed
+        1:   83-block  2
+        -:   84:
+        1:   85:    ok = 1;
+        1:   86:    validare_index(lista, 10, erori, &ok);
+        1:   86-block  0
+call    0 returned 1
+       1*:   87:    assert(ok == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   87-block  0
+call    2 never executed
+        1:   87-block  1
+       1*:   88:    assert(strstr(erori, "Index out of range"));
+        1:   88-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   88-block  1
+call    2 never executed
+        1:   88-block  2
+        -:   89:
+        1:   90:    free(oferta_noua.tip);
+        1:   91:    free(oferta_noua.adresa);
+        1:   92:    free(lista->lista_oferte);
+        1:   93:    free(lista);
+        -:   94:
+        1:   95:}
+        -:   96:
+        -:   97:
+function test_adaugare_oferta called 1 returned 100% blocks executed 74%
+        1:   98:void test_adaugare_oferta(){
+        -:   99:
+        1:  100:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  101:    *lista = creare_lista(lista);
+        1:  101-block  0
+call    0 returned 1
+        -:  102:
+        -:  103:
+        1:  104:    char tip[12] = "teren";
+        1:  105:    char adresa[30] = "Cluj";
+        1:  106:    float pret = 2000;
+        1:  107:    float suprafata = 3000;
+        -:  108:    oferta oferta_noua;
+        -:  109:
+        1:  110:    oferta_noua = creare_oferta(tip, adresa, pret, suprafata);
+call    0 returned 1
+        -:  111:
+        1:  112:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        -:  113:
+       1*:  114:    assert(lista->lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  114-block  0
+call    2 never executed
+        1:  114-block  1
+       1*:  115:    assert(strcmp(lista->lista_oferte[0].tip, "teren") == 0);
+        1:  115-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  115-block  1
+call    2 never executed
+        1:  115-block  2
+       1*:  116:    assert(strcmp(lista->lista_oferte[0].adresa, "Cluj") == 0);
+        1:  116-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  116-block  1
+call    2 never executed
+        1:  116-block  2
+       1*:  117:    assert(lista->lista_oferte[0].pret == (float)2000);
+        1:  117-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  117-block  1
+call    2 never executed
+        1:  117-block  2
+       1*:  118:    assert(lista->lista_oferte[0].suprafata == (float)3000);
+        1:  118-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  118-block  1
+call    2 never executed
+        1:  118-block  2
+        -:  119:
+        1:  120:    free(lista->lista_oferte[0].tip);
+        1:  121:    free(lista->lista_oferte[0].adresa);
+        1:  122:    free(lista->lista_oferte);
+        1:  123:    free(lista);
+        -:  124:
+        1:  125:}
+        -:  126:
+function test_actualizeaza called 1 returned 100% blocks executed 75%
+        1:  127:void test_actualizeaza(){
+        -:  128:
+        1:  129:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  130:    *lista = creare_lista(lista);
+        1:  130-block  0
+call    0 returned 1
+        -:  131:    oferta oferta_noua;
+        -:  132:
+        1:  133:    oferta_noua = creare_oferta("teren", "Cluj", 1000, 10000);
+call    0 returned 1
+        -:  134:
+        1:  135:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        -:  136:
+        1:  137:    actualizeaza(lista, 1, "casa", "Suceava", 300, 500);
+call    0 returned 1
+        -:  138:
+       1*:  139:    assert(lista->lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  139-block  0
+call    2 never executed
+        1:  139-block  1
+       1*:  140:    assert(strcmp(lista->lista_oferte[0].tip, "casa") == 0);
+        1:  140-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  140-block  1
+call    2 never executed
+        1:  140-block  2
+       1*:  141:    assert(strcmp(lista->lista_oferte[0].adresa, "Suceava") == 0);
+        1:  141-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  141-block  1
+call    2 never executed
+        1:  141-block  2
+       1*:  142:    assert(lista->lista_oferte[0].pret == (float)300);
+        1:  142-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  142-block  1
+call    2 never executed
+        1:  142-block  2
+       1*:  143:    assert(lista->lista_oferte[0].suprafata == (float)500);
+        1:  143-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  143-block  1
+call    2 never executed
+        1:  143-block  2
+        -:  144:
+        1:  145:    free(lista->lista_oferte[0].tip);
+        1:  146:    free(lista->lista_oferte[0].adresa);
+        1:  147:    free(lista->lista_oferte);
+        1:  148:    free(lista);
+        -:  149:
+        1:  150:}
+        -:  151:
+function test_sterge called 1 returned 100% blocks executed 89%
+        1:  152:void test_sterge(){
+        -:  153:
+        1:  154:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  155:    *lista = creare_lista(lista);
+        1:  155-block  0
+call    0 returned 1
+        -:  156:    oferta oferta_noua;
+        -:  157:
+        1:  158:    oferta_noua = creare_oferta("teren", "Cluj", 1000, 10000);
+call    0 returned 1
+        -:  159:
+        1:  160:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        1:  161:    adaugare_oferta(oferta_noua, &lista);
+call    0 returned 1
+        -:  162:
+        1:  163:    sterge(lista, 1);
+call    0 returned 1
+       1*:  164:    assert(lista->lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  164-block  0
+call    2 never executed
+        1:  164-block  1
+        -:  165:
+        1:  166:    free(oferta_noua.tip);
+        1:  167:    free(oferta_noua.adresa);
+        1:  168:    free(lista->lista_oferte);
+        1:  169:    free(lista);
+        -:  170:
+        1:  171:}
+        -:  172:
+        -:  173:
+function test_sortare_tip called 1 returned 100% blocks executed 86%
+        1:  174:void test_sortare_tip(){
+        -:  175:
+        1:  176:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  177:    *lista = creare_lista(lista);
+        1:  177-block  0
+call    0 returned 1
+        -:  178:    oferta oferta_noua_1, oferta_noua_2;
+        -:  179:
+        1:  180:    oferta_noua_1 = creare_oferta("teren", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  181:    oferta_noua_2 = creare_oferta("apartament", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  182:    adaugare_oferta(oferta_noua_1, &lista);
+call    0 returned 1
+        1:  183:    adaugare_oferta(oferta_noua_2, &lista);
+call    0 returned 1
+        -:  184:
+        1:  185:    sortare_tip(lista, '1');
+call    0 returned 1
+       1*:  186:    assert(strcmp(lista->lista_oferte[0].tip, "apartament") == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  186-block  0
+call    2 never executed
+        1:  186-block  1
+        1:  187:    sortare_tip(lista, '2');
+        1:  187-block  0
+call    0 returned 1
+       1*:  188:    assert(strcmp(lista->lista_oferte[0].tip, "teren") == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  188-block  0
+call    2 never executed
+        1:  188-block  1
+        -:  189:
+        1:  190:    free(oferta_noua_1.tip);
+        1:  191:    free(oferta_noua_1.adresa);
+        1:  192:    free(oferta_noua_2.tip);
+        1:  193:    free(oferta_noua_2.adresa);
+        1:  194:    free(lista->lista_oferte);
+        1:  195:    free(lista);
+        -:  196:
+        1:  197:}
+        -:  198:
+        -:  199:
+function test_sortare_pret called 1 returned 100% blocks executed 86%
+        1:  200:void test_sortare_pret(){
+        -:  201:
+        1:  202:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  203:    *lista = creare_lista(lista);
+        1:  203-block  0
+call    0 returned 1
+        -:  204:    oferta oferta_noua_1, oferta_noua_2;
+        -:  205:
+        1:  206:    oferta_noua_1 = creare_oferta("teren", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  207:    oferta_noua_2 = creare_oferta("apartament", "Cluj", 2000, 10000);
+call    0 returned 1
+        1:  208:    adaugare_oferta(oferta_noua_1, &lista);
+call    0 returned 1
+        1:  209:    adaugare_oferta(oferta_noua_2, &lista);
+call    0 returned 1
+        -:  210:
+        1:  211:    sortare_pret(lista, '2');
+call    0 returned 1
+       1*:  212:    assert(lista->lista_oferte[0].pret == 2000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  212-block  0
+call    2 never executed
+        1:  212-block  1
+        1:  213:    sortare_pret(lista, '1');
+        1:  213-block  0
+call    0 returned 1
+       1*:  214:    assert(lista->lista_oferte[0].pret == 1000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  214-block  0
+call    2 never executed
+        1:  214-block  1
+        -:  215:
+        1:  216:    free(oferta_noua_1.tip);
+        1:  217:    free(oferta_noua_1.adresa);
+        1:  218:    free(oferta_noua_2.tip);
+        1:  219:    free(oferta_noua_2.adresa);
+        1:  220:    free(lista->lista_oferte);
+        1:  221:    free(lista);
+        -:  222:
+        1:  223:}
+        -:  224:
+        -:  225:
+function test_key called 1 returned 100% blocks executed 79%
+        1:  226:void test_key(){
+        -:  227:
+        -:  228:    oferta oferta1, oferta2;
+        -:  229:
+        1:  230:    oferta1 = creare_oferta("teren", "Cluj", 100, 100);
+        1:  230-block  0
+call    0 returned 1
+        1:  231:    oferta2 = creare_oferta("apartament", "Cluj", 200, 200);
+call    0 returned 1
+       1*:  232:    assert(bool_key('1', oferta1, oferta2, true) == false);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  232-block  0
+call    3 never executed
+        1:  232-block  1
+       1*:  233:    assert(bool_key('1', oferta1, oferta2, false) == true);
+        1:  233-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  233-block  1
+call    3 never executed
+        1:  233-block  2
+       1*:  234:    assert(bool_key('2', oferta1, oferta2, true) == true);
+        1:  234-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  234-block  1
+call    3 never executed
+        1:  234-block  2
+       1*:  235:    assert(bool_key('2', oferta1, oferta2, false) == false);
+        1:  235-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  235-block  1
+call    3 never executed
+        1:  235-block  2
+        -:  236:
+        1:  237:    free(oferta1.tip);
+        1:  238:    free(oferta1.adresa);
+        1:  239:    free(oferta2.tip);
+        1:  240:    free(oferta2.adresa);
+        1:  241:}
+        -:  242:
+        -:  243:
+function test_sortare called 1 returned 100% blocks executed 80%
+        1:  244:void test_sortare(){
+        -:  245:
+        1:  246:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  247:    *lista = creare_lista(lista);
+        1:  247-block  0
+call    0 returned 1
+        -:  248:    oferta oferta_noua_1, oferta_noua_2, oferta_noua_3;
+        -:  249:
+        1:  250:    oferta_noua_1 = creare_oferta("teren", "Cluj", 2000, 10000);
+call    0 returned 1
+        1:  251:    oferta_noua_2 = creare_oferta("apartament", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  252:    adaugare_oferta(oferta_noua_1, &lista);
+call    0 returned 1
+        1:  253:    adaugare_oferta(oferta_noua_2, &lista);
+call    0 returned 1
+        -:  254:
+        1:  255:    sortare(lista, true, '1');
+call    0 returned 1
+       1*:  256:    assert(lista->lista_oferte[0].pret == 1000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  256-block  0
+call    2 never executed
+        1:  256-block  1
+        1:  257:    sortare(lista, true, '2');
+        1:  257-block  0
+call    0 returned 1
+       1*:  258:    assert(lista->lista_oferte[0].pret == 1000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  258-block  0
+call    2 never executed
+        1:  258-block  1
+        1:  259:    sortare(lista, false, '1');
+        1:  259-block  0
+call    0 returned 1
+       1*:  260:    assert(lista->lista_oferte[0].pret == 2000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  260-block  0
+call    2 never executed
+        1:  260-block  1
+        1:  261:    sortare(lista, false, '2');
+        1:  261-block  0
+call    0 returned 1
+       1*:  262:    assert(lista->lista_oferte[0].pret == 2000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  262-block  0
+call    2 never executed
+        1:  262-block  1
+        -:  263:
+        1:  264:    *lista = sorttip(lista);
+        1:  264-block  0
+call    0 returned 1
+       1*:  265:    assert(lista->lista_oferte[0].pret == 1000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  265-block  0
+call    2 never executed
+        1:  265-block  1
+        1:  266:    *lista = sortpret(lista);
+        1:  266-block  0
+call    0 returned 1
+       1*:  267:    assert(lista->lista_oferte[0].pret == 1000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  267-block  0
+call    2 never executed
+        1:  267-block  1
+        1:  268:    oferta_noua_3 = creare_oferta("apartament", "Cluj", 1000, 10000);
+        1:  268-block  0
+call    0 returned 1
+        1:  269:    adaugare_oferta(oferta_noua_3, &lista);
+call    0 returned 1
+        1:  270:    *lista = sortpret(lista);
+call    0 returned 1
+       1*:  271:    assert(lista->lista_oferte[0].pret == 1000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  271-block  0
+call    2 never executed
+        1:  271-block  1
+        1:  272:    *lista = sorttip(lista);
+        1:  272-block  0
+call    0 returned 1
+       1*:  273:    assert(lista->lista_oferte[0].pret == 1000);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  273-block  0
+call    2 never executed
+        1:  273-block  1
+        -:  274:
+        -:  275:
+        1:  276:    free(oferta_noua_1.tip);
+        1:  277:    free(oferta_noua_1.adresa);
+        1:  278:    free(oferta_noua_2.tip);
+        1:  279:    free(oferta_noua_2.adresa);
+        1:  280:    free(oferta_noua_3.tip);
+        1:  281:    free(oferta_noua_3.adresa);
+        1:  282:    free(lista->lista_oferte);
+        1:  283:    free(lista);
+        -:  284:
+        1:  285:}
+        -:  286:
+        -:  287:
+function test_filtrare_suprafata called 1 returned 100% blocks executed 85%
+        1:  288:void test_filtrare_suprafata(){
+        -:  289:
+        1:  290:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  291:    *lista = creare_lista(lista);
+        1:  291-block  0
+call    0 returned 1
+        -:  292:    oferta oferta_noua_1, oferta_noua_2;
+        -:  293:
+        1:  294:    oferta_noua_1 = creare_oferta("teren", "Cluj", 1000, 1000);
+call    0 returned 1
+        1:  295:    oferta_noua_2 = creare_oferta("apartament", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  296:    adaugare_oferta(oferta_noua_1, &lista);
+call    0 returned 1
+        1:  297:    adaugare_oferta(oferta_noua_2, &lista);
+call    0 returned 1
+        -:  298:
+        1:  299:    filtrare_suprafata(lista, 5000);
+call    0 returned 1
+       1*:  300:    assert(lista->lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  300-block  0
+call    2 never executed
+        1:  300-block  1
+       1*:  301:    assert(lista->lista_oferte[0].suprafata == (float)10000);
+        1:  301-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  301-block  1
+call    2 never executed
+        1:  301-block  2
+        -:  302:
+        1:  303:    free(oferta_noua_1.tip);
+        1:  304:    free(oferta_noua_1.adresa);
+        1:  305:    free(oferta_noua_2.tip);
+        1:  306:    free(oferta_noua_2.adresa);
+        1:  307:    free(lista->lista_oferte);
+        1:  308:    free(lista);
+        -:  309:
+        1:  310:}
+        -:  311:
+        -:  312:
+function test_filtrare_tip called 1 returned 100% blocks executed 85%
+        1:  313:void test_filtrare_tip(){
+        -:  314:
+        1:  315:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  316:    *lista = creare_lista(lista);
+        1:  316-block  0
+call    0 returned 1
+        -:  317:    oferta oferta_noua_1, oferta_noua_2;
+        -:  318:
+        1:  319:    oferta_noua_1 = creare_oferta("teren", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  320:    oferta_noua_2 = creare_oferta("apartament", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  321:    adaugare_oferta(oferta_noua_1, &lista);
+call    0 returned 1
+        1:  322:    adaugare_oferta(oferta_noua_2, &lista);
+call    0 returned 1
+        -:  323:
+        1:  324:    filtrare_tip(lista, "teren");
+call    0 returned 1
+       1*:  325:    assert(lista->lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  325-block  0
+call    2 never executed
+        1:  325-block  1
+       1*:  326:    assert(strcmp(lista->lista_oferte[0].tip, "teren") == 0);
+        1:  326-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  326-block  1
+call    2 never executed
+        1:  326-block  2
+        -:  327:
+        1:  328:    free(oferta_noua_1.tip);
+        1:  329:    free(oferta_noua_1.adresa);
+        1:  330:    free(oferta_noua_2.tip);
+        1:  331:    free(oferta_noua_2.adresa);
+        1:  332:    free(lista->lista_oferte);
+        1:  333:    free(lista);
+        -:  334:
+        1:  335:}
+        -:  336:
+        -:  337:
+function test_filtrare_pret called 1 returned 100% blocks executed 85%
+        1:  338:void test_filtrare_pret(){
+        -:  339:
+        1:  340:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  341:    *lista = creare_lista(lista);
+        1:  341-block  0
+call    0 returned 1
+        -:  342:    oferta oferta_noua_1, oferta_noua_2;
+        -:  343:
+        1:  344:    oferta_noua_1 = creare_oferta("teren", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  345:    oferta_noua_2 = creare_oferta("apartament", "Cluj", 2000, 10000);
+call    0 returned 1
+        1:  346:    adaugare_oferta(oferta_noua_1, &lista);
+call    0 returned 1
+        1:  347:    adaugare_oferta(oferta_noua_2, &lista);
+call    0 returned 1
+        -:  348:
+        1:  349:    filtrare_pret(lista, 1500);
+call    0 returned 1
+       1*:  350:    assert(lista->lungime == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  350-block  0
+call    2 never executed
+        1:  350-block  1
+       1*:  351:    assert(lista->lista_oferte[0].pret == (float)1000);
+        1:  351-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  351-block  1
+call    2 never executed
+        1:  351-block  2
+        -:  352:
+        1:  353:    free(oferta_noua_1.tip);
+        1:  354:    free(oferta_noua_1.adresa);
+        1:  355:    free(oferta_noua_2.tip);
+        1:  356:    free(oferta_noua_2.adresa);
+        1:  357:    free(lista->lista_oferte);
+        1:  358:    free(lista);
+        -:  359:
+        1:  360:}
+        -:  361:
+        -:  362:
+function test_redimensionare called 1 returned 100% blocks executed 89%
+        1:  363:void test_redimensionare(){
+        -:  364:
+        1:  365:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  366:    *lista = creare_lista(lista);
+        1:  366-block  0
+call    0 returned 1
+        -:  367:
+        1:  368:    lista->dimensiune = 1;
+        -:  369:
+        -:  370:    oferta oferta_noua_1, oferta_noua_2;
+        -:  371:
+        1:  372:    oferta_noua_1 = creare_oferta("teren", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  373:    oferta_noua_2 = creare_oferta("apartament", "Cluj", 1000, 10000);
+call    0 returned 1
+        1:  374:    adaugare_oferta(oferta_noua_1, &lista);
+call    0 returned 1
+        1:  375:    adaugare_oferta(oferta_noua_2, &lista);
+call    0 returned 1
+        -:  376:
+       1*:  377:    assert(lista->dimensiune == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  377-block  0
+call    2 never executed
+        1:  377-block  1
+        -:  378:
+        1:  379:    free(oferta_noua_1.tip);
+        1:  380:    free(oferta_noua_1.adresa);
+        1:  381:    free(oferta_noua_2.tip);
+        1:  382:    free(oferta_noua_2.adresa);
+        1:  383:    free(lista->lista_oferte);
+        1:  384:    free(lista);
+        -:  385:
+        1:  386:}
+        -:  387:
+        -:  388:
+function testat_all called 1 returned 100% blocks executed 100%
+        1:  389:void testat_all(){
+        -:  390:
+        1:  391:    test_creare_oferta();
+        1:  391-block  0
+call    0 returned 1
+        1:  392:    test_creare_lista();
+call    0 returned 1
+        1:  393:    test_validare_date();
+call    0 returned 1
+        1:  394:    test_validare_index();
+call    0 returned 1
+        1:  395:    test_adaugare_oferta();
+call    0 returned 1
+        1:  396:    test_actualizeaza();
+call    0 returned 1
+        1:  397:    test_sterge();
+call    0 returned 1
+        1:  398:    test_sortare_tip();
+call    0 returned 1
+        1:  399:    test_sortare_pret();
+call    0 returned 1
+        1:  400:    test_filtrare_suprafata();
+call    0 returned 1
+        1:  401:    test_filtrare_tip();
+call    0 returned 1
+        1:  402:    test_filtrare_pret();
+call    0 returned 1
+        1:  403:    test_redimensionare();
+call    0 returned 1
+        1:  404:    test_key();
+call    0 returned 1
+        1:  405:    test_sortare();
+call    0 returned 1
+        -:  406:
+        1:  407:}
+        -:  408:
+        -:  409:
+        -:  410:
+        -:  411:
+        -:  412:

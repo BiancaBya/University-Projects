@@ -1,0 +1,1928 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/main.cpp
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#define _CRTDBG_MAP_ALLOC
+        -:    2:#include <stdlib.h>
+        -:    3:#include <crtdbg.h>
+        -:    4:#include <iostream>
+        -:    5:#include <string>
+        -:    6:#include "service.h"
+        -:    7:#include "teste.h"
+        -:    8:#include "exceptions.h"
+        -:    9:#include "validator.h"
+        -:   10:#include "cos.h"
+        -:   11:
+        -:   12:using namespace std;
+        -:   13:
+        -:   14:
+function _Z10print_menuv called 1 returned 100% blocks executed 100%
+        1:   15:void print_menu(){
+        -:   16:
+        1:   17:    cout << "-BIBLIOTECA-\n";
+        1:   17-block  0
+call    0 returned 1
+        1:   18:    cout << "1. Adaugare carte\n";
+call    0 returned 1
+        1:   19:    cout << "2. Modificare carte\n";
+call    0 returned 1
+        1:   20:    cout << "3. Stergere carte\n";
+call    0 returned 1
+        1:   21:    cout << "4. Afisare lista carti\n";
+call    0 returned 1
+        1:   22:    cout << "5. Cautare carte\n";
+call    0 returned 1
+        1:   23:    cout << "6. Filtrare carti\n";
+call    0 returned 1
+        1:   24:    cout << "7. Sortare carti\n";
+call    0 returned 1
+        1:   25:    cout << "8. Adauga in cos\n";
+call    0 returned 1
+        1:   26:    cout << "9. Afisare cos\n";
+call    0 returned 1
+        1:   27:    cout << "10. Goleste cos\n";
+call    0 returned 1
+        1:   28:    cout << "11. Carti random\n";
+call    0 returned 1
+        1:   29:    cout << "12. Export in fisier HTML\n";
+call    0 returned 1
+        1:   30:    cout << "13. Report autori\n";
+call    0 returned 1
+        1:   31:    cout << "14. Baga carti\n";
+call    0 returned 1
+        1:   32:    cout << "15. Undo\n";
+call    0 returned 1
+        1:   33:    cout << "0. Break\n";
+call    0 returned 1
+        -:   34:
+        1:   35:}
+        -:   36:
+        -:   37:
+function _Z13afisare_listaR12CarteService called 0 returned 0% blocks executed 0%
+    #####:   38:void afisare_lista(CarteService& lista){
+        -:   39:
+    #####:   40:    const vector<Carte>& elemente = lista.get_all();
+    %%%%%:   40-block  0
+call    0 never executed
+        -:   41:
+    #####:   42:    if (elemente.empty())
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   43:        cout << "Lista este vida\n";
+    %%%%%:   43-block  0
+call    0 never executed
+        -:   44:
+        -:   45:    else{
+    #####:   46:        cout << "Lista este:\n";
+    %%%%%:   46-block  0
+call    0 never executed
+    #####:   47:        for (const auto& element: elemente){
+call    0 never executed
+call    1 never executed
+    %%%%%:   47-block  0
+call    2 never executed
+    %%%%%:   47-block  1
+call    3 never executed
+    %%%%%:   47-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed (fallthrough)
+    #####:   48:            cout << endl << "Titlu: " << element.get_titlu().c_str() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   48-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   48-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   48-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:   48-block  3
+call   13 never executed
+branch 14 never executed (fallthrough)
+branch 15 never executed (throw)
+    %%%%%:   48-block  4
+call   16 never executed
+    $$$$$:   48-block  5
+call   17 never executed
+    $$$$$:   48-block  6
+    #####:   49:            cout << "Autor: " << element.get_autor().c_str() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   49-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   49-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   49-block  2
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:   49-block  3
+call   13 never executed
+    $$$$$:   49-block  4
+call   14 never executed
+    $$$$$:   49-block  5
+    #####:   50:            cout << "Gen: " << element.get_gen().c_str() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   50-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   50-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   50-block  2
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:   50-block  3
+call   13 never executed
+    $$$$$:   50-block  4
+call   14 never executed
+    $$$$$:   50-block  5
+    #####:   51:            cout << "An: " << element.get_an() << endl << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   51-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   51-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   51-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   51-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+        -:   52:        }
+        -:   53:
+        -:   54:    }
+        -:   55:
+    #####:   56:}
+    %%%%%:   56-block  0
+        -:   57:
+function _Z11print_listaRSt6vectorI5CarteSaIS0_EERi called 0 returned 0% blocks executed 0%
+    #####:   58:void print_lista(vector<Carte>& lista, int& lg){
+        -:   59:
+    #####:   60:    for(int i=0; i < lg; i++) {
+    %%%%%:   60-block  0
+    %%%%%:   60-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:   61:
+    #####:   62:        cout << endl << "Titlu: " << lista[i].get_titlu().c_str() << endl;
+    %%%%%:   62-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   62-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   62-block  2
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:   62-block  3
+call   13 never executed
+    $$$$$:   62-block  4
+call   14 never executed
+    $$$$$:   62-block  5
+call   15 never executed
+    #####:   63:        cout << "Autor: " << lista[i].get_autor().c_str() << endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+    %%%%%:   63-block  0
+call    5 never executed
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   63-block  1
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   63-block  2
+call   12 never executed
+    $$$$$:   63-block  3
+call   13 never executed
+    $$$$$:   63-block  4
+call   14 never executed
+    #####:   64:        cout << "Gen: " << lista[i].get_gen().c_str() << endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed (fallthrough)
+branch  4 never executed (throw)
+    %%%%%:   64-block  0
+call    5 never executed
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   64-block  1
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   64-block  2
+call   12 never executed
+    $$$$$:   64-block  3
+call   13 never executed
+    #####:   65:        cout << "An: " << lista[i].get_an() << endl << endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+        -:   66:
+        -:   67:    }
+        -:   68:
+    #####:   69:}
+    %%%%%:   69-block  0
+        -:   70:
+        -:   71:
+        -:   72:
+function _Z6UI_addR12CarteService called 0 returned 0% blocks executed 0%
+    #####:   73:void UI_add(CarteService& lista){
+        -:   74:
+    #####:   75:    string titlu, autor, gen;
+    %%%%%:   75-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   76:    int an;
+        -:   77:
+    #####:   78:    cout << "Titlu:";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   79:    getline(cin, titlu);
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   80:    cout << "Autor:";
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   81:    getline(cin, autor);
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   82:    cout << "Gen:";
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   83:    getline(cin, gen);
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   84:    cout << "An:";
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   85:    cin >> an;
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   86:
+    #####:   87:    Carte carte(titlu, autor, gen, an);
+    %%%%%:   87-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   88:
+        -:   89:    try {
+    #####:   90:        lista.adaugare(carte);
+    %%%%%:   90-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    =====:   91:    }catch (const Exceptions& exceptie){
+    $$$$$:   91-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   91-block  1
+call    2 never executed
+    =====:   92:        cout << exceptie.get_message() << '\n';
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   92-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   92-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:   92-block  2
+call    9 never executed
+    $$$$$:   92-block  3
+call   10 never executed
+    $$$$$:   92-block  4
+    =====:   93:    }
+call    0 never executed
+    $$$$$:   93-block  0
+call    1 never executed
+        -:   94:
+    #####:   95:}
+    %%%%%:   95-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    $$$$$:   95-block  1
+call    4 never executed
+    $$$$$:   95-block  2
+call    5 never executed
+    $$$$$:   95-block  3
+call    6 never executed
+    $$$$$:   95-block  4
+call    7 never executed
+        -:   96:
+        -:   97:
+function _Z13UI_modificareR12CarteService called 0 returned 0% blocks executed 0%
+    #####:   98:void UI_modificare(CarteService& lista){
+        -:   99:
+    #####:  100:    string titlu_nou, autor_nou, gen_nou;
+    %%%%%:  100-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  101:    string titlu_sters, autor_sters, gen_sters;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  102:    int an_nou, an_sters;
+        -:  103:
+    #####:  104:    cout << "Titlu cautat:";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  105:    getline(cin, titlu_sters);
+    %%%%%:  105-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  106:    cout << "Autor cautat:";
+    %%%%%:  106-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  107:    getline(cin, autor_sters);
+    %%%%%:  107-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  108:    cout << "Gen cautat:";
+    %%%%%:  108-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  109:    getline(cin, gen_sters);
+    %%%%%:  109-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  110:    cout << "An cautat:";
+    %%%%%:  110-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  111:    cin >> an_sters;
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  112:
+    #####:  113:    cin.ignore(1000, '\n');
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  114:
+    #####:  115:    cout << "Titlu nou:";
+    %%%%%:  115-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  116:    getline(cin, titlu_nou);
+    %%%%%:  116-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  117:    cout << "Autor nou:";
+    %%%%%:  117-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  118:    getline(cin, autor_nou);
+    %%%%%:  118-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  119:    cout << "Gen nou:";
+    %%%%%:  119-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  120:    getline(cin, gen_nou);
+    %%%%%:  120-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  121:    cout << "An nou:";
+    %%%%%:  121-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  122:    cin >> an_nou;
+    %%%%%:  122-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  123:
+    #####:  124:    Carte carte_noua(titlu_nou, autor_nou, gen_nou, an_nou);
+    %%%%%:  124-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  125:    Carte carte_stearsa(titlu_sters, autor_sters, gen_sters, an_sters);
+    %%%%%:  125-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  126:
+        -:  127:    try {
+    #####:  128:        lista.modificare(carte_stearsa, carte_noua);
+    %%%%%:  128-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    =====:  129:    }catch (const Exceptions& exceptie){
+    $$$$$:  129-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:  129-block  1
+call    2 never executed
+    =====:  130:        cout << exceptie.get_message() << '\n';
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  130-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:  130-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:  130-block  2
+call    9 never executed
+    $$$$$:  130-block  3
+call   10 never executed
+    $$$$$:  130-block  4
+    =====:  131:    }
+call    0 never executed
+    $$$$$:  131-block  0
+call    1 never executed
+        -:  132:
+    #####:  133:}
+    %%%%%:  133-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+    $$$$$:  133-block  1
+call    8 never executed
+    $$$$$:  133-block  2
+call    9 never executed
+    $$$$$:  133-block  3
+call   10 never executed
+    $$$$$:  133-block  4
+call   11 never executed
+    $$$$$:  133-block  5
+call   12 never executed
+    $$$$$:  133-block  6
+call   13 never executed
+    $$$$$:  133-block  7
+call   14 never executed
+    $$$$$:  133-block  8
+call   15 never executed
+        -:  134:
+        -:  135:
+function _Z11UI_stergereR12CarteService called 0 returned 0% blocks executed 0%
+    #####:  136:void UI_stergere(CarteService& lista){
+        -:  137:
+    #####:  138:    string titlu, autor, gen;
+    %%%%%:  138-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  139:    int an;
+        -:  140:
+    #####:  141:    cout << "Titlu cautat:";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  142:    getline(cin, titlu);
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  143:    cout << "Autor cautat:";
+    %%%%%:  143-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  144:    getline(cin, autor);
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  145:    cout << "Gen cautat:";
+    %%%%%:  145-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  146:    getline(cin, gen);
+    %%%%%:  146-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  147:    cout << "An cautat:";
+    %%%%%:  147-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  148:    cin >> an;
+    %%%%%:  148-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  149:
+    #####:  150:    const Carte* carte_cautata_ptr = lista.gasire_carte(titlu, autor, gen, an);
+    %%%%%:  150-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  151:    if (carte_cautata_ptr == nullptr)
+    %%%%%:  151-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  152:        cout << "Cartea nu exista!\n";
+    %%%%%:  152-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  153:
+        -:  154:    else {
+    #####:  155:        Carte carte = *lista.gasire_carte(titlu, autor, gen, an);
+    %%%%%:  155-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  155-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+        -:  156:
+        -:  157:        try {
+    #####:  158:            lista.stergere(carte);
+    %%%%%:  158-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    =====:  159:        } catch (const Exceptions &exceptie) {
+    $$$$$:  159-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:  159-block  1
+call    2 never executed
+    =====:  160:            cout << exceptie.get_message() << '\n';
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  160-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:  160-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:  160-block  2
+call    9 never executed
+    $$$$$:  160-block  3
+call   10 never executed
+    $$$$$:  160-block  4
+    =====:  161:        }
+call    0 never executed
+    $$$$$:  161-block  0
+call    1 never executed
+    #####:  162:    }
+    %%%%%:  162-block  0
+call    0 never executed
+    $$$$$:  162-block  1
+call    1 never executed
+        -:  163:
+    #####:  164:}
+    %%%%%:  164-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  164-block  1
+call    3 never executed
+    $$$$$:  164-block  2
+call    4 never executed
+    $$$$$:  164-block  3
+call    5 never executed
+        -:  165:
+        -:  166:
+function _Z16UI_cautare_carteR12CarteService called 0 returned 0% blocks executed 0%
+    #####:  167:void UI_cautare_carte(CarteService& lista){
+        -:  168:
+    #####:  169:    string titlu, autor, gen;
+    %%%%%:  169-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  170:    int an;
+        -:  171:
+    #####:  172:    cout << "Titlu carte:";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  173:    getline(cin, titlu);
+    %%%%%:  173-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  174:    cout << "Autor carte:";
+    %%%%%:  174-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  175:    getline(cin, autor);
+    %%%%%:  175-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  176:    cout << "Gen carte:";
+    %%%%%:  176-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  177:    getline(cin, gen);
+    %%%%%:  177-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  178:    cout << "An carte:";
+    %%%%%:  178-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  179:    cin >> an;
+    %%%%%:  179-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  180:
+    #####:  181:    const Carte* carte_cautata_ptr = lista.gasire_carte(titlu, autor, gen, an);
+    %%%%%:  181-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  182:    if (carte_cautata_ptr == nullptr)
+    %%%%%:  182-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  183:        cout << "Cartea nu exista!\n";
+    %%%%%:  183-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  184:    else {
+    #####:  185:        const Carte& carte = *lista.gasire_carte(titlu, autor, gen, an);
+    %%%%%:  185-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  186:
+    #####:  187:        cout << endl << "Titlu: " << carte.get_titlu() << endl;
+    %%%%%:  187-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  187-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  187-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  187-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  187-block  4
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:  187-block  5
+call   15 never executed
+    $$$$$:  187-block  6
+call   16 never executed
+    $$$$$:  187-block  7
+    #####:  188:        cout << "Autor: " << carte.get_autor() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  188-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  188-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  188-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  188-block  3
+call   12 never executed
+    $$$$$:  188-block  4
+call   13 never executed
+    $$$$$:  188-block  5
+    #####:  189:        cout << "Gen: " << carte.get_gen() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  189-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  189-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  189-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  189-block  3
+call   12 never executed
+    $$$$$:  189-block  4
+call   13 never executed
+    $$$$$:  189-block  5
+    #####:  190:        cout << "An: " << carte.get_an() << endl << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  190-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  190-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  190-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  190-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+        -:  191:    }
+        -:  192:
+    #####:  193:}
+    %%%%%:  193-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  193-block  1
+call    3 never executed
+    $$$$$:  193-block  2
+call    4 never executed
+    $$$$$:  193-block  3
+call    5 never executed
+        -:  194:
+        -:  195:
+function _Z11UI_filtrareRK12CarteService called 0 returned 0% blocks executed 0%
+    #####:  196:void UI_filtrare(const CarteService& lista){
+        -:  197:
+        -:  198:
+    #####:  199:    vector<Carte> copie;
+    #####:  200:    int lungime=0;
+        -:  201:
+        -:  202:
+        -:  203:    int optiune, an;
+    #####:  204:    string titlu;
+    %%%%%:  204-block  0
+call    0 never executed
+    #####:  205:    cout << "Filtrare dupa:\n1.titlu\n2.an\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  206:    cin >> optiune;
+    %%%%%:  206-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  207:    cin.ignore(1000, '\n');
+    %%%%%:  207-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  208:
+    #####:  209:    if (optiune == 1) {
+    %%%%%:  209-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  210:        cout << "Titlu:";
+    %%%%%:  210-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  211:        getline(cin, titlu);
+    %%%%%:  211-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  212:        lista.filtrare_titlu(titlu, copie, lungime);
+    %%%%%:  212-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  213:    }
+        -:  214:
+    #####:  215:    else if (optiune == 2) {
+    %%%%%:  215-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  216:        cout << "An:";
+    %%%%%:  216-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  217:        cin >> an;
+    %%%%%:  217-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  218:        lista.filtrare_an(an, copie, lungime);
+    %%%%%:  218-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  219:    }
+        -:  220:    else{
+    #####:  221:        cout << "Optiune invalida!";
+    %%%%%:  221-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  222:    }
+        -:  223:
+    #####:  224:    cout << "Lista filtrata este:\n";
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  225:    print_lista(copie, lungime);
+    %%%%%:  225-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  226:
+    #####:  227:}
+    %%%%%:  227-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  227-block  1
+call    2 never executed
+    $$$$$:  227-block  2
+call    3 never executed
+        -:  228:
+        -:  229:
+function _Z10UI_sortareR12CarteService called 0 returned 0% blocks executed 0%
+    #####:  230:void UI_sortare(CarteService& lista){
+        -:  231:
+        -:  232:
+    #####:  233:    vector<Carte> copie;
+    #####:  234:    int lungime=0;
+        -:  235:
+        -:  236:    int optiune;
+        -:  237:
+    #####:  238:    cout << "Sortare dupa:\n1.titlu\n2.autor\n3.an + gen\n";
+    %%%%%:  238-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  239:    cin >> optiune;
+    %%%%%:  239-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  240:    cin.ignore(1000, '\n');
+    %%%%%:  240-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  241:
+    #####:  242:    if (optiune == 1){
+    %%%%%:  242-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  243:        lista.sortare(&CarteService::cmp_titlu, copie, lungime);
+    %%%%%:  243-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  244:    }
+    #####:  245:    else if (optiune == 2){
+    %%%%%:  245-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  246:        lista.sortare(&CarteService::cmp_autor, copie, lungime);
+    %%%%%:  246-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  247:    }
+    #####:  248:    else if (optiune == 3){
+    %%%%%:  248-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  249:        lista.sortare(&CarteService::cmp_an, copie, lungime);
+    %%%%%:  249-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  250:    }
+        -:  251:    else
+    #####:  252:        cout << "Optiune invalida!";
+    %%%%%:  252-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  253:
+    #####:  254:    cout << "Lista sortata este:\n";
+    %%%%%:  254-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  255:    print_lista(copie, lungime);
+    %%%%%:  255-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  256:
+    #####:  257:}
+    %%%%%:  257-block  0
+call    0 never executed
+    $$$$$:  257-block  1
+call    1 never executed
+        -:  258:
+        -:  259:
+function _Z14UI_afisare_cosR3Cos called 0 returned 0% blocks executed 0%
+    #####:  260:void UI_afisare_cos(Cos& cos){
+        -:  261:
+    #####:  262:    const vector<Carte> elemente = cos.get_cos();
+    %%%%%:  262-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+        -:  263:
+    #####:  264:    if (elemente.empty())
+    %%%%%:  264-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  265:        cout << "Lista este vida\n";
+    %%%%%:  265-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  266:
+        -:  267:    else{
+    #####:  268:        cout << "Lista este:\n";
+    %%%%%:  268-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  269:        for (const auto& element: elemente){
+    %%%%%:  269-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  269-block  1
+call    2 never executed
+    %%%%%:  269-block  2
+call    3 never executed
+    %%%%%:  269-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed (fallthrough)
+    #####:  270:            cout << endl << "Titlu: " << element.get_titlu().c_str() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  270-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  270-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  270-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:  270-block  3
+call   13 never executed
+branch 14 never executed (fallthrough)
+branch 15 never executed (throw)
+    %%%%%:  270-block  4
+call   16 never executed
+    $$$$$:  270-block  5
+call   17 never executed
+    $$$$$:  270-block  6
+    #####:  271:            cout << "Autor: " << element.get_autor().c_str() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  271-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  271-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  271-block  2
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:  271-block  3
+call   13 never executed
+    $$$$$:  271-block  4
+call   14 never executed
+    $$$$$:  271-block  5
+    #####:  272:            cout << "Gen: " << element.get_gen().c_str() << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  272-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  272-block  1
+call    6 never executed
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  272-block  2
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:  272-block  3
+call   13 never executed
+    $$$$$:  272-block  4
+call   14 never executed
+    $$$$$:  272-block  5
+    #####:  273:            cout << "An: " << element.get_an() << endl << endl;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  273-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  273-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  273-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  273-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+        -:  274:        }
+        -:  275:
+        -:  276:    }
+        -:  277:
+    #####:  278:}
+    %%%%%:  278-block  0
+call    0 never executed
+    $$$$$:  278-block  1
+call    1 never executed
+        -:  279:
+        -:  280:
+function _Z10UI_add_cosR12CarteServiceR3Cos called 0 returned 0% blocks executed 0%
+    #####:  281:void UI_add_cos(CarteService& lista, Cos& cos){
+        -:  282:
+    #####:  283:    string titlu;
+    %%%%%:  283-block  0
+call    0 never executed
+    #####:  284:    cout << "Titlul cartii de adaugat in cos:";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  285:    getline(cin, titlu);
+    %%%%%:  285-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  286:
+    #####:  287:    Carte carte = lista.find_carte_titlu(titlu);
+    %%%%%:  287-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  288:
+    #####:  289:    if (carte.get_titlu() != " ") {
+    %%%%%:  289-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  289-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  289-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed
+    $$$$$:  289-block  3
+call    9 never executed
+    $$$$$:  289-block  4
+    #####:  290:        cos.adaugare_in_cos(carte);
+    %%%%%:  290-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  291:        cout << "Carte adaugata cu succes";
+    %%%%%:  291-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  292:    }
+        -:  293:    else
+    #####:  294:        cout << "Cartea nu exista!";
+    %%%%%:  294-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  295:
+    #####:  296:}
+    %%%%%:  296-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  296-block  1
+call    2 never executed
+    $$$$$:  296-block  2
+call    3 never executed
+        -:  297:
+function _Z14UI_goleste_cosR3Cos called 0 returned 0% blocks executed 0%
+    #####:  298:void UI_goleste_cos(Cos& cos){
+        -:  299:
+    #####:  300:    cos.golire_cos();
+    %%%%%:  300-block  0
+call    0 never executed
+        -:  301:
+    #####:  302:}
+        -:  303:
+        -:  304:
+function _Z15UI_carti_randomR12CarteServiceR3Cos called 0 returned 0% blocks executed 0%
+    #####:  305:void UI_carti_random(CarteService& lista, Cos& cos){
+        -:  306:
+        -:  307:    int n;
+    #####:  308:    cout << "Numarul de carti de generat:";
+    %%%%%:  308-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  309:    cin >> n;
+    %%%%%:  309-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  310:    cin.ignore(1000, '\n');
+    %%%%%:  310-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  311:    if(n > lista.get_lung()){
+    %%%%%:  311-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  311-block  1
+branch  3 never executed (fallthrough)
+branch  4 never executed
+    #####:  312:        cout << "Se pot adauga doar " << lista.get_lung() << " carti.\n";
+    %%%%%:  312-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  312-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  312-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  312-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    #####:  313:        n = lista.get_lung();
+    %%%%%:  313-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  313-block  1
+        -:  314:    }
+    #####:  315:    cos.random_carti(lista.get_all(),n);
+    %%%%%:  315-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  315-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  315-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  315-block  3
+call    9 never executed
+    $$$$$:  315-block  4
+call   10 never executed
+    $$$$$:  315-block  5
+        -:  316:
+    #####:  317:}
+        -:  318:
+        -:  319:
+        -:  320:
+        -:  321:
+function _Z9UI_reportR12CarteService called 0 returned 0% blocks executed 0%
+    #####:  322:void UI_report(CarteService& lista){
+        -:  323:
+    #####:  324:    map <string, Autorcount> report = lista.report();
+    %%%%%:  324-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  325:    for(auto& pereche : report){
+    %%%%%:  325-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  325-block  1
+call    2 never executed
+    %%%%%:  325-block  2
+call    3 never executed
+    %%%%%:  325-block  3
+call    4 never executed
+branch  5 never executed
+branch  6 never executed (fallthrough)
+    #####:  326:        cout << "Autorul " << pereche.first << " are " << pereche.second.get_nr() << " carti\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  326-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  326-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  326-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed (fallthrough)
+branch 12 never executed (throw)
+    %%%%%:  326-block  3
+call   13 never executed
+branch 14 never executed (fallthrough)
+branch 15 never executed (throw)
+        -:  327:    }
+        -:  328:
+    #####:  329:}
+    %%%%%:  329-block  0
+call    0 never executed
+    $$$$$:  329-block  1
+call    1 never executed
+        -:  330:
+        -:  331:
+function _Z14UI_export_HTMLR3Cos called 0 returned 0% blocks executed 0%
+    #####:  332:void UI_export_HTML(Cos& cos){
+        -:  333:
+    #####:  334:    cout << "Nume fisier:";
+    %%%%%:  334-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  335:    string file_name;
+    %%%%%:  335-block  0
+call    0 never executed
+    #####:  336:    getline(cin, file_name);
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  337:    cos.export_html(file_name);
+    %%%%%:  337-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  338:
+    #####:  339:}
+    %%%%%:  339-block  0
+call    0 never executed
+    $$$$$:  339-block  1
+call    1 never executed
+        -:  340:
+        -:  341:
+function _Z13UI_baga_cartiR12CarteService called 0 returned 0% blocks executed 0%
+    #####:  342:void UI_baga_carti(CarteService& lista){
+        -:  343:
+    #####:  344:    Carte carte1 = Carte("aaa", "aaa", "aaaa", 2222);
+    %%%%%:  344-block  0
+    %%%%%:  344-block  1
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  344-block  2
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  344-block  3
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  344-block  4
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  344-block  5
+call   12 never executed
+    %%%%%:  344-block  6
+call   13 never executed
+    %%%%%:  344-block  7
+call   14 never executed
+    $$$$$:  344-block  8
+call   15 never executed
+    $$$$$:  344-block  9
+    $$$$$:  344-block 10
+    $$$$$:  344-block 11
+call   16 never executed
+    $$$$$:  344-block 12
+    $$$$$:  344-block 13
+    $$$$$:  344-block 14
+call   17 never executed
+    $$$$$:  344-block 15
+    $$$$$:  344-block 16
+    $$$$$:  344-block 17
+    #####:  345:    Carte carte2 = Carte("bbb", "bbb", "bbbb", 3333);
+    %%%%%:  345-block  0
+    %%%%%:  345-block  1
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  345-block  2
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  345-block  3
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  345-block  4
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  345-block  5
+call   12 never executed
+    %%%%%:  345-block  6
+call   13 never executed
+    %%%%%:  345-block  7
+call   14 never executed
+    $$$$$:  345-block  8
+call   15 never executed
+    $$$$$:  345-block  9
+    $$$$$:  345-block 10
+    $$$$$:  345-block 11
+call   16 never executed
+    $$$$$:  345-block 12
+    $$$$$:  345-block 13
+    $$$$$:  345-block 14
+call   17 never executed
+    $$$$$:  345-block 15
+    $$$$$:  345-block 16
+    $$$$$:  345-block 17
+    #####:  346:    Carte carte3 = Carte("ccc", "ccc", "cccc", 4444);
+    %%%%%:  346-block  0
+    %%%%%:  346-block  1
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  346-block  2
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  346-block  3
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  346-block  4
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  346-block  5
+call   12 never executed
+    %%%%%:  346-block  6
+call   13 never executed
+    %%%%%:  346-block  7
+call   14 never executed
+    $$$$$:  346-block  8
+call   15 never executed
+    $$$$$:  346-block  9
+    $$$$$:  346-block 10
+    $$$$$:  346-block 11
+call   16 never executed
+    $$$$$:  346-block 12
+    $$$$$:  346-block 13
+    $$$$$:  346-block 14
+call   17 never executed
+    $$$$$:  346-block 15
+    $$$$$:  346-block 16
+    $$$$$:  346-block 17
+    #####:  347:    Carte carte4 = Carte("vvv", "vvv", "vvvv", 2222);
+    %%%%%:  347-block  0
+    %%%%%:  347-block  1
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  347-block  2
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  347-block  3
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  347-block  4
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  347-block  5
+call   12 never executed
+    %%%%%:  347-block  6
+call   13 never executed
+    %%%%%:  347-block  7
+call   14 never executed
+    $$$$$:  347-block  8
+call   15 never executed
+    $$$$$:  347-block  9
+    $$$$$:  347-block 10
+    $$$$$:  347-block 11
+call   16 never executed
+    $$$$$:  347-block 12
+    $$$$$:  347-block 13
+    $$$$$:  347-block 14
+call   17 never executed
+    $$$$$:  347-block 15
+    $$$$$:  347-block 16
+    $$$$$:  347-block 17
+    #####:  348:    Carte carte5 = Carte("bbb", "bbb", "bbbb", 4444);
+    %%%%%:  348-block  0
+    %%%%%:  348-block  1
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  348-block  2
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  348-block  3
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  348-block  4
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  348-block  5
+call   12 never executed
+    %%%%%:  348-block  6
+call   13 never executed
+    %%%%%:  348-block  7
+call   14 never executed
+    $$$$$:  348-block  8
+call   15 never executed
+    $$$$$:  348-block  9
+    $$$$$:  348-block 10
+    $$$$$:  348-block 11
+call   16 never executed
+    $$$$$:  348-block 12
+    $$$$$:  348-block 13
+    $$$$$:  348-block 14
+call   17 never executed
+    $$$$$:  348-block 15
+    $$$$$:  348-block 16
+    $$$$$:  348-block 17
+    #####:  349:    Carte carte6 = Carte("qqq", "qqq", "qqqq", 5555);
+    %%%%%:  349-block  0
+    %%%%%:  349-block  1
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  349-block  2
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  349-block  3
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  349-block  4
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  349-block  5
+call   12 never executed
+    %%%%%:  349-block  6
+call   13 never executed
+    %%%%%:  349-block  7
+call   14 never executed
+    $$$$$:  349-block  8
+call   15 never executed
+    $$$$$:  349-block  9
+    $$$$$:  349-block 10
+    $$$$$:  349-block 11
+call   16 never executed
+    $$$$$:  349-block 12
+    $$$$$:  349-block 13
+    $$$$$:  349-block 14
+call   17 never executed
+    $$$$$:  349-block 15
+    $$$$$:  349-block 16
+    $$$$$:  349-block 17
+        -:  350:
+    #####:  351:    lista.adaugare(carte1);
+    %%%%%:  351-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  352:    lista.adaugare(carte2);
+    %%%%%:  352-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  353:    lista.adaugare(carte3);
+    %%%%%:  353-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  354:    lista.adaugare(carte4);
+    %%%%%:  354-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  355:    lista.adaugare(carte5);
+    %%%%%:  355-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  356:    lista.adaugare(carte6);
+    %%%%%:  356-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  357:
+    #####:  358:}
+    %%%%%:  358-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    $$$$$:  358-block  1
+call    6 never executed
+    $$$$$:  358-block  2
+call    7 never executed
+    $$$$$:  358-block  3
+call    8 never executed
+    $$$$$:  358-block  4
+call    9 never executed
+    $$$$$:  358-block  5
+call   10 never executed
+    $$$$$:  358-block  6
+call   11 never executed
+        -:  359:
+        -:  360:
+function _Z7UI_undoR12CarteService called 0 returned 0% blocks executed 0%
+    #####:  361:void UI_undo(CarteService& lista){
+        -:  362:
+    #####:  363:    if (lista.Undo() == -1)
+    %%%%%:  363-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  364:        cout << "Nu se mai poate face undo!\n";
+    %%%%%:  364-block  0
+call    0 never executed
+        -:  365:    else{
+    #####:  366:        cout << "Undo realizat cu succes\n";
+    %%%%%:  366-block  0
+call    0 never executed
+        -:  367:    }
+        -:  368:
+    #####:  369:}
+        -:  370:
+        -:  371:
+function _Z3runv called 1 returned 100% blocks executed 26%
+        1:  372:void run(){
+        -:  373:
+        -:  374:    //ListaCarti carti;
+        -:  375:    //RepoInFile carti("C:/Users/Next/CLionProjects/lab9/fisier.txt");
+        1:  376:    RepoDictionar carti;
+        1:  376-block  0
+call    0 returned 1
+        -:  377:
+        1:  378:    CarteService lista{carti};
+call    0 returned 1
+        1:  379:    Cos cos;
+        -:  380:
+        -:  381:    while(true){
+        -:  382:
+        1:  383:        print_menu();
+        1:  383-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  384:        int optiune;
+        1:  385:        cin >> optiune;
+        1:  385-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  386:        cin.ignore(1000, '\n');
+        1:  386-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  387:
+        1:  388:        switch (optiune) {
+        1:  388-block  0
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 0
+branch  8 taken 0
+branch  9 taken 0
+branch 10 taken 0
+branch 11 taken 0
+branch 12 taken 0
+branch 13 taken 0
+branch 14 taken 0
+branch 15 taken 1
+branch 16 taken 0
+        -:  389:
+    #####:  390:            case 1:
+    #####:  391:                UI_add(lista);
+    %%%%%:  391-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  392:                break;
+    %%%%%:  392-block  0
+    #####:  393:            case 2:
+    #####:  394:                UI_modificare(lista);
+    %%%%%:  394-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  395:                break;
+    %%%%%:  395-block  0
+    #####:  396:            case 3:
+    #####:  397:                UI_stergere(lista);
+    %%%%%:  397-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  398:                break;
+    %%%%%:  398-block  0
+    #####:  399:            case 4:
+    #####:  400:                afisare_lista(lista);
+    %%%%%:  400-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  401:                break;
+    %%%%%:  401-block  0
+    #####:  402:            case 5:
+    #####:  403:                UI_cautare_carte(lista);
+    %%%%%:  403-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  404:                break;
+    %%%%%:  404-block  0
+    #####:  405:            case 6:
+    #####:  406:                UI_filtrare(lista);
+    %%%%%:  406-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  407:                break;
+    %%%%%:  407-block  0
+    #####:  408:            case 7:
+    #####:  409:                UI_sortare(lista);
+    %%%%%:  409-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  410:                break;
+    %%%%%:  410-block  0
+    #####:  411:            case 8:
+    #####:  412:                UI_add_cos(lista, cos);
+    %%%%%:  412-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  413:                break;
+    %%%%%:  413-block  0
+    #####:  414:            case 9:
+    #####:  415:                UI_afisare_cos(cos);
+    %%%%%:  415-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  416:                break;
+    %%%%%:  416-block  0
+    #####:  417:            case 10:
+    #####:  418:                UI_goleste_cos(cos);
+    %%%%%:  418-block  0
+call    0 never executed
+    #####:  419:                break;
+    #####:  420:            case 11:
+    #####:  421:                UI_carti_random(lista, cos);
+    %%%%%:  421-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  422:                break;
+    %%%%%:  422-block  0
+    #####:  423:            case 12:
+    #####:  424:                UI_export_HTML(cos);
+    %%%%%:  424-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  425:                break;
+    %%%%%:  425-block  0
+    #####:  426:            case 13:
+    #####:  427:                UI_report(lista);
+    %%%%%:  427-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  428:                break;
+    %%%%%:  428-block  0
+    #####:  429:            case 14:
+    #####:  430:                UI_baga_carti(lista);
+    %%%%%:  430-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  431:                break;
+    %%%%%:  431-block  0
+    #####:  432:            case 15:
+    #####:  433:                UI_undo(lista);
+    %%%%%:  433-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  434:                break;
+    %%%%%:  434-block  0
+        1:  435:            case 0:
+        1:  436:                break;
+        1:  436-block  0
+        -:  437:
+    #####:  438:            default:
+    #####:  439:                cout << "Optiune invalida!";
+    %%%%%:  439-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  440:
+        -:  441:        }
+        -:  442:
+        1:  443:        if (optiune == 0)
+        1:  443-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  444:            break;
+        -:  445:
+    #####:  446:    }
+    %%%%%:  446-block  0
+        -:  447:
+        1:  448:}
+        1:  448-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  448-block  1
+call    3 never executed
+    $$$$$:  448-block  2
+call    4 never executed
+    $$$$$:  448-block  3
+call    5 never executed
+        -:  449:
+        -:  450:
+function main called 1 returned 100% blocks executed 100%
+        1:  451:int main() {
+        -:  452:
+        1:  453:    Test::test_all();
+        1:  453-block  0
+call    0 returned 1
+        -:  454:
+        -:  455:    _CrtDumpMemoryLeaks();
+        -:  456:
+        1:  457:    run();
+call    0 returned 1
+        -:  458:
+        -:  459:
+        1:  460:    return 0;
+        -:  461:
+        -:  462:}
+        -:  463:
+        -:  464:
+        -:  465:
+        -:  466:
+        -:  467:
+        -:  468:
+        -:  469:
+        -:  470:

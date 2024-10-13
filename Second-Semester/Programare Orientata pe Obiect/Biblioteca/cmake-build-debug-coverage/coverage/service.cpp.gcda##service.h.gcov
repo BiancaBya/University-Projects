@@ -1,0 +1,140 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/service.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef QT1_SERVICE_H
+        -:    2:#define QT1_SERVICE_H
+        -:    3:
+        -:    4:#include "repository.h"
+        -:    5:#include <map>
+        -:    6:#include <functional>
+        -:    7:#include <memory>
+        -:    8:#include "undo.h"
+        -:    9:
+        -:   10:typedef int (CompareFct)(const Carte& x, const Carte& y);
+        -:   11:
+        -:   12:
+        -:   13:class Autorcount{
+        -:   14:
+        -:   15:private:
+        -:   16:
+        -:   17:    int nr=1;
+        -:   18:    string autor;
+        -:   19:
+        -:   20:public:
+        -:   21:
+function _ZN10AutorcountC1Ev called 10 returned 100% blocks executed 100%
+       10:   22:    Autorcount() = default;
+       10:   22-block  0
+call    0 returned 10
+        -:   23:
+function _ZN10Autorcount13IncrementcoutEv called 2 returned 100% blocks executed 100%
+        2:   24:    void Incrementcout(){
+        2:   25:        nr++;
+        2:   26:    }
+        -:   27:
+        -:   28:    [[nodiscard]] int get_nr() const{
+        -:   29:        return nr;
+        -:   30:    }
+        -:   31:
+        -:   32:};
+        -:   33:
+        -:   34:
+        -:   35:class CarteService
+        -:   36:{
+        -:   37:
+        -:   38:private:
+        -:   39:
+        -:   40:    RepoAbstract& lista_service;
+        -:   41:    vector<unique_ptr<Undo>> undo;
+        -:   42:
+        -:   43:public:
+        -:   44:
+        -:   45:    explicit CarteService(RepoAbstract& lista_service) : lista_service{lista_service}{};
+        -:   46:    /*
+        -:   47:        Constructorul listei din service care apeleaza repository-ul
+        -:   48:    */
+        -:   49:
+        -:   50:    [[nodiscard]] int get_lung() const;
+        -:   51:    /*
+        -:   52:        Returneaza lungimea listei de carti
+        -:   53:    */
+        -:   54:
+        -:   55:    void adaugare(const Carte& carte);
+        -:   56:    /*
+        -:   57:        adauga cartea carte in lista de carti
+        -:   58:    */
+        -:   59:
+        -:   60:    void modificare(const Carte& carte_stearsa, const Carte& carte_noua);
+        -:   61:    /*
+        -:   62:        modifica cartea de la pozitia poz cu carte
+        -:   63:    */
+        -:   64:
+        -:   65:    void stergere(const Carte& carte);
+        -:   66:    /*
+        -:   67:        sterge din lista de carti cartea de la pozitia poz
+        -:   68:    */
+        -:   69:
+        -:   70:    [[nodiscard]] const Carte* gasire_carte(const string& titlu, const string& autor, const string& gen, int an) const;
+        -:   71:    /*
+        -:   72:        gaseste cartea dupa titlu autor an si gen
+        -:   73:    */
+        -:   74:
+        -:   75:    void filtrare_titlu(const string& titlu, vector<Carte>& copie, int& lungime) const;
+        -:   76:    /*
+        -:   77:        filtreaza lista de carti, lasand in ea doar cartile cu titlul titlu, de tip string
+        -:   78:    */
+        -:   79:
+        -:   80:    void filtrare_an(int an, vector<Carte>& copie, int& lungime) const;
+        -:   81:    /*
+        -:   82:        filtreaza lista de carti, lasand in ea doar cartile care au anul an, de tip int
+        -:   83:    */
+        -:   84:
+        -:   85:    static int cmp_titlu(const Carte& x, const Carte& y);
+        -:   86:    /*
+        -:   87:        functia de comparare folosita la sortarea dupa titlu
+        -:   88:    */
+        -:   89:
+        -:   90:    static int cmp_autor(const Carte& x, const Carte& y);
+        -:   91:    /*
+        -:   92:        functia de comparare folosita la sortarea dupa autor
+        -:   93:    */
+        -:   94:
+        -:   95:    static int cmp_gen(const Carte& x, const Carte& y);
+        -:   96:    /*
+        -:   97:        functia de comparare folosita la sortarea dupa gen
+        -:   98:    */
+        -:   99:
+        -:  100:    static int cmp_an(const Carte& x, const Carte& y);
+        -:  101:    /*
+        -:  102:        functia de comparare folosita la sortarea dupa an
+        -:  103:    */
+        -:  104:
+        -:  105:    void sortare(CompareFct cmpfct, vector<Carte>& copie, int& lungime) const;
+        -:  106:    /*
+        -:  107:        functia de sortare care primeste o functie de comparare si sorteaza lista in functie de functia de comparare
+        -:  108:    */
+        -:  109:
+function _ZN12CarteService7get_allEv called 0 returned 0% blocks executed 0%
+    #####:  110:    const vector<Carte>& get_all(){
+    #####:  111:        return lista_service.get_all();
+    %%%%%:  111-block  0
+call    0 never executed
+        -:  112:    }
+        -:  113:
+        -:  114:    Carte find_carte_titlu(const string &titlu);
+        -:  115:
+        -:  116:    [[nodiscard]] map<string, Autorcount> report() const;
+        -:  117:
+        -:  118:    int Undo();
+        -:  119:
+        -:  120:    ~CarteService() = default;
+        -:  121:
+        -:  122:
+        -:  123:};
+        -:  124:
+        -:  125:
+        -:  126:
+        -:  127:#endif //QT1_SERVICE_H
+        -:  128:
+        -:  129:

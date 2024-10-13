@@ -1,0 +1,3 @@
+C:/Users/Next/Downloads/Multime/Multime/cmake-build-debug/CMakeFiles/Multime.dir
+C:/Users/Next/Downloads/Multime/Multime/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Next/Downloads/Multime/Multime/cmake-build-debug/CMakeFiles/rebuild_cache.dir

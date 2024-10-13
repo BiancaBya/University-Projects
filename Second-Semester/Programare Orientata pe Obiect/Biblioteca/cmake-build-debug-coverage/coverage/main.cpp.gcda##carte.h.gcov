@@ -1,0 +1,88 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/carte.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef QT1_CARTE_H
+        -:    2:#define QT1_CARTE_H
+        -:    3:
+        -:    4:#include <string>
+        -:    5:using namespace std;
+        -:    6:
+        -:    7:class Carte
+        -:    8:{
+        -:    9:
+        -:   10:
+        -:   11:private:
+        -:   12:
+        -:   13:    string titlu;
+        -:   14:    string autor;
+        -:   15:    string gen;
+        -:   16:    int an;
+        -:   17:
+        -:   18:public:
+        -:   19:
+        -:   20:    Carte(const string& titlu, const string& autor, const string& gen, const int& an); // Carte(string titlu, string autor, string gen, int an) : titlu{titlu}, model{model}...;
+        -:   21:    /*
+        -:   22:        constructorul obiectului carte
+        -:   23:        titlu -> titlul cartii care trebuie adaugata, tip = string
+        -:   24:        autor -> autorul cartii care trebuie adaugata, tip = string
+        -:   25:        gen -> genul cartii care trebuie adaugata, tip = string
+        -:   26:        an -> anul cartii de adaugat, tip = int
+        -:   27:        return -> None
+        -:   28:    */
+function _ZN5CarteC1Ev called 5 returned 100% blocks executed 100%
+        5:   29:    Carte() = default;
+        5:   29-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+        -:   30:
+        -:   31:    Carte(const Carte& other);
+        -:   32:
+        -:   33:    string get_titlu() const;
+        -:   34:    /*
+        -:   35:        Returneaza titlul cartii, de tip string
+        -:   36:    */
+        -:   37:
+        -:   38:    string get_autor() const;
+        -:   39:    /*
+        -:   40:        Returneaza autorul cartii, de tip string
+        -:   41:    */
+        -:   42:
+        -:   43:    string get_gen() const;
+        -:   44:    /*
+        -:   45:        Returneaza genul cartii, de tip string
+        -:   46:    */
+        -:   47:
+        -:   48:    int get_an() const;
+        -:   49:    /*
+        -:   50:        Returneaza anul cartii, de tip int
+        -:   51:    */
+        -:   52:
+        -:   53:    void set_titlu(const string& titlul);
+        -:   54:    /*
+        -:   55:        Schimba titlul cartii
+        -:   56:    */
+        -:   57:
+        -:   58:    void set_autor(const string& autorul);
+        -:   59:    /*
+        -:   60:        Schimba autorul cartii
+        -:   61:    */
+        -:   62:
+        -:   63:    void set_gen(const string& genul);
+        -:   64:    /*
+        -:   65:        Schimba genul cartii
+        -:   66:    */
+        -:   67:
+        -:   68:    void set_an(int anul);
+        -:   69:    /*
+        -:   70:        Schimba anul cartii
+        -:   71:    */
+        -:   72:
+        -:   73:
+        -:   74:};
+        -:   75:
+        -:   76:
+        -:   77:
+        -:   78:#endif //QT1_CARTE_H
+        -:   79:

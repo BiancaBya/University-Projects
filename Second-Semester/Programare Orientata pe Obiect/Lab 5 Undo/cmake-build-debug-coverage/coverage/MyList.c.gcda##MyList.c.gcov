@@ -1,0 +1,1101 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/buget_bun/MyList.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\buget_bun\cmake-build-debug-coverage\CMakeFiles\buget_bun.dir\MyList.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\buget_bun\cmake-build-debug-coverage\CMakeFiles\buget_bun.dir\MyList.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "MyList.h"
+        -:    2:#include <stdio.h>
+        -:    3:#include <assert.h>
+        -:    4:#include <string.h>
+        -:    5:#include <stdlib.h>
+        -:    6:
+function get called 45 returned 100% blocks executed 100%
+       45:    7:ElemType get(MyList *l, int poz){
+       45:    8:    return l->elems[poz];
+       45:    8-block  0
+        -:    9:}
+        -:   10:
+function createEmpty called 28 returned 100% blocks executed 100%
+       28:   11:MyList *createEmpty(DestroyFct fct) {
+       28:   12:    MyList *rez = malloc(sizeof(MyList));
+       28:   13:    rez->cp = 50;
+       28:   14:    rez->elems = malloc(sizeof(ElemType)*rez->cp);
+       28:   15:    rez->lg = 0;
+       28:   16:    rez->dfnc = fct;
+       28:   17:    return rez;
+       28:   17-block  0
+        -:   18:}
+        -:   19:
+function testCreateEmpty called 1 returned 100% blocks executed 86%
+        1:   20:void testCreateEmpty()
+        -:   21:{
+        1:   22:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:   22-block  0
+call    0 returned 1
+       1*:   23:    assert(size(l) == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   23-block  0
+call    3 never executed
+        1:   23-block  1
+        1:   24:    destroyList(l);
+        1:   24-block  0
+call    0 returned 1
+        1:   25:}
+        -:   26:
+function destroyList called 28 returned 100% blocks executed 100%
+       28:   27:void destroyList(MyList* l) {
+        -:   28:    int i;
+      104:   29:    for(i=0;i<l->lg;i++)
+       28:   29-block  0
+      104:   29-block  1
+branch  0 taken 76
+branch  1 taken 28 (fallthrough)
+        -:   30:    {
+       76:   31:        ElemType el = l->elems[i];
+       76:   32:        destroyBuget(el);
+       76:   32-block  0
+call    0 returned 76
+        -:   33:    }
+       28:   34:    l->lg = 0;
+       28:   35:    free(l->elems);
+       28:   36:    free(l);
+       28:   37:}
+        -:   38:
+function test_destroy called 1 returned 100% blocks executed 100%
+        1:   39:void test_destroy()
+        -:   40:{
+        1:   41:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:   41-block  0
+call    0 returned 1
+        1:   42:    add(l, createBuget("altele",2,2));
+call    0 returned 1
+call    1 returned 1
+        1:   43:    destroyList(l);
+call    0 returned 1
+        1:   44:}
+        -:   45:
+function resize called 1 returned 100% blocks executed 100%
+        1:   46:void resize(MyList* l)
+        -:   47:{
+        1:   48:    l->cp *= 2;
+        1:   49:    ElemType *aux = (ElemType *)realloc(l->elems, sizeof(ElemType) * l->cp);
+        1:   50:    l->elems = aux;
+        1:   51:}
+        -:   52:
+function test_resize called 1 returned 100% blocks executed 100%
+        1:   53:void test_resize()
+        -:   54:{
+        1:   55:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:   55-block  0
+call    0 returned 1
+        1:   56:    resize(l);
+call    0 returned 1
+        1:   57:    add(l, createBuget("altele", 1, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   58:    add(l, createBuget("altele", 2, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   59:    add(l, createBuget("altele", 3, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   60:    add(l, createBuget("altele", 4, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   61:    add(l, createBuget("altele", 5, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   62:    add(l, createBuget("altele", 6, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   63:    add(l, createBuget("altele", 7, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   64:    add(l, createBuget("altele", 8, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   65:    add(l, createBuget("altele", 9, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   66:    add(l, createBuget("altele", 10, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   67:    add(l, createBuget("altele", 11, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   68:    add(l, createBuget("altele", 12, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   69:    add(l, createBuget("altele", 13, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   70:    add(l, createBuget("altele", 14, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   71:    add(l, createBuget("altele", 15, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   72:    add(l, createBuget("altele", 16, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   73:    add(l, createBuget("altele", 17, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   74:    add(l, createBuget("altele", 18, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   75:    add(l, createBuget("altele", 19, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   76:    add(l, createBuget("altele", 20, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   77:    add(l, createBuget("altele", 21, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   78:    add(l, createBuget("altele", 22, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   79:    add(l, createBuget("altele", 23, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   80:    add(l, createBuget("altele", 24, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   81:    add(l, createBuget("altele", 25, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   82:    add(l, createBuget("altele", 26, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   83:    add(l, createBuget("altele", 27, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   84:    add(l, createBuget("altele", 28, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   85:    add(l, createBuget("altele", 29, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   86:    add(l, createBuget("altele", 30, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   87:    add(l, createBuget("altele", 31, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   88:    add(l, createBuget("imbracaminte", 1, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   89:    add(l, createBuget("imbracaminte", 2, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   90:    add(l, createBuget("imbracaminte", 3, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   91:    add(l, createBuget("imbracaminte", 4, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   92:    add(l, createBuget("imbracaminte", 5, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   93:    add(l, createBuget("imbracaminte", 6, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   94:    add(l, createBuget("imbracaminte", 7, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   95:    add(l, createBuget("imbracaminte", 8, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   96:    add(l, createBuget("imbracaminte", 9, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   97:    add(l, createBuget("imbracaminte", 10, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   98:    add(l, createBuget("imbracaminte", 11, 2));
+call    0 returned 1
+call    1 returned 1
+        1:   99:    add(l, createBuget("imbracaminte", 12, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  100:    add(l, createBuget("imbracaminte", 13, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  101:    add(l, createBuget("imbracaminte", 14, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  102:    add(l, createBuget("imbracaminte", 15, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  103:    add(l, createBuget("imbracaminte", 16, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  104:    add(l, createBuget("imbracaminte", 17, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  105:    add(l, createBuget("imbracaminte", 18, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  106:    add(l, createBuget("imbracaminte", 19, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  107:    add(l, createBuget("imbracaminte", 20, 2));
+call    0 returned 1
+call    1 returned 1
+        1:  108:    destroyList(l);
+call    0 returned 1
+        1:  109:}
+        -:  110:
+        -:  111:
+function set called 2 returned 100% blocks executed 100%
+        2:  112:ElemType set(MyList* l,int poz, ElemType el)
+        -:  113:{
+        2:  114:    ElemType replaced = l->elems[poz];
+        2:  115:    l->elems[poz] = el;
+        2:  116:    return replaced;
+        2:  116-block  0
+        -:  117:    /*
+        -:  118:    strcpy_s(l->elems[poz]->type, 30, type);
+        -:  119:    l->elems[poz]->zi = day;
+        -:  120:    l->elems[poz]->suma = sum;
+        -:  121:    return l->elems[poz];
+        -:  122:     */
+        -:  123:}
+        -:  124:
+function test_set called 1 returned 100% blocks executed 83%
+        1:  125:void test_set()
+        -:  126:{
+        1:  127:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  127-block  0
+call    0 returned 1
+        1:  128:    Buget *p = createBuget("transport", 17, 3);
+call    0 returned 1
+        1:  129:    add(l, p);
+call    0 returned 1
+        1:  130:    set(l, 0, createBuget("telefon&internet", 7, 8));
+call    0 returned 1
+call    1 returned 1
+        1:  131:    Buget *b = get(l, 0);
+call    0 returned 1
+       1*:  132:    assert(b->zi == 7);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  132-block  0
+call    2 never executed
+        1:  132-block  1
+       1*:  133:    assert(b->suma == 8);
+        1:  133-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  133-block  1
+call    2 never executed
+        1:  133-block  2
+       1*:  134:    assert(strcmp(b->type,"telefon&internet") == 0);
+        1:  134-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  134-block  1
+call    2 never executed
+        1:  134-block  2
+        -:  135:
+        1:  136:    destroyBuget(p);
+        1:  136-block  0
+call    0 returned 1
+        1:  137:    destroyList(l);
+call    0 returned 1
+        1:  138:}
+        -:  139:
+function size called 86 returned 100% blocks executed 100%
+       86:  140:int size(MyList* l) {
+       86:  141:    return l->lg;
+       86:  141-block  0
+        -:  142:}
+        -:  143:
+        -:  144:
+        -:  145:
+function add called 85 returned 100% blocks executed 100%
+       85:  146:void add(MyList* v, ElemType el) {
+       85:  147:    if (v->lg >= v->cp) {
+       85:  147-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 84
+        -:  148:
+        1:  149:        int newCapacity = v->cp * 2;
+        1:  150:        ElemType* aux = malloc(sizeof(ElemType)*newCapacity);
+        2:  151:        for (int i = 0; i < v->lg; i++) {
+        1:  151-block  0
+        2:  151-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  152:            aux[i] = v->elems[i];
+        1:  152-block  0
+        -:  153:        }
+        1:  154:        free(v->elems);
+        1:  155:        v->elems = aux;
+        1:  156:        v->cp = newCapacity;
+        1:  156-block  0
+        -:  157:    }
+       85:  158:    v->elems[v->lg] = el;
+       85:  159:    v->lg++;
+       85:  160:}
+        -:  161:
+function copyList called 3 returned 100% blocks executed 100%
+        3:  162:MyList* copyList(MyList* l, CopyFct copyFct) {
+        3:  163:    MyList* rez = createEmpty(l->dfnc);
+        3:  163-block  0
+call    0 returned 3
+        6:  164:    for (int i = 0; i < size(l); i++) {
+        6:  164-block  0
+call    0 returned 6
+branch  1 taken 3
+branch  2 taken 3 (fallthrough)
+        3:  165:        ElemType el = get(l,i);
+        3:  165-block  0
+call    0 returned 3
+        3:  166:        add(rez, copyFct(el));
+call    0 returned 3
+call    1 returned 3
+        -:  167:    }
+        3:  168:    return rez;
+        3:  168-block  0
+        -:  169:}
+        -:  170:
+function testCopyList called 1 returned 100% blocks executed 88%
+        1:  171:void testCopyList() {
+        1:  172:    MyList* l = createEmpty((DestroyFct) destroyBuget);
+        1:  172-block  0
+call    0 returned 1
+        1:  173:    Buget* p = createBuget("a", 10, 10);
+call    0 returned 1
+        1:  174:    add(l, p);
+call    0 returned 1
+        1:  175:    Buget* t = createBuget("a2", 12, 20);
+call    0 returned 1
+        1:  176:    add(l, t);
+call    0 returned 1
+        1:  177:    MyList* l2 = copyList(l, (CopyFct) copyBuget);
+call    0 returned 1
+       1*:  178:    assert(size(l2) == 2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  178-block  0
+call    3 never executed
+        1:  178-block  1
+        1:  179:    Buget* s = l2->elems[0];
+       1*:  180:    assert(strcmp(s->type, "a") == 0);
+        1:  180-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  180-block  1
+call    2 never executed
+        1:  180-block  2
+        1:  181:    destroyList(l2);
+        1:  181-block  0
+call    0 returned 1
+        1:  182:    destroyList(l);
+call    0 returned 1
+        1:  183:}
+        -:  184:
+        -:  185:
+function FindBuget called 1 returned 100% blocks executed 90%
+        1:  186:int FindBuget(MyList *l, char* tip, int zi, float suma){
+        -:  187:
+        1:  188:    int poz = -1;
+       1*:  189:    for (int i=0; i < l->lg; i++){
+        1:  189-block  0
+    %%%%%:  189-block  1
+        1:  189-block  2
+branch  0 taken 1
+branch  1 taken 0 (fallthrough)
+        1:  190:        Buget *p = get(l, i);
+        1:  190-block  0
+call    0 returned 1
+        1:  191:        if (strcmp(p->type, tip) == 0 && p->zi == zi && p->suma == suma){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  191-block  0
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:  191-block  1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+        1:  192:            poz = i;
+        1:  193:            break;
+        1:  193-block  0
+        -:  194:        }
+        -:  195:    }
+        1:  196:    return poz;
+        1:  196-block  0
+        -:  197:
+        -:  198:}
+        -:  199:
+        -:  200:
+function test_find called 1 returned 100% blocks executed 89%
+        1:  201:void test_find(){
+        -:  202:
+        1:  203:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  203-block  0
+call    0 returned 1
+        1:  204:    char tip[30] = "mancare";
+        1:  205:    int zi = 1;
+        1:  206:    float suma = 1;
+        1:  207:    Buget *b = createBuget(tip, zi, suma);
+call    0 returned 1
+        1:  208:    add(l,b);
+call    0 returned 1
+        1:  209:    int poz = FindBuget(l, tip, zi, suma);
+call    0 returned 1
+       1*:  210:    assert(poz == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  210-block  0
+call    2 never executed
+        1:  210-block  1
+        -:  211:
+        1:  212:    destroyList(l);
+        1:  212-block  0
+call    0 returned 1
+        -:  213:
+        1:  214:}
+        -:  215:
+        -:  216:
+function delete called 5 returned 100% blocks executed 100%
+        5:  217:void delete(MyList* l, ElemType el)
+        -:  218:{
+       14:  219:    for(int i = 0;i < size(l);i++)
+        5:  219-block  0
+        9:  219-block  1
+       14:  219-block  2
+call    0 returned 14
+branch  1 taken 9
+branch  2 taken 5 (fallthrough)
+        -:  220:    {
+        9:  221:        if(get(l, i) == el) {
+        9:  221-block  0
+call    0 returned 9
+branch  1 taken 5 (fallthrough)
+branch  2 taken 4
+        9:  222:            for (int j = i + 1; j < size(l); j++) {
+        5:  222-block  0
+        9:  222-block  1
+call    0 returned 9
+branch  1 taken 4
+branch  2 taken 5 (fallthrough)
+        4:  223:                l->elems[j - 1] = l->elems[j];
+        4:  223-block  0
+        -:  224:            }
+        5:  225:            i--;
+        5:  226:            l->lg--;
+        5:  226-block  0
+        -:  227:        }
+        -:  228:    }
+        5:  229:}
+        -:  230:
+function test_delete called 1 returned 100% blocks executed 91%
+        1:  231:void test_delete()
+        -:  232:{
+        1:  233:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  233-block  0
+call    0 returned 1
+        1:  234:    Buget *p = createBuget("altele", 29, 3);
+call    0 returned 1
+        1:  235:    add(l, p);
+call    0 returned 1
+        1:  236:    delete(l, p);
+call    0 returned 1
+        1:  237:    destroyBuget(p);
+call    0 returned 1
+       1*:  238:    assert(size(l) == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  238-block  0
+call    3 never executed
+        1:  238-block  1
+        1:  239:    destroyList(l);
+        1:  239-block  0
+call    0 returned 1
+        1:  240:}
+        -:  241:
+function cmptype called 2 returned 100% blocks executed 100%
+        2:  242:int cmptype(Buget* a, Buget* b) {
+        2:  243:    return  strcmp(a->type,b->type);
+        2:  243-block  0
+        -:  244:}
+        -:  245:
+function cmpzi called 2 returned 100% blocks executed 100%
+        2:  246:int cmpzi(Buget* a, Buget* b) {
+        2:  247:    return a->zi - b->zi;
+        2:  247-block  0
+        -:  248:}
+        -:  249:
+function cmpsuma called 2 returned 100% blocks executed 100%
+        2:  250:int cmpsuma(Buget* a, Buget* b) {
+        2:  251:    return (int)(a->suma - b->suma);
+        2:  251-block  0
+        -:  252:}
+function sort_list called 6 returned 100% blocks executed 100%
+        6:  253:void sort_list(MyList* l, comparare cmptype, int sortare)
+        -:  254:{
+        -:  255:    Buget *aux;
+        -:  256:    int i, j;
+        6:  257:    if(sortare == 1)
+        6:  257-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 3
+        6:  258:        for(i=0;i<size(l)-1;i++) {
+        3:  258-block  0
+        3:  258-block  1
+        6:  258-block  2
+call    0 returned 6
+branch  1 taken 3
+branch  2 taken 3 (fallthrough)
+        6:  259:            for (j = i + 1; j < size(l); j++) {
+        3:  259-block  0
+        3:  259-block  1
+        6:  259-block  2
+call    0 returned 6
+branch  1 taken 3
+branch  2 taken 3 (fallthrough)
+        3:  260:                if (cmptype(l->elems[i], l->elems[j])>=0) {
+        3:  260-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0
+        3:  261:                    aux = l->elems[i];
+        3:  262:                    l->elems[i] = l->elems[j];
+        3:  263:                    l->elems[j] = aux;
+        3:  263-block  0
+        -:  264:                }
+        -:  265:            }
+        -:  266:        }
+        6:  267:    if(sortare == -1)
+        6:  267-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 3
+        6:  268:        for (i = 0;i < size(l) - 1;i++) {
+        3:  268-block  0
+        3:  268-block  1
+        6:  268-block  2
+call    0 returned 6
+branch  1 taken 3
+branch  2 taken 3 (fallthrough)
+        6:  269:            for (j = i + 1; j < size(l); j++) {
+        3:  269-block  0
+        3:  269-block  1
+        6:  269-block  2
+call    0 returned 6
+branch  1 taken 3
+branch  2 taken 3 (fallthrough)
+        3:  270:                if (cmptype(l->elems[i], l->elems[j]) < 0) {
+        3:  270-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0
+        3:  271:                    aux = l->elems[i];
+        3:  272:                    l->elems[i] = l->elems[j];
+        3:  273:                    l->elems[j] = aux;
+        3:  273-block  0
+        -:  274:                }
+        -:  275:            }
+        -:  276:        }
+        6:  277:}
+        -:  278:
+function test_sort_list called 1 returned 100% blocks executed 84%
+        1:  279:void test_sort_list()
+        -:  280:{
+        1:  281:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  281-block  0
+call    0 returned 1
+        1:  282:    Buget *p = createBuget("telefon&internet", 2, 3);
+call    0 returned 1
+        1:  283:    add(l, p);
+call    0 returned 1
+        1:  284:    Buget *t = createBuget("altele", 4, 5);
+call    0 returned 1
+        1:  285:    add(l, t);
+call    0 returned 1
+        1:  286:    sort_list(l, cmptype, 1);
+call    0 returned 1
+        -:  287:
+        1:  288:    ElemType element = get(l,0);
+call    0 returned 1
+       1*:  289:    assert(element == t);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  289-block  0
+call    2 never executed
+        1:  289-block  1
+        1:  290:    element = get(l, 1);
+        1:  290-block  0
+call    0 returned 1
+       1*:  291:    assert(element == p);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  291-block  0
+call    2 never executed
+        1:  291-block  1
+        -:  292:
+        1:  293:    sort_list(l, cmptype, -1);
+        1:  293-block  0
+call    0 returned 1
+        -:  294:
+        1:  295:    element = get(l, 1);
+call    0 returned 1
+       1*:  296:    assert(element == t);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  296-block  0
+call    2 never executed
+        1:  296-block  1
+        1:  297:    element = get(l, 0);
+        1:  297-block  0
+call    0 returned 1
+       1*:  298:    assert(element == p);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  298-block  0
+call    2 never executed
+        1:  298-block  1
+        1:  299:    destroyList(l);
+        1:  299-block  0
+call    0 returned 1
+        -:  300:
+        1:  301:    MyList *l2 = createEmpty((DestroyFct) destroyBuget);
+call    0 returned 1
+        1:  302:    Buget *p2 = createBuget("telefon&internet", 4, 3);
+call    0 returned 1
+        1:  303:    add(l2, p2);
+call    0 returned 1
+        1:  304:    Buget *t2 = createBuget("altele", 2, 5);
+call    0 returned 1
+        1:  305:    add(l2, t2);
+call    0 returned 1
+        1:  306:    sort_list(l2, cmpzi, 1);
+call    0 returned 1
+        -:  307:
+        1:  308:    element = get(l2, 1);
+call    0 returned 1
+       1*:  309:    assert(element == p2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  309-block  0
+call    2 never executed
+        1:  309-block  1
+        1:  310:    element = get(l2, 0);
+        1:  310-block  0
+call    0 returned 1
+       1*:  311:    assert(element == t2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  311-block  0
+call    2 never executed
+        1:  311-block  1
+        -:  312:
+        1:  313:    sort_list(l2,cmpzi,  -1);
+        1:  313-block  0
+call    0 returned 1
+        -:  314:
+        1:  315:    element = get(l2, 1);
+call    0 returned 1
+       1*:  316:    assert(element == t2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  316-block  0
+call    2 never executed
+        1:  316-block  1
+        1:  317:    element = get(l2, 0);
+        1:  317-block  0
+call    0 returned 1
+       1*:  318:    assert(element == p2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  318-block  0
+call    2 never executed
+        1:  318-block  1
+        1:  319:    destroyList(l2);
+        1:  319-block  0
+call    0 returned 1
+        -:  320:
+        1:  321:    MyList *l3 = createEmpty((DestroyFct) destroyBuget);
+call    0 returned 1
+        1:  322:    Buget *p3 = createBuget("telefon&internet", 4, 7);
+call    0 returned 1
+        1:  323:    add(l3, p3);
+call    0 returned 1
+        1:  324:    Buget *t3 = createBuget("altele", 2, 5);
+call    0 returned 1
+        1:  325:    add(l3, t3);
+call    0 returned 1
+        1:  326:    sort_list(l3,cmpsuma,  1);
+call    0 returned 1
+        -:  327:
+        1:  328:    element = get(l3, 1);
+call    0 returned 1
+       1*:  329:    assert(element == p3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  329-block  0
+call    2 never executed
+        1:  329-block  1
+        1:  330:    element = get(l3, 0);
+        1:  330-block  0
+call    0 returned 1
+       1*:  331:    assert(element == t3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  331-block  0
+call    2 never executed
+        1:  331-block  1
+        -:  332:
+        1:  333:    sort_list(l3,cmpsuma,  -1);
+        1:  333-block  0
+call    0 returned 1
+        1:  334:    element = get(l3, 1);
+call    0 returned 1
+       1*:  335:    assert(element == t3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  335-block  0
+call    2 never executed
+        1:  335-block  1
+        1:  336:    element = get(l3, 0);
+        1:  336-block  0
+call    0 returned 1
+       1*:  337:    assert(element == p3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  337-block  0
+call    2 never executed
+        1:  337-block  1
+        1:  338:    destroyList(l3);
+        1:  338-block  0
+call    0 returned 1
+        1:  339:}
+        -:  340:
+function filtrare_type called 1 returned 100% blocks executed 100%
+        1:  341:void filtrare_type(MyList *l, char criteriu[30])
+        -:  342:{
+        -:  343:    int i;
+        3:  344:    for(i=0;i<size(l);i++) {
+        1:  344-block  0
+        2:  344-block  1
+        3:  344-block  2
+call    0 returned 3
+branch  1 taken 2
+branch  2 taken 1 (fallthrough)
+        -:  345:
+        2:  346:        Buget *b = get(l, i);
+        2:  346-block  0
+call    0 returned 2
+        -:  347:
+        2:  348:        if (strcmp(b->type, criteriu) != 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  349:            delete(l, l->elems[i]);
+        1:  349-block  0
+call    0 returned 1
+        1:  350:            i--;
+        -:  351:        }
+        -:  352:    }
+        1:  353:}
+        -:  354:
+function test_filtrare_type called 1 returned 100% blocks executed 83%
+        1:  355:void test_filtrare_type()
+        -:  356:{
+        1:  357:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  357-block  0
+call    0 returned 1
+        1:  358:    Buget *p = createBuget("telefon&internet", 4, 3);
+call    0 returned 1
+        1:  359:    add(l, p);
+call    0 returned 1
+        1:  360:    Buget *t = createBuget("altele", 2, 5);
+call    0 returned 1
+        1:  361:    add(l, t);
+call    0 returned 1
+        1:  362:    filtrare_type(l, "altele");
+call    0 returned 1
+        1:  363:    destroyBuget(p);
+call    0 returned 1
+        1:  364:    Buget *b = get(l, 0);
+call    0 returned 1
+       1*:  365:    assert(b->zi == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  365-block  0
+call    2 never executed
+        1:  365-block  1
+       1*:  366:    assert(b->suma == 5);
+        1:  366-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  366-block  1
+call    2 never executed
+        1:  366-block  2
+       1*:  367:    assert(strcmp(b->type,"altele") == 0);
+        1:  367-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  367-block  1
+call    2 never executed
+        1:  367-block  2
+       1*:  368:    assert(size(l) == 1);
+        1:  368-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  368-block  1
+call    3 never executed
+        1:  368-block  2
+        1:  369:    destroyList(l);
+        1:  369-block  0
+call    0 returned 1
+        1:  370:}
+        -:  371:
+function filtrare_zi called 1 returned 100% blocks executed 100%
+        1:  372:void filtrare_zi(MyList *l, int numar)
+        -:  373:{
+        -:  374:    int i;
+        3:  375:    for(i=0;i<size(l);i++) {
+        1:  375-block  0
+        2:  375-block  1
+        3:  375-block  2
+call    0 returned 3
+branch  1 taken 2
+branch  2 taken 1 (fallthrough)
+        -:  376:
+        2:  377:        Buget *b = get(l, i);
+        2:  377-block  0
+call    0 returned 2
+        -:  378:
+        2:  379:        if (b->zi != numar) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  380:            delete(l, l->elems[i]);
+        1:  380-block  0
+call    0 returned 1
+        1:  381:            i--;
+        -:  382:        }
+        -:  383:    }
+        1:  384:}
+        -:  385:
+function test_filtrare_zi called 1 returned 100% blocks executed 83%
+        1:  386:void test_filtrare_zi()
+        -:  387:{
+        1:  388:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  388-block  0
+call    0 returned 1
+        1:  389:    Buget *p = createBuget("telefon&internet", 4, 3);
+call    0 returned 1
+        1:  390:    add(l, p);
+call    0 returned 1
+        1:  391:    Buget *t = createBuget("altele", 2, 5);
+call    0 returned 1
+        1:  392:    add(l, t);
+call    0 returned 1
+        1:  393:    filtrare_zi(l, 2);
+call    0 returned 1
+        1:  394:    destroyBuget(p);
+call    0 returned 1
+        1:  395:    Buget *b = get(l, 0);
+call    0 returned 1
+       1*:  396:    assert(b->zi == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  396-block  0
+call    2 never executed
+        1:  396-block  1
+       1*:  397:    assert(b->suma == 5);
+        1:  397-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  397-block  1
+call    2 never executed
+        1:  397-block  2
+       1*:  398:    assert(strcmp(b->type,"altele") == 0);
+        1:  398-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  398-block  1
+call    2 never executed
+        1:  398-block  2
+       1*:  399:    assert(size(l) == 1);
+        1:  399-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  399-block  1
+call    3 never executed
+        1:  399-block  2
+        1:  400:    destroyList(l);
+        1:  400-block  0
+call    0 returned 1
+        1:  401:}
+        -:  402:
+function filtrare_suma called 1 returned 100% blocks executed 100%
+        1:  403:void filtrare_suma(MyList *l, float sum)
+        -:  404:{
+        -:  405:    int i;
+        3:  406:    for(i=0;i<size(l);i++) {
+        1:  406-block  0
+        2:  406-block  1
+        3:  406-block  2
+call    0 returned 3
+branch  1 taken 2
+branch  2 taken 1 (fallthrough)
+        -:  407:
+        2:  408:        Buget *b = get(l, i);
+        2:  408-block  0
+call    0 returned 2
+        -:  409:
+        2:  410:        if (b->suma != sum) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  411:            delete(l, l->elems[i]);
+        1:  411-block  0
+call    0 returned 1
+        1:  412:            i--;
+        -:  413:        }
+        -:  414:    }
+        1:  415:}
+        -:  416:
+function test_filtrare_suma called 1 returned 100% blocks executed 83%
+        1:  417:void test_filtrare_suma()
+        -:  418:{
+        1:  419:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  419-block  0
+call    0 returned 1
+        1:  420:    Buget *p = createBuget("telefon&internet", 4, 3);
+call    0 returned 1
+        1:  421:    add(l, p);
+call    0 returned 1
+        1:  422:    Buget *t = createBuget("altele", 2, 5);
+call    0 returned 1
+        1:  423:    add(l, t);
+call    0 returned 1
+        1:  424:    filtrare_suma(l, 5);
+call    0 returned 1
+        1:  425:    destroyBuget(p);
+call    0 returned 1
+        1:  426:    Buget *b = get(l, 0);
+call    0 returned 1
+       1*:  427:    assert(b->zi == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  427-block  0
+call    2 never executed
+        1:  427-block  1
+       1*:  428:    assert((int)b->suma == 5);
+        1:  428-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  428-block  1
+call    2 never executed
+        1:  428-block  2
+       1*:  429:    assert(strcmp(b->type,"altele") == 0);
+        1:  429-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  429-block  1
+call    2 never executed
+        1:  429-block  2
+       1*:  430:    assert(size(l) == 1);
+        1:  430-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  430-block  1
+call    3 never executed
+        1:  430-block  2
+        1:  431:    destroyList(l);
+        1:  431-block  0
+call    0 returned 1
+        1:  432:}
+        -:  433:
+function filtrare_suma_mai_mare called 1 returned 100% blocks executed 100%
+        1:  434:void filtrare_suma_mai_mare(MyList *l, float sum)
+        -:  435:{
+        -:  436:    int i;
+        3:  437:    for(i=0;i<size(l);i++) {
+        1:  437-block  0
+        2:  437-block  1
+        3:  437-block  2
+call    0 returned 3
+branch  1 taken 2
+branch  2 taken 1 (fallthrough)
+        -:  438:
+        2:  439:        Buget *b = get(l, i);
+        2:  439-block  0
+call    0 returned 2
+        -:  440:
+        2:  441:        if (b->suma < sum) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  442:            delete(l, l->elems[i]);
+        1:  442-block  0
+call    0 returned 1
+        1:  443:            i--;
+        -:  444:        }
+        -:  445:    }
+        1:  446:}
+        -:  447:
+        -:  448:
+function test_filtrare_suma_mai_mare called 1 returned 100% blocks executed 83%
+        1:  449:void test_filtrare_suma_mai_mare() {
+        -:  450:
+        1:  451:    MyList *l = createEmpty((DestroyFct) destroyBuget);
+        1:  451-block  0
+call    0 returned 1
+        1:  452:    Buget *p = createBuget("telefon&internet", 4, 3);
+call    0 returned 1
+        1:  453:    add(l, p);
+call    0 returned 1
+        1:  454:    Buget *t = createBuget("altele", 2, 5);
+call    0 returned 1
+        1:  455:    add(l, t);
+call    0 returned 1
+        1:  456:    filtrare_suma_mai_mare(l, 5);
+call    0 returned 1
+        1:  457:    destroyBuget(p);
+call    0 returned 1
+        1:  458:    Buget *b = get(l, 0);
+call    0 returned 1
+       1*:  459:    assert(b->zi == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  459-block  0
+call    2 never executed
+        1:  459-block  1
+       1*:  460:    assert((int)b->suma == 5);
+        1:  460-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  460-block  1
+call    2 never executed
+        1:  460-block  2
+       1*:  461:    assert(strcmp(b->type,"altele") == 0);
+        1:  461-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  461-block  1
+call    2 never executed
+        1:  461-block  2
+       1*:  462:    assert(size(l) == 1);
+        1:  462-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  462-block  1
+call    3 never executed
+        1:  462-block  2
+        1:  463:    destroyList(l);
+        1:  463-block  0
+call    0 returned 1
+        -:  464:
+        1:  465:}
+        -:  466:
+        -:  467:

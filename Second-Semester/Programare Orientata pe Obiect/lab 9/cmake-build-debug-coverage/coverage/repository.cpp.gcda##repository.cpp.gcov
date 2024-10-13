@@ -1,0 +1,551 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/repository.cpp
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\repository.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "repository.h"
+        -:    2:#include <algorithm>
+        -:    3:#include <fstream>
+        -:    4:
+function _ZN10ListaCarti9add_carteERK5Carte called 98 returned 100% blocks executed 100%
+       98:    5:void ListaCarti::add_carte(const Carte& carte) {
+        -:    6:
+       98:    7:    lista_carti.push_back(carte);
+       98:    7-block  0
+call    0 returned 98
+        -:    8:
+       98:    9:}
+        -:   10:
+function _ZN10ListaCarti12sterge_carteERK5Carte called 12 returned 100% blocks executed 69%
+       12:   11:void ListaCarti::sterge_carte(const Carte& carte){
+        -:   12:
+function _ZZN10ListaCarti12sterge_carteERK5CarteENKUlS2_E_clES2_ called 61 returned 100% blocks executed 59%
+       12:   13:    auto it = std::remove_if(lista_carti.begin(), lista_carti.end(), [carte](const Carte& carte_comparata){
+       12:   13-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   13-block  1
+call    3 returned 12
+call    4 returned 12
+call    5 returned 12
+branch  6 taken 12 (fallthrough)
+branch  7 taken 0 (throw)
+       12:   13-block  2
+call    8 returned 12
+    $$$$$:   13-block  3
+call    9 never executed
+    $$$$$:   13-block  4
+       61:   14:        return carte.get_titlu() == carte_comparata.get_titlu() and carte.get_autor() == carte_comparata.get_autor() and carte.get_gen() == carte_comparata.get_gen() and carte.get_an() == carte_comparata.get_an();
+       61:   14-block  0
+call    0 returned 61
+branch  1 taken 61 (fallthrough)
+branch  2 taken 0 (throw)
+       61:   14-block  1
+call    3 returned 61
+branch  4 taken 61 (fallthrough)
+branch  5 taken 0 (throw)
+       61:   14-block  2
+call    6 returned 61
+branch  7 taken 14 (fallthrough)
+branch  8 taken 47
+       14:   14-block  3
+call    9 returned 14
+branch 10 taken 14 (fallthrough)
+branch 11 taken 0 (throw)
+       14:   14-block  4
+call   12 returned 14
+branch 13 taken 14 (fallthrough)
+branch 14 taken 0 (throw)
+       14:   14-block  5
+call   15 returned 14
+branch 16 taken 12 (fallthrough)
+branch 17 taken 2
+       12:   14-block  6
+call   18 returned 12
+branch 19 taken 12 (fallthrough)
+branch 20 taken 0 (throw)
+       12:   14-block  7
+call   21 returned 12
+branch 22 taken 12 (fallthrough)
+branch 23 taken 0 (throw)
+       12:   14-block  8
+call   24 returned 12
+branch 25 taken 12 (fallthrough)
+branch 26 taken 0
+       12:   14-block  9
+call   27 returned 12
+branch 28 taken 12 (fallthrough)
+branch 29 taken 0 (throw)
+       12:   14-block 10
+call   30 returned 12
+branch 31 taken 12 (fallthrough)
+branch 32 taken 0 (throw)
+       12:   14-block 11
+branch 33 taken 12 (fallthrough)
+branch 34 taken 0
+       12:   14-block 12
+       49:   14-block 13
+       61:   14-block 14
+       61:   14-block 15
+branch 35 taken 12 (fallthrough)
+branch 36 taken 49
+       12:   14-block 16
+call   37 returned 12
+       61:   14-block 17
+branch 38 taken 12 (fallthrough)
+branch 39 taken 49
+       12:   14-block 18
+call   40 returned 12
+       61:   14-block 19
+branch 41 taken 14 (fallthrough)
+branch 42 taken 47
+       14:   14-block 20
+call   43 returned 14
+       61:   14-block 21
+branch 44 taken 14 (fallthrough)
+branch 45 taken 47
+       14:   14-block 22
+call   46 returned 14
+       61:   14-block 23
+branch 47 taken 61 (fallthrough)
+branch 48 taken 0
+       61:   14-block 24
+call   49 returned 61
+       61:   14-block 25
+branch 50 taken 61 (fallthrough)
+branch 51 taken 0
+       61:   14-block 26
+call   52 returned 61
+       61:   14-block 27
+       61:   14-block 28
+    $$$$$:   14-block 29
+branch 53 never executed (fallthrough)
+branch 54 never executed
+    $$$$$:   14-block 30
+call   55 never executed
+    $$$$$:   14-block 31
+    $$$$$:   14-block 32
+branch 56 never executed (fallthrough)
+branch 57 never executed
+    $$$$$:   14-block 33
+call   58 never executed
+    $$$$$:   14-block 34
+    $$$$$:   14-block 35
+branch 59 never executed (fallthrough)
+branch 60 never executed
+    $$$$$:   14-block 36
+call   61 never executed
+    $$$$$:   14-block 37
+    $$$$$:   14-block 38
+branch 62 never executed (fallthrough)
+branch 63 never executed
+    $$$$$:   14-block 39
+call   64 never executed
+    $$$$$:   14-block 40
+    $$$$$:   14-block 41
+branch 65 never executed (fallthrough)
+branch 66 never executed
+    $$$$$:   14-block 42
+call   67 never executed
+    $$$$$:   14-block 43
+    $$$$$:   14-block 44
+branch 68 never executed (fallthrough)
+branch 69 never executed
+    $$$$$:   14-block 45
+call   70 never executed
+        -:   15:    });
+        -:   16:
+       12:   17:    lista_carti.erase(it);
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   17-block  0
+        -:   18:
+       12:   19:}
+       12:   19-block  0
+        -:   20:
+function _ZN10ListaCarti16modificare_carteERK5CarteS2_ called 5 returned 100% blocks executed 100%
+        5:   21:void ListaCarti::modificare_carte(const Carte& carte_stearsa, const Carte& carte_noua) {
+        -:   22:
+        5:   23:    sterge_carte(carte_stearsa);
+        5:   23-block  0
+call    0 returned 5
+        5:   24:    add_carte(carte_noua);
+call    0 returned 5
+        -:   25:
+        5:   26:}
+        -:   27:
+        -:   28:
+function _ZNK10ListaCarti11get_lungimeEv called 15 returned 100% blocks executed 100%
+       15:   29:int ListaCarti::get_lungime() const {
+       15:   30:    return lista_carti.size();
+       15:   30-block  0
+call    0 returned 15
+        -:   31:}
+        -:   32:
+        -:   33:
+function _ZNK10ListaCarti10find_carteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 3 returned 100% blocks executed 61%
+        3:   34:const Carte* ListaCarti::find_carte(const string& titlu, const string& autor, const string& gen, int an) const{
+        -:   35:
+function _ZZNK10ListaCarti10find_carteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_iENKUlRK5CarteE_clESA_ called 3 returned 100% blocks executed 68%
+        3:   36:    auto pred = [titlu,autor,gen,an](const Carte& carte){
+        3:   37:        return carte.get_titlu() == titlu and carte.get_autor() == autor and carte.get_gen() == gen and carte.get_an() == an;
+        3:   37-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   37-block  1
+call    3 returned 3
+branch  4 taken 2 (fallthrough)
+branch  5 taken 1
+        2:   37-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   37-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0
+        2:   37-block  4
+call   12 returned 2
+branch 13 taken 2 (fallthrough)
+branch 14 taken 0 (throw)
+        2:   37-block  5
+call   15 returned 2
+branch 16 taken 2 (fallthrough)
+branch 17 taken 0
+        2:   37-block  6
+call   18 returned 2
+branch 19 taken 2 (fallthrough)
+branch 20 taken 0 (throw)
+        2:   37-block  7
+branch 21 taken 2 (fallthrough)
+branch 22 taken 0
+        2:   37-block  8
+        1:   37-block  9
+        3:   37-block 10
+        3:   37-block 11
+branch 23 taken 2 (fallthrough)
+branch 24 taken 1
+        2:   37-block 12
+call   25 returned 2
+        3:   37-block 13
+branch 26 taken 2 (fallthrough)
+branch 27 taken 1
+        2:   37-block 14
+call   28 returned 2
+        3:   37-block 15
+branch 29 taken 3 (fallthrough)
+branch 30 taken 0
+        3:   37-block 16
+call   31 returned 3
+        3:   37-block 17
+        3:   37-block 18
+    $$$$$:   37-block 19
+branch 32 never executed (fallthrough)
+branch 33 never executed
+    $$$$$:   37-block 20
+call   34 never executed
+    $$$$$:   37-block 21
+    $$$$$:   37-block 22
+branch 35 never executed (fallthrough)
+branch 36 never executed
+    $$$$$:   37-block 23
+call   37 never executed
+    $$$$$:   37-block 24
+    $$$$$:   37-block 25
+branch 38 never executed (fallthrough)
+branch 39 never executed
+    $$$$$:   37-block 26
+call   40 never executed
+        3:   38:    };
+        3:   38-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   38-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   38-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+    $$$$$:   38-block  3
+branch  9 never executed (fallthrough)
+branch 10 never executed
+    $$$$$:   38-block  4
+call   11 never executed
+    $$$$$:   38-block  5
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:   38-block  6
+call   14 never executed
+        -:   39:
+        3:   40:    auto iterator = std::find_if(lista_carti.begin(), lista_carti.end(), pred);
+        3:   40-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   40-block  1
+call    3 returned 3
+call    4 returned 3
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+        3:   40-block  2
+call    8 returned 3
+    $$$$$:   40-block  3
+call    9 never executed
+    $$$$$:   40-block  4
+        3:   41:    if (iterator != lista_carti.end())
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:   42:        return &(*iterator);
+        2:   42-block  0
+call    0 returned 2
+        -:   43:
+        -:   44:    else{
+        1:   45:        return nullptr;
+        1:   45-block  0
+        -:   46:    }
+        3:   47:}
+        3:   47-block  0
+call    0 returned 3
+    $$$$$:   47-block  1
+call    1 never executed
+        -:   48:
+        -:   49:
+function _ZN10RepoInFile12ReadFromFileEv called 3 returned 100% blocks executed 79%
+        3:   50:void RepoInFile::ReadFromFile() {
+        -:   51:
+        3:   52:    ifstream file(file_name);
+        3:   52-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   53:
+       61:   54:    while (!file.eof()){
+        3:   54-block  0
+       61:   54-block  1
+call    0 returned 61
+branch  1 taken 61 (fallthrough)
+branch  2 taken 0 (throw)
+       61:   54-block  2
+branch  3 taken 61
+branch  4 taken 0 (fallthrough)
+        -:   55:
+       61:   56:        string titlu, autor, gen;
+       61:   56-block  0
+call    0 returned 61
+call    1 returned 61
+call    2 returned 61
+        -:   57:        int an;
+        -:   58:
+       61:   59:        file >> titlu >> autor >> gen >> an;
+call    0 returned 61
+branch  1 taken 61 (fallthrough)
+branch  2 taken 0 (throw)
+       61:   59-block  0
+call    3 returned 61
+branch  4 taken 61 (fallthrough)
+branch  5 taken 0 (throw)
+       61:   59-block  1
+call    6 returned 61
+branch  7 taken 61 (fallthrough)
+branch  8 taken 0 (throw)
+       61:   59-block  2
+call    9 returned 61
+branch 10 taken 61 (fallthrough)
+branch 11 taken 0 (throw)
+        -:   60:
+       61:   61:        if (titlu.empty() or autor.empty() or gen.empty())
+       61:   61-block  0
+call    0 returned 61
+branch  1 taken 58 (fallthrough)
+branch  2 taken 3
+       58:   61-block  1
+call    3 returned 58
+branch  4 taken 58 (fallthrough)
+branch  5 taken 0
+       58:   61-block  2
+call    6 returned 58
+branch  7 taken 0 (fallthrough)
+branch  8 taken 58
+        3:   61-block  3
+       58:   61-block  4
+       61:   61-block  5
+branch  9 taken 3 (fallthrough)
+branch 10 taken 58
+        3:   62:            break;
+        3:   62-block  0
+        -:   63:
+       58:   64:        Carte carte(titlu, autor, gen, an);
+       58:   64-block  0
+call    0 returned 58
+branch  1 taken 58 (fallthrough)
+branch  2 taken 0 (throw)
+       58:   65:        ListaCarti::add_carte(carte);
+       58:   65-block  0
+call    0 returned 58
+branch  1 taken 58 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   66:
+       67:   67:    }
+       58:   67-block  0
+call    0 returned 58
+       61:   67-block  1
+call    1 returned 61
+branch  2 taken 58 (fallthrough)
+branch  3 taken 3
+       58:   67-block  2
+       61:   67-block  3
+call    4 returned 61
+branch  5 taken 58 (fallthrough)
+branch  6 taken 3
+       58:   67-block  4
+       61:   67-block  5
+call    7 returned 61
+branch  8 taken 58 (fallthrough)
+branch  9 taken 3
+    $$$$$:   67-block  6
+call   10 never executed
+    $$$$$:   67-block  7
+call   11 never executed
+    $$$$$:   67-block  8
+call   12 never executed
+    $$$$$:   67-block  9
+call   13 never executed
+        -:   68:
+        3:   69:    file.close();
+        3:   69-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   70:
+        3:   71:}
+        3:   71-block  0
+call    0 returned 3
+    $$$$$:   71-block  1
+call    1 never executed
+        -:   72:
+        -:   73:
+function _ZN10RepoInFile11WriteToFileEv called 8 returned 100% blocks executed 70%
+        8:   74:void RepoInFile::WriteToFile() {
+        -:   75:
+        8:   76:    ofstream file(file_name);
+        8:   76-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   77:    vector<Carte> lista = ListaCarti::get_all();
+        8:   77-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   78:
+      173:   79:    for (auto& carte : lista){
+        8:   79-block  0
+call    0 returned 8
+call    1 returned 8
+      165:   79-block  1
+call    2 returned 165
+      165:   79-block  2
+call    3 returned 165
+      173:   79-block  3
+call    4 returned 173
+branch  5 taken 165
+branch  6 taken 8 (fallthrough)
+        -:   80:
+      165:   81:        file << carte.get_titlu().c_str() << '\n';
+call    0 returned 165
+branch  1 taken 165 (fallthrough)
+branch  2 taken 0 (throw)
+      165:   81-block  0
+call    3 returned 165
+call    4 returned 165
+branch  5 taken 165 (fallthrough)
+branch  6 taken 0 (throw)
+      165:   81-block  1
+call    7 returned 165
+branch  8 taken 165 (fallthrough)
+branch  9 taken 0 (throw)
+      165:   81-block  2
+call   10 returned 165
+    $$$$$:   81-block  3
+call   11 never executed
+    $$$$$:   81-block  4
+      165:   82:        file << carte.get_autor().c_str() << '\n';
+call    0 returned 165
+branch  1 taken 165 (fallthrough)
+branch  2 taken 0 (throw)
+      165:   82-block  0
+call    3 returned 165
+call    4 returned 165
+branch  5 taken 165 (fallthrough)
+branch  6 taken 0 (throw)
+      165:   82-block  1
+call    7 returned 165
+branch  8 taken 165 (fallthrough)
+branch  9 taken 0 (throw)
+      165:   82-block  2
+call   10 returned 165
+    $$$$$:   82-block  3
+call   11 never executed
+    $$$$$:   82-block  4
+      165:   83:        file << carte.get_gen().c_str() << '\n';
+call    0 returned 165
+branch  1 taken 165 (fallthrough)
+branch  2 taken 0 (throw)
+      165:   83-block  0
+call    3 returned 165
+call    4 returned 165
+branch  5 taken 165 (fallthrough)
+branch  6 taken 0 (throw)
+      165:   83-block  1
+call    7 returned 165
+branch  8 taken 165 (fallthrough)
+branch  9 taken 0 (throw)
+      165:   83-block  2
+call   10 returned 165
+    $$$$$:   83-block  3
+call   11 never executed
+    $$$$$:   83-block  4
+      165:   84:        file << carte.get_an() << '\n';
+call    0 returned 165
+branch  1 taken 165 (fallthrough)
+branch  2 taken 0 (throw)
+      165:   84-block  0
+call    3 returned 165
+branch  4 taken 165 (fallthrough)
+branch  5 taken 0 (throw)
+      165:   84-block  1
+call    6 returned 165
+branch  7 taken 165 (fallthrough)
+branch  8 taken 0 (throw)
+        -:   85:
+        -:   86:    }
+        -:   87:
+        8:   88:    file.close();
+        8:   88-block  0
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   89:
+        8:   90:}
+        8:   90-block  0
+call    0 returned 8
+call    1 returned 8
+    $$$$$:   90-block  1
+call    2 never executed
+    $$$$$:   90-block  2
+call    3 never executed
+        -:   91:
+        -:   92:
+        -:   93:
+        -:   94:
+        -:   95:

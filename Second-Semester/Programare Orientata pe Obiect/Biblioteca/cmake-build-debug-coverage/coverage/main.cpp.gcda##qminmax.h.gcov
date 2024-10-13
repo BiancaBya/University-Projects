@@ -1,0 +1,106 @@
+        -:    0:Source:C:/QTbun/6.8.0/mingw_64/include/QtCore/qminmax.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2022 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QMINMAX_H
+        -:    5:#define QMINMAX_H
+        -:    6:
+        -:    7:#if 0
+        -:    8:#pragma qt_class(QtMinMax)
+        -:    9:#pragma qt_sync_stop_processing
+        -:   10:#endif
+        -:   11:
+        -:   12:#include <QtCore/qassert.h>
+        -:   13:#include <QtCore/qtconfigmacros.h>
+        -:   14:
+        -:   15:#include <type_traits>
+        -:   16:
+        -:   17:QT_BEGIN_NAMESPACE
+        -:   18:
+        -:   19:namespace QTypeTraits {
+        -:   20:
+        -:   21:namespace detail {
+        -:   22:template<typename T, typename U,
+        -:   23:         typename = std::enable_if_t<std::is_arithmetic_v<T> && std::is_arithmetic_v<U> &&
+        -:   24:                                     std::is_floating_point_v<T> == std::is_floating_point_v<U> &&
+        -:   25:                                     std::is_signed_v<T> == std::is_signed_v<U> &&
+        -:   26:                                     !std::is_same_v<T, bool> && !std::is_same_v<U, bool> &&
+        -:   27:                                     !std::is_same_v<T, char> && !std::is_same_v<U, char>>>
+        -:   28:struct Promoted
+        -:   29:{
+        -:   30:    using type = decltype(T() + U());
+        -:   31:};
+        -:   32:}
+        -:   33:
+        -:   34:template <typename T, typename U>
+        -:   35:using Promoted = typename detail::Promoted<T, U>::type;
+        -:   36:
+        -:   37:}
+        -:   38:
+        -:   39:template <typename T>
+        -:   40:constexpr inline const T &qMin(const T &a, const T &b) { return (a < b) ? a : b; }
+        -:   41:template <typename T>
+function _Z4qMaxIxERKT_S2_S2_ called 1 returned 100% blocks executed 80%
+       1*:   42:constexpr inline const T &qMax(const T &a, const T &b) { return (a < b) ? b : a; }
+        1:   42-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   42-block  1
+        1:   42-block  2
+        1:   42-block  3
+        -:   43:template <typename T>
+        -:   44:constexpr inline const T &qBound(const T &min, const T &val, const T &max)
+        -:   45:{
+        -:   46:    Q_ASSERT(!(max < min));
+        -:   47:    return qMax(min, qMin(max, val));
+        -:   48:}
+        -:   49:template <typename T, typename U>
+        -:   50:constexpr inline QTypeTraits::Promoted<T, U> qMin(const T &a, const U &b)
+        -:   51:{
+        -:   52:    using P = QTypeTraits::Promoted<T, U>;
+        -:   53:    P _a = a;
+        -:   54:    P _b = b;
+        -:   55:    return (_a < _b) ? _a : _b;
+        -:   56:}
+        -:   57:template <typename T, typename U>
+function _Z4qMaxIixEN11QTypeTraits6detail8PromotedIT_T0_NSt9enable_ifIXaaaaaaaaaaaaaa15is_arithmetic_vIS3_E15is_arithmetic_vIS4_Eeq19is_floating_point_vIS3_E19is_floating_point_vIS4_Eeq11is_signed_vIS3_E11is_signed_vIS4_Ent9is_same_vIS3_bEnt9is_same_vIS4_bEnt9is_same_vIS3_cEnt9is_same_vIS4_cEEvE4typeEE4typeERKS3_RKS4_ called 0 returned 0% blocks executed 0%
+    #####:   58:constexpr inline QTypeTraits::Promoted<T, U> qMax(const T &a, const U &b)
+        -:   59:{
+        -:   60:    using P = QTypeTraits::Promoted<T, U>;
+    #####:   61:    P _a = a;
+    #####:   62:    P _b = b;
+    #####:   63:    return (_a < _b) ? _b : _a;
+    %%%%%:   63-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   63-block  1
+    %%%%%:   63-block  2
+    %%%%%:   63-block  3
+        -:   64:}
+        -:   65:template <typename T, typename U>
+        -:   66:constexpr inline QTypeTraits::Promoted<T, U> qBound(const T &min, const U &val, const T &max)
+        -:   67:{
+        -:   68:    Q_ASSERT(!(max < min));
+        -:   69:    return qMax(min, qMin(max, val));
+        -:   70:}
+        -:   71:template <typename T, typename U>
+        -:   72:constexpr inline QTypeTraits::Promoted<T, U> qBound(const T &min, const T &val, const U &max)
+        -:   73:{
+        -:   74:    using P = QTypeTraits::Promoted<T, U>;
+        -:   75:    Q_ASSERT(!(P(max) < P(min)));
+        -:   76:    return qMax(min, qMin(max, val));
+        -:   77:}
+        -:   78:template <typename T, typename U>
+        -:   79:constexpr inline QTypeTraits::Promoted<T, U> qBound(const U &min, const T &val, const T &max)
+        -:   80:{
+        -:   81:    using P = QTypeTraits::Promoted<T, U>;
+        -:   82:    Q_ASSERT(!(P(max) < P(min)));
+        -:   83:    return qMax(min, qMin(max, val));
+        -:   84:}
+        -:   85:
+        -:   86:QT_END_NAMESPACE
+        -:   87:
+        -:   88:#endif // QMINMAX_H

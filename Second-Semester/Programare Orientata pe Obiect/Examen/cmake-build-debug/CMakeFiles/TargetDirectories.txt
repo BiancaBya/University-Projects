@@ -1,0 +1,5 @@
+C:/Users/Next/CLionProjects/ex/cmake-build-debug/CMakeFiles/ex.dir
+C:/Users/Next/CLionProjects/ex/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Next/CLionProjects/ex/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Next/CLionProjects/ex/cmake-build-debug/CMakeFiles/ex_autogen_timestamp_deps.dir
+C:/Users/Next/CLionProjects/ex/cmake-build-debug/CMakeFiles/ex_autogen.dir

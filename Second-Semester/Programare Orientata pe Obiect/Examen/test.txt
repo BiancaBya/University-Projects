@@ -1,0 +1,7 @@
+nr1 masina1 72 sedan
+nr2 masina2 72 hatch
+nr3 masina3 72 suv
+nr4 masina4 172 van
+nr5 masina5 172 sedan
+nr6 masina6 72 hatch
+nr7 masina7 172 suv

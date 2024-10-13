@@ -1,0 +1,549 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/OOP_lab2/service.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\service.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\service.c.gcda
+        -:    0:Runs:1
+        -:    1://#include "service.h"
+        -:    2:#include <string.h>
+        -:    3:#include "oferta.h"
+        -:    4:#include <stdlib.h>
+        -:    5:#include "lista.h"
+        -:    6:#include <stdbool.h>
+        -:    7:#include "customsort.h"
+        -:    8:
+        -:    9:
+function adaugare_oferta called 23 returned 100% blocks executed 100%
+       23:   10:void adaugare_oferta(oferta oferta_noua, my_list **lista){
+        -:   11:
+        -:   12:    /*
+        -:   13:        Functia primeste lista de oferte si o oferta pe care o adauga in lista
+        -:   14:        daca nmarul de oferte existent in lista este egal cu dimensiunea listei, atunci lista este redimensionata
+        -:   15:        si apoi elementul este adaugat
+        -:   16:    */
+        -:   17:
+       23:   18:    if((*lista)->lungime == (*lista)->dimensiune)
+       23:   18-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 22
+        1:   19:        resize(*lista);//*lista = redimensionare(*lista);
+        1:   19-block  0
+call    0 returned 1
+        -:   20:
+       23:   21:    (*lista)->lista_oferte[(*lista)->lungime] = oferta_noua;
+       23:   22:    (*lista)->lungime ++;
+        -:   23:
+       23:   24:}
+        -:   25:
+        -:   26:
+        -:   27:
+function validare_date called 1 returned 100% blocks executed 100%
+        1:   28:void validare_date(char erori[100], int *ok, char tip[12], char adresa[30], float pret, float suprafata){
+        -:   29:
+        -:   30:    /*
+        -:   31:        Functia verifica daca datele introduse de utilizator sunt corecte
+        -:   32:        daca nu, modifica parametrul ok si pune in sirul de erori cate un mesaj potrivit pentru fiecare eroare
+        -:   33:    */
+        -:   34:
+        1:   35:    if (strcmp(tip, "teren") != 0 && strcmp(tip, "casa") != 0 && strcmp(tip, "apartament") != 0)
+        1:   35-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   35-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   35-block  2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+        1:   36:        strcat(erori, "Tip invalid!\n"), *ok = 0;
+        1:   36-block  0
+        -:   37:
+        1:   38:    if (pret < 0)
+        1:   38-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   39:        strcat(erori, "Pretul trebuie sa fie mai mare decat 0!\n"), *ok = 0;
+        1:   39-block  0
+        -:   40:
+        1:   41:    if (suprafata < 0)
+        1:   41-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   42:        strcat(erori, "Suprafata trebuie sa fie mai mare decat 0!\n"), *ok = 0;
+        1:   42-block  0
+        -:   43:
+        1:   44:}
+        -:   45:
+        -:   46:
+        -:   47:
+        -:   48:
+function validare_index called 2 returned 100% blocks executed 100%
+        2:   49:void validare_index(my_list *lista, int index, char erori[100], int *ok){
+        -:   50:
+        -:   51:    /*
+        -:   52:        Functia verifica daca indexul dat de utilizator este valid pentru lista primita ca parametru
+        -:   53:        daca nu este modifica variabila ok si o face 0 si pune in sirul de erori un mesaj potrivit
+        -:   54:    */
+        -:   55:
+        2:   56:    if (index > lista->lungime || index < 1)
+        2:   56-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   56-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        2:   57:        strcat(erori, "Index out of range!\n"), *ok = 0;
+        2:   57-block  0
+        -:   58:
+        2:   59:}
+        -:   60:
+        -:   61:
+function actualizeaza called 1 returned 100% blocks executed 100%
+        1:   62:void actualizeaza(my_list *lista, int index, char *tip, char *adresa, float pret, float suprafata){
+        -:   63:
+        -:   64:    /*
+        -:   65:        Functia primeste ca parametru o lista de oferte si actualizeaza oferta de la pozitia indicata
+        -:   66:        de index cu noile valori primite ca parametru
+        -:   67:    */
+        -:   68:
+        1:   69:    index--;
+        -:   70:    oferta oferta;
+        1:   71:    oferta = lista->lista_oferte[index];
+        1:   72:    set_tip(&oferta, tip);
+        1:   72-block  0
+call    0 returned 1
+        1:   73:    set_adresa(&oferta, adresa);
+call    0 returned 1
+        1:   74:    set_pret(&oferta, pret);
+call    0 returned 1
+        1:   75:    set_suprafata(&oferta, suprafata);
+call    0 returned 1
+        1:   76:    lista->lista_oferte[index] = oferta;
+        -:   77:
+        1:   78:}
+        -:   79:
+        -:   80:
+        -:   81:
+        -:   82:
+function sterge called 1 returned 100% blocks executed 100%
+        1:   83:void sterge(my_list *lista, int index){
+        -:   84:
+        -:   85:    /*
+        -:   86:        Functia sterge elementul de la pozitia indicata de index din lista
+        -:   87:        prin cresterea indexului si mutarea elementelor de dupa el cu o pozitie la stanga
+        -:   88:    */
+        -:   89:
+        1:   90:    index--;
+        2:   91:    for (int i = index; i < lista->lungime-1; i++)
+        1:   91-block  0
+        2:   91-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:   92:        lista->lista_oferte[i] = lista->lista_oferte[i+1];
+        1:   92-block  0
+        1:   93:    lista->lungime--;
+        -:   94:
+        1:   95:}
+        -:   96:
+        -:   97:
+        -:   98:
+        -:   99:
+function swap called 6 returned 100% blocks executed 100%
+        6:  100:void swap(oferta *oferta1, oferta *oferta2){
+        -:  101:
+        -:  102:    /*
+        -:  103:        Functia interschimba doi parametri de tip oferta intre ei
+        -:  104:        este folosita pentru functia de sortare
+        -:  105:     */
+        -:  106:
+        -:  107:    oferta aux;
+        6:  108:    aux = *oferta1;
+        6:  109:    *oferta1 = *oferta2;
+        6:  110:    *oferta2 = aux;
+        -:  111:
+        6:  112:}
+        -:  113:
+        -:  114:
+        -:  115:
+function sortare_tip called 2 returned 100% blocks executed 100%
+        2:  116:void sortare_tip(my_list *lista, char crescator){
+        -:  117:
+        -:  118:    /*
+        -:  119:        Functia sorteaza lista primita ca parametru in functie de pret parametrul crescator sau descrescator
+        -:  120:        -modifica lista primita ca parametru astfel incat sa fie sortata corespunzator in functie de tip
+        -:  121:    */
+        -:  122:
+        -:  123:    int i, j;
+        -:  124:
+        4:  125:    for (i=0; i < lista->lungime-1; i++)
+        2:  125-block  0
+        2:  125-block  1
+        4:  125-block  2
+branch  0 taken 2
+branch  1 taken 2 (fallthrough)
+        4:  126:        for (j=i+1; j < lista->lungime; j++){
+        2:  126-block  0
+        2:  126-block  1
+        4:  126-block  2
+branch  0 taken 2
+branch  1 taken 2 (fallthrough)
+        -:  127:
+        2:  128:            if (crescator == '1'){
+        2:  128-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  129:                if (strcmp(get_tip(get_lista_index(lista,i)), get_tip(get_lista_index(lista,j))) > 0)
+        1:  129-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+        1:  130:                    swap(&lista->lista_oferte[i], &lista->lista_oferte[j]);
+        1:  130-block  0
+call    0 returned 1
+        -:  131:            }
+        -:  132:            else {
+        1:  133:                if (strcmp(get_tip(get_lista_index(lista,i)), get_tip(get_lista_index(lista,j))) < 0)
+        1:  133-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+        1:  134:                    swap(&lista->lista_oferte[i], &lista->lista_oferte[j]);
+        1:  134-block  0
+call    0 returned 1
+        -:  135:            }
+        -:  136:        }
+        2:  137:}
+        -:  138:
+        -:  139:
+function sortare_pret called 2 returned 100% blocks executed 100%
+        2:  140:void sortare_pret(my_list *lista, char crescator){
+        -:  141:
+        -:  142:    /*
+        -:  143:        Functia sorteaza lista primita ca parametru in functie de pret parametrul crescator sau descrescator
+        -:  144:        -modifica lista primita ca parametru astfel incat sa fie sortata corespunzator in functie de pret
+        -:  145:    */
+        -:  146:
+        -:  147:    int i, j;
+        -:  148:
+        4:  149:    for (i=0; i < lista->lungime-1; i++)
+        2:  149-block  0
+        2:  149-block  1
+        4:  149-block  2
+branch  0 taken 2
+branch  1 taken 2 (fallthrough)
+        4:  150:        for (j=i+1; j < lista->lungime; j++){
+        2:  150-block  0
+        2:  150-block  1
+        4:  150-block  2
+branch  0 taken 2
+branch  1 taken 2 (fallthrough)
+        -:  151:
+        2:  152:            if (crescator == '1'){
+        2:  152-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  153:                if (get_pret(get_lista_index(lista,i)) > get_pret(get_lista_index(lista,j)))
+        1:  153-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+        1:  154:                    swap(&lista->lista_oferte[i], &lista->lista_oferte[j]);
+        1:  154-block  0
+call    0 returned 1
+        -:  155:            }
+        -:  156:            else {
+        1:  157:                if (get_pret(get_lista_index(lista,i)) < get_pret(get_lista_index(lista,j)))
+        1:  157-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+        1:  158:                    swap(&lista->lista_oferte[i], &lista->lista_oferte[j]);
+        1:  158-block  0
+call    0 returned 1
+        -:  159:            }
+        -:  160:        }
+        2:  161:}
+        -:  162:
+        -:  163:
+function bool_key called 8 returned 100% blocks executed 100%
+        8:  164:bool bool_key(char key, oferta oferta1, oferta oferta2, bool crescator){
+        -:  165:
+        -:  166:    bool ok;
+        -:  167:
+        8:  168:    if (key == '1'){
+        8:  168-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+        -:  169:
+        4:  170:        if (get_pret(&oferta1) > get_pret(&oferta2))
+        4:  170-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 1 (fallthrough)
+branch  3 taken 3
+        1:  171:            ok = true;
+        1:  171-block  0
+        -:  172:        else
+        3:  173:            ok = false;
+        3:  173-block  0
+        -:  174:    }
+        -:  175:    else {
+        -:  176:
+        4:  177:        if(strcmp(get_tip(&oferta1), get_tip(&oferta2)) > 0)
+        4:  177-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 3 (fallthrough)
+branch  3 taken 1
+        3:  178:            ok = true;
+        3:  178-block  0
+        -:  179:        else
+        1:  180:            ok = false;
+        1:  180-block  0
+        -:  181:    }
+        -:  182:
+        8:  183:    if (crescator)
+        8:  183-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 4
+        4:  184:        return ok;
+        4:  184-block  0
+        4:  185:    return !ok;
+        4:  185-block  0
+        -:  186:
+        -:  187:}
+        -:  188:
+        -:  189:
+function sortare called 4 returned 100% blocks executed 100%
+        4:  190:void sortare(my_list *lista, bool crescator, char key){
+        -:  191:
+        -:  192:    /*
+        -:  193:        Functia sorteaza lista primita ca parametru in functie de key parametrul crescator sau descrescator
+        -:  194:        -modifica lista primita ca parametru astfel incat sa fie sortata corespunzator in functie de pret
+        -:  195:    */
+        -:  196:
+        -:  197:    int i, j;
+        -:  198:
+        8:  199:    for (i=0; i < lista->lungime-1; i++)
+        4:  199-block  0
+        4:  199-block  1
+        8:  199-block  2
+branch  0 taken 4
+branch  1 taken 4 (fallthrough)
+        8:  200:        for (j=i+1; j < lista->lungime; j++){
+        4:  200-block  0
+        4:  200-block  1
+        8:  200-block  2
+branch  0 taken 4
+branch  1 taken 4 (fallthrough)
+        4:  201:            if (bool_key(key, lista->lista_oferte[i], lista->lista_oferte[j], crescator))
+        4:  201-block  0
+call    0 returned 4
+branch  1 taken 2 (fallthrough)
+branch  2 taken 2
+        2:  202:                swap(&lista->lista_oferte[i], &lista->lista_oferte[j]);
+        2:  202-block  0
+call    0 returned 2
+        -:  203:        }
+        4:  204:}
+        -:  205:
+        -:  206:
+        -:  207:
+        -:  208:
+        -:  209:
+function filtrare_suprafata called 1 returned 100% blocks executed 100%
+        1:  210:void filtrare_suprafata(my_list *lista, float suprafata){
+        -:  211:
+        -:  212:    /*
+        -:  213:        Functia creeaza o copie a listei primite ca parametru pe care o filtreaza in functie de suprafata
+        -:  214:        -modifica lista primita ca parametru astfel incat sa ramana in ea doar elementele care indeplinesc consitia
+        -:  215:    */
+        -:  216:
+        -:  217:    my_list copie;
+        1:  218:    copie = creare_lista(&copie);
+        1:  218-block  0
+call    0 returned 1
+        -:  219:
+        3:  220:    for (int i=0; i < lista->lungime; i++)
+        2:  220-block  0
+        3:  220-block  1
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        2:  221:        if (get_suprafata(get_lista_index(lista,i)) >= suprafata){
+        2:  221-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  222:            copie.lista_oferte[copie.lungime] = lista->lista_oferte[i];
+        1:  223:            copie.lungime ++;
+        1:  223-block  0
+        -:  224:        }
+        -:  225:
+        1:  226:    lista->lungime = copie.lungime;
+        2:  227:    for (int i=0; i < lista->lungime; i++)
+        1:  227-block  0
+        2:  227-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  228:        lista->lista_oferte[i] = copie.lista_oferte[i];
+        1:  228-block  0
+        -:  229:
+        1:  230:    free_lista(&copie);
+        1:  230-block  0
+call    0 returned 1
+        -:  231:
+        1:  232:}
+        -:  233:
+        -:  234:
+function filtrare_tip called 1 returned 100% blocks executed 100%
+        1:  235:void filtrare_tip(my_list *lista, char *tip){
+        -:  236:
+        -:  237:    /*
+        -:  238:        Functia creeaza o copie a listei primite ca parametru pe care o filtreaza in functie de tip
+        -:  239:        -modifica lista primita ca parametru astfel incat sa ramana in ea doar elementele care indeplinesc consitia
+        -:  240:    */
+        -:  241:
+        -:  242:    my_list copie;
+        1:  243:    copie = creare_lista(&copie);
+        1:  243-block  0
+call    0 returned 1
+        -:  244:
+        3:  245:    for (int i=0; i < lista->lungime; i++)
+        2:  245-block  0
+        3:  245-block  1
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        2:  246:        if (strcmp(get_tip(get_lista_index(lista,i)), tip) == 0){
+        2:  246-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  247:            copie.lista_oferte[copie.lungime] = lista->lista_oferte[i];
+        1:  248:            copie.lungime ++;
+        1:  248-block  0
+        -:  249:        }
+        -:  250:
+        1:  251:    lista->lungime = copie.lungime;
+        2:  252:    for (int i=0; i < lista->lungime; i++)
+        1:  252-block  0
+        2:  252-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  253:        lista->lista_oferte[i] = copie.lista_oferte[i];
+        1:  253-block  0
+        -:  254:
+        1:  255:    free_lista(&copie);
+        1:  255-block  0
+call    0 returned 1
+        -:  256:
+        1:  257:}
+        -:  258:
+        -:  259:
+function filtrare_pret called 1 returned 100% blocks executed 100%
+        1:  260:void filtrare_pret(my_list *lista, float pret){
+        -:  261:
+        -:  262:    /*
+        -:  263:        Functia creeaza o copie a listei primite ca parametru pe care o filtreaza in functie de pret
+        -:  264:        -modifica lista primita ca parametru astfel incat sa ramana in ea doar elementele care indeplinesc consitia
+        -:  265:    */
+        -:  266:
+        -:  267:    my_list copie;
+        1:  268:    copie = creare_lista(&copie);
+        1:  268-block  0
+call    0 returned 1
+        -:  269:
+        3:  270:    for (int i=0; i < lista->lungime; i++)
+        2:  270-block  0
+        3:  270-block  1
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        2:  271:        if (get_pret(get_lista_index(lista,i)) <= pret){
+        2:  271-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  272:            copie.lista_oferte[copie.lungime] = lista->lista_oferte[i];
+        1:  273:            copie.lungime ++;
+        1:  273-block  0
+        -:  274:        }
+        -:  275:
+        1:  276:    lista->lungime = copie.lungime;
+        2:  277:    for (int i=0; i < lista->lungime; i++)
+        1:  277-block  0
+        2:  277-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  278:        lista->lista_oferte[i] = copie.lista_oferte[i];
+        1:  278-block  0
+        -:  279:
+        1:  280:    free_lista(&copie);
+        1:  280-block  0
+call    0 returned 1
+        -:  281:
+        1:  282:}
+        -:  283:
+function cmptip called 4 returned 100% blocks executed 100%
+        4:  284:int cmptip(oferta * m1, oferta * m2){
+        4:  285:    if (strcmp(m1->tip, m2->tip) > 0)
+        4:  285-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:  286:        return 1;
+        1:  286-block  0
+        -:  287:    else
+        3:  288:        return 0;
+        3:  288-block  0
+        -:  289:}
+        -:  290:
+function cmppret called 4 returned 100% blocks executed 100%
+        4:  291:int cmppret(oferta * m1, oferta *m2){
+        4:  292:    if(m1->pret == m2->pret)
+        4:  292-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:  293:        return 0;
+        1:  293-block  0
+        3:  294:    if(m1->pret > m2->pret)
+        3:  294-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:  295:        return 1;
+        1:  295-block  0
+        -:  296:    else
+        2:  297:        return 0;
+        2:  297-block  0
+        -:  298:}
+        -:  299:
+function sortpret called 2 returned 100% blocks executed 100%
+        2:  300:my_list sortpret(my_list *lista){
+        2:  301:    sort(lista, cmppret);
+        2:  301-block  0
+call    0 returned 2
+        2:  302:    return *lista;
+        -:  303:}
+        -:  304:
+function sorttip called 2 returned 100% blocks executed 100%
+        2:  305:my_list sorttip(my_list *lista){
+        2:  306:    sort(lista, cmptip);
+        2:  306-block  0
+call    0 returned 2
+        2:  307:    return *lista;
+        -:  308:}
+        -:  309:
+        -:  310:
+        -:  311:
+        -:  312:
+        -:  313:

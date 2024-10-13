@@ -1,0 +1,504 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/OOP_lab2/main.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\main.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\main.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "oferta.h"
+        -:    2:#include "service.h"
+        -:    3:#include "lista.h"
+        -:    4:#include "teste.h"
+        -:    5:#include "stdio.h"
+        -:    6:#define _CRTDBG_MAP_ALLOC
+        -:    7:#include <stdlib.h>
+        -:    8:#include <crtdbg.h>
+        -:    9:#include <stdbool.h>
+        -:   10:#include "customsort.h"
+        -:   11:
+        -:   12:
+        -:   13:
+function print_menu called 1 returned 100% blocks executed 100%
+        1:   14:void print_menu(){
+        -:   15:
+        1:   16:    printf("Alegeti optiunea:\n");
+        1:   16-block  0
+call    0 returned 1
+        1:   17:    printf("1. Adauga o oferta noua.\n");
+call    0 returned 1
+        1:   18:    printf("2. Actualizare oferte.\n");
+call    0 returned 1
+        1:   19:    printf("3. Sterge oferta.\n");
+call    0 returned 1
+        1:   20:    printf("4. Oferte ordonate.\n");
+call    0 returned 1
+        1:   21:    printf("5. Filtrare oferte.\n");
+call    0 returned 1
+        1:   22:    printf("6. Break.\n");
+call    0 returned 1
+        -:   23:
+        1:   24:}
+        -:   25:
+        -:   26:
+function afisare_lista_oferte called 0 returned 0% blocks executed 0%
+    #####:   27:void afisare_lista_oferte(my_list *lista){
+        -:   28:
+        -:   29:    oferta oferta;
+    #####:   30:    int index = lista->lungime;
+    #####:   31:    printf("\nLista de oferte este:\n");
+    %%%%%:   31-block  0
+call    0 never executed
+        -:   32:
+    #####:   33:    for (int i = 0; i < index; i++){
+    %%%%%:   33-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   34:        oferta = lista->lista_oferte[i];
+    #####:   35:        printf("\nTipul = %s\nAdresa = %s\nPretul = %f\nSuprafata = %f\n\n", get_tip(&oferta), get_adresa(&oferta), get_pret(&oferta), get_suprafata(&oferta));
+    %%%%%:   35-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+        -:   36:    }
+        -:   37:
+    #####:   38:}
+        -:   39:
+        -:   40:
+function add_oferta called 0 returned 0% blocks executed 0%
+    #####:   41:void add_oferta(my_list **lista){
+        -:   42:
+    #####:   43:    char *tip = (char*) malloc(sizeof(char) * 30);
+    #####:   44:    char *adresa = (char*) malloc(sizeof(char) * 30);
+        -:   45:    float pret, suprafata;
+        -:   46:
+    #####:   47:    printf("Introduceti datele ofertei:\n");
+    %%%%%:   47-block  0
+call    0 never executed
+    #####:   48:    printf("tip =");
+call    0 never executed
+    #####:   49:    scanf("%s", tip);
+call    0 never executed
+    #####:   50:    printf("adresa =");
+call    0 never executed
+    #####:   51:    scanf("%s", adresa);
+call    0 never executed
+    #####:   52:    printf("pret =");
+call    0 never executed
+    #####:   53:    scanf("%f", &pret);
+call    0 never executed
+    #####:   54:    printf("suprafata =");
+call    0 never executed
+    #####:   55:    scanf("%f", &suprafata);
+call    0 never executed
+        -:   56:
+        -:   57:    oferta oferta_noua;
+        -:   58:
+    #####:   59:    oferta_noua = creare_oferta(tip, adresa, pret, suprafata);
+call    0 never executed
+        -:   60:
+        -:   61:    char erori[100];
+    #####:   62:    int ok = 1;
+        -:   63:
+    #####:   64:    validare_date(erori, &ok, tip, adresa, pret, suprafata);
+call    0 never executed
+        -:   65:
+    #####:   66:    if (ok == 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   67:        printf("%s",erori);
+    %%%%%:   67-block  0
+call    0 never executed
+        -:   68:
+        -:   69:    else {
+    #####:   70:        adaugare_oferta(oferta_noua, lista);
+    %%%%%:   70-block  0
+call    0 never executed
+    #####:   71:        afisare_lista_oferte(*lista);
+call    0 never executed
+        -:   72:    }
+        -:   73:
+    #####:   74:    free(tip);
+    #####:   75:    free(adresa);
+        -:   76:
+    #####:   77:}
+        -:   78:
+        -:   79:
+function actualizare_oferta called 0 returned 0% blocks executed 0%
+    #####:   80:void actualizare_oferta(my_list *lista){
+        -:   81:
+        -:   82:    /*
+        -:   83:      Functia primeste un ponter la o lista de tipul my_list si schimba o oferta din ea cu datele citite
+        -:   84:     */
+        -:   85:
+        -:   86:    int index;
+    #####:   87:    char *tip = (char*) malloc(sizeof(char) * 30);
+    #####:   88:    char *adresa = (char*) malloc(sizeof(char) * 30);
+        -:   89:    float pret, suprafata;
+        -:   90:
+    #####:   91:    printf("Indexul ofertei de actualizat =");
+    %%%%%:   91-block  0
+call    0 never executed
+    #####:   92:    scanf("%d", &index);
+call    0 never executed
+    #####:   93:    printf("Introduceti datele noi ale ofertei:\n");
+call    0 never executed
+    #####:   94:    printf("tip nou =");
+call    0 never executed
+    #####:   95:    scanf("%s", tip);
+call    0 never executed
+    #####:   96:    printf("adresa noua =");
+call    0 never executed
+    #####:   97:    scanf("%s", adresa);
+call    0 never executed
+    #####:   98:    printf("pret nou =");
+call    0 never executed
+    #####:   99:    scanf("%f", &pret);
+call    0 never executed
+    #####:  100:    printf("suprafata noua =");
+call    0 never executed
+    #####:  101:    scanf("%f", &suprafata);
+call    0 never executed
+        -:  102:
+        -:  103:    char erori[200];
+    #####:  104:    int ok = 1;
+        -:  105:
+    #####:  106:    validare_index(lista, index, erori, &ok);
+call    0 never executed
+    #####:  107:    validare_date(erori, &ok, tip, adresa, pret, suprafata);
+call    0 never executed
+        -:  108:
+    #####:  109:    if (ok == 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  110:        printf("%s",erori);
+    %%%%%:  110-block  0
+call    0 never executed
+        -:  111:
+        -:  112:    else {
+    #####:  113:        actualizeaza(lista, index, tip, adresa, pret, suprafata);
+    %%%%%:  113-block  0
+call    0 never executed
+    #####:  114:        afisare_lista_oferte(lista);
+call    0 never executed
+        -:  115:    }
+        -:  116:
+    #####:  117:    free(tip);
+    #####:  118:    free(adresa);
+        -:  119:
+    #####:  120:}
+        -:  121:
+        -:  122:
+        -:  123:
+function stergere_oferta called 0 returned 0% blocks executed 0%
+    #####:  124:void stergere_oferta(my_list *lista){
+        -:  125:
+        -:  126:    /*
+        -:  127:      Functia primeste un pointer la o lista de tipul my_list si sterge din ea oferta de la pozitia citita
+        -:  128:     */
+        -:  129:
+        -:  130:    int index;
+    #####:  131:    printf("Indexul ofertei de sters =");
+    %%%%%:  131-block  0
+call    0 never executed
+    #####:  132:    scanf("%d", &index);
+call    0 never executed
+        -:  133:
+        -:  134:    char erori[100];
+    #####:  135:    int ok = 1;
+    #####:  136:    validare_index(lista, index, erori, &ok);
+call    0 never executed
+        -:  137:
+    #####:  138:    if (ok == 1) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  139:
+    #####:  140:        sterge(lista, index);
+    %%%%%:  140-block  0
+call    0 never executed
+    #####:  141:        if (lista->lungime != 0)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  142:            afisare_lista_oferte(lista);
+    %%%%%:  142-block  0
+call    0 never executed
+        -:  143:        else
+    #####:  144:            printf("Lista este vida.\n");
+    %%%%%:  144-block  0
+call    0 never executed
+        -:  145:    }
+        -:  146:    else
+    #####:  147:        printf("%s", erori);
+    %%%%%:  147-block  0
+call    0 never executed
+        -:  148:
+    #####:  149:}
+        -:  150:
+        -:  151:
+        -:  152:
+function sortare_pret_tip called 0 returned 0% blocks executed 0%
+    #####:  153:void sortare_pret_tip(my_list *lista){
+        -:  154:
+        -:  155:    /*
+        -:  156:        Functia primeste un pointer la o lista de oferte si ii face o copie pe care o sorteaza crescator dupa pret su tip
+        -:  157:        pre: lista trebuie sa fie de tipul my_list
+        -:  158:        post: lista initiala ramane neschimbata, si este afisata copia sortata
+        -:  159:    */
+        -:  160:
+        -:  161:    int key;
+        -:  162:    my_list copie;
+        -:  163:
+    #####:  164:    copie.lungime = lista->lungime;
+    #####:  165:    copie.dimensiune = lista->dimensiune;
+    #####:  166:    copie.lista_oferte = (oferta*)malloc(sizeof(oferta) * copie.dimensiune);
+        -:  167:
+    #####:  168:    for (int i=0; i < lista->lungime; i++)
+    %%%%%:  168-block  0
+    %%%%%:  168-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  169:        copie.lista_oferte[i] = lista->lista_oferte[i];
+    %%%%%:  169-block  0
+        -:  170:
+        -:  171:
+    #####:  172:    printf("Sortare dupa:\n1.Pret\n2.Tip\n");
+    %%%%%:  172-block  0
+call    0 never executed
+    #####:  173:    scanf(" %d", &key);
+call    0 never executed
+    #####:  174:    if (key == 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  175:        copie = sortpret(&copie);
+    %%%%%:  175-block  0
+call    0 never executed
+    #####:  176:    else if (key == 2)
+    %%%%%:  176-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  177:        copie = sorttip(&copie);
+    %%%%%:  177-block  0
+call    0 never executed
+        -:  178:    else
+    #####:  179:        printf("Optiune invalida!");
+    %%%%%:  179-block  0
+call    0 never executed
+        -:  180:
+    #####:  181:    afisare_lista_oferte(&copie);
+    %%%%%:  181-block  0
+call    0 never executed
+        -:  182:
+        -:  183:
+    #####:  184:    free(copie.lista_oferte);
+        -:  185:
+    #####:  186:}
+        -:  187:
+        -:  188:
+        -:  189:
+function filtrare called 0 returned 0% blocks executed 0%
+    #####:  190:void filtrare(my_list *lista){
+        -:  191:
+        -:  192:    /*
+        -:  193:      Functia primeste lista si ii face o copie pe care o filtreaza corespuzator si dupa o afiseaza
+        -:  194:     */
+        -:  195:
+        -:  196:    char criteriu;
+        -:  197:    my_list copie;
+        -:  198:
+    #####:  199:    copie.lungime = lista->lungime;
+    #####:  200:    copie.dimensiune = lista->dimensiune;
+    #####:  201:    copie.lista_oferte = (oferta*)malloc(sizeof(oferta) * copie.dimensiune);
+        -:  202:
+    #####:  203:    for (int i=0; i < lista->lungime; i++)
+    %%%%%:  203-block  0
+    %%%%%:  203-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  204:        copie.lista_oferte[i] = lista->lista_oferte[i];
+    %%%%%:  204-block  0
+        -:  205:
+    #####:  206:    printf("Filtrare dupa:\n1.Suprafata\n2.Tip\n3.Pret\n");
+    %%%%%:  206-block  0
+call    0 never executed
+    #####:  207:    scanf(" %c", &criteriu);
+call    0 never executed
+        -:  208:
+    #####:  209:    if (criteriu == '1') {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  210:
+        -:  211:        float suprafata;
+    #####:  212:        printf("Afisare oferte cu suprafata mai mare decat:");
+    %%%%%:  212-block  0
+call    0 never executed
+    #####:  213:        scanf("%f", &suprafata);
+call    0 never executed
+    #####:  214:        filtrare_suprafata(&copie, suprafata);
+call    0 never executed
+        -:  215:
+        -:  216:    }
+    #####:  217:    else if (criteriu == '2') {
+    %%%%%:  217-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  218:
+    #####:  219:        char *tip = (char*) malloc(sizeof(char) * 30);
+    #####:  220:        printf("Afisare oferte cu tipul:");
+    %%%%%:  220-block  0
+call    0 never executed
+    #####:  221:        scanf("%s", tip);
+call    0 never executed
+    #####:  222:        filtrare_tip(&copie, tip);
+call    0 never executed
+    #####:  223:        free(tip);
+        -:  224:
+        -:  225:    }
+    #####:  226:    else if (criteriu == '3') {
+    %%%%%:  226-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  227:
+        -:  228:        float pret;
+    #####:  229:        printf("Afisare oferte cu pretul mai mic decat:");
+    %%%%%:  229-block  0
+call    0 never executed
+    #####:  230:        scanf("%f", &pret);
+call    0 never executed
+    #####:  231:        filtrare_pret(&copie, pret);
+call    0 never executed
+        -:  232:
+        -:  233:    }
+        -:  234:    else
+    #####:  235:        printf("Optiune invalida!\n");
+    %%%%%:  235-block  0
+call    0 never executed
+        -:  236:
+    #####:  237:    if (criteriu == '1' || criteriu == '2' || criteriu == '3')
+    %%%%%:  237-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  237-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:  237-block  2
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    #####:  238:        afisare_lista_oferte(&copie);
+    %%%%%:  238-block  0
+call    0 never executed
+        -:  239:
+    #####:  240:    free(copie.lista_oferte);
+        -:  241:
+    #####:  242:}
+        -:  243:
+        -:  244:
+        -:  245:
+        -:  246:
+        -:  247:
+function run called 1 returned 100% blocks executed 64%
+        1:  248:void run(){
+        -:  249:
+        -:  250:    int optiune;
+        -:  251:
+        1:  252:    my_list* lista = (my_list*)malloc(sizeof(my_list));
+        1:  253:    *lista = creare_lista(lista);
+        1:  253-block  0
+call    0 returned 1
+        -:  254:
+        -:  255:    while (1){
+        1:  256:        print_menu();
+        1:  256-block  0
+call    0 returned 1
+        1:  257:        printf(">");
+call    0 returned 1
+        1:  258:        scanf("%d", &optiune);
+call    0 returned 1
+        1:  259:        if (optiune == 1)
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  260:            add_oferta(&lista);
+    %%%%%:  260-block  0
+call    0 never executed
+        1:  261:        else if (optiune == 2)
+        1:  261-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  262:            actualizare_oferta(lista);
+    %%%%%:  262-block  0
+call    0 never executed
+        1:  263:        else if (optiune == 3)
+        1:  263-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  264:            stergere_oferta(lista);
+    %%%%%:  264-block  0
+call    0 never executed
+        1:  265:        else if (optiune == 4)
+        1:  265-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  266:            sortare_pret_tip(lista);
+    %%%%%:  266-block  0
+call    0 never executed
+        1:  267:        else if (optiune == 5)
+        1:  267-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  268:            filtrare(lista);
+    %%%%%:  268-block  0
+call    0 never executed
+        1:  269:        else if (optiune == 6) {
+        1:  269-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+       1*:  270:            for (int i=0; i< lista->lungime; i++)
+        1:  270-block  0
+        1:  270-block  1
+branch  0 taken 0
+branch  1 taken 1 (fallthrough)
+    #####:  271:                free(lista->lista_oferte[i].tip), free(lista->lista_oferte[i].adresa);
+    %%%%%:  271-block  0
+        1:  272:            free(lista->lista_oferte);
+        1:  273:            free(lista);
+        -:  274:            _CrtDumpMemoryLeaks();
+        1:  275:            break;
+        1:  275-block  0
+        -:  276:        }
+        -:  277:        else
+    #####:  278:            printf("Optiune invalida!\n");
+    %%%%%:  278-block  0
+call    0 never executed
+        -:  279:    }
+        -:  280:
+        1:  281:}
+        -:  282:
+        -:  283:
+        -:  284:
+        -:  285:
+        -:  286:
+        -:  287:
+function main called 1 returned 100% blocks executed 100%
+        1:  288:int main(){
+        -:  289:
+        -:  290:
+        1:  291:    testat_all();
+        1:  291-block  0
+call    0 returned 1
+        -:  292:    _CrtDumpMemoryLeaks();
+        -:  293:
+        -:  294:    //my_list lista;
+        -:  295:    //lista = creare_lista(&lista);
+        -:  296:
+        1:  297:    run();
+call    0 returned 1
+        -:  298:    _CrtDumpMemoryLeaks();
+        -:  299:
+        1:  300:    return 0;
+        -:  301:}
+        -:  302:
+        -:  303:
+        -:  304:
+        -:  305:
+        -:  306:
+        -:  307:
+        -:  308:
+        -:  309:
+        -:  310:

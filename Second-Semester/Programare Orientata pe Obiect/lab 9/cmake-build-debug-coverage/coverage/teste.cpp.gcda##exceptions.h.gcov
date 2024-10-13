@@ -1,0 +1,76 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/exceptions.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\teste.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB9_EXCEPTIONS_H
+        -:    2:#define LAB9_EXCEPTIONS_H
+        -:    3:#include <string>
+        -:    4:
+        -:    5:class Exceptions{
+        -:    6:
+        -:    7:protected:
+        -:    8:
+        -:    9:    std::string message;
+        -:   10:
+        -:   11:public:
+        -:   12:
+function _ZNK10Exceptions11get_messageB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   13:    [[nodiscard]] std::string get_message() const { return message; }
+    %%%%%:   13-block  0
+call    0 never executed
+        -:   14:
+        -:   15:};
+        -:   16:
+        -:   17:
+        -:   18:class IndexInvalid : public Exceptions{
+        -:   19:
+        -:   20:public:
+        -:   21:
+function _ZN12IndexInvalidC1Ev called 1 returned 100% blocks executed 100%
+        1:   22:    IndexInvalid() noexcept { message = "Pozitie invalida!";}
+        1:   22-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   23:
+        -:   24:};
+        -:   25:
+        -:   26:
+        -:   27:class CarteExistenta : public Exceptions{
+        -:   28:
+        -:   29:public:
+        -:   30:
+function _ZN14CarteExistentaC1Ev called 0 returned 0% blocks executed 0%
+    #####:   31:    CarteExistenta() noexcept {message = "Cartea exista deja!";}
+    %%%%%:   31-block  0
+call    0 never executed
+call    1 never executed
+        -:   32:
+        -:   33:};
+        -:   34:
+        -:   35:
+        -:   36:class Dateinvalide : public Exceptions{
+        -:   37:
+        -:   38:public:
+        -:   39:
+function _ZN12DateinvalideC1Ev called 0 returned 0% blocks executed 0%
+    #####:   40:    Dateinvalide() noexcept {message = "Date invalide!";}
+    %%%%%:   40-block  0
+call    0 never executed
+call    1 never executed
+        -:   41:
+        -:   42:};
+        -:   43:
+        -:   44:
+        -:   45:class CarteaNuExista : public Exceptions{
+        -:   46:
+        -:   47:public:
+        -:   48:
+function _ZN14CarteaNuExistaC1Ev called 0 returned 0% blocks executed 0%
+    #####:   49:    CarteaNuExista() noexcept {message = "Cartea nu exista!";}
+    %%%%%:   49-block  0
+call    0 never executed
+call    1 never executed
+        -:   50:
+        -:   51:};
+        -:   52:
+        -:   53:#endif //LAB9_EXCEPTIONS_H

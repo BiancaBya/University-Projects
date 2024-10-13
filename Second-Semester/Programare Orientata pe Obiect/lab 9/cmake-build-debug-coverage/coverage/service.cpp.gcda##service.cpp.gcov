@@ -1,0 +1,881 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/service.cpp
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "service.h"
+        -:    2:#include "validator.h"
+        -:    3:#include <cstring>
+        -:    4:#include <random>
+        -:    5:#include <fstream>
+        -:    6:#include <algorithm>
+        -:    7:#include <map>
+        -:    8:
+        -:    9:
+function _ZN12CarteService8adaugareERK5Carte called 28 returned 82% blocks executed 91%
+       28:   10:void CarteService::adaugare(const Carte& carte) {
+        -:   11:
+       40:   12:    Validator::validare_date(carte.get_titlu(), carte.get_autor(), carte.get_gen(), carte.get_an());
+       28:   12-block  0
+call    0 returned 28
+call    1 returned 28
+branch  2 taken 28 (fallthrough)
+branch  3 taken 0 (throw)
+       28:   12-block  1
+call    4 returned 28
+branch  5 taken 28 (fallthrough)
+branch  6 taken 0 (throw)
+       28:   12-block  2
+call    7 returned 28
+branch  8 taken 28 (fallthrough)
+branch  9 taken 0 (throw)
+       28:   12-block  3
+call   10 returned 28
+branch 11 taken 24 (fallthrough)
+branch 12 taken 4 (throw)
+       24:   12-block  4
+call   13 returned 24
+call   14 returned 24
+call   15 returned 24
+        4:   12-block  5
+call   16 returned 4
+        4:   12-block  6
+        4:   12-block  7
+call   17 returned 4
+        4:   12-block  8
+        4:   12-block  9
+call   18 returned 4
+        4:   12-block 10
+call   19 returned 0
+       28:   13:    Validator::validare_carte(carte.get_titlu(), carte.get_autor(), carte.get_gen(), carte.get_an(), get_all());
+call    0 returned 24
+branch  1 taken 24 (fallthrough)
+branch  2 taken 0 (throw)
+       24:   13-block  0
+call    3 returned 24
+branch  4 taken 24 (fallthrough)
+branch  5 taken 0 (throw)
+       24:   13-block  1
+call    6 returned 24
+branch  7 taken 24 (fallthrough)
+branch  8 taken 0 (throw)
+       24:   13-block  2
+call    9 returned 24
+branch 10 taken 24 (fallthrough)
+branch 11 taken 0 (throw)
+       24:   13-block  3
+call   12 returned 24
+branch 13 taken 24 (fallthrough)
+branch 14 taken 0 (throw)
+       24:   13-block  4
+call   15 returned 24
+branch 16 taken 24 (fallthrough)
+branch 17 taken 0 (throw)
+       24:   13-block  5
+call   18 returned 24
+branch 19 taken 23 (fallthrough)
+branch 20 taken 1 (throw)
+       23:   13-block  6
+call   21 returned 23
+call   22 returned 23
+call   23 returned 23
+call   24 returned 23
+        1:   13-block  7
+call   25 returned 1
+        1:   13-block  8
+        1:   13-block  9
+call   26 returned 1
+        1:   13-block 10
+        1:   13-block 11
+call   27 returned 1
+        1:   13-block 12
+        1:   13-block 13
+call   28 returned 1
+        1:   13-block 14
+call   29 returned 0
+       23:   14:    lista_service.add_carte(carte);
+call    0 returned 23
+        -:   15:
+       23:   16:    undo.push_back(make_unique<AdaugaUndo>(lista_service, carte));
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   16-block  0
+call    3 returned 23
+call    4 returned 23
+branch  5 taken 23 (fallthrough)
+branch  6 taken 0 (throw)
+       23:   16-block  1
+call    7 returned 23
+call    8 returned 23
+    $$$$$:   16-block  2
+call    9 never executed
+    $$$$$:   16-block  3
+call   10 never executed
+    $$$$$:   16-block  4
+        -:   17:
+       23:   18:}
+        -:   19:
+function _ZN12CarteService10modificareERK5CarteS2_ called 4 returned 50% blocks executed 78%
+        4:   20:void CarteService::modificare(const Carte& carte_stearsa, const Carte& carte_noua) {
+        -:   21:
+        7:   22:    Validator::validare_date(carte_noua.get_titlu(), carte_noua.get_autor(), carte_noua.get_gen(), carte_noua.get_an());
+        4:   22-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   22-block  1
+call    4 returned 4
+branch  5 taken 4 (fallthrough)
+branch  6 taken 0 (throw)
+        4:   22-block  2
+call    7 returned 4
+branch  8 taken 4 (fallthrough)
+branch  9 taken 0 (throw)
+        4:   22-block  3
+call   10 returned 4
+branch 11 taken 3 (fallthrough)
+branch 12 taken 1 (throw)
+        3:   22-block  4
+call   13 returned 3
+call   14 returned 3
+call   15 returned 3
+        1:   22-block  5
+call   16 returned 1
+        1:   22-block  6
+        1:   22-block  7
+call   17 returned 1
+        1:   22-block  8
+        1:   22-block  9
+call   18 returned 1
+        1:   22-block 10
+call   19 returned 0
+        7:   23:    Validator::validare_carte_nu_exista(carte_stearsa.get_titlu(), carte_stearsa.get_autor(), carte_stearsa.get_gen(), carte_stearsa.get_an(), get_all());
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   23-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   23-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   23-block  2
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:   23-block  3
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:   23-block  4
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:   23-block  5
+call   18 returned 3
+branch 19 taken 2 (fallthrough)
+branch 20 taken 1 (throw)
+        2:   23-block  6
+call   21 returned 2
+call   22 returned 2
+call   23 returned 2
+call   24 returned 2
+        1:   23-block  7
+call   25 returned 1
+        1:   23-block  8
+        1:   23-block  9
+call   26 returned 1
+        1:   23-block 10
+        1:   23-block 11
+call   27 returned 1
+        1:   23-block 12
+        1:   23-block 13
+call   28 returned 1
+        1:   23-block 14
+call   29 returned 0
+        2:   24:    Validator::validare_carte(carte_noua.get_titlu(), carte_noua.get_autor(), carte_noua.get_gen(), carte_noua.get_an(), get_all());
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   24-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   24-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   24-block  2
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   24-block  3
+call   12 returned 2
+branch 13 taken 2 (fallthrough)
+branch 14 taken 0 (throw)
+        2:   24-block  4
+call   15 returned 2
+branch 16 taken 2 (fallthrough)
+branch 17 taken 0 (throw)
+        2:   24-block  5
+call   18 returned 2
+branch 19 taken 2 (fallthrough)
+branch 20 taken 0 (throw)
+        2:   24-block  6
+call   21 returned 2
+call   22 returned 2
+call   23 returned 2
+call   24 returned 2
+    $$$$$:   24-block  7
+call   25 never executed
+    $$$$$:   24-block  8
+    $$$$$:   24-block  9
+call   26 never executed
+    $$$$$:   24-block 10
+    $$$$$:   24-block 11
+call   27 never executed
+    $$$$$:   24-block 12
+    $$$$$:   24-block 13
+call   28 never executed
+    $$$$$:   24-block 14
+call   29 never executed
+        -:   25:
+        2:   26:    lista_service.modificare_carte(carte_stearsa, carte_noua);
+call    0 returned 2
+        -:   27:
+        2:   28:    undo.push_back(make_unique<ModificareUndo>(lista_service, carte_stearsa, carte_noua));
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   28-block  0
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   28-block  1
+call    7 returned 2
+call    8 returned 2
+    $$$$$:   28-block  2
+call    9 never executed
+    $$$$$:   28-block  3
+call   10 never executed
+    $$$$$:   28-block  4
+        -:   29:
+        2:   30:}
+        -:   31:
+function _ZN12CarteService8stergereERK5Carte called 2 returned 100% blocks executed 53%
+        2:   32:void CarteService::stergere(const Carte& carte) {
+        -:   33:
+        2:   34:    Validator::validare_carte_nu_exista(carte.get_titlu(), carte.get_autor(), carte.get_gen(), carte.get_an(), get_all());
+        2:   34-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   34-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   34-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   34-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   34-block  4
+call   12 returned 2
+branch 13 taken 2 (fallthrough)
+branch 14 taken 0 (throw)
+        2:   34-block  5
+call   15 returned 2
+branch 16 taken 2 (fallthrough)
+branch 17 taken 0 (throw)
+        2:   34-block  6
+call   18 returned 2
+branch 19 taken 2 (fallthrough)
+branch 20 taken 0 (throw)
+        2:   34-block  7
+call   21 returned 2
+call   22 returned 2
+call   23 returned 2
+call   24 returned 2
+    $$$$$:   34-block  8
+call   25 never executed
+    $$$$$:   34-block  9
+    $$$$$:   34-block 10
+call   26 never executed
+    $$$$$:   34-block 11
+    $$$$$:   34-block 12
+call   27 never executed
+    $$$$$:   34-block 13
+    $$$$$:   34-block 14
+call   28 never executed
+    $$$$$:   34-block 15
+call   29 never executed
+        2:   35:    lista_service.sterge_carte(carte);
+call    0 returned 2
+        -:   36:
+        2:   37:    undo.push_back(make_unique<StergereUndo>(lista_service, carte));
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   37-block  0
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   37-block  1
+call    7 returned 2
+call    8 returned 2
+    $$$$$:   37-block  2
+call    9 never executed
+    $$$$$:   37-block  3
+call   10 never executed
+    $$$$$:   37-block  4
+        -:   38:
+        2:   39:}
+        -:   40:
+        -:   41:
+function _ZNK12CarteService8get_lungEv called 5 returned 100% blocks executed 100%
+        5:   42:int CarteService::get_lung() const{
+        -:   43:
+        5:   44:    return lista_service.get_lungime();
+        5:   44-block  0
+call    0 returned 5
+        -:   45:
+        -:   46:}
+        -:   47:
+        -:   48:
+function _ZNK12CarteService12gasire_carteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 1 returned 100% blocks executed 100%
+        1:   49:const Carte* CarteService::gasire_carte(const string& titlu, const string& autor, const string& gen, int an) const{
+        -:   50:
+        1:   51:    return lista_service.find_carte(titlu, autor, gen, an);
+        1:   51-block  0
+call    0 returned 1
+        -:   52:
+        -:   53:}
+        -:   54:
+        -:   55:
+        -:   56:
+function _ZNK12CarteService14filtrare_titluERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERSt6vectorI5CarteSaIS9_EERi called 1 returned 100% blocks executed 86%
+        1:   57:void CarteService::filtrare_titlu(const string& titlu, vector<Carte>& copie, int& lungime) const{
+        -:   58:
+        1:   59:    const vector<Carte>& elemente = lista_service.get_all();
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   60:    copie.resize(elemente.size());
+        1:   60-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   61:
+function _ZZNK12CarteService14filtrare_titluERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERSt6vectorI5CarteSaIS9_EERiENKUlRKS9_E_clESF_ called 2 returned 100% blocks executed 100%
+        1:   62:    auto it = std::copy_if(elemente.begin(), elemente.end(), copie.begin(),[titlu](const Carte& carte){
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   62-block  1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   62-block  2
+call    9 returned 1
+    $$$$$:   62-block  3
+call   10 never executed
+    $$$$$:   62-block  4
+        -:   63:
+        2:   64:        return (carte.get_titlu() == titlu);
+        2:   64-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   64-block  1
+call    3 returned 2
+call    4 returned 2
+        2:   64-block  2
+        -:   65:
+        -:   66:    });
+        -:   67:
+        1:   68:    lungime = std::distance(copie.begin(),it);
+call    0 returned 1
+        1:   69:    copie.resize(lungime); // ca sa aiba lungimea reala
+        1:   69-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   70:
+        1:   71:}
+        1:   71-block  0
+        -:   72:
+        -:   73:
+function _ZNK12CarteService11filtrare_anEiRSt6vectorI5CarteSaIS1_EERi called 1 returned 100% blocks executed 100%
+        1:   74:void CarteService::filtrare_an(int an, vector<Carte>& copie, int& lungime) const{
+        -:   75:
+        1:   76:    const vector<Carte>& elemente = lista_service.get_all();
+        1:   76-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77:    copie.resize(elemente.size());
+        1:   77-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        -:   78:
+function _ZZNK12CarteService11filtrare_anEiRSt6vectorI5CarteSaIS1_EERiENKUlRKS1_E_clES7_ called 2 returned 100% blocks executed 100%
+        1:   79:    auto it = std::copy_if(elemente.begin(), elemente.end(), copie.begin(),[an](const Carte& carte){
+        1:   79-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   80:
+        2:   81:        return (carte.get_an() == an);
+        2:   81-block  0
+call    0 returned 2
+        -:   82:
+        -:   83:    });
+        -:   84:
+        1:   85:    lungime = std::distance(copie.begin(),it);
+        1:   85-block  0
+call    0 returned 1
+        1:   86:    copie.resize(lungime); // ca sa aiba lungimea reala
+        1:   86-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   87:
+        1:   88:}
+        1:   88-block  0
+        -:   89:
+        -:   90:
+        -:   91:
+function _ZN12CarteService9cmp_titluERK5CarteS2_ called 2 returned 100% blocks executed 73%
+        2:   92:int CarteService::cmp_titlu(const Carte& x, const Carte& y) {
+        -:   93:
+        2:   94:    return x.get_titlu() <= y.get_titlu();
+        2:   94-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   94-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   94-block  2
+call    7 returned 2
+call    8 returned 2
+        2:   94-block  3
+call    9 returned 2
+call   10 returned 2
+        2:   94-block  4
+    $$$$$:   94-block  5
+    $$$$$:   94-block  6
+call   11 never executed
+    $$$$$:   94-block  7
+        -:   95:
+        -:   96:}
+        -:   97:
+function _ZN12CarteService9cmp_autorERK5CarteS2_ called 1 returned 100% blocks executed 73%
+        1:   98:int CarteService::cmp_autor(const Carte& x, const Carte& y) {
+        -:   99:
+        1:  100:    return x.get_autor() <= y.get_autor();
+        1:  100-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  100-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  100-block  2
+call    7 returned 1
+call    8 returned 1
+        1:  100-block  3
+call    9 returned 1
+call   10 returned 1
+        1:  100-block  4
+    $$$$$:  100-block  5
+    $$$$$:  100-block  6
+call   11 never executed
+    $$$$$:  100-block  7
+        -:  101:
+        -:  102:}
+        -:  103:
+function _ZN12CarteService7cmp_genERK5CarteS2_ called 2 returned 100% blocks executed 73%
+        2:  104:int CarteService::cmp_gen(const Carte& x, const Carte& y) {
+        -:  105:
+        2:  106:    return x.get_gen() < y.get_gen();
+        2:  106-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  106-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:  106-block  2
+call    7 returned 2
+call    8 returned 2
+        2:  106-block  3
+call    9 returned 2
+call   10 returned 2
+        2:  106-block  4
+    $$$$$:  106-block  5
+    $$$$$:  106-block  6
+call   11 never executed
+    $$$$$:  106-block  7
+        -:  107:
+        -:  108:}
+        -:  109:
+function _ZN12CarteService6cmp_anERK5CarteS2_ called 2 returned 100% blocks executed 100%
+        2:  110:int CarteService::cmp_an(const Carte& x, const Carte& y) {
+        -:  111:
+        2:  112:    if (x.get_an() == y.get_an())
+        2:  112-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  113:        return cmp_gen(x,y);
+        1:  113-block  0
+call    0 returned 1
+        -:  114:
+        1:  115:    return x.get_an() < y.get_an();
+        1:  115-block  0
+call    0 returned 1
+call    1 returned 1
+        -:  116:}
+        -:  117:
+        -:  118:
+function _ZNK12CarteService7sortareEPFiRK5CarteS2_ERSt6vectorIS0_SaIS0_EERi called 1 returned 100% blocks executed 100%
+        1:  119:void CarteService::sortare(CompareFct cmpfct, vector<Carte>& copie, int& lungime) const{
+        -:  120:
+        1:  121:    const vector<Carte>& elemente = lista_service.get_all();
+        1:  121-block  0
+call    0 returned 1
+        -:  122:
+        3:  123:    for (const auto& carte : elemente){
+call    0 returned 1
+call    1 returned 1
+        2:  123-block  0
+call    2 returned 2
+        3:  123-block  1
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+        2:  124:        copie.push_back(carte);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  125:        lungime++;
+        2:  125-block  0
+call    0 returned 2
+        -:  126:    }
+        -:  127:
+        1:  128:    std::sort(copie.begin(),copie.end(),cmpfct);
+        1:  128-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  129:}
+        -:  130:
+        -:  131:
+function _ZN12CarteService16find_carte_titluERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 57%
+        2:  132:Carte CarteService::find_carte_titlu(const string& titlu){
+        -:  133:
+        2:  134:    const vector<Carte> carti = lista_service.get_all();
+        2:  134-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  134-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  135:
+function _ZZN12CarteService16find_carte_titluERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK5CarteE_clESA_ called 4 returned 100% blocks executed 100%
+        2:  136:    auto it = std::find_if(carti.begin(), carti.end(),[titlu](const Carte& carte){
+        2:  136-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  136-block  1
+call    3 returned 2
+call    4 returned 2
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:  136-block  2
+call    8 returned 2
+    $$$$$:  136-block  3
+call    9 never executed
+    $$$$$:  136-block  4
+        -:  137:
+        4:  138:        return titlu == carte.get_titlu();
+        4:  138-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  138-block  1
+call    3 returned 4
+call    4 returned 4
+        4:  138-block  2
+        -:  139:
+        -:  140:    });
+        -:  141:
+        2:  142:    if (it != carti.end()) {
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  143:        Carte carte = *it;
+        1:  143-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  144:        return carte;
+        1:  144-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  145:    }
+        1:  145-block  0
+call    0 returned 1
+    $$$$$:  145-block  1
+call    1 never executed
+        -:  146:
+        6:  147:    Carte carte = Carte(" "," "," ",0);
+        1:  147-block  0
+        1:  147-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  147-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  147-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  147-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  147-block  5
+call   12 returned 1
+        1:  147-block  6
+call   13 returned 1
+        1:  147-block  7
+call   14 returned 1
+    $$$$$:  147-block  8
+call   15 never executed
+    $$$$$:  147-block  9
+    $$$$$:  147-block 10
+    $$$$$:  147-block 11
+call   16 never executed
+    $$$$$:  147-block 12
+    $$$$$:  147-block 13
+    $$$$$:  147-block 14
+call   17 never executed
+    $$$$$:  147-block 15
+    $$$$$:  147-block 16
+    $$$$$:  147-block 17
+        1:  148:    return carte;
+        1:  148-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  149:
+        2:  150:}
+        1:  150-block  0
+call    0 returned 1
+        2:  150-block  1
+call    1 returned 2
+    $$$$$:  150-block  2
+call    2 never executed
+    $$$$$:  150-block  3
+call    3 never executed
+        -:  151:
+        -:  152:
+        -:  153:
+function _ZNK12CarteService6reportB5cxx11Ev called 1 returned 100% blocks executed 58%
+        1:  154:map <string, Autorcount> CarteService::report() const{
+        -:  155:
+        1:  156:    map <string, Autorcount> rep;
+        1:  156-block  0
+call    0 returned 1
+        -:  157:
+        4:  158:    for (auto& carte : lista_service.get_all()){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  158-block  0
+call    3 returned 1
+call    4 returned 1
+        3:  158-block  1
+call    5 returned 3
+        3:  158-block  2
+call    6 returned 3
+        4:  158-block  3
+call    7 returned 4
+branch  8 taken 3
+branch  9 taken 1 (fallthrough)
+        -:  159:
+        3:  160:        auto it = rep.find(carte.get_autor());
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  160-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  160-block  1
+call    6 returned 3
+    $$$$$:  160-block  2
+call    7 never executed
+    $$$$$:  160-block  3
+        3:  161:        if (it != rep.end())
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 1 (fallthrough)
+branch  3 taken 2
+        1:  162:            it->second.Incrementcout();
+        1:  162-block  0
+call    0 returned 1
+call    1 returned 1
+        -:  163:        else{
+        2:  164:            rep.insert(std::make_pair(carte.get_autor(), Autorcount()));
+        2:  164-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  164-block  1
+call    4 returned 2
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:  164-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 2
+    $$$$$:  164-block  3
+call   11 never executed
+    $$$$$:  164-block  4
+call   12 never executed
+    $$$$$:  164-block  5
+    $$$$$:  164-block  6
+call   13 never executed
+    $$$$$:  164-block  7
+    $$$$$:  164-block  8
+    $$$$$:  164-block  9
+        2:  165:            rep.emplace(carte.get_autor(), Autorcount());
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  165-block  0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:  165-block  1
+call    7 returned 2
+call    8 returned 2
+    $$$$$:  165-block  2
+call    9 never executed
+    $$$$$:  165-block  3
+    $$$$$:  165-block  4
+call   10 never executed
+    $$$$$:  165-block  5
+    $$$$$:  165-block  6
+        -:  166:        }
+        -:  167:
+        -:  168:    }
+        -:  169:
+        1:  170:    return rep;
+        1:  170-block  0
+        1:  170-block  1
+        -:  171:
+    =====:  172:}
+    $$$$$:  172-block  0
+call    0 never executed
+        -:  173:
+        -:  174:
+function _ZN12CarteService4UndoEv called 6 returned 100% blocks executed 100%
+        6:  175:int CarteService::Undo() {
+        -:  176:
+        6:  177:    if (undo.empty())
+        6:  177-block  0
+call    0 returned 6
+branch  1 taken 1 (fallthrough)
+branch  2 taken 5
+        1:  178:        return -1;
+        1:  178-block  0
+        -:  179:
+        5:  180:    undo.back()->undo();
+        5:  180-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+        5:  181:    undo.pop_back();
+call    0 returned 5
+        5:  182:    return 0;
+        -:  183:
+        -:  184:}
+        -:  185:
+        -:  186:
+        -:  187:
+        -:  188:/*
+        -:  189:void generare_carte_random(Carte& carte){
+        -:  190:
+        -:  191:    string caractere = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        -:  192:    random_device rd;
+        -:  193:    mt19937 gen(rd()); //  generatorul de numere folosit de dis
+        -:  194:    uniform_int_distribution<> dis(0, caractere.size()-1); // genereaza numere aleatoare
+        -:  195:    uniform_int_distribution<> numere(1600, 2024);
+        -:  196:
+        -:  197:    string titlu, autor, genul;
+        -:  198:    int an;
+        -:  199:
+        -:  200:    for (int i=0 ; i < 10; i++)
+        -:  201:        titlu += caractere[dis(gen)];
+        -:  202:    for (int i=0; i < 5; i++)
+        -:  203:        autor += caractere[dis(gen)];
+        -:  204:    autor += " ";
+        -:  205:    for (int i=0; i < 5; i++)
+        -:  206:        autor += caractere[dis(gen)];
+        -:  207:    for (int i=0; i < 5; i++)
+        -:  208:        genul += caractere[dis(gen)];
+        -:  209:    an = numere(gen);
+        -:  210:
+        -:  211:    carte.set_titlu(titlu);
+        -:  212:    carte.set_autor(autor);
+        -:  213:    carte.set_gen(genul);
+        -:  214:    carte.set_an(an);
+        -:  215:
+        -:  216:}
+        -:  217:*/
+        -:  218:
+        -:  219:
+        -:  220:
+        -:  221:

@@ -1,0 +1,82 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/qt1/exceptions.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\qt1\cmake-build-debug-coverage\CMakeFiles\qt1.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef QT1_EXCEPTIONS_H
+        -:    2:#define QT1_EXCEPTIONS_H
+        -:    3:
+        -:    4:#include <string>
+        -:    5:
+        -:    6:class Exceptions{
+        -:    7:
+        -:    8:protected:
+        -:    9:
+        -:   10:    std::string message;
+        -:   11:
+        -:   12:public:
+        -:   13:
+        -:   14:    [[nodiscard]] std::string get_message() const { return message; }
+        -:   15:
+        -:   16:};
+        -:   17:
+        -:   18:
+        -:   19:class IndexInvalid : public Exceptions{
+        -:   20:
+        -:   21:public:
+        -:   22:
+        -:   23:    IndexInvalid() noexcept { message = "Pozitie invalida!";}
+        -:   24:
+        -:   25:};
+        -:   26:
+        -:   27:
+        -:   28:class CarteExistenta : public Exceptions{
+        -:   29:
+        -:   30:public:
+        -:   31:
+function _ZN14CarteExistentaC1Ev called 2 returned 100% blocks executed 100%
+        2:   32:    CarteExistenta() noexcept {message = "Cartea exista deja!";}
+        2:   32-block  0
+call    0 returned 2
+call    1 returned 2
+        -:   33:
+        -:   34:};
+        -:   35:
+        -:   36:
+        -:   37:class Dateinvalide : public Exceptions{
+        -:   38:
+        -:   39:public:
+        -:   40:
+function _ZN12DateinvalideC1Ev called 6 returned 100% blocks executed 100%
+        6:   41:    Dateinvalide() noexcept {message = "Date invalide!";}
+        6:   41-block  0
+call    0 returned 6
+call    1 returned 6
+        -:   42:
+        -:   43:};
+        -:   44:
+        -:   45:
+        -:   46:class CarteaNuExista : public Exceptions{
+        -:   47:
+        -:   48:public:
+        -:   49:
+function _ZN14CarteaNuExistaC1Ev called 2 returned 100% blocks executed 100%
+        2:   50:    CarteaNuExista() noexcept {message = "Cartea nu exista!";}
+        2:   50-block  0
+call    0 returned 2
+call    1 returned 2
+        -:   51:
+        -:   52:};
+        -:   53:
+        -:   54:class Probabilitate : public Exceptions{
+        -:   55:
+        -:   56:public:
+        -:   57:
+        -:   58:    Probabilitate() noexcept {message = "Nu se poate efectua operatia!";}
+        -:   59:
+        -:   60:};
+        -:   61:
+        -:   62:
+        -:   63:
+        -:   64:#endif //QT1_EXCEPTIONS_H
+        -:   65:
+        -:   66:

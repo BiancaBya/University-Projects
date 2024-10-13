@@ -1,0 +1,84 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/carte.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB9_CARTE_H
+        -:    2:#define LAB9_CARTE_H
+        -:    3:#include <string>
+        -:    4:using namespace std;
+        -:    5:
+        -:    6:class Carte
+        -:    7:{
+        -:    8:
+        -:    9:
+        -:   10:private:
+        -:   11:
+        -:   12:    string titlu;
+        -:   13:    string autor;
+        -:   14:    string gen;
+        -:   15:    int an;
+        -:   16:
+        -:   17:public:
+        -:   18:
+        -:   19:    Carte(const string& titlu, const string& autor, const string& gen, const int& an); // Carte(string titlu, string autor, string gen, int an) : titlu{titlu}, model{model}...;
+        -:   20:    /*
+        -:   21:        constructorul obiectului carte
+        -:   22:        titlu -> titlul cartii care trebuie adaugata, tip = string
+        -:   23:        autor -> autorul cartii care trebuie adaugata, tip = string
+        -:   24:        gen -> genul cartii care trebuie adaugata, tip = string
+        -:   25:        an -> anul cartii de adaugat, tip = int
+        -:   26:        return -> None
+        -:   27:    */
+function _ZN5CarteC1Ev called 4 returned 100% blocks executed 100%
+        4:   28:    Carte() = default;
+        4:   28-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+        -:   29:
+        -:   30:    Carte(const Carte& other);
+        -:   31:
+        -:   32:    string get_titlu() const;
+        -:   33:    /*
+        -:   34:        Returneaza titlul cartii, de tip string
+        -:   35:    */
+        -:   36:
+        -:   37:    string get_autor() const;
+        -:   38:    /*
+        -:   39:        Returneaza autorul cartii, de tip string
+        -:   40:    */
+        -:   41:
+        -:   42:    string get_gen() const;
+        -:   43:    /*
+        -:   44:        Returneaza genul cartii, de tip string
+        -:   45:    */
+        -:   46:
+        -:   47:    int get_an() const;
+        -:   48:    /*
+        -:   49:        Returneaza anul cartii, de tip int
+        -:   50:    */
+        -:   51:
+        -:   52:    void set_titlu(const string& titlul);
+        -:   53:    /*
+        -:   54:        Schimba titlul cartii
+        -:   55:    */
+        -:   56:
+        -:   57:    void set_autor(const string& autorul);
+        -:   58:    /*
+        -:   59:        Schimba autorul cartii
+        -:   60:    */
+        -:   61:
+        -:   62:    void set_gen(const string& genul);
+        -:   63:    /*
+        -:   64:        Schimba genul cartii
+        -:   65:    */
+        -:   66:
+        -:   67:    void set_an(int anul);
+        -:   68:    /*
+        -:   69:        Schimba anul cartii
+        -:   70:    */
+        -:   71:
+        -:   72:
+        -:   73:};
+        -:   74:
+        -:   75:#endif //LAB9_CARTE_H

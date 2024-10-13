@@ -1,0 +1,133 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/OOP_lab2/oferta.c
+        -:    0:Graph:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\oferta.c.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\OOP_lab2\cmake-build-debug-coverage\CMakeFiles\OOP_lab2.dir\oferta.c.gcda
+        -:    0:Runs:1
+        -:    1://#include "oferta.h"
+        -:    2:#include <stdio.h>
+        -:    3:#include <string.h>
+        -:    4:#include <stdlib.h>
+        -:    5:
+        -:    6:
+        -:    7:
+        -:    8:typedef struct {
+        -:    9:    char *tip;
+        -:   10:    char *adresa;
+        -:   11:    float pret, suprafata;
+        -:   12:} oferta;
+        -:   13:
+        -:   14:
+        -:   15:
+        -:   16:typedef struct {
+        -:   17:    oferta *lista_oferte;
+        -:   18:    int lungime, dimensiune;
+        -:   19:} my_list;
+        -:   20:
+        -:   21:
+        -:   22:
+function get_tip called 15 returned 100% blocks executed 100%
+       15:   23:char* get_tip(oferta* oferta){
+        -:   24:
+       15:   25:    return oferta->tip;
+       15:   25-block  0
+        -:   26:
+        -:   27:}
+        -:   28:
+function get_adresa called 1 returned 100% blocks executed 100%
+        1:   29:char* get_adresa(oferta* oferta){
+        -:   30:
+        1:   31:    return oferta->adresa;
+        1:   31-block  0
+        -:   32:
+        -:   33:}
+        -:   34:
+function get_pret called 15 returned 100% blocks executed 100%
+       15:   35:float get_pret(oferta* oferta){
+        -:   36:
+       15:   37:    return oferta->pret;
+       15:   37-block  0
+        -:   38:
+        -:   39:}
+        -:   40:
+function get_suprafata called 3 returned 100% blocks executed 100%
+        3:   41:float get_suprafata(oferta* oferta){
+        -:   42:
+        3:   43:    return oferta->suprafata;
+        3:   43-block  0
+        -:   44:
+        -:   45:}
+        -:   46:
+function set_tip called 23 returned 100% blocks executed 100%
+       23:   47:void set_tip(oferta* oferta, const char *tip){
+        -:   48:
+        -:   49:    /*
+        -:   50:      Functia primeste o oferta si un sir pentru tip, elibereaza memoria alocata pentru fostul tip, aloca memorie pentru noul tip si il seteaza
+        -:   51:     */
+        -:   52:
+       23:   53:    free(oferta->tip);
+       23:   54:    oferta->tip = (char*) malloc(sizeof(char) * (strlen(tip) + 1));
+       23:   55:    strcpy(oferta->tip, tip);
+        -:   56:
+       23:   57:}
+        -:   58:
+function set_adresa called 23 returned 100% blocks executed 100%
+       23:   59:void set_adresa(oferta* oferta, const char *adresa){
+        -:   60:
+        -:   61:    /*
+        -:   62:      Functia primeste o oferta si un sir pentru adresa, elibereaza memoria alocata pentru fosta adresa, aloca memorie pentru noua adresa si o seteaza
+        -:   63:     */
+        -:   64:
+       23:   65:    free(oferta->adresa);
+       23:   66:    oferta->adresa = (char*) malloc(sizeof(char) * (strlen(adresa) + 1));
+       23:   67:    strcpy(oferta->adresa, adresa);
+        -:   68:
+       23:   69:}
+        -:   70:
+function set_pret called 23 returned 100% blocks executed 100%
+       23:   71:void set_pret(oferta* oferta, float pret){
+        -:   72:
+       23:   73:    oferta->pret = pret;
+        -:   74:
+       23:   75:}
+        -:   76:
+function set_suprafata called 23 returned 100% blocks executed 100%
+       23:   77:void set_suprafata(oferta* oferta, float suprafata){
+        -:   78:
+       23:   79:    oferta->suprafata = suprafata;
+        -:   80:
+       23:   81:}
+        -:   82:
+        -:   83:
+        -:   84:
+function creare_oferta called 22 returned 100% blocks executed 100%
+       22:   85:oferta creare_oferta(char *tip, char *adresa, float pret, float suprafata){
+        -:   86:
+        -:   87:    /*
+        -:   88:        Functia primeste valorile unei oferte si creeaza o oferta noua pe care o returneaza
+        -:   89:    */
+        -:   90:
+        -:   91:    oferta oferta_noua;
+        -:   92:
+       22:   93:    oferta_noua.tip = (char*) malloc(sizeof(char) * (strlen(tip) + 1));
+       22:   94:    oferta_noua.adresa = (char*) malloc(sizeof(char) * (strlen(adresa) + 1));
+        -:   95:
+        -:   96:
+       22:   97:    set_tip(&oferta_noua, tip);
+       22:   97-block  0
+call    0 returned 22
+       22:   98:    set_adresa(&oferta_noua, adresa);
+call    0 returned 22
+       22:   99:    set_pret(&oferta_noua, pret);
+call    0 returned 22
+       22:  100:    set_suprafata(&oferta_noua, suprafata);
+call    0 returned 22
+        -:  101:
+        -:  102:
+       22:  103:    return oferta_noua;
+        -:  104:
+        -:  105:}
+        -:  106:
+        -:  107:
+        -:  108:
+        -:  109:
+        -:  110:
+        -:  111:

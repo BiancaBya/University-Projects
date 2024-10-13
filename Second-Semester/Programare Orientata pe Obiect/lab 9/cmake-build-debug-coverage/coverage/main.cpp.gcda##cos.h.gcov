@@ -1,0 +1,396 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/cos.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB9_COS_H
+        -:    2:#define LAB9_COS_H
+        -:    3:#include "carte.h"
+        -:    4:#include <vector>
+        -:    5:#include <random>
+        -:    6:#include <chrono>
+        -:    7:#include <fstream>
+        -:    8:
+        -:    9:class Cos{
+        -:   10:
+        -:   11:private:
+        -:   12:
+        -:   13:    vector<Carte> cos;
+        -:   14:
+        -:   15:public:
+        -:   16:
+        -:   17:    Cos()=default;
+        -:   18:
+function _ZN3Cos7get_cosEv called 4 returned 100% blocks executed 100%
+        4:   19:    const vector<Carte>& get_cos(){
+        4:   20:        return this->cos;
+        4:   20-block  0
+        -:   21:    }
+        -:   22:
+        -:   23:
+        -:   24:
+function _ZN3Cos15adaugare_in_cosERK5Carte called 6 returned 100% blocks executed 100%
+        6:   25:    void adaugare_in_cos(const Carte& carte){
+        -:   26:
+        6:   27:        this->cos.push_back(carte);
+        6:   27-block  0
+call    0 returned 6
+        -:   28:
+        6:   29:    }
+        -:   30:
+function _ZN3Cos10golire_cosEv called 1 returned 100% blocks executed 100%
+        1:   31:    void golire_cos(){
+        -:   32:
+        1:   33:        this->cos.clear();
+        1:   33-block  0
+call    0 returned 1
+        -:   34:
+        1:   35:    }
+        -:   36:
+function _ZN3Cos12random_cartiESt6vectorI5CarteSaIS1_EEi called 1 returned 100% blocks executed 87%
+        1:   37:    void random_carti(vector<Carte> lista_carti, int nr) {
+        1:   38:        shuffle(lista_carti.begin(), lista_carti.end(), std::default_random_engine(std::random_device{}())); //amesteca vectorul v
+        1:   38-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   38-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   38-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   38-block  3
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+branch 12 taken 1 (fallthrough)
+branch 13 taken 0 (throw)
+        1:   38-block  4
+call   14 returned 1
+    $$$$$:   38-block  5
+call   15 never executed
+    $$$$$:   38-block  6
+        3:   39:        while (cos.size() < nr && lista_carti.size() > 0) {
+        3:   39-block  0
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1
+        2:   39-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0
+        2:   39-block  2
+        1:   39-block  3
+        3:   39-block  4
+branch  6 taken 2
+branch  7 taken 1 (fallthrough)
+        2:   40:            cos.push_back(lista_carti.back());
+        2:   40-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   41:            lista_carti.pop_back();
+call    0 returned 2
+        -:   42:        }
+        1:   43:    }
+        1:   43-block  0
+        -:   44:
+function _ZN3Cos11export_htmlERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 84%
+        1:   45:    void export_html(const string& file_name){
+        -:   46:
+        1:   47:        std::ofstream file(file_name);
+        1:   47-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   48:/*
+        -:   49:        file << "<html>\n";
+        -:   50:        file << "<head><title>Export cos</title></head>\n";
+        -:   51:        file << "<body>\n";
+        -:   52:        file << "<h1>Continut cos:</h1>\n";
+        -:   53:        file << "<table border=\"1\">\n";
+        -:   54:        file << "<tr><th>Titlu</th><th>Autor</th><th>Gen</th><th>An</th><tr>\n";
+        -:   55:*/
+        1:   56:        file << "<html>\n";
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   57:        file << "<head><title>Export cos</title></head>\n";
+        1:   57-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   58:        file << "<style>\n";
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59:        file << "body {";
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   60:        file << "    background-color: #c8fab8;";
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61:        file << "    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   62:        file << "}";
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   63:        file << "h1 {";
+        1:   63-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   64:        file << "    color: #058322;";
+        1:   64-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   65:        file << "}";
+        1:   65-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   66:        file << "table {";
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   67:        file << "    border-collapse: collapse;";
+        1:   67-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   68:        file << "    width: 100%;";
+        1:   68-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69:        file << "    border-radius: 8px;";
+        1:   69-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   70:        file << "}";
+        1:   70-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71:        file << "th, td {";
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   72:        file << "    padding: 12px;";
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73:        file << "    text-align: left;";
+        1:   73-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74:        file << "}";
+        1:   74-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75:        file << "th {";
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76:        file << "    background-color: #30ef88;";
+        1:   76-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77:        file << "    color: #08803b;";
+        1:   77-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78:        file << "}";
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   79:        file << "tr:nth-child(even) {";
+        1:   79-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   80:        file << "    background-color: #30ef88;";
+        1:   80-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   81:        file << "}";
+        1:   81-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   82:        file << "tr:hover {";
+        1:   82-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   83:        file << "    background-color: #30ef88;";
+        1:   83-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   84:        file << "}";
+        1:   84-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85:        file << "</style>\n";
+        1:   85-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   86:        file << "<body>\n";
+        1:   86-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   87:        file << "<h1>Shopping cart:</h1>\n";
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   88:        file << "<table>\n";
+        1:   88-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   89:        file << "<tr><th>Titlu</th><th>Autor</th><th>Gen</th><th>An</th><tr>\n";
+        1:   89-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   90:
+        1:   91:        const vector<Carte>& cos_carti = get_cos();
+        1:   91-block  0
+call    0 returned 1
+        -:   92:
+        3:   93:        for(const Carte& carte : cos_carti){
+call    0 returned 1
+call    1 returned 1
+        2:   93-block  0
+call    2 returned 2
+        3:   93-block  1
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+        2:   94:            file << "<tr><td> " << carte.get_titlu() << " </td><td> " << carte.get_autor() << " </td><td> " << carte.get_gen() << " </td><td> " << carte.get_an() <<" </td><tr>\n";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   94-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   94-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   94-block  2
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   94-block  3
+call   12 returned 2
+branch 13 taken 2 (fallthrough)
+branch 14 taken 0 (throw)
+        2:   94-block  4
+call   15 returned 2
+branch 16 taken 2 (fallthrough)
+branch 17 taken 0 (throw)
+        2:   94-block  5
+call   18 returned 2
+branch 19 taken 2 (fallthrough)
+branch 20 taken 0 (throw)
+        2:   94-block  6
+call   21 returned 2
+branch 22 taken 2 (fallthrough)
+branch 23 taken 0 (throw)
+        2:   94-block  7
+call   24 returned 2
+branch 25 taken 2 (fallthrough)
+branch 26 taken 0 (throw)
+        2:   94-block  8
+call   27 returned 2
+branch 28 taken 2 (fallthrough)
+branch 29 taken 0 (throw)
+        2:   94-block  9
+call   30 returned 2
+branch 31 taken 2 (fallthrough)
+branch 32 taken 0 (throw)
+        2:   94-block 10
+call   33 returned 2
+branch 34 taken 2 (fallthrough)
+branch 35 taken 0 (throw)
+        2:   94-block 11
+call   36 returned 2
+branch 37 taken 2 (fallthrough)
+branch 38 taken 0 (throw)
+        2:   94-block 12
+call   39 returned 2
+call   40 returned 2
+call   41 returned 2
+call   42 returned 2
+    $$$$$:   94-block 13
+call   43 never executed
+    $$$$$:   94-block 14
+    $$$$$:   94-block 15
+call   44 never executed
+    $$$$$:   94-block 16
+    $$$$$:   94-block 17
+call   45 never executed
+    $$$$$:   94-block 18
+        -:   95:        }
+        -:   96:
+        1:   97:        file << "</table>\n";
+        1:   97-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   98:        file << "</body>\n";
+        1:   98-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   99:        file << "<html>\n";
+        1:   99-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  100:
+        1:  101:        file.close();
+        1:  101-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  102:
+        1:  103:    }
+        1:  103-block  0
+call    0 returned 1
+    $$$$$:  103-block  1
+call    1 never executed
+        -:  104:
+        -:  105:};
+        -:  106:#endif //LAB9_COS_H

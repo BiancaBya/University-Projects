@@ -1,0 +1,5 @@
+C:/Users/Next/CLionProjects/qt1/cmake-build-debug-coverage/CMakeFiles/qt1.dir
+C:/Users/Next/CLionProjects/qt1/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
+C:/Users/Next/CLionProjects/qt1/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir
+C:/Users/Next/CLionProjects/qt1/cmake-build-debug-coverage/CMakeFiles/qt1_autogen_timestamp_deps.dir
+C:/Users/Next/CLionProjects/qt1/cmake-build-debug-coverage/CMakeFiles/qt1_autogen.dir

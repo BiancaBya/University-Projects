@@ -1,0 +1,127 @@
+        -:    0:Source:C:/Users/Next/CLionProjects/lab9/undo.h
+        -:    0:Graph:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcno
+        -:    0:Data:C:\Users\Next\CLionProjects\lab9\cmake-build-debug-coverage\CMakeFiles\lab9.dir\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef LAB9_UNDO_H
+        -:    2:#define LAB9_UNDO_H
+        -:    3:#include "carte.h"
+        -:    4:#include "repository.h"
+        -:    5:#include <vector>
+        -:    6:#include <algorithm>
+        -:    7:
+        -:    8:class Undo{
+        -:    9:
+        -:   10:public:
+        -:   11:
+        -:   12:    virtual void undo() = 0;
+function _ZN4UndoD2Ev called 27 returned 100% blocks executed 100%
+       27:   13:    virtual ~Undo() = default;
+        -:   14:
+        -:   15:
+        -:   16:};
+        -:   17:
+        -:   18:
+        -:   19:class AdaugaUndo : public Undo{
+        -:   20:
+        -:   21:private:
+        -:   22:
+        -:   23:    RepoAbstract& repository;
+        -:   24:    Carte carte;
+        -:   25:
+        -:   26:public:
+        -:   27:
+function _ZN10AdaugaUndoC1ER12RepoAbstractRK5Carte called 23 returned 100% blocks executed 80%
+       23:   28:    AdaugaUndo(RepoAbstract& repo, const Carte& carte) : repository(repo), carte(carte){};
+       23:   28-block  0
+call    0 returned 23
+call    1 returned 23
+branch  2 taken 23 (fallthrough)
+branch  3 taken 0 (throw)
+       23:   28-block  1
+    $$$$$:   28-block  2
+call    4 never executed
+        -:   29:
+function _ZN10AdaugaUndo4undoEv called 3 returned 100% blocks executed 100%
+        3:   30:    void undo() override {
+        3:   31:        repository.sterge_carte(carte);
+        3:   31-block  0
+call    0 returned 3
+        3:   32:    }
+        -:   33:
+        -:   34:};
+        -:   35:
+        -:   36:
+        -:   37:class StergereUndo : public Undo{
+        -:   38:
+        -:   39:private:
+        -:   40:
+        -:   41:    RepoAbstract& repository;
+        -:   42:    Carte carte_stearsa;
+        -:   43:
+        -:   44:public:
+        -:   45:
+function _ZN12StergereUndoC1ER12RepoAbstractRK5Carte called 2 returned 100% blocks executed 80%
+        2:   46:    StergereUndo(RepoAbstract& repo, const Carte& carte) : repository(repo), carte_stearsa(carte) {};
+        2:   46-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   46-block  1
+    $$$$$:   46-block  2
+call    4 never executed
+        -:   47:
+function _ZN12StergereUndo4undoEv called 1 returned 100% blocks executed 100%
+        1:   48:    void undo() override {
+        -:   49:
+        1:   50:        repository.add_carte(carte_stearsa);
+        1:   50-block  0
+call    0 returned 1
+        -:   51:
+        1:   52:    }
+        -:   53:
+        -:   54:};
+        -:   55:
+        -:   56:
+        -:   57:class ModificareUndo : public Undo{
+        -:   58:
+        -:   59:private:
+        -:   60:
+        -:   61:    RepoAbstract& repository;
+        -:   62:    Carte carte_stearsa;
+        -:   63:    Carte carte_adaugata;
+        -:   64:
+        -:   65:public:
+        -:   66:
+function _ZN14ModificareUndoC1ER12RepoAbstractRK5CarteS4_ called 2 returned 100% blocks executed 62%
+        2:   67:    ModificareUndo(RepoAbstract& repo, const Carte& carte_stearsa, const Carte& carte_adaugata) : repository(repo), carte_stearsa(carte_stearsa), carte_adaugata(carte_adaugata){};
+        2:   67-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   67-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   67-block  2
+    $$$$$:   67-block  3
+call    7 never executed
+    $$$$$:   67-block  4
+call    8 never executed
+        -:   68:
+function _ZN14ModificareUndo4undoEv called 1 returned 100% blocks executed 100%
+        1:   69:    void undo() override {
+        -:   70:
+        1:   71:        repository.modificare_carte(carte_adaugata, carte_stearsa);
+        1:   71-block  0
+call    0 returned 1
+        -:   72:
+        1:   73:    }
+        -:   74:
+        -:   75:
+        -:   76:};
+        -:   77:
+        -:   78:#endif //LAB9_UNDO_H
+        -:   79:
+        -:   80:
