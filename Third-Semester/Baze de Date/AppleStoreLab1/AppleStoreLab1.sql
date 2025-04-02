@@ -115,7 +115,7 @@ CREATE TABLE Produse_Comenzi
 );
 
 
-
+--8
 CREATE TABLE Magazine 
 (
 	id_magazin INT IDENTITY(1,1),
