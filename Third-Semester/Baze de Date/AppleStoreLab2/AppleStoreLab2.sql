@@ -174,13 +174,6 @@ WHERE email LIKE '%@gmail.com'
 
 
 
---interogari GROUP BY
-
---SELECT coloana1, functie_agregata(coloana2)
---FROM nume_tabel
---GROUP BY coloana1;
-
-
 -- afiseaza numarul de produse de fiecare tip
 SELECT tip, COUNT(*)
 FROM Produse
@@ -207,40 +200,11 @@ GROUP BY tip;
 
 
 
---interogari DISTINCT
---SELECT DISTINCT coloana1, coloana2, ...
---FROM nume_tabel
---WHERE conditii;
-
 
 -- fiecare tip de produs
 SELECT DISTINCT tip 
 FROM Produse;
 
-
-
-
---interogari HAVING
---SELECT coloana1, funcție_agregare(coloana2)
---FROM tabel
---GROUP BY coloana1
---HAVING condiție;
-
--- WHERE filtreaza randurile inainte de GROUP BY
--- HAVING se aplica dupa ce datele sunt grupate cu GROUP BY
-
-
-
-
--- leaga tabelul produse de comenzi prin tabelul intermediar
---SELECT Produse.nume, Comenzi.cod_comanda
---FROM Produse 
---JOIN Produse_Comenzi ON Produse.id_produs = Produse_Comenzi.id_produs
---JOIN Comenzi ON Produse_Comenzi.id_comanda = Comenzi.cod_comanda
-
-
---interogari intre mai multe tabele si m-m
--- coloanele care apar in rezultatul interogarii
 
 
 
