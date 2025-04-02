@@ -12,3 +12,12 @@ All projects from Babes Bolyai University, Computer Science Major :dog:
 - [Operating Systems](https://github.com/BiancaBya/University-Projects/tree/main/Second-Semester/Sisteme%20de%20Operare) :computer:
 - [Dynamic Systems](https://github.com/BiancaBya/University-Projects/tree/main/Second-Semester/Sisteme%20Dinamice) :bar_chart:
 - [Graph Theory](https://github.com/BiancaBya/University-Projects/tree/main/Second-Semester/Algoritmica%20Grafurilor/Examen) :grapes:
+
+### Third Semester
+- [Advanced Programming Methods](https://github.com/BiancaBya/University-Projects/tree/main/Third-Semester/Metode%20Avansate%20de%20Programare) :money_with_wings:
+- [Databases](https://github.com/BiancaBya/University-Projects/tree/main/Third-Semester/Baze%20de%20Date) :floppy_disk:
+- [Logic and Functional Programming](https://github.com/BiancaBya/University-Projects/tree/main/Third-Semester/Programare%20Logica%20si%20Functionala) :brain:
+- [Computer Networks](https://github.com/BiancaBya/University-Projects/tree/main/Third-Semester/Retele%20de%20Calculatoare) :globe_with_meridians:
+- [Statistics](https://github.com/BiancaBya/University-Projects/tree/main/Third-Semester/Statistica) :chart_with_upwards_trend:
+
+  
