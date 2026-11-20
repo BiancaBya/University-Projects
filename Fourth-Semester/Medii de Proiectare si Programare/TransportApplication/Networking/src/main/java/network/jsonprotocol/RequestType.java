@@ -1,0 +1,15 @@
+package network.jsonprotocol;
+
+public enum RequestType {
+    LOGIN,
+    GET_ALL_TRIPS,
+    GET_RESERVATIONS_FOR_TRIP,
+    GET_TRIP_BY_DESTINATION_AND_TIME,
+    GET_ALL_RESERVATIONS,
+    FIND_CLIENT_BY_NAME,
+    SAVE_CLIENT,
+    SAVE_RESERVATION,
+    LOGOUT
+}
+
+

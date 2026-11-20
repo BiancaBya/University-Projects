@@ -1,0 +1,85 @@
+\usepackage{graphicx}  % Necesar pentru \rotatebox (rotirea textului)
+\usepackage{multirow}  % Necesar pentru \multirow (celule unite pe verticală)
+\usepackage{array}
+\section{Experiment 8: 2D Slice-Based Approach (Transfer Learning)}
+
+\subsection{Rationale and Hypothesis}
+While 3D CNNs capture volumetric spatial context, they are computationally intensive and suffer from a lack of large-scale pre-trained models comparable to those in general computer vision. 
+
+Experiment 8 tests the hypothesis that a \textit{2D Slice-Based approach} can outperform 3D models by leveraging:
+\begin{itemize}
+    \item \textbf{Stronger Transfer Learning:} Utilizing architectures (EfficientNetB0) pre-trained on millions of 2D images (ImageNet).
+    \item \textbf{Data Efficiency:} Reducing the 3D problem to 2D simplifies the feature space, potentially reducing the risk of overfitting on our small cohort ($N=87$).
+\end{itemize}
+
+\subsection{Methodology}
+
+\subsubsection{Slice Extraction Strategy}
+To convert the 3D CT volumes into 2D inputs, we employed a "Max-Tumor-Area" slicing strategy:
+\begin{enumerate}
+    \item \textbf{ROI Identification:} For each patient, the lung mask was used to identify the bounding box of the tumor.
+    \item \textbf{Slice Selection:} We iterated through the axial slices of the cropped volume and selected the single slice with the largest tumor surface area (maximum number of mask pixels).
+    \item \textbf{Pseudo-Coloring:} Since standard 2D models expect 3 input channels (RGB), the selected grayscale CT slice was replicated 3 times to fit the input tensor shape $(224, 224, 3)$.
+\end{enumerate}
+
+\subsubsection{Model Architecture}
+We utilized a standard 2D Convolutional Neural Network architecture compatible with ImageNet weights.
+\begin{itemize}
+    \item \textbf{Backbone:} EfficientNetB0 (pre-trained on ImageNet).
+    \item \textbf{Adaptation:} The top (classification) layers were removed and replaced with:
+    \begin{itemize}
+        \item GlobalAveragePooling2D.
+        \item Dense Layer (128 units, ReLU).
+        \item Dropout (0.5).
+        \item Dual Output Heads: \texttt{Dense(1, Sigmoid)} for TTF1 and \texttt{Dense(1, Sigmoid)} for CK7.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Experimental Results}
+
+\subsubsection{Test Set Performance}
+The 2D model was evaluated on the same stratified test set.
+
+\begin{figure}[h]
+    \centering
+    % --- Matrice TTF1 ---
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \textbf{a) TTF1 Prediction} \\ \vspace{0.3cm}
+        \renewcommand{\arraystretch}{1.5} % Mărește spațiul vertical
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{\textbf{Predicted}} \\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Negative (0)} & \multicolumn{1}{c}{Positive (1)} \\ \cline{3-4}
+            \multirow{2}{*}{\rotatebox[origin=c]{90}{\textbf{Actual}}} 
+            & Neg (0) & \textbf{2} & 1 \\ \cline{3-4}
+            & Pos (1) & 1 & \textbf{5} \\ \cline{3-4}
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    % --- Matrice CK7 ---
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \textbf{b) CK7 Prediction} \\ \vspace{0.3cm}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{cc|c|c|}
+            & \multicolumn{1}{c}{} & \multicolumn{2}{c}{\textbf{Predicted}} \\
+            & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Negative (0)} & \multicolumn{1}{c}{Positive (1)} \\ \cline{3-4}
+            \multirow{2}{*}{\rotatebox[origin=c]{90}{\textbf{Actual}}} 
+            & Neg (0) & \textbf{5} & 0 \\ \cline{3-4}
+            & Pos (1) & 2 & \textbf{2} \\ \cline{3-4}
+        \end{tabular}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    \caption{Confusion Matrices for the 2D Slice-Based Model on the Test Set.}
+    \label{fig:conf_matrix_exp8}
+\end{figure}
+
+\subsubsection{Comparison with 3D Approaches}
+\begin{itemize}
+    \item \textbf{Pros:} The 2D model showed [High/Low] sensitivity to texture, likely due to the robust filters learned from ImageNet.
+    \item \textbf{Cons:} By discarding the volumetric information (the "z" dimension), the model may have lost 3D morphological features (e.g., sphericity, spiculated margins in 3D) that are relevant for diagnosis.
+\end{itemize}
+
+\subsection{Conclusion of Experiment 8}
+This experiment demonstrates the trade-off between dimensionality and data availability. While 2D transfer learning offers a powerful starting point, the reduction of a 3D tumor to a single 2D cross-section simplifies the biological reality. The results suggest that [Conclusion based on results: e.g., "a hybrid approach or multi-slice 2.5D approach might be needed to capture both texture and volume"].

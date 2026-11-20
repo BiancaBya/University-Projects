@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/problema3.js"></script>
+
+    <style>
+        .div1 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            width: 200px;
+            height: 200px;
+            table-layout: fixed;
+        }
+
+        table td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        td.revealed {
+            background-color: lightseagreen;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <label id="label"></label>
+    <table>
+        <tr>
+            <td id="cell1"  data-value="1">&nbsp;</td>
+            <td id="cell2"  data-value="2">&nbsp;</td>
+            <td id="cell3"  data-value="2">&nbsp;</td>
+            <td id="cell4"  data-value="1">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="cell5"  data-value="3"></td>
+            <td id="cell6"  data-value="4"></td>
+            <td id="cell7"  data-value="3"></td>
+            <td id="cell8"  data-value="4"></td>
+        </tr>
+        <tr>
+            <td id="cell9"  data-value="5"></td>
+            <td id="cell10" data-value="5"></td>
+            <td id="cell11" data-value="6"></td>
+            <td id="cell12" data-value="6"></td>
+        </tr>
+        <tr>
+            <td id="cell13" data-value="7"></td>
+            <td id="cell14" data-value="8"></td>
+            <td id="cell15" data-value="7"></td>
+            <td id="cell16" data-value="8"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+

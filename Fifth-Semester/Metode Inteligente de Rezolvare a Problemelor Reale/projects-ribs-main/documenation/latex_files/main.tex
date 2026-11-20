@@ -1,0 +1,348 @@
+%latex model.tex
+%bibtex model
+%latex model.tex
+%latex model.tex
+%pdflatex model.tex
+
+%se poate lucra si online (de ex www.overleaf.com)
+
+
+\documentclass[twoside,runningheads,a4paper,11pt]{report}
+
+\usepackage{algorithmic}
+\usepackage{algorithm} 
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{caption}
+\usepackage{comment} 
+\usepackage{epsfig} 
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{geometry} 
+\usepackage{graphicx}
+\usepackage[colorlinks]{hyperref} 
+\usepackage[latin1]{inputenc}
+\usepackage{multicol}
+\usepackage{multirow} 
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{xcolor}
+
+\geometry{a4paper,top=3cm,left=2cm,right=2cm,bottom=3cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{Project's name}
+\fancyhead[RE,LO]{Team's name}
+\fancyfoot[RE,LO]{MIRPR 2025-2026}
+\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{lime}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{%
+  \color{lime}\leaders\hrule height \footrulewidth\hfill}}
+
+\hypersetup{
+pdftitle={artTitle},
+pdfauthor={name},
+pdfkeywords={pdf, latex, tex, ps2pdf, dvipdfm, pdflatex},
+bookmarksnumbered,
+pdfstartview={FitH},
+urlcolor=cyan,
+colorlinks=true,
+linkcolor=red,
+citecolor=green,
+}
+% \pagestyle{plain}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\linespread{1}
+
+% \pagestyle{myheadings}
+
+\makeindex
+
+
+\begin{document}
+
+\begin{titlepage}
+\sloppy
+
+\begin{center}
+BABE\c S BOLYAI UNIVERSITY, CLUJ NAPOCA, ROM\^ ANIA
+
+FACULTY OF MATHEMATICS AND COMPUTER SCIENCE
+
+\vspace{6cm}
+
+\Huge \textbf{Project RIBS}
+
+\vspace{1cm}
+
+\normalsize -- MIRPR report --
+
+\end{center}
+
+
+\vspace{5cm}
+
+\begin{flushright}
+\Large{\textbf{Team members}}\\
+Alexandra-Cristina Pu\c sca\c s, Computer Science\\
+Bianca-Gabriela Pulp\u a, Computer Science\\
+Bogdan-C\u alin-Florin Rebele\c s, Computer Science\\
+\end{flushright}
+
+\vspace{4cm}
+
+\begin{center}
+2025-2026
+\end{center}
+
+\end{titlepage}
+
+\pagenumbering{gobble}
+
+\begin{abstract}
+This report investigates a multi-biomarker "virtual biopsy" approach for non-small cell lung cancer (NSCLC), aiming to build models that can predict several tumor biomarkers simultaneously from medical imaging. The motivation is that biomarker determination often depends on tissue biopsy, which is invasive and may be challenging or infeasible in some clinical scenarios. We explore hybrid strategies that combine deep learning (features learned from CT/PET volumes) with radiomics (and optionally basic patient metadata) to estimate biomarker likelihood for targets such as TTF1, NAPSIN, and CK7.
+
+The dataset comprises 101 patients with paired CT+PET imaging and biopsy-confirmed labels. Experiments cover both pilot settings (e.g., small cohorts) and larger subsets, using preprocessing steps such as segmentation-based cropping and normalization, and evaluating 3D architectures including multimodal variants (e.g., 3D ResNet-based models) as well as 2D slice-based architectures (e.g., EfficientNet-based models). Overall performance is modest under limited-data conditions, highlighting the impact of ROI definition/cropping and the potential utility of radiomic descriptors, while also underlining the need for larger and more diverse cohorts to achieve clinically robust generalization.
+\end{abstract}
+
+
+\tableofcontents
+
+\newpage
+
+\listoftables
+\listoffigures
+\listofalgorithms
+
+\newpage
+
+\setstretch{1.5}
+
+\newpage
+
+\pagenumbering{arabic}
+
+
+\chapter{Introduction}
+\label{chapter:introduction}
+
+\section{What? Why? How?}
+\label{section:what}
+
+Lung cancer remains one of the most severe oncological diseases, and the management of non-small cell lung cancer (NSCLC) increasingly relies on tumor biomarkers that guide diagnosis, prognosis, and therapy selection. In current clinical workflows, many clinically relevant biomarkers (e.g., immunohistochemical and genomic markers) are determined using tissue biopsy, which can be invasive, costly, and sometimes impractical for patients with advanced disease or limited lesion accessibility. Consequently, there is a strong need for methods that can provide biomarker information non-invasively, early, and at scale.
+
+The scientific problem addressed in this project is the automated prediction of multiple NSCLC tumor biomarkers directly from medical imaging, aiming to build a "virtual biopsy" system that can estimate biomarker likelihood from imaging phenotypes. The clinical motivation is clear: a reliable image-based predictor could reduce dependency on invasive procedures, support faster decision-making, and complement pathological testing by providing an additional source of evidence for personalized treatment strategies. The intended users are radiologists, oncologists, and clinical researchers, for whom such a tool could act as a decision-support component in diagnostic and treatment planning workflows.
+
+Our basic approach is to combine deep learning representations with radiomics features (and, when available, basic patient metadata), leveraging complementary strengths: deep models can learn complex imaging patterns, while radiomics provides interpretable quantitative descriptors that often remain robust in small-data regimes. The dataset described in this report includes NSCLC cases with paired CT/PET imaging and biopsy-confirmed biomarker labels (e.g., TTF1, NAPSIN, CK7), which enables supervised learning and objective evaluation.
+
+This work is positioned in the context of recent research showing that radiomics and multimodal deep learning can non-invasively predict clinically meaningful biomarker status (e.g., PD-L1 and oncogene mutations), especially when CT and PET information are fused and/or combined with clinical variables. Building on these directions, we investigate multiple architectures and fusion strategies, and we evaluate them using standard classification metrics such as AUC, sensitivity, specificity, and F1-score.
+
+The objectives of this report are therefore: (1) to formalize the "virtual biopsy" task for multi-biomarker prediction in NSCLC using imaging data; (2) to develop and compare several model families (radiomics-only baselines, 3D CNNs, and hybrid deep learning + radiomics models); and (3) to outline how these models can be integrated into an application-oriented workflow. The experimental results presented in the investigated approaches highlight both the potential and the practical challenges of small clinical datasets: radiomics-only models may remain competitive when data are scarce, while hybrid and deep models require careful design and validation to generalize reliably. 
+
+
+\section{Paper structure and original contribution(s)}
+\label{section:structure}
+
+The research presented in this report advances the design and implementation of several predictive models for non-invasive biomarker estimation in NSCLC, with a focus on hybrid learning strategies that combine radiomics and deep imaging features.
+
+The main contribution of this report is the development and evaluation of an intelligent algorithmic pipeline for solving the problem of automated, non-invasive prediction of \textbf{multiple} lung cancer biomarkers from medical imaging (CT/PET), using biopsy-confirmed labels as ground truth and reporting standard quantitative metrics for performance assessment.
+
+The second contribution consists of a systematic experimental study that compares multiple modeling strategies under realistic constraints (limited cohort sizes and multi-label/multi-class outputs), including:
+\begin{itemize}
+    \item deep learning models operating on 3D volumes,
+    \item radiomics-only and ct-only machine learning baselines,
+    \item hybrid architectures that fuse deep features with selected radiomic descriptors to improve robustness and generalization on small datasets.
+\end{itemize}
+
+\chapter{Scientific Problem}
+\label{section:scientificProblem}
+\input{problem_description}
+
+
+\chapter{State of the art/Related work}
+\label{chapter:stateOfArt}
+
+\input{Da-Ano_et_al}
+\input{Aerts_et_al}
+\input{Fuster-Matanzo_et_al}
+\input{Li_et_al}
+\input{Majumder_et_al}
+\input{Wang_et_al}
+
+\chapter{Investigated approach}
+\label{chapter:proposedApproach}
+\input{first_attempt}
+\input{rest_net}
+\input{ck7_radiomics_first}
+\input{model_monai}
+\input{small_cnn}
+\input{whole_ct}
+\input{multi_class}
+\input{model_2d}
+\input{optimizationTTF1_CK7_3D}
+\input{2d_finetunning}
+\input{efficentnet_3d}
+
+
+\chapter{Application (Study case)}
+\label{chapter:application}
+
+
+\section{App's description  and the main functionalities}
+\label{section:appDescription}
+
+Application description
+
+Main functionalities and their specification 
+
+Add a flow diagram (very useful for the client)
+
+
+\section{App's design}
+\label{section:appDesign}
+
+\begin{itemize}
+	\item use cases
+	\item diagrams (class diagram, sequence diagram, database structure)
+\end{itemize}
+
+\section{Implementation}
+\label{section:appImplementation}
+
+Give details about app's implementations (language, technologies, frameworks, special settings, etc.)
+
+
+\section{Testing of the codebase}
+\label{section:appTesting}
+
+Asserts, unitTestings, coverage, etc.
+
+
+\section{Numerical validation}
+\label{section:numericalValidation}
+
+Explain the experimental methodology and the numerical results obtained with your approach and the state of art approache(s).
+
+Try to perform a comparison of several approaches.
+
+Statistical validation of the results.
+
+
+\subsection{Methodology}
+\label{section:methodology}
+
+\begin{itemize}
+	\item What are criteria you are using to evaluate your method? 
+	\item What specific hypotheses does your experiment test? Describe the experimental methodology that you used. 
+	\item What are the dependent and independent variables? 
+	\item What is the training/test data that was used, and why is it realistic or interesting? Exactly what performance data did you collect and how are you presenting and analyzing it? Comparisons to competing methods that address the same problem are particularly useful.
+\end{itemize}
+
+\subsection{Data}
+\label{section:data}
+
+Describe the used data.
+
+\subsection{Results}
+\label{section:results}
+
+Present the quantitative results of your experiments. Graphical data presentation such as graphs and histograms are frequently better than tables. What are the basic differences revealed in the data. Are they statistically significant?
+
+\subsection{Discussion}
+\label{section:discussion}
+
+\begin{itemize}
+	\item Is your hypothesis supported? 
+	\item What conclusions do the results support about the strengths and weaknesses of your method compared to other methods? 
+	\item How can the results be explained in terms of the underlying properties of the algorithm and/or the data. 
+\end{itemize}
+
+
+
+\chapter{Conclusion and future work}
+\label{chapter:concl}
+
+This report investigated the feasibility of a \textit{multi-biomarker ``virtual biopsy``} approach for non-small cell lung cancer (NSCLC), where tumor biomarker status is inferred non-invasively from medical imaging. We explored pipelines that leverage (i) deep learning representations learned from 3D CT (and, in the broader scope, PET/CT) and (ii) radiomics descriptors, including hybrid fusion strategies that combine complementary information sources.
+
+\section{Main results and conclusions}
+Across the conducted experiments, three key conclusions emerge:
+
+\begin{enumerate}
+    \item \textbf{An end-to-end pipeline is feasible.} We implemented and tested a complete workflow from image loading and preprocessing to model inference and evaluation, showing that multi-biomarker prediction can be formulated and assessed in a reproducible manner even under limited data.
+
+    \item \textbf{Pure 3D deep learning trained from scratch is challenged by small cohorts.} When the number of patients is limited (and/or class imbalance is strong), large 3D backbones tend to overfit or collapse toward majority-class predictions, leading to modest discrimination and unstable generalization.
+
+    \item \textbf{ROI-focused preprocessing and hybrid fusion are critical in the low-data regime.} Restricting the input to a relevant region-of-interest (ROI) preserves tumor-related signal that is otherwise diluted by whole-volume downsampling. In addition, adding radiomics features to deep representations improves training stability and often yields more competitive performance than deep-only models.
+\end{enumerate}
+
+Overall, the most promising direction suggested by our results is to combine a carefully designed ROI strategy with hybrid modeling (radiomics + deep features), while maintaining model capacity at a level consistent with the available supervision.
+
+\section{Strengths of the proposed approach}
+The main strengths of this work can be summarized as follows:
+
+\begin{itemize}
+    \item \textbf{Systematic experimental framework:} multiple architectures and fusion strategies were implemented and compared under a consistent evaluation protocol.
+    \item \textbf{Evidence-driven design choices:} experiments highlighted the importance of ROI definition and the benefit of radiomics fusion when data are scarce.
+    \item \textbf{Multi-biomarker orientation:} the pipeline was designed to support predicting multiple biomarkers within a unified workflow, enabling a scalable ``virtual biopsy'' perspective.
+\end{itemize}
+
+\section{Weaknesses and major shortcomings}
+Despite encouraging signals, the current approach has important limitations:
+
+\begin{enumerate}
+    \item \textbf{Limited cohort size and class imbalance.}
+    Small training sets and few positive cases for some biomarkers can lead to high variance in results and majority-class bias.
+    
+    \item \textbf{Generalization uncertainty.}
+    Most evaluations are performed on internal splits; without external validation, clinical robustness cannot be claimed.
+    
+    \item \textbf{Dependence on preprocessing quality.}
+    Performance depends strongly on segmentation/cropping, intensity normalization, and resolution. Errors in masks or inconsistent preprocessing can degrade predictions.
+    
+    \item \textbf{Underutilization of multimodality and representation learning.}
+    Consistent PET/CT fusion and representation learning (e.g., self-supervised pretraining) were not fully exploited in all experiments, which can limit performance under small sample sizes.
+    
+    \item \textbf{Clinical usability gaps: calibration and interpretability.}
+    Beyond discrimination metrics (AUC/F1), clinical adoption requires calibrated probabilities, uncertainty estimates, and interpretability to support decision-making.
+\end{enumerate}
+
+\section{Future work}
+For each shortcoming, we propose the following enhancements:
+
+\begin{itemize}
+    \item \textbf{Increase dataset size and mitigate imbalance:}
+    expand to larger and more diverse cohorts (ideally multi-center), apply stratified sampling, use class-balanced or cost-sensitive losses (e.g., class weights, focal loss), and report metrics suitable for imbalance (e.g., PR-AUC in addition to ROC-AUC).
+
+    \item \textbf{External validation and harmonization:}
+    validate on an independent external cohort; analyze scanner/protocol effects; consider harmonization methods for radiomics and intensity distributions to reduce domain shift.
+
+    \item \textbf{Improve ROI definition and robustness:}
+    move from coarse lung-level cropping to lesion-centric strategies (tumor segmentation or detection + bounding box); add preprocessing quality-control checks (mask coverage, HU ranges, slice thickness); quantify sensitivity to segmentation errors.
+
+    \item \textbf{Stronger multimodal learning and pretraining:}
+    incorporate PET consistently via principled fusion (early/late/attention-based); evaluate transfer learning from medical imaging backbones and self-supervised pretraining to reduce sample complexity; prefer compact architectures aligned with available data.
+
+\end{itemize}
+
+\section{Impact on future research and applications}
+The presented results provide practical guidance for image-based biomarker prediction in small clinical datasets: (i) ROI resolution and relevance are crucial for preserving predictive signal, (ii) hybrid radiomics + deep learning can offer a strong and data-efficient baseline, and (iii) model capacity should be matched to cohort size to avoid overfitting. These insights can directly inform future iterations toward a more reliable and deployable ``virtual biopsy'' decision-support tool, and can help narrow the design space for subsequent research by emphasizing robust preprocessing, fusion strategies, and validation methodology.
+
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

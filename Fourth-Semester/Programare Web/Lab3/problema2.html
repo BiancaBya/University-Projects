@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Problema 2</title>
+    </head>
+    <body>
+        <form>
+            <label id="label"></label>
+            <fieldset>
+                <legend><strong>Date personale</strong></legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="date">Birth Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age">
+            </fieldset>
+            <p>
+                <button id="submit" type="button">Submit</button>
+            </p>
+        </form>
+    </body>
+    <script>
+        function validareDate(name, date, email, age) {
+
+            const elemName = document.getElementById(name);
+            const elemDate = document.getElementById(date);
+            const elemEmail = document.getElementById(email);
+            const elemAge = document.getElementById(age);
+
+            let missingValues = []
+            let missingArgs = []
+            let completedArgs = [name, date, email, age]
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (elemName.value === "" || elemName.value.length <= 3) {
+                missingValues.push("Name");
+                missingArgs.push(name);
+            }
+            if (elemDate.value === "") {
+                missingValues.push("Date");
+                missingArgs.push(date);
+            }
+            if (elemEmail.value === "" || !emailRegex.test(elemEmail.value)) {
+                missingValues.push("Email");
+                missingArgs.push(email);
+            }
+            if (elemAge.value === "") {
+                missingValues.push("Age");
+                missingArgs.push(age);
+            }
+
+            completedArgs = completedArgs.filter(value => !missingArgs.includes(value));
+
+            if (missingValues.length > 0) {
+                document.getElementById("label").innerHTML = "Urmatoarele date nu sunt complete: " + missingValues.join(" ");
+                for (let arg of missingArgs){
+                    document.getElementById(arg).style.border = "2px solid red";
+                }
+                for (let arg of completedArgs){
+                    document.getElementById(arg).style.border = "2px solid black";
+                }
+            }
+            else{
+                document.getElementById("label").innerHTML = "Datele sunt completate corect";
+                document.getElementById("name").style.border = "2px solid black";
+                document.getElementById("date").style.border = "2px solid black";
+                document.getElementById("email").style.border = "2px solid black";
+                document.getElementById("age").style.border = "2px solid black";
+            }
+        }
+
+        document.getElementById("submit").onclick = function(){
+            validareDate("name" , "date", "email", "age");
+        }
+    </script>
+</html>
+

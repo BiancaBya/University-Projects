@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Proiect236 - pbir3611_BBT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Proiect236<br/>Test Suite: Proiect236 - pbir3611_BBT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 28/03/2026</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.pbir3611_BBT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc28822">P236-21: AdaugareProdusECPValidTestCase</a></p><p style="padding-left: 45px;"><a href="#toc_tc28824">P236-22: AdaugareProdusECPInvalidTestCase</a></p><p style="padding-left: 45px;"><a href="#toc_tc28826">P236-23: AdaugareProdusBVAValidTestCase</a></p><p style="padding-left: 45px;"><a href="#toc_tc28828">P236-24: AdaugareProdusBVAInvalidTestCase</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Proiect de testare pentru studentii din grupa 236.</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : pbir3611_BBT</h1>
+<div><p>se testeaza adaugarea produsului</p>
+</div><a name="toc_tc28822"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P236-21: AdaugareProdusECPValidTestCase&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">pbir3611</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se verifica&nbsp;adaugarea cu succes a unui produs nou atunci cand datele de intrare apartin clasei de echivalenta&nbsp;valide. Clase de echivalenta&nbsp;validate:</p>
+
+<p>- nume produs valid nevid</p>
+
+<p>- pret&nbsp;valid pozitiv</p>
+
+<p>- categorie valida&nbsp;existenta</p>
+
+<p>- tip valid existent</p>
+
+<p>Rezultatul asteptat este salvarea produsului in sistem, persistarea lui in fisierul CSV si afisarea in lista produselor active.</p>
+
+<p>&nbsp;</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- exista&nbsp;cel putin o categorie valida&nbsp;in sistem</p>
+
+<p>- exista&nbsp;cel putin un tip valid in sistem</p>
+
+<p>- fisierul CSV de produse este accesibil</p>
+
+<p>- numele produsului este valid si nevid</p>
+
+<p>- pretul produsului este un numar pozitiv</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">pbir3611_F01:  Adaugare Produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc28824"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P236-22: AdaugareProdusECPInvalidTestCase&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">pbir3611</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se verifica&nbsp;faptul ca&nbsp;sistemul respinge adaugarea unui produs nou atunci cand datele de intrare apartin unei clase de echivalenta&nbsp;nevalide. Clase de echivalenta&nbsp;nevalidate:</p>
+
+<p>- nume produs invalid (sir vid)</p>
+
+<p>- pret&nbsp;valid pozitiv</p>
+
+<p>- categorie valida&nbsp;existenta</p>
+
+<p>- tip valid existent</p>
+
+<p>Rezultatul asteptat este ca&nbsp;produsul nu este salvat in sistem si&nbsp;nu este persistat in fisierul CSV.&nbsp;</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- exista&nbsp;cel putin o categorie valida&nbsp;in sistem</p>
+
+<p>- exista&nbsp;cel putin un tip valid in sistem</p>
+
+<p>- fisierul CSV de produse este accesibil</p>
+
+<p>- numele produsului este invalid (gol)</p>
+
+<p>- pretul produsului este valid si pozitiv</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">pbir3611_F01:  Adaugare Produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc28826"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P236-23: AdaugareProdusBVAValidTestCase&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">pbir3611</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se verifica&nbsp;adaugarea cu succes a unui produs nou folosind analiza valorilor limita&nbsp;pentru atributul pret.</p>
+
+<p>Valoarea de test apartine clasei valide de la limita:</p>
+
+<p>- nume produs valid nevid</p>
+
+<p>- pret&nbsp;valid la limita inferioara&nbsp;acceptata</p>
+
+<p>- categorie valida&nbsp;existenta</p>
+
+<p>- tip valid existenta</p>
+
+<p>Rezultatul asteptat este salvarea corecta&nbsp;a produsului in sistem si&nbsp;persistarea lui in fisierul CSV.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- exista&nbsp;cel putin o categorie valida&nbsp;in sistem</p>
+
+<p>- exista&nbsp;cel putin un tip valid in sistem</p>
+
+<p>- fisierul CSV de produse este accesibil</p>
+
+<p>- numele produsului este valid si nevid</p>
+
+<p>- pretul produsului este la limita inferioara&nbsp;valida</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">pbir3611_F01:  Adaugare Produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc28828"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P236-24: AdaugareProdusBVAInvalidTestCase&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">pbir3611</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Se verifica&nbsp;faptul ca&nbsp;sistemul respinge adaugarea unui produs nou folosind analiza valorilor limita&nbsp;pentru atributul pret. Valoarea de test aparyine clasei nevalide de la limita:</p>
+
+<p>- nume produs valid nevid</p>
+
+<p>- pret&nbsp;invalid la limita inferioara&nbsp;neacceptata</p>
+
+<p>- categorie valida&nbsp;existenta</p>
+
+<p>- tip valid existent</p>
+
+<p>Rezultatul asteptat este ca&nbsp;produsul nu este salvat in sistem si&nbsp;nu este persistat in fisierul CSV.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- exista&nbsp;cel putin o categorie valida&nbsp;in sistem</p>
+
+<p>- exista&nbsp;cel putin un tip valid in sistem</p>
+
+<p>- fisierul CSV de produse este accesibil</p>
+
+<p>- numele produsului este valid si nevid</p>
+
+<p>- pretul produsului este la limita inferioara&nbsp;nevalida</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">pbir3611_F01:  Adaugare Produs [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>

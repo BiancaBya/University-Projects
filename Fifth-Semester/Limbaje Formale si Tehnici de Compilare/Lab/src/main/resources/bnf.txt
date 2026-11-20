@@ -1,0 +1,23 @@
+<file> ::= <states-line> <nl> <alphabet-line> <nl> <initial-state-line> <nl> <final-states-line> <nl> <transitions>
+
+<states-line> ::= <state-list>
+<alphabet-line> ::= <symbol-list>
+<initial-state-line> ::= <state>
+<final-states-line> ::= <state-list>
+
+<transitions> ::= <transition-line>|<transition-line><nl><transitions>
+
+<transition-line> ::= <state>" "<symbol>" "<state>
+
+<state-list> ::= <state>|<state>" "<state-list>
+<symbol-list> ::= <symbol>|<symbol>" "<symbol-list>
+
+<state> ::= <letter>|<state><letter>|<state><digit>
+<symbol> ::= <letter>|<digit>|"+"|"-"
+
+<letter>::="A"|...|"Z"|"a"|...|"z"
+<digit>::="0"|...|"9"
+
+<nl>::="\n"
+
+

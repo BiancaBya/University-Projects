@@ -1,0 +1,78 @@
+START program
+
+program -> librarii using_ns main_func
+
+librarii -> #include < iostream >
+using_ns -> using namespace std ;
+
+main_func -> int main ( ) { corp return_stmt }
+
+corp -> decl_list instr_list
+
+return_stmt -> return INT_CONST ;
+
+decl_list -> decl decl_list | EPS
+
+decl -> tip list_id ;
+decl -> struct_def
+
+struct_def -> struct ID { decl_list } ;
+
+tip -> int
+tip -> float
+tip -> tip_struct
+
+tip_struct -> struct ID
+
+list_id -> ID list_id_tail
+list_id_tail -> , ID list_id_tail | EPS
+
+instr_list -> instr instr_list | EPS
+
+instr -> atribuire ;
+instr -> citire ;
+instr -> scriere ;
+instr -> instr_cond
+instr -> instr_rep
+
+atribuire -> ID = exp
+
+exp -> operand exp_tail
+exp_tail -> op_arit operand exp_tail | EPS
+
+operand -> ID
+operand -> INT_CONST
+operand -> REAL_CONST
+
+op_arit -> +
+op_arit -> -
+op_arit -> *
+op_arit -> /
+op_arit -> %
+
+citire -> cin >> ID citire_tail
+citire_tail -> >> ID citire_tail | EPS
+
+scriere -> cout << exp scriere_tail
+scriere_tail -> << exp scriere_tail | EPS
+
+instr_cond -> if ( cond_comp ) { instr_list } else_part
+else_part -> else { instr_list } | EPS
+
+instr_rep -> while ( cond_comp ) { instr_list }
+
+cond_comp -> cond cond_comp_tail
+cond_comp_tail -> op_logic cond cond_comp_tail | EPS
+
+cond -> operand op_comp operand
+cond -> ! operand
+
+op_comp -> <
+op_comp -> <=
+op_comp -> >
+op_comp -> >=
+op_comp -> ==
+op_comp -> !=
+
+op_logic -> &&
+op_logic -> ||

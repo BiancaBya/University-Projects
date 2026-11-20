@@ -1,0 +1,27 @@
+div {
+    background-color: yellow;
+    display: flex;
+    width: 500px;
+    border: 1px solid;
+    padding: 2px;
+}
+
+p {
+    text-indent: 20px;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+    flex-direction: row;
+    margin: 12px;
+}
+
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+

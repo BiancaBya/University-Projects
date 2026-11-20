@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header{
+    padding: 75px 0;
+}
+
+#footer{
+    padding: 36px 0;
+}
+
+#menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+li{
+    width: 20%;
+    border-left: 2px solid;
+    float: left;
+}
+
+#main{
+    padding: 144px 0;
+}
+

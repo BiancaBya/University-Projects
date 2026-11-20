@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="512.0" prefWidth="890.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.gui.MainController">
+   <children>
+      <ListView fx:id="listTrips" layoutX="14.0" layoutY="235.0" prefHeight="238.0" prefWidth="488.0" />
+      <TextField fx:id="destinationField" layoutX="52.0" layoutY="65.0" prefHeight="26.0" prefWidth="175.0" promptText="Destination" />
+      <DatePicker fx:id="datePicker" layoutX="52.0" layoutY="108.0" promptText="Date" />
+      <ComboBox fx:id="hourComboBox" layoutX="52.0" layoutY="170.0" prefWidth="150.0" promptText="Hour" />
+      <ComboBox fx:id="minutesComboBox" layoutX="218.0" layoutY="170.0" prefWidth="150.0" promptText="Minutes" />
+      <Button fx:id="searchBtn" layoutX="52.0" layoutY="19.0" mnemonicParsing="false" onAction="#onBtnSearchClicked" text="Search" />
+      <Label fx:id="messageLabel" alignment="CENTER" layoutX="242.0" layoutY="14.0" prefHeight="18.0" prefWidth="225.0" text="Label" />
+      <TableView fx:id="tableSeats" layoutX="535.0" layoutY="33.0" prefHeight="200.0" prefWidth="337.0">
+         <columns>
+            <TableColumn fx:id="numSeatColumn" prefWidth="94.39996337890625" text="Seat" />
+            <TableColumn fx:id="clientNameColumn" prefWidth="240.0" text="Client" />
+         </columns>
+      </TableView>
+      <Button layoutX="572.0" layoutY="455.0" mnemonicParsing="false" onAction="#onBtnBookClicked" prefHeight="35.0" prefWidth="124.0" text="Book Trip" />
+      <TextField fx:id="clientBookNameField" layoutX="548.0" layoutY="256.0" prefHeight="26.0" prefWidth="242.0" promptText="Client Name" />
+      <TextField fx:id="nrSeatsBookedField" layoutX="548.0" layoutY="403.0" prefHeight="26.0" prefWidth="242.0" promptText="Nr of Seats" />
+      <Button layoutX="752.0" layoutY="455.0" mnemonicParsing="false" onAction="#onBtnLogOutClicked" prefHeight="35.0" prefWidth="96.0" text="Log out" />
+      <TextField fx:id="clientBookEmailField" layoutX="548.0" layoutY="306.0" prefHeight="34.0" prefWidth="242.0" promptText="Email" />
+      <TextField fx:id="clientBookPhoneField" layoutX="548.0" layoutY="354.0" prefHeight="34.0" prefWidth="242.0" promptText="Phone" />
+   </children>
+</AnchorPane>

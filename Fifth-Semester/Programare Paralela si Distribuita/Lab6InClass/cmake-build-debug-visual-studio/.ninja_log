@@ -1,0 +1,19 @@
+# ninja log v6
+2	120	7840529096349473	CMakeFiles/Lab6InClass.dir/main.cpp.obj.ddi	260c23230dc6aaa2
+121	167	7840529097955777	CMakeFiles/Lab6InClass.dir/CXX.dd	907862049f966c2f
+121	167	7840529097955777	C:/Users/Next/Desktop/PPD/Lab6InClass/cmake-build-debug-visual-studio/CMakeFiles/Lab6InClass.dir/CXXModules.json	907862049f966c2f
+121	167	7840529097955777	CMakeFiles/Lab6InClass.dir/main.cpp.obj.modmap	907862049f966c2f
+175	1139	7840529098080419	CMakeFiles/Lab6InClass.dir/main.cpp.obj	bff732e31c755e52
+1139	1361	7840529107716699	Lab6InClass.exe	6bda6d9c7bcb2ccc
+3	361	7840536843073965	CMakeFiles/Lab6InClass.dir/main.cpp.obj.ddi	260c23230dc6aaa2
+361	418	7840536846659388	CMakeFiles/Lab6InClass.dir/CXX.dd	907862049f966c2f
+361	418	7840536846659388	C:/Users/Next/Desktop/PPD/Lab6InClass/cmake-build-debug-visual-studio/CMakeFiles/Lab6InClass.dir/CXXModules.json	907862049f966c2f
+361	418	7840536846659388	CMakeFiles/Lab6InClass.dir/main.cpp.obj.modmap	907862049f966c2f
+419	1581	7840536847232227	CMakeFiles/Lab6InClass.dir/main.cpp.obj	bff732e31c755e52
+1581	1776	7840536858853233	Lab6InClass.exe	6bda6d9c7bcb2ccc
+2	351	7845820387890275	CMakeFiles/Lab6InClass.dir/main.cpp.obj.ddi	260c23230dc6aaa2
+352	423	7845820391382867	CMakeFiles/Lab6InClass.dir/CXX.dd	907862049f966c2f
+352	423	7845820391382867	C:/Users/Next/Desktop/PPD/Lab6InClass/cmake-build-debug-visual-studio/CMakeFiles/Lab6InClass.dir/CXXModules.json	907862049f966c2f
+352	423	7845820391382867	CMakeFiles/Lab6InClass.dir/main.cpp.obj.modmap	907862049f966c2f
+425	1587	7845820392111842	CMakeFiles/Lab6InClass.dir/main.cpp.obj	bff732e31c755e52
+1587	1766	7845820403741925	Lab6InClass.exe	6bda6d9c7bcb2ccc

@@ -1,0 +1,305 @@
+@ARTICLE{Shao2022-yo,
+  title     = "Radiogenomic system for non-invasive identification of multiple
+               actionable mutations and {PD-L1} expression in non-small cell
+               lung cancer based on {CT} images",
+  author    = "Shao, Jun and Ma, Jiechao and Zhang, Shu and Li, Jingwei and
+               Dai, Hesen and Liang, Shufan and Yu, Yizhou and Li, Weimin and
+               Wang, Chengdi",
+  abstract  = "PURPOSE: Personalized treatments such as targeted therapy and
+               immunotherapy have revolutionized the predominantly therapeutic
+               paradigm for non-small cell lung cancer (NSCLC). However, these
+               treatment decisions require the determination of targetable
+               genomic and molecular alterations through invasive genetic or
+               immunohistochemistry (IHC) tests. Numerous previous studies have
+               demonstrated that artificial intelligence can accurately predict
+               the single-gene status of tumors based on radiologic imaging,
+               but few studies have achieved the simultaneous evaluation of
+               multiple genes to reflect more realistic clinical scenarios.
+               METHODS: We proposed a multi-label multi-task deep learning
+               (MMDL) system for non-invasively predicting actionable NSCLC
+               mutations and PD-L1 expression utilizing routinely acquired
+               computed tomography (CT) images. This radiogenomic system
+               integrated transformer-based deep learning features and radiomic
+               features of CT volumes from 1096 NSCLC patients based on
+               next-generation sequencing (NGS) and IHC tests. RESULTS: For
+               each task cohort, we randomly split the corresponding dataset
+               into training (80\%), validation (10\%), and testing (10\%)
+               subsets. The area under the receiver operating characteristic
+               curves (AUCs) of the MMDL system achieved 0.862 (95\% confidence
+               interval (CI), 0.758-0.969) for discrimination of a panel of 8
+               mutated genes, including EGFR, ALK, ERBB2, BRAF, MET, ROS1, RET
+               and KRAS, 0.856 (95\% CI, 0.663-0.948) for identification of a
+               10-molecular status panel (previous 8 genes plus TP53 and
+               PD-L1); and 0.868 (95\% CI, 0.641-0.972) for classifying EGFR /
+               PD-L1 subtype, respectively. CONCLUSIONS: To the best of our
+               knowledge, this study is the first deep learning system to
+               simultaneously analyze 10 molecular expressions, which might be
+               utilized as an assistive tool in conjunction with or in lieu of
+               ancillary testing to support precision treatment options.",
+  journal   = "Cancers (Basel)",
+  publisher = "MDPI AG",
+  volume    =  14,
+  number    =  19,
+  pages     = "4823",
+  month     =  oct,
+  year      =  2022,
+  keywords  = "actionable mutations; deep learning; molecular status; non-small
+               cell lung cancer; radiomics",
+  copyright = "https://creativecommons.org/licenses/by/4.0/",
+  language  = "en"
+}
+@ARTICLE{Lu2025-uo,
+  title    = "Predicting {PD-L1} status in {NSCLC} patients using deep learning
+              radiomics based on {CT} images",
+  author   = "Lu, Jiameng and Liu, Xinyi and Ji, Xiaoqing and Jiang, Yunxiu and
+              Zuo, Anli and Guo, Zihan and Yang, Shuran and Peng, Haiying and
+              Sun, Fei and Lu, Degan",
+  abstract = "Radiomics refers to the utilization of automated or
+              semi-automated techniques to extract and analyze numerous
+              quantitative features from medical images, such as computerized
+              tomography (CT) or magnetic resonance imaging (MRI) scans. This
+              study aims to develop a deep learning radiomics (DLR)-based
+              approach for predicting programmed death-ligand 1 (PD-L1)
+              expression in patients with non-small cell lung cancer (NSCLC).
+              Data from 352 NSCLC patients with known PD-L1 expression were
+              collected, of which 48.29\% (170/352) were tested positive for
+              PD-L1 expression. Tumor regions of interest (ROI) were
+              semi-automatically segmented based on CT images, and DL features
+              were extracted using Residual Network 50. The least absolute
+              shrinkage and selection operator (LASSO) algorithm was used for
+              feature selection and dimensionality reduction. Seven algorithms
+              were used to build models, and the most optimal ones were
+              identified. A combined model integrating DLR with clinical data
+              was also developed. The predictive performance of each model was
+              evaluated using the area under the curve (AUC) of the receiver
+              operating characteristic (ROC) curve analysis. The DLR model,
+              based on CT images, demonstrated an AUC of 0.85 (95\% confidence
+              interval (CI), 0.82-0.88), sensitivity of 0.80 (0.74-0.85), and
+              specificity of 0.73 (0.70-0.77) for predicting PD-L1 status. The
+              integrated model exhibited superior performance, with an AUC of
+              0.91 (0.87-0.95), sensitivity of 0.85 (0.82-0.89), and
+              specificity of 0.75 (0.72-0.80). Our findings indicate that the
+              DLR model holds promise as a valuable tool for predicting the
+              PD-L1 status in patients with NSCLC, which can greatly assist in
+              clinical decision-making and the selection of personalized
+              treatment strategies.",
+  journal  = "Sci. Rep.",
+  volume   =  15,
+  number   =  1,
+  pages    = "12495",
+  month    =  apr,
+  year     =  2025,
+  keywords = "Deep learning; Non-small cell lung cancer (NSCLC); Programmed
+              death-ligand 1(PD-L1).",
+  language = "en"
+}
+@ARTICLE{Da-Ano2024-oo,
+  title     = "Automated {PD-L1} status prediction in lung cancer with
+               multi-modal {PET/CT} fusion",
+  author    = "Da-Ano, Ronrick and Andrade-Miranda, Gustavo and Tankyevych,
+               Olena and Visvikis, Dimitris and Conze, Pierre-Henri and Rest,
+               Catherine Cheze Le",
+  abstract  = "Programmed death-ligand 1 (PD-L1) expressions play a crucial
+               role in guiding therapeutic interventions such as the use of
+               tyrosine kinase inhibitors (TKIs) and immune checkpoint
+               inhibitors (ICIs) in lung cancer. Conventional determination of
+               PD-L1 status includes careful surgical or biopsied tumor
+               specimens. These specimens are gathered through invasive
+               procedures, representing a risk of difficulties and potential
+               challenges in getting reliable and representative tissue
+               samples. Using a single center cohort of 189 patients, our
+               objective was to evaluate various fusion methods that used
+               non-invasive computed tomography (CT) and 18 F-FDG positron
+               emission tomography (PET) images as inputs to various deep
+               learning models to automatically predict PD-L1 in non-small cell
+               lung cancer (NSCLC). We compared three different architectures
+               (ResNet, DenseNet, and EfficientNet) and considered different
+               input data (CT only, PET only, PET/CT early fusion, PET/CT late
+               fusion without as well as with partially and fully shared
+               weights to determine the best model performance. Models were
+               assessed utilizing areas under the receiver operating
+               characteristic curves (AUCs) considering their 95\% confidence
+               intervals (CI). The fusion of PET and CT images as input yielded
+               better performance for PD-L1 classification. The different data
+               fusion schemes systematically outperformed their individual
+               counterparts when used as input of the various deep models.
+               Furthermore, early fusion consistently outperformed late fusion,
+               probably as a result of its capacity to capture more complicated
+               patterns by merging PET and CT derived content at a lower level.
+               When we looked more closely at the effects of weight sharing in
+               late fusion architectures, we discovered that while it might
+               boost model stability, it did not always result in better
+               results. This suggests that although weight sharing could be
+               beneficial when modality parameters are similar, the anatomical
+               and metabolic information provided by CT and PET scans are too
+               dissimilar to consistently lead to improved PD-L1 status
+               predictions.",
+  journal   = "Sci. Rep.",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  14,
+  number    =  1,
+  pages     = "16720",
+  month     =  jul,
+  year      =  2024,
+  keywords  = "Deep learning; Immunotherapy response; Medical imaging;
+               Multi-modal fusion",
+  copyright = "https://creativecommons.org/licenses/by/4.0",
+  language  = "en"
+}
+@ARTICLE{Li2024-np,
+  title     = "Deep learning radiomics model based on {PET/CT} predicts {PD-L1}
+               expression in non-small cell lung cancer",
+  author    = "Li, Bo and Su, Jie and Liu, Kai and Hu, Chunfeng",
+  abstract  = "Purpose: Programmed cell death protein-1 ligand (PD-L1) is an
+               important prognostic predictor for immunotherapy of non-small
+               cell lung cancer (NSCLC). This study aimed to develop a
+               non-invasive deep learning and radiomics model based on positron
+               emission tomography and computed tomography (PET/CT) to predict
+               PD-L1 expression in NSCLC. Methods: A total of 136 patients with
+               NSCLC between January 2021 and September 2022 were enrolled in
+               this study. The patients were randomly divided into the training
+               dataset and the validation dataset in a ratio of 7:3. Radiomics
+               feature and deep learning feature were extracted from their
+               PET/CT images. The Mann-whitney U-test, Least Absolute Shrinkage
+               and Selection Operator algorithm and Spearman correlation
+               analysis were used to select the top significant features. Then
+               we developed a radiomics model, a deep learning model, and a
+               fusion model based on the selected features. The performance of
+               three models were compared by the area under the curve (AUC),
+               sensitivity, specificity, accuracy, positive predictive value,
+               and negative predictive value. Results: Of the patients, 42
+               patients were PD-L1 negative and 94 patients were PD-L1
+               positive. A total of 2446 radiomics features and 4096 deep
+               learning features were extracted per patient. In the training
+               dataset, the fusion model achieved a highest AUC (0.954, 95\%
+               confident internal [CI]: 0.890-0.986) compared with the
+               radiomics model (0.829, 95\%CI: 0.738-0.898) and the deep
+               learning model (0.935, 95\%CI: 0.865-0.975). In the validation
+               dataset, the AUC of the fusion model (0.910, 95\% CI:
+               0.779-0.977) was also higher than that of the radiomics model
+               (0.785, 95\% CI: 0.628-0.897) and the deep learning model
+               (0.867, 95\% CI: 0.724-0.952). Conclusion: The PET/CT-based deep
+               learning radiomics model can predict the PD-L1 expression
+               accurately in NSCLC patients, and provides a non-invasive tool
+               for clinicians to select positive PD-L1 patients.",
+  journal   = "Eur. J. Radiol. Open",
+  publisher = "Elsevier BV",
+  volume    =  12,
+  number    =  100549,
+  pages     = "100549",
+  month     =  jun,
+  year      =  2024,
+  keywords  = "Deep learning; Machine learning; Non-small cell lung cancer;
+               PD-L1; PET/CT; Radiomics",
+  copyright = "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+  language  = "en"
+}
+@ARTICLE{Majumder2024-tzad004,
+  title={State of the art: radiomics and radiomics-related artificial intelligence on the road to clinical translation},
+  author={Majumder, Shweta and Katz, Sharyn and Kontos, Despina and Roshkovan, Leonid},
+  journal={BJR | Open},
+  volume={6},
+  number={1},
+  pages={tzad004},
+  year={2024},
+  publisher={Oxford University Press},
+  doi={10.1093/bjro/tzad004},
+  url={https://pmc.ncbi.nlm.nih.gov/articles/PMC10860524/}
+}
+Get 30 days free
+@ARTICLE{Fuster-Matanzo2025-ki,
+  title     = "Prediction of oncogene mutation status in non-small cell lung
+               cancer: a systematic review and meta-analysis with a special
+               focus on artificial intelligence-based methods",
+  author    = "Fuster-Matanzo, Almudena and Pic{\'o}-Peris, Alfonso and
+               Bellv{\'\i}s-Bataller, Fuensanta and Jimenez-Pastor, Ana and
+               Weiss, Glen J and Mart{\'\i}-Bonmat{\'\i}, Luis and L{\'a}zaro
+               S{\'a}nchez, Antonio and Bazaga, David and Banna, Giuseppe L and
+               Addeo, Alfredo and Camps, Carlos and Seijo, Luis M and
+               Alberich-Bayarri, {\'A}ngel",
+  abstract  = "OBJECTIVES: In non-small cell lung cancer (NSCLC), non-invasive
+               alternatives to biopsy-dependent driver mutation analysis are
+               needed. We reviewed the effectiveness of radiomics alone or with
+               clinical data and assessed the performance of artificial
+               intelligence (AI) models in predicting oncogene mutation status.
+               MATERIALS AND METHODS: A PRISMA-compliant literature review for
+               studies predicting oncogene mutation status in NSCLC patients
+               using radiomics was conducted by a multidisciplinary team.
+               Meta-analyses evaluating the performance of AI-based models
+               developed with CT-derived radiomics features alone or combined
+               with clinical data were performed. A meta-regression to analyze
+               the influence of different predictors was also conducted.
+               RESULTS: Of 890 studies identified, 124 evaluating models for
+               the prediction of epidermal growth factor-1 (EGFR), anaplastic
+               lymphoma kinase (ALK), and Kirsten rat sarcoma virus (KRAS)
+               mutations were included in the systematic review, of which 51
+               were meta-analyzed. The AI algorithms' sensitivity/false
+               positive rate (FPR) in predicting mutation status using
+               radiomics-based models was 0.754 (95\% CI 0.727-0.780)/0.344
+               (95\% CI 0.308-0.381) for EGFR, 0.754 (95\% CI
+               0.638-0.841)/0.225 (95\% CI 0.163-0.302) for ALK and 0.475 (95\%
+               CI 0.153-0.820)/0.181 (95\% CI 0.054-0.461) for KRAS. A
+               meta-analysis of combined models was possible for EGFR mutation,
+               revealing a sensitivity of 0.806 (95\% CI 0.777-0.833) and a FPR
+               of 0.315 (95\% CI 0.270-0.364). No statistically significant
+               results were obtained in the meta-regression. CONCLUSIONS:
+               Radiomics-based models may offer a non-invasive alternative for
+               determining oncogene mutation status in NSCLC. Further research
+               is required to analyze whether clinical data might boost their
+               performance. KEY POINTS: Question Can imaging-based radiomics
+               and artificial intelligence non-invasively predict oncogene
+               mutation status to improve diagnosis in non-small cell lung
+               cancer (NSCLC)? Findings Radiomics-based models achieved high
+               performance in predicting mutation status in NSCLC; adding
+               clinical data showed limited improvement in predictive
+               performance. Clinical relevance Radiomics and AI tools offer a
+               non-invasive strategy to support molecular profiling in NSCLC.
+               Validation studies addressing clinical and methodological
+               aspects are essential to ensure their reliability and
+               integration into routine clinical practice.",
+  journal   = "Eur. Radiol.",
+  publisher = "Springer Science and Business Media LLC",
+  month     =  sep,
+  year      =  2025,
+  keywords  = "Artificial intelligence; Diagnostic imaging; Mutation; Non-small
+               cell lung cancer.; Radiomics",
+  copyright = "https://creativecommons.org/licenses/by/4.0",
+  language  = "en"
+}
+@ARTICLE{Aerts2014-bg,
+  title     = "Decoding tumour phenotype by noninvasive imaging using a
+               quantitative radiomics approach",
+  author    = "Aerts, Hugo J W L and Velazquez, Emmanuel Rios and Leijenaar,
+               Ralph T H and Parmar, Chintan and Grossmann, Patrick and
+               Carvalho, Sara and Bussink, Johan and Monshouwer, Ren{\'e} and
+               Haibe-Kains, Benjamin and Rietveld, Derek and Hoebers, Frank and
+               Rietbergen, Michelle M and Leemans, C Ren{\'e} and Dekker, Andre
+               and Quackenbush, John and Gillies, Robert J and Lambin, Philippe",
+  abstract  = "Human cancers exhibit strong phenotypic differences that can be
+               visualized noninvasively by medical imaging. Radiomics refers to
+               the comprehensive quantification of tumour phenotypes by
+               applying a large number of quantitative image features. Here we
+               present a radiomic analysis of 440 features quantifying tumour
+               image intensity, shape and texture, which are extracted from
+               computed tomography data of 1,019 patients with lung or
+               head-and-neck cancer. We find that a large number of radiomic
+               features have prognostic power in independent data sets of lung
+               and head-and-neck cancer patients, many of which were not
+               identified as significant before. Radiogenomics analysis reveals
+               that a prognostic radiomic signature, capturing intratumour
+               heterogeneity, is associated with underlying gene-expression
+               patterns. These data suggest that radiomics identifies a general
+               prognostic phenotype existing in both lung and head-and-neck
+               cancer. This may have a clinical impact as imaging is routinely
+               used in clinical practice, providing an unprecedented
+               opportunity to improve decision-support in cancer treatment at
+               low cost.",
+  journal   = "Nat. Commun.",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  5,
+  number    =  1,
+  pages     = "4006",
+  month     =  jun,
+  year      =  2014,
+  language  = "en"
+}

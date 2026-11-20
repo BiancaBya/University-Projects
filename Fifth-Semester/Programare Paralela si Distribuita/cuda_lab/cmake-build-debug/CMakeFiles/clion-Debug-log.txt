@@ -1,0 +1,12 @@
+"C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.3.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\Next\Desktop\PPD\cuda_lab -B C:\Users\Next\Desktop\PPD\cuda_lab\cmake-build-debug
+CMake Error at C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CMakeCUDAFindToolkit.cmake:104 (message):
+  Failed to find nvcc.
+
+  Compiler requires the CUDA toolkit.  Please set the CUDAToolkit_ROOT
+  variable.
+Call Stack (most recent call first):
+  C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCUDACompiler.cmake:85 (cmake_cuda_find_toolkit)
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!

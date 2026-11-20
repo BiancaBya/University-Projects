@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Problema 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+    .div1{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    table{
+      width: 200px;
+      height: 200px;
+      table-layout: fixed;
+    }
+
+    table td{
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid black;
+    }
+
+    td.revealed {
+      background-color: lightseagreen;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <div class = "div1">
+      <label id="label"></label>
+        <table>
+          <tr>
+            <td id="cell1" data-value="1">&nbsp;</td>
+            <td id="cell2" data-value="2">&nbsp;</td>
+            <td id="cell3" data-value="2">&nbsp;</td>
+            <td id="cell4" data-value="1">&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td id="cell5" data-value="3"></td>
+            <td id="cell6" data-value="4"></td>
+            <td id="cell7" data-value="3"></td>
+            <td id="cell8" data-value="4"></td>
+          </tr>
+
+          <tr>
+            <td id="cell9" data-value="5"></td>
+            <td id="cell10" data-value="5"></td>
+            <td id="cell11" data-value="6"></td>
+            <td id="cell12" data-value="6"></td>
+          </tr>
+
+          <tr>
+            <td id="cell13" data-value="7"></td>
+            <td id="cell14" data-value="8"></td>
+            <td id="cell15" data-value="7"></td>
+            <td id="cell16" data-value="8"></td>
+          </tr>
+        </table>
+    </div>
+  </body>
+
+  <script>
+    let revealedCells = []
+    let locked = false;
+
+    function seeNumber(cell){
+      cell.textContent = cell.getAttribute("data-value");
+      cell.classList.add("revealed");
+    }
+
+    function hideNumber(cell){
+      cell.textContent = "\u00A0";
+      cell.classList.remove("revealed");
+    }
+
+    function checkWin(){
+      const allCells = document.querySelectorAll("td");
+      return Array.from(allCells).every(cell => cell.classList.contains("revealed"));
+    }
+
+    const cells = document.querySelectorAll("td");
+
+    cells.forEach(cell => {
+      cell.addEventListener("click", function() {
+
+        if (locked || this.classList.contains("revealed")) return;
+
+        seeNumber(this);
+        revealedCells.push(this);
+
+        if (revealedCells.length === 2) {
+          const [first, second] = revealedCells;
+
+          if (first.getAttribute("data-value") === second.getAttribute("data-value")) {
+            revealedCells = [];
+
+            if (checkWin()) {
+              document.getElementById("label").textContent = "Ai castigat";
+            }
+          }
+          else{
+            locked = true;
+            setTimeout(() => {
+              hideNumber(first);
+              hideNumber(second);
+              revealedCells = [];
+              locked = false;
+            }, 1000);
+          }
+        }
+      });
+    });
+
+  </script>
+</html>
+

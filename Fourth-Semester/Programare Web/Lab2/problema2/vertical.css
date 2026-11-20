@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#div{
+    display: flex;
+}
+
+#header{
+    padding: 75px 0;
+}
+
+#footer{
+    padding: 36px 0;
+}
+
+#main{
+    width: 80%;
+    padding: 144px 0;
+}
+
+#menu {
+    width: 20%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+li {
+    border-bottom: 2px solid;
+}

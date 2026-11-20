@@ -1,0 +1,30 @@
+# ninja log v6
+39	168	7864723745751135	CMakeFiles/Lab10Class.dir/main.cpp.obj.ddi	2b09bb8cdfd0b30a
+168	197	7864723747042329	CMakeFiles/Lab10Class.dir/CXX.dd	b670643c2a9931c1
+168	197	7864723747042329	CMakeFiles/Lab10Class.dir/main.cpp.obj.modmap	b670643c2a9931c1
+198	1044	7864723747347353	CMakeFiles/Lab10Class.dir/main.cpp.obj	79c2cf6aaebc6583
+1044	1183	7864723755802210	Lab10Class.exe	853b4f4f0e1a3055
+3	120	7931501981283607	CMakeFiles/Lab10Class.dir/main.cpp.obj.ddi	77449bfc4c2846ed
+120	140	7931501982624802	CMakeFiles/Lab10Class.dir/CXX.dd	b670643c2a9931c1
+120	140	7931501982624802	C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/Lab10Class.dir/CXXModules.json	b670643c2a9931c1
+120	140	7931501982624802	CMakeFiles/Lab10Class.dir/main.cpp.obj.modmap	b670643c2a9931c1
+141	934	7931501982654704	CMakeFiles/Lab10Class.dir/main.cpp.obj	c9bca121ab4c04f2
+934	1149	7931501990584606	Lab10Class.exe	853b4f4f0e1a3055
+21	347	7931514683866268	CMakeFiles/Lab10Class.dir/main.cpp.obj.ddi	77449bfc4c2846ed
+348	373	7931514687142280	CMakeFiles/Lab10Class.dir/CXX.dd	b670643c2a9931c1
+348	373	7931514687142280	C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/Lab10Class.dir/CXXModules.json	b670643c2a9931c1
+348	373	7931514687142280	CMakeFiles/Lab10Class.dir/main.cpp.obj.modmap	b670643c2a9931c1
+374	750	7931514687406311	CMakeFiles/Lab10Class.dir/main.cpp.obj	c9bca121ab4c04f2
+750	912	7931514691162703	Lab10Class.exe	853b4f4f0e1a3055
+3	53	7931514963680737	CMakeFiles/Lab10Class.dir/main.cpp.obj.ddi	77449bfc4c2846ed
+54	78	7931514964186540	CMakeFiles/Lab10Class.dir/CXX.dd	b670643c2a9931c1
+54	78	7931514964186540	C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/Lab10Class.dir/CXXModules.json	b670643c2a9931c1
+54	78	7931514964186540	CMakeFiles/Lab10Class.dir/main.cpp.obj.modmap	b670643c2a9931c1
+79	146	7931514964442412	CMakeFiles/Lab10Class.dir/main.cpp.obj	c9bca121ab4c04f2
+146	280	7931514965107457	Lab10Class.exe	853b4f4f0e1a3055
+4	53	7931515275594129	CMakeFiles/Lab10Class.dir/main.cpp.obj.ddi	77449bfc4c2846ed
+54	76	7931515276100765	CMakeFiles/Lab10Class.dir/CXX.dd	b670643c2a9931c1
+54	76	7931515276100765	C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/Lab10Class.dir/CXXModules.json	b670643c2a9931c1
+54	76	7931515276100765	CMakeFiles/Lab10Class.dir/main.cpp.obj.modmap	b670643c2a9931c1
+77	143	7931515276331454	CMakeFiles/Lab10Class.dir/main.cpp.obj	c9bca121ab4c04f2
+143	276	7931515276992024	Lab10Class.exe	853b4f4f0e1a3055

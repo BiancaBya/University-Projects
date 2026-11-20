@@ -1,0 +1,374 @@
+=== CHECK @ 2026-01-25T15:38:51.711325Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=30
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=90
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=100
+Unpaid(Rezervat) count=0
+CleanedExpired count=0
+BalancePerEvent:
+Integrity: OK
+
+=== CHECK @ 2026-01-25T15:38:56.716834700Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=25
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=54
+Eveniment=2 Categorie=3 Stoc_ramas=86
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=97
+Unpaid(Rezervat) count=3
+  - 695ca703-01e1-478a-ac0b-664002d57ddc client=client-1 cnp=9375689682629 ev=2 cat=3 qty=4 reservedAt=2026-01-25T15:38:54.300782600Z
+  - 3c9c3de9-6d78-43c3-a0ff-b2ce5df975fa client=client-3 cnp=4512255601062 ev=1 cat=1 qty=3 reservedAt=2026-01-25T15:38:54.323302700Z
+  - c10cd7cc-5e9e-4fa8-8e0f-ed6e7476db29 client=client-3 cnp=4512255601062 ev=3 cat=3 qty=3 reservedAt=2026-01-25T15:38:56.369332700Z
+CleanedExpired count=0
+BalancePerEvent:
+  - Eveniment=1 Sold=1000
+  - Eveniment=2 Sold=220
+Integrity: OK
+
+=== CHECK @ 2026-01-25T15:39:01.713624400Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=23
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=54
+Eveniment=2 Categorie=3 Stoc_ramas=90
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=95
+Unpaid(Rezervat) count=3
+  - 0729bd6d-9831-4fcb-9dfd-5da15f30c976 client=client-3 cnp=4512255601062 ev=3 cat=3 qty=1 reservedAt=2026-01-25T15:39:00.005775600Z
+  - 4e6979ae-f23a-4a9b-8707-06932d6d9be9 client=client-4 cnp=4827472268846 ev=1 cat=1 qty=2 reservedAt=2026-01-25T15:39:00.218561Z
+  - fbbdb264-ca12-4bb7-83bf-79c150015739 client=client-2 cnp=7479613409193 ev=3 cat=3 qty=1 reservedAt=2026-01-25T15:39:01.227258200Z
+CleanedExpired count=1
+  - 3c9c3de9-6d78-43c3-a0ff-b2ce5df975fa ev=1 cat=1 qty=3 reservedAt=2026-01-25T15:38:54.323302700Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2500
+  - Eveniment=2 Sold=220
+  - Eveniment=3 Sold=540
+Integrity: OK
+
+=== CHECK @ 2026-01-25T15:39:06.723165300Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=25
+Eveniment=1 Categorie=2 Stoc_ramas=59
+Eveniment=1 Categorie=3 Stoc_ramas=78
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=54
+Eveniment=2 Categorie=3 Stoc_ramas=88
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=47
+Eveniment=3 Categorie=3 Stoc_ramas=97
+Unpaid(Rezervat) count=4
+  - be7bfc55-b6a8-4aca-8339-1470020c2650 client=client-1 cnp=9375689682629 ev=1 cat=3 qty=2 reservedAt=2026-01-25T15:39:01.730751200Z
+  - 1b89863e-e894-469f-84ee-d0387b05bba3 client=client-4 cnp=4827472268846 ev=3 cat=2 qty=1 reservedAt=2026-01-25T15:39:02.231638200Z
+  - 2ee27e3a-bc5b-40dc-9986-d941fb60eaef client=client-2 cnp=7479613409193 ev=1 cat=2 qty=1 reservedAt=2026-01-25T15:39:03.245517100Z
+  - abc156f1-00dd-4652-9197-9a022c9737bc client=client-3 cnp=4512255601062 ev=2 cat=3 qty=2 reservedAt=2026-01-25T15:39:04.531010700Z
+CleanedExpired count=3
+  - 0729bd6d-9831-4fcb-9dfd-5da15f30c976 ev=3 cat=3 qty=1 reservedAt=2026-01-25T15:39:00.005775600Z
+  - 4e6979ae-f23a-4a9b-8707-06932d6d9be9 ev=1 cat=1 qty=2 reservedAt=2026-01-25T15:39:00.218561Z
+  - fbbdb264-ca12-4bb7-83bf-79c150015739 ev=3 cat=3 qty=1 reservedAt=2026-01-25T15:39:01.227258200Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2500
+  - Eveniment=2 Sold=220
+  - Eveniment=3 Sold=1140
+Integrity: OK
+
+=== CHECK @ 2026-01-25T15:39:11.719949900Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=22
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=76
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=54
+Eveniment=2 Categorie=3 Stoc_ramas=90
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=48
+Eveniment=3 Categorie=3 Stoc_ramas=93
+Unpaid(Rezervat) count=3
+  - 57ae8408-a012-435f-b821-81f806fac456 client=client-2 cnp=7479613409193 ev=1 cat=3 qty=4 reservedAt=2026-01-25T15:39:08.415011900Z
+  - e45715b3-5b7f-4dda-b215-77964717f236 client=client-1 cnp=9375689682629 ev=1 cat=1 qty=3 reservedAt=2026-01-25T15:39:08.900444600Z
+  - 66094ae6-9db5-4f92-bb9b-7bced91d9419 client=client-2 cnp=7479613409193 ev=3 cat=3 qty=4 reservedAt=2026-01-25T15:39:10.417312500Z
+CleanedExpired count=1
+  - 2ee27e3a-bc5b-40dc-9986-d941fb60eaef ev=1 cat=2 qty=1 reservedAt=2026-01-25T15:39:03.245517100Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2500
+  - Eveniment=2 Sold=220
+  - Eveniment=3 Sold=1140
+Integrity: OK
+
+=== CHECK @ 2026-01-25T15:39:16.721181300Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=25
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=76
+Eveniment=2 Categorie=1 Stoc_ramas=18
+Eveniment=2 Categorie=2 Stoc_ramas=54
+Eveniment=2 Categorie=3 Stoc_ramas=88
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=42
+Eveniment=3 Categorie=3 Stoc_ramas=93
+Unpaid(Rezervat) count=5
+  - 34fba534-bc87-470d-b0fe-ca6bfef0482b client=client-3 cnp=4512255601062 ev=2 cat=1 qty=3 reservedAt=2026-01-25T15:39:12.193264100Z
+  - fa4933fc-2038-46e8-a9df-22f17bd905e0 client=client-3 cnp=4512255601062 ev=3 cat=2 qty=3 reservedAt=2026-01-25T15:39:14.196913500Z
+  - 36a80570-8fe0-406f-8533-95bb867c1727 client=client-4 cnp=4827472268846 ev=3 cat=2 qty=3 reservedAt=2026-01-25T15:39:15.399830700Z
+  - a7dcaa80-1a09-421e-8d3b-2acc3f24db39 client=client-3 cnp=4512255601062 ev=2 cat=3 qty=2 reservedAt=2026-01-25T15:39:16.199347600Z
+  - baf51a11-0d80-4c8e-8a88-b222754f1029 client=client-2 cnp=7479613409193 ev=1 cat=3 qty=4 reservedAt=2026-01-25T15:39:16.363109300Z
+CleanedExpired count=1
+  - 57ae8408-a012-435f-b821-81f806fac456 ev=1 cat=3 qty=4 reservedAt=2026-01-25T15:39:08.415011900Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2500
+  - Eveniment=2 Sold=2020
+  - Eveniment=3 Sold=1860
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:22.799720700Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=30
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=90
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=100
+Unpaid(Rezervat) count=0
+CleanedExpired count=0
+BalancePerEvent:
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:27.803527100Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=30
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=79
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=86
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=48
+Eveniment=3 Categorie=3 Stoc_ramas=97
+Unpaid(Rezervat) count=5
+  - 20d9209c-a8f6-4094-91c6-ac4f3d51d948 client=client-1 cnp=5682882211812 ev=1 cat=3 qty=1 reservedAt=2026-01-30T15:43:24.982569Z
+  - 29f5be4b-5218-4514-87dc-bd17256b1c0c client=client-4 cnp=7592560370292 ev=3 cat=2 qty=1 reservedAt=2026-01-30T15:43:24.982569Z
+  - a58f7436-92c1-4779-a72e-aadae6840ccf client=client-2 cnp=1136789226625 ev=2 cat=3 qty=4 reservedAt=2026-01-30T15:43:24.982569Z
+  - 2c58b2b2-3334-468e-a933-a6b4abcf92bc client=client-3 cnp=2769115947957 ev=3 cat=2 qty=1 reservedAt=2026-01-30T15:43:24.993922500Z
+  - 4bae45ce-d0ba-4615-9ead-97a02a484b51 client=client-1 cnp=5682882211812 ev=3 cat=3 qty=3 reservedAt=2026-01-30T15:43:27.032122400Z
+CleanedExpired count=0
+BalancePerEvent:
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:32.804577100Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=27
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=25
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=90
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=98
+Unpaid(Rezervat) count=1
+  - d768320d-8112-4ebe-ae18-62a6022c8416 client=client-2 cnp=1136789226625 ev=3 cat=3 qty=2 reservedAt=2026-01-30T15:43:32.316968700Z
+CleanedExpired count=1
+  - 20d9209c-a8f6-4094-91c6-ac4f3d51d948 ev=1 cat=3 qty=1 reservedAt=2026-01-30T15:43:24.982569Z
+BalancePerEvent:
+  - Eveniment=1 Sold=1500
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:37.800783900Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=23
+Eveniment=1 Categorie=2 Stoc_ramas=53
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=23
+Eveniment=2 Categorie=2 Stoc_ramas=51
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=97
+Unpaid(Rezervat) count=6
+  - da1d78c6-43bf-4740-ab37-d7549d8a5809 client=client-2 cnp=1136789226625 ev=2 cat=3 qty=3 reservedAt=2026-01-30T15:43:34.321038600Z
+  - e9612a22-39f2-4e6d-9fb3-48c4b19f93dc client=client-4 cnp=7592560370292 ev=3 cat=3 qty=3 reservedAt=2026-01-30T15:43:34.552430100Z
+  - d0e56222-953b-4887-85d3-79aa51af0f97 client=client-3 cnp=2769115947957 ev=2 cat=2 qty=4 reservedAt=2026-01-30T15:43:34.615016100Z
+  - e46c2246-32d0-4da3-b36a-45a2e5d8f9b4 client=client-4 cnp=7592560370292 ev=1 cat=2 qty=3 reservedAt=2026-01-30T15:43:36.556507700Z
+  - 5f2b9368-3f0e-430f-b67c-2342f0a74cc3 client=client-3 cnp=2769115947957 ev=1 cat=1 qty=4 reservedAt=2026-01-30T15:43:36.619094800Z
+  - 9104f183-065b-4793-81a8-292a979676e1 client=client-1 cnp=5682882211812 ev=1 cat=2 qty=4 reservedAt=2026-01-30T15:43:37.431080600Z
+CleanedExpired count=1
+  - d768320d-8112-4ebe-ae18-62a6022c8416 ev=3 cat=3 qty=2 reservedAt=2026-01-30T15:43:32.316968700Z
+BalancePerEvent:
+  - Eveniment=1 Sold=1500
+  - Eveniment=2 Sold=900
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:42.813066800Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=27
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=23
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=97
+Unpaid(Rezervat) count=1
+  - a80c8027-d466-41bc-b007-b8b144084cbc client=client-2 cnp=1136789226625 ev=3 cat=3 qty=3 reservedAt=2026-01-30T15:43:40.094904700Z
+CleanedExpired count=4
+  - d0e56222-953b-4887-85d3-79aa51af0f97 ev=2 cat=2 qty=4 reservedAt=2026-01-30T15:43:34.615016100Z
+  - e9612a22-39f2-4e6d-9fb3-48c4b19f93dc ev=3 cat=3 qty=3 reservedAt=2026-01-30T15:43:34.552430100Z
+  - e46c2246-32d0-4da3-b36a-45a2e5d8f9b4 ev=1 cat=2 qty=3 reservedAt=2026-01-30T15:43:36.556507700Z
+  - 5f2b9368-3f0e-430f-b67c-2342f0a74cc3 ev=1 cat=1 qty=4 reservedAt=2026-01-30T15:43:36.619094800Z
+BalancePerEvent:
+  - Eveniment=1 Sold=1500
+  - Eveniment=2 Sold=1320
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:47.799949500Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=27
+Eveniment=1 Categorie=2 Stoc_ramas=60
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=21
+Eveniment=2 Categorie=2 Stoc_ramas=52
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=16
+Eveniment=3 Categorie=2 Stoc_ramas=47
+Eveniment=3 Categorie=3 Stoc_ramas=100
+Unpaid(Rezervat) count=4
+  - e9d1bb72-9840-4f13-8a5f-f58f268fae4e client=client-1 cnp=5682882211812 ev=3 cat=1 qty=4 reservedAt=2026-01-30T15:43:43.807751200Z
+  - 38b53d04-58d3-4d0c-a8f1-386702fa5c19 client=client-3 cnp=2769115947957 ev=3 cat=2 qty=3 reservedAt=2026-01-30T15:43:45.570704900Z
+  - 18c95d17-f08c-4d69-9773-8d24d9711d42 client=client-4 cnp=7592560370292 ev=2 cat=1 qty=2 reservedAt=2026-01-30T15:43:45.674055800Z
+  - 82261856-28f1-46f5-9990-ecc6f6fcbd4d client=client-3 cnp=2769115947957 ev=2 cat=2 qty=3 reservedAt=2026-01-30T15:43:47.573862600Z
+CleanedExpired count=0
+BalancePerEvent:
+  - Eveniment=1 Sold=1500
+  - Eveniment=2 Sold=1320
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:52.808359500Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=27
+Eveniment=1 Categorie=2 Stoc_ramas=59
+Eveniment=1 Categorie=3 Stoc_ramas=80
+Eveniment=2 Categorie=1 Stoc_ramas=17
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=49
+Eveniment=3 Categorie=3 Stoc_ramas=97
+Unpaid(Rezervat) count=3
+  - d2776626-1a57-417d-a965-66a2a5372f04 client=client-2 cnp=1136789226625 ev=2 cat=1 qty=4 reservedAt=2026-01-30T15:43:49.627417100Z
+  - 9fc72c64-50fb-4f3e-8c5d-af5b80213cf0 client=client-4 cnp=7592560370292 ev=3 cat=3 qty=3 reservedAt=2026-01-30T15:43:51.845585200Z
+  - 3d3a7479-8a1f-4b25-a885-56506ca768da client=client-1 cnp=5682882211812 ev=3 cat=2 qty=1 reservedAt=2026-01-30T15:43:52.472752600Z
+CleanedExpired count=2
+  - 38b53d04-58d3-4d0c-a8f1-386702fa5c19 ev=3 cat=2 qty=3 reservedAt=2026-01-30T15:43:45.570704900Z
+  - 82261856-28f1-46f5-9990-ecc6f6fcbd4d ev=2 cat=2 qty=3 reservedAt=2026-01-30T15:43:47.573862600Z
+BalancePerEvent:
+  - Eveniment=1 Sold=1750
+  - Eveniment=2 Sold=2220
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:43:57.801872700Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=27
+Eveniment=1 Categorie=2 Stoc_ramas=59
+Eveniment=1 Categorie=3 Stoc_ramas=77
+Eveniment=2 Categorie=1 Stoc_ramas=16
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=50
+Eveniment=3 Categorie=3 Stoc_ramas=100
+Unpaid(Rezervat) count=1
+  - c6b05f7c-3daa-4726-bd13-099d7a20199a client=client-3 cnp=2769115947957 ev=2 cat=1 qty=1 reservedAt=2026-01-30T15:43:52.931292900Z
+CleanedExpired count=1
+  - 3d3a7479-8a1f-4b25-a885-56506ca768da ev=3 cat=2 qty=1 reservedAt=2026-01-30T15:43:52.472752600Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2200
+  - Eveniment=2 Sold=4020
+  - Eveniment=3 Sold=0
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:44:02.802860500Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=26
+Eveniment=1 Categorie=2 Stoc_ramas=57
+Eveniment=1 Categorie=3 Stoc_ramas=77
+Eveniment=2 Categorie=1 Stoc_ramas=17
+Eveniment=2 Categorie=2 Stoc_ramas=55
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=20
+Eveniment=3 Categorie=2 Stoc_ramas=46
+Eveniment=3 Categorie=3 Stoc_ramas=100
+Unpaid(Rezervat) count=1
+  - 80487cd5-adc4-42bd-a059-32f6f4059902 client=client-3 cnp=2769115947957 ev=1 cat=1 qty=1 reservedAt=2026-01-30T15:43:58.777701400Z
+CleanedExpired count=1
+  - c6b05f7c-3daa-4726-bd13-099d7a20199a ev=2 cat=1 qty=1 reservedAt=2026-01-30T15:43:52.931292900Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2700
+  - Eveniment=2 Sold=4020
+  - Eveniment=3 Sold=1200
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:44:07.806980700Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=27
+Eveniment=1 Categorie=2 Stoc_ramas=57
+Eveniment=1 Categorie=3 Stoc_ramas=77
+Eveniment=2 Categorie=1 Stoc_ramas=17
+Eveniment=2 Categorie=2 Stoc_ramas=53
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=18
+Eveniment=3 Categorie=2 Stoc_ramas=43
+Eveniment=3 Categorie=3 Stoc_ramas=98
+Unpaid(Rezervat) count=3
+  - 077b1489-1058-4fe9-bf5a-0137c8ba80ae client=client-2 cnp=1136789226625 ev=3 cat=3 qty=2 reservedAt=2026-01-30T15:44:04.177951500Z
+  - cd27346a-e8be-4805-a694-764f681a8671 client=client-1 cnp=5682882211812 ev=2 cat=2 qty=2 reservedAt=2026-01-30T15:44:04.727087300Z
+  - 32040222-1ca4-4e43-b0ef-a00b292509da client=client-3 cnp=2769115947957 ev=3 cat=2 qty=3 reservedAt=2026-01-30T15:44:07.645481400Z
+CleanedExpired count=0
+BalancePerEvent:
+  - Eveniment=1 Sold=2700
+  - Eveniment=2 Sold=4020
+  - Eveniment=3 Sold=2400
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:44:12.809960600Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=21
+Eveniment=1 Categorie=2 Stoc_ramas=57
+Eveniment=1 Categorie=3 Stoc_ramas=77
+Eveniment=2 Categorie=1 Stoc_ramas=15
+Eveniment=2 Categorie=2 Stoc_ramas=50
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=18
+Eveniment=3 Categorie=2 Stoc_ramas=46
+Eveniment=3 Categorie=3 Stoc_ramas=100
+Unpaid(Rezervat) count=4
+  - b3c60823-94c9-486f-884b-bc566fb94e2e client=client-4 cnp=7592560370292 ev=1 cat=1 qty=4 reservedAt=2026-01-30T15:44:09.141523400Z
+  - 981b553e-d6ad-46f8-8417-e8fd2390e80c client=client-3 cnp=2769115947957 ev=2 cat=1 qty=2 reservedAt=2026-01-30T15:44:09.649171200Z
+  - 664dd37c-2cfd-4326-a863-da3f02e7b89e client=client-1 cnp=5682882211812 ev=1 cat=1 qty=2 reservedAt=2026-01-30T15:44:09.991621400Z
+  - 383c24ad-ddcb-422a-8568-0f9fcdeee0ed client=client-2 cnp=1136789226625 ev=2 cat=2 qty=3 reservedAt=2026-01-30T15:44:11.578742900Z
+CleanedExpired count=1
+  - 32040222-1ca4-4e43-b0ef-a00b292509da ev=3 cat=2 qty=3 reservedAt=2026-01-30T15:44:07.645481400Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2700
+  - Eveniment=2 Sold=4460
+  - Eveniment=3 Sold=2400
+Integrity: OK
+
+=== CHECK @ 2026-01-30T15:44:17.812053800Z ===
+Eveniment=1 Categorie=1 Stoc_ramas=27
+Eveniment=1 Categorie=2 Stoc_ramas=57
+Eveniment=1 Categorie=3 Stoc_ramas=77
+Eveniment=2 Categorie=1 Stoc_ramas=15
+Eveniment=2 Categorie=2 Stoc_ramas=53
+Eveniment=2 Categorie=3 Stoc_ramas=87
+Eveniment=3 Categorie=1 Stoc_ramas=18
+Eveniment=3 Categorie=2 Stoc_ramas=46
+Eveniment=3 Categorie=3 Stoc_ramas=100
+Unpaid(Rezervat) count=1
+  - 5c5ea36b-837c-4fc0-b0a6-b593828a4bc8 client=client-3 cnp=2769115947957 ev=2 cat=1 qty=2 reservedAt=2026-01-30T15:44:16.860793800Z
+CleanedExpired count=1
+  - 383c24ad-ddcb-422a-8568-0f9fcdeee0ed ev=2 cat=2 qty=3 reservedAt=2026-01-30T15:44:11.578742900Z
+BalancePerEvent:
+  - Eveniment=1 Sold=2700
+  - Eveniment=2 Sold=4460
+  - Eveniment=3 Sold=2400
+Integrity: OK
+

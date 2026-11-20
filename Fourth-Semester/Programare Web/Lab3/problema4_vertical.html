@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 4 Vertical</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+
+        .highlight {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+
+<table class="sortable-table">
+    <tr>
+        <th>Fruct</th>
+        <td>Măr</td>
+        <td>Banana</td>
+        <td>Kiwi</td>
+    </tr>
+    <tr>
+        <th>Preț</th>
+        <td>3</td>
+        <td>5</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <th>Cantitate</th>
+        <td>10</td>
+        <td>6</td>
+        <td>12</td>
+    </tr>
+</table>
+
+<table class="sortable-table">
+    <tr>
+        <th>Student</th>
+        <td>Andrei</td>
+        <td>Maria</td>
+        <td>Ioana</td>
+    </tr>
+    <tr>
+        <th>Nota</th>
+        <td>7</td>
+        <td>10</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <th>Prezente</th>
+        <td>12</td>
+        <td>15</td>
+        <td>14</td>
+    </tr>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tables = document.querySelectorAll('.sortable-table');
+
+        tables.forEach(table => {
+            const rows = Array.from(table.rows);
+
+            rows.forEach((row, rowIndex) => {
+                const th = row.cells[0];
+                if (th) {
+                    th.addEventListener('click', () => {
+                        sortTableByRow(table, rowIndex);
+                    });
+                }
+            });
+        });
+
+        function sortTableByRow(table, rowIndex) {
+            const rows = Array.from(table.rows);
+            const headerRow = rows[rowIndex];
+            const th = headerRow.cells[0];
+
+            const colCount = headerRow.cells.length - 1;
+
+            const values = [];
+            for (let col = 1; col <= colCount; col++) {
+                const value = headerRow.cells[col].textContent.trim();
+                values.push({ value, colIndex: col });
+            }
+
+            const isNumeric = values.every(v => !isNaN(parseFloat(v.value)));
+
+            values.sort((a, b) => {
+                const valA = isNumeric ? parseFloat(a.value) : a.value.toLowerCase();
+                const valB = isNumeric ? parseFloat(b.value) : b.value.toLowerCase();
+
+                if (valA < valB) return -1;
+                if (valA > valB) return 1;
+                return 0;
+            });
+
+            rows.forEach(row => {
+                const cells = Array.from(row.cells);
+                const newRow = [cells[0]];
+
+                values.forEach(v => {
+                    newRow.push(cells[v.colIndex]);
+                });
+
+                while (row.firstChild) {
+                    row.removeChild(row.firstChild);
+                }
+
+                newRow.forEach(cell => row.appendChild(cell));
+            });
+
+            rows.forEach(row => row.classList.remove('highlight'));
+            headerRow.classList.add('highlight');
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+

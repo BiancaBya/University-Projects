@@ -1,0 +1,116 @@
+\section{Experiment 11: EffNet-like 3D (MBConv+SE) + Radiomics Fusion}
+
+\subsection{Rationale and Hypothesis}
+This experiment evaluates a \textbf{compact 3D EfficientNet-like architecture} (custom MBConv + Squeeze-and-Excitation blocks) combined with \textbf{radiomics features} for multi-label biomarker prediction (\textbf{TTF-1} and \textbf{CK7}). The key motivation is to keep the 3D encoder lightweight enough for a small cohort while still leveraging volumetric context, and to augment it with radiomics as a complementary structured modality.
+
+The hypothesis is that adding a radiomics branch and fusing it with a learned 3D representation can improve predictive stability and performance compared to image-only learning.
+
+\subsection{Methodology}
+
+\subsubsection{Data Preparation}
+The notebook defines:
+\[
+\texttt{TARGET\_SHAPE} = (128,128,128), \quad \texttt{BATCH\_SIZE}=2.
+\]
+
+CT volume preprocessing (\texttt{load\_ct\_volume}):
+\begin{itemize}
+    \item Load NIfTI with NiBabel and convert to \texttt{float32}, with NaNs removed.
+    \item Intensity normalization using the 1st and 99th percentiles:
+    \[
+    \text{vol} \leftarrow \text{clip}\Big(\frac{\text{vol}-p_1}{p_{99}-p_1}, 0, 1\Big)
+    \]
+    (fallback to min--max normalization if $p_{99}\le p_1$).
+    \item Resize to $(128,128,128)$ using \texttt{scipy.ndimage.zoom(order=1)} and add a channel dimension.
+\end{itemize}
+
+Radiomics:
+\begin{itemize}
+    \item Loaded from \texttt{radiomics\_ct/<Code>\_radiomics.txt}
+    \item Only keys starting with \texttt{original\_} are included.
+    \item The notebook applies \texttt{StandardScaler().fit\_transform(X\_radio)} on the full radiomics matrix as written.
+\end{itemize}
+
+Splitting:
+\begin{itemize}
+    \item Total patients: 87
+    \item Train: 69, Validation: 9, Test: 9
+    \item The notebook prints stratified counts based on the joint label combination (TTF1, CK7).
+\end{itemize}
+
+\subsubsection{Dual-Stream Architecture (EffNet-like 3D + Radiomics)}
+The model is built by \texttt{build\_effnetlike3d\_multimodal\_twoheads}:
+
+\paragraph{3D Image Stream}
+\begin{itemize}
+    \item Stem: \texttt{Conv3D + BN + Swish} with 16 filters, stride 2 (downsample by 2).
+    \item MBConv3D blocks with SE:
+    \begin{itemize}
+        \item b1: out=16, expand=2, k=3, s=1
+        \item b2: out=24, expand=3, k=3, s=2
+        \item b3: out=24, expand=3, k=3, s=1
+        \item b4: out=32, expand=4, k=3, s=2
+        \item b5: out=32, expand=4, k=3, s=1
+    \end{itemize}
+    \item GlobalAveragePooling3D $\rightarrow$ Dense(64, swish) $\rightarrow$ Dropout(\texttt{drop\_img})
+\end{itemize}
+
+\paragraph{Radiomics Stream}
+\begin{itemize}
+    \item Input: \texttt{radio\_dim} features
+    \item LayerNorm $\rightarrow$ GaussianNoise(0.02) $\rightarrow$ Dense(128, swish) $\rightarrow$ Dropout(\texttt{drop\_radio}) $\rightarrow$ Dense(64, swish)
+\end{itemize}
+
+\paragraph{Fusion and Heads}
+\begin{itemize}
+    \item Concatenate(image\_vec, radio\_vec) $\rightarrow$ Dense(64, swish) $\rightarrow$ Dropout(\texttt{drop\_fusion})
+    \item Two sigmoid heads: \texttt{TTF1} and \texttt{CK7}
+\end{itemize}
+
+\subsubsection{Training Setup}
+The notebook contains multiple training rounds (different saved paths and hyperparameters). In the last shown training configuration (v3):
+\begin{itemize}
+    \item \texttt{EPOCHS = 25}
+    \item Optimizer: Adam, learning rate = $3 \times 10^{-5}$
+    \item Regularization: \texttt{l2\_reg = 1e-4}
+    \item Dropouts: \texttt{drop\_img=0.45, drop\_radio=0.25, drop\_fusion=0.35}
+    \item Loss: binary cross-entropy (\texttt{use\_focal=False})
+\end{itemize}
+
+Callbacks:
+\begin{itemize}
+    \item ReduceLROnPlateau on \texttt{val\_loss} (factor 0.5, patience 3)
+    \item EarlyStopping on \texttt{val\_loss} (patience 10, restore best weights)
+    \item ModelCheckpoint saving best \texttt{val\_loss}
+\end{itemize}
+
+\subsection{Experimental Results}
+
+\subsubsection{Test Set Metrics (as printed in notebook)}
+The final evaluation cell uses explicit thresholds:
+\[
+\text{TTF1 threshold}=0.53, \quad \text{CK7 threshold}=0.50.
+\]
+
+Reported binary metrics on the test set:
+\begin{itemize}
+    \item \textbf{TTF-1} (thr=0.53): Accuracy = 0.5000, Precision = 0.5556, Recall = 0.8333, F1-score = 0.6667 \\
+    Confusion matrix:
+    \[
+    \begin{bmatrix}
+    0 & 4 \\
+    1 & 5
+    \end{bmatrix}
+    \]
+    \item \textbf{CK7} (thr=0.50): Accuracy = 0.7000, Precision = 0.6250, Recall = 1.0000, F1-score = 0.7692 \\
+    Confusion matrix:
+    \[
+    \begin{bmatrix}
+    2 & 3 \\
+    0 & 5
+    \end{bmatrix}
+    \]
+\end{itemize}
+
+\subsection{Conclusion of Experiment 11}
+This experiment implements a lightweight 3D EfficientNet-like encoder (MBConv+SE) fused with a small radiomics MLP and two independent sigmoid heads for \textbf{TTF-1} and \textbf{CK7}. On the reported test evaluation, CK7 achieves stronger performance (F1 = 0.7692), while TTF-1 remains more challenging (F1 = 0.6667) with a high number of false positives at the selected threshold.

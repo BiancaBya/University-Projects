@@ -1,0 +1,10 @@
+SimpleITK
+numpy
+pandas
+tensorflow-macos
+scikit-learn
+lungmask
+nibabel
+joblib
+opencv-python
+pydicom

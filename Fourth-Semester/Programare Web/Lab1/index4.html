@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ro">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Adoption html4</title>
+    </head>
+
+    <body>
+
+        <a href="https://www.w3schools.com" title="Click here to learn HTML" target="_blank">Link W3Schools</a>
+        <center><h1>Formular de Adopție</h1></center>
+        <center><b>Aici poți face un animal fericit!</b><br><br></center>
+
+        <form method="post" action="/page.html">
+            <fieldset>
+                <legend><strong>Date personale</strong></legend>
+                <label for="firstname">Nume:</label>
+                <input type="text" id="firstname" name="firstname" maxlength="50"><br><br>
+
+                <label for="lastname">Prenume:</label>
+                <input type="text" id="lastname" name="lastname" maxlength="50"><br><br>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br><br>
+
+                <label for="phone">Telefon:</label>
+                <input type="text" id="phone" name="phone" maxlength="15" size="10"><br><br>
+
+                <label for="age">Vârstă:</label>
+                <input type="text" id="age" name="age">
+            </fieldset>
+
+            <table border="1" width="100%">
+                <tr bgcolor="#7fffd4">
+                    <th align="center" valign="top" colspan="2">Animale si Descrierile lor</th>
+                </tr>
+                <tr bgcolor="#add8e6">
+                    <td align="center">Câine</td>
+                    <td align="center">Adorabil, Mici, Mari, Întunecați</td>
+                </tr>
+                <tr bgcolor="#add8e6">
+                    <td align="center">Pisică</td>
+                    <td align="center">Prietenoasă, Morocănoasă, Babană</td>
+                </tr>
+                <tr bgcolor="#add8e6">
+                    <td align="center">Pește</td>
+                    <td align="center">Inocent, Frumușel, Stylish</td>
+                </tr>
+                <tr bgcolor="#add8e6">
+                    <td align="center">Iepure</td>
+                    <td align="center">Prietenos, Mic, Inocent</td>
+                </tr>
+                <tr bgcolor="#add8e6">
+                    <td align="center">Hamster</td>
+                    <td align="center">ADHD, Minuscul, Bătrân, Tânăr</td>
+                </tr>
+            </table>
+
+            <fieldset>
+                <legend><strong>Informatii Adopție</strong></legend>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="animalType">Animal :</label>
+                        </td>
+                        <td>
+                            <select id="animalType" name="animalType" multiple size="4">
+                                <option value="dog" selected>Câine</option>
+                                <option value="cat">Pisică</option>
+                                <option value="fish">Pește</option>
+                                <option value="rabbit">Iepure</option>
+                                <option value="hamster">Hamster</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>Sexul Animalului:</p>
+                <input type="radio" id="male" name="animalSex" value="Male" checked>
+                <label for="male">Mascul</label>
+
+                <input type="radio" id="female" name="animalSex" value="Female">
+                <label for="female">Femelă</label><br><br>
+
+                <label for="reason">De ce vrei să adopți animalul?</label><br><br>
+                <textarea id="reason" name="reason" rows="4" cols="50"></textarea>
+
+                <p>Cum poți avea grijă de animal?</p>
+                <ul>
+                    <li><input type="checkbox" id="time" name="conditions[]" value="time"> <label for="time">Timp</label></li>
+                    <li><input type="checkbox" id="money" name="conditions[]" value="money"> <label for="money">Resurse Financiare</label></li>
+                    <li><input type="checkbox" id="space" name="conditions[]" value="space"> <label for="space">Spațiu Adecvat</label></li>
+                    <li><input type="checkbox" id="experience" name="conditions[]" value="experience"> <label for="experience">Experiență cu animalele</label></li>
+                </ul>
+                <label><textarea readonly rows="2" cols="30">I love animals!</textarea>
+                </label>
+
+                <p><span>Pașii de Adopție</span></p>
+                <ol start="1">
+                    <li>Completează formularul</li>
+                    <li>Ațteaptă mail-ul de confirmare</li>
+                    <li>Vii să îți cunoști noul prieten</li>
+                </ol>
+            </fieldset>
+
+            <fieldset>
+                <legend><strong>Alte Informatii</strong></legend>
+                <table>
+                    <tr>
+                        <th>Întrebare</th>
+                        <th>Răspuns</th>
+                    </tr>
+                    <tr>
+                        <td>Mai ai alte animale?</td>
+                        <td>
+                            <input type="radio" id="yes" name="otherPets" value="yes"> <label for="yes">Da</label>
+                            <input type="radio" id="no" name="otherPets" value="no" checked> <label for="no">Nu</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dacă da, ce animale?</td>
+                        <td>
+                            <input type="text" id="animal" name="animal"><label for="animal"> </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Cât de des ai fi dispus să mergi la veterinar?</strong>
+                            <table>
+                                <tr>
+                                    <th>Frecvență</th>
+                                    <th>Disponibilitate</th>
+                                </tr>
+                                <tr>
+                                    <td>O data pe lună</td>
+                                    <td>
+                                        <input type="radio" name="availability" value="1month">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>De două ori pe an</td>
+                                    <td>
+                                        <input type="radio" name="availability" value="1/2year">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>O dată pe an</td>
+                                    <td>
+                                        <input type="radio" name="availability" value="1year">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend><strong>Ce ar trebui sa stii?</strong></legend>
+                <ol start="1">
+                    <li>Animalele necesită timp si răbdare</li>
+                    <li>Nu ar trebui să le adopți dacă nu le tratezi ca parte din familie</li>
+                    <li>Pentru ei, tu esti totul</li>
+                    <li>Nu uita
+                        <ol type="a">
+                            <li>tratează-le cu respect</li>
+                            <li>mergi la veterinar cât de des este nevoie</li>
+                            <li>ai grijă la dieta pe care le-o oferi</li>
+                        </ol>
+                    </li>
+                </ol>
+            </fieldset>
+
+            <div>
+                <img src="img.png" alt="Bobi" width="150" height="150">
+            </div>
+
+            <div>
+                <label><input type="checkbox" disabled></label> Nu vreau să adopt
+            </div>
+
+            <p>
+                <button type="submit">Trimite</button>
+                <button type="reset">Resetează</button>
+            </p>
+
+        </form>
+    </body>
+</html>
+
+

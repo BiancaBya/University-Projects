@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\ExamenPractic.dir\\main.cpp.obj",
+            "outputs": [
+                "C:\\Users\\Next\\Desktop\\PPD\\ExamenPractic\\cmake-build-debug-visual-studio\\vc140.pdb",
+                "CMakeFiles\\ExamenPractic.dir\\main.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+\section{Experiment 10: 2D Slice-Based EfficientNet + Radiomics (continuation of experiment 8)}
+
+\subsection{Rationale and Hypothesis}
+This experiment continues to evaluate a \textbf{2D slice-based} alternative to fully volumetric 3D learning in the context of a small cohort, while preserving tumor-specific information through \textbf{radiomics}. Instead of processing entire 3D CT volumes with a computationally heavy 3D backbone, each CT scan is decomposed into a set of informative axial slices. Slice-level predictions are subsequently aggregated into a patient-level decision.
+
+The hypothesis is that combining (i) a pretrained EfficientNet-based 2D encoder with (ii) complementary radiomics features, and applying conservative fine-tuning, can improve training stability, robustness, and generalization for \textbf{TTF-1} and \textbf{CK7} prediction.
+
+\subsection{Methodology}
+
+\subsubsection{Data Preparation}
+
+The cohort split is fixed and defined by explicit patient ID lists, attempting to continue the training and tuning process on the same patients that the model was initially trained on during \textbf{Experiment 8}:
+\begin{itemize}
+    \item Validation: 8 patients
+    \item Test: 9 patients
+    \item Train: remaining patients
+\end{itemize}
+resulting in:
+\[
+\text{Train: }70 \quad | \quad \text{Val: }8 \quad | \quad \text{Test: }9 \quad (\text{Total}=87).
+\]
+
+\subsubsection{Slice Generation and Filtering}
+The slice generation and filtering methods previously used Each were kept the same. CT volume is loaded with NiBabel (\texttt{nib.load}), converted to \texttt{float32}, and sanitized using \texttt{np.nan\_to\_num}. Axial 2D slices are extracted by iterating over the depth dimension. Each slice is resized to:
+\[
+\texttt{TARGET\_SHAPE\_2D} = (128, 128).
+\]
+
+Slices are filtered to retain only informative content. A slice is considered informative if:
+\[
+\sum(\text{slice} > 0.01) > 500,
+\]
+implemented via \texttt{is\_slice\_informative(threshold=0.01, min\_pixels=500)}.
+
+Each retained slice is paired with the corresponding \textbf{patient-level radiomics vector} and the patient labels \texttt{(TTF1, CK7)}.
+
+\subsubsection{Model and Fine-Tuning Strategy}
+Training initializes from a previously trained multimodal model.
+
+Fine-tuning is enabled by unfreezing layers satisfying at least one of the following:
+\begin{itemize}
+    \item the layer name contains \texttt{"efficientnet"}, or
+    \item the layer is a nested \texttt{tf.keras.Model}.
+\end{itemize}
+
+The model is optimized with:
+\begin{itemize}
+    \item Optimizer: Adam
+    \item Loss: binary cross-entropy for both outputs (\texttt{TTF1}, \texttt{CK7})
+    \item Metrics (per head): BinaryAccuracy and AUC
+\end{itemize}
+
+Two learning-rate configurations are considered:
+\begin{itemize}
+    \item \textbf{Fixed LR fine-tuning:} \texttt{FINE\_TUNING\_LR = 1e-5} with \texttt{ReduceLROnPlateau}.
+    \item \textbf{Cosine decay schedule:} \texttt{CosineDecay(initial\_lr=1e-4, decay\_steps=990*15, alpha=0.01)} (without \texttt{ReduceLROnPlateau}). Since the initial learning rate value along with the cosine decay method didn't seem to change anything, multiple initial learning rates were tested. We progressively incresed the value of the initial learning rate and reran the training process separately for each value. Across successive and separate training stages, test-set predictions remained unchanged, indicating thatusing this method did not materially alter model behavior on the held-out set. Observed variations were limited to threshold-sweep visualizations, which actually became worse and likely reflect evaluation/threshold selection effects rather than improved discrimination.
+\end{itemize}
+
+Common training callbacks:
+
+\subsubsection{Patient-Level Aggregation}
+At inference time, slice-level probabilities are aggregated into a patient-level prediction via mean pooling:
+\[
+\hat{p}_{\text{patient}} = \mathrm{mean}\left(\hat{p}_{\text{slices}}\right),
+\]
+computed independently for \textbf{TTF-1} and \textbf{CK7}.
+
+\subsection{Results}
+
+\subsubsection{Test Set Metrics (Thresholded, Patient-Level)}
+Using patient-level aggregated probabilities and fixed decision thresholds, the following performance is obtained:
+\begin{itemize}
+    \item \textbf{TTF-1} (threshold = 0.65): Accuracy = 0.7778, Precision = 0.8333, Recall = 0.8333, F1-score = 0.8333
+    \item \textbf{CK7} (threshold = 0.70): Accuracy = 0.7778, Precision = 1.00, Recall = 0.50, F1-score = 0.6667
+\end{itemize}
+
+\subsubsection{Test AUC (Patient-Level)}
+Patient-level AUC is computed from aggregated probabilities:
+\begin{itemize}
+    \item \textbf{TTF-1 AUC:} 0.7778
+    \item \textbf{CK7 AUC:} 0.6000
+\end{itemize}
+
+\subsection{Conclusion}
+The multimodal 2D pipeline was implemented by pairing informative axial CT slices with patient-level radiomics features and aggregating slice predictions at the patient level. The approach yields stronger performance for \textbf{TTF-1} than for \textbf{CK7}, with patient-level AUC values of 0.7778 and 0.6000, respectively, indicating moderate separability on the held-out test set.

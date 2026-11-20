@@ -1,0 +1,16 @@
+package com.lftc;
+
+public enum TokenType {
+    IDENTIFIER,
+    REAL_CONSTANT,
+    INTEGER_CONSTANT,
+    SEPARATOR,
+    ARITHMETIC_OPERATOR,
+    LOGIC_OPERATOR,
+    COMPARISON_OPERATOR,
+    IO_OPERATOR,
+    RESERVED_WORD,
+}
+
+
+

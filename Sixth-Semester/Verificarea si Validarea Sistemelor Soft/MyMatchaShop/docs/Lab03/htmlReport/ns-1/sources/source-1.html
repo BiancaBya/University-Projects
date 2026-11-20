@@ -1,0 +1,232 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > StocService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drinkshop.service</a>
+</div>
+
+<h1>Coverage Summary for Class: StocService (drinkshop.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StocService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (4/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    71.4%
+  </span>
+  <span class="absValue">
+    (20/28)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    74.5%
+  </span>
+  <span class="absValue">
+    (35/47)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drinkshop.service;
+&nbsp;
+&nbsp;import drinkshop.domain.IngredientReteta;
+&nbsp;import drinkshop.domain.Reteta;
+&nbsp;import drinkshop.domain.Stoc;
+&nbsp;import drinkshop.repository.Repository;
+&nbsp;import drinkshop.service.interfaces.IStocService;
+&nbsp;import drinkshop.exception.BusinessException;
+&nbsp;import drinkshop.exception.NotFoundException;
+&nbsp;import drinkshop.validator.StocValidator;
+&nbsp;import drinkshop.validator.Validator;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class StocService implements IStocService {
+&nbsp;
+&nbsp;    private final Repository&lt;Integer, Stoc&gt; stocRepo;
+&nbsp;    private final Validator&lt;Stoc&gt; validator;
+&nbsp;
+&nbsp;    public StocService(Repository&lt;Integer, Stoc&gt; stocRepo) {
+<b class="fc">&nbsp;        this(stocRepo, new StocValidator());</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public StocService(Repository&lt;Integer, Stoc&gt; stocRepo, Validator&lt;Stoc&gt; validator) {</b>
+<b class="fc">&nbsp;        this.stocRepo = stocRepo;</b>
+<b class="fc">&nbsp;        this.validator = validator;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;Stoc&gt; getAll() {
+<b class="nc">&nbsp;        return stocRepo.findAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void add(Stoc stoc) {
+<b class="nc">&nbsp;        validator.validate(stoc);</b>
+<b class="nc">&nbsp;        if (stocRepo.findOne(stoc.getId()) != null) {</b>
+<b class="nc">&nbsp;            throw new BusinessException(&quot;Exista deja un stoc cu ID-ul &quot; + stoc.getId() + &quot;.&quot;);</b>
+&nbsp;        }
+<b class="nc">&nbsp;        stocRepo.save(stoc);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void update(Stoc stoc) {
+<b class="nc">&nbsp;        if (stocRepo.findOne(stoc.getId()) == null) {</b>
+<b class="nc">&nbsp;            throw new NotFoundException(&quot;Stocul cu ID-ul &quot; + stoc.getId() + &quot; nu exista.&quot;);</b>
+&nbsp;        }
+<b class="nc">&nbsp;        validator.validate(stoc);</b>
+<b class="nc">&nbsp;        stocRepo.update(stoc);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void delete(int id) {
+<b class="nc">&nbsp;        if (stocRepo.findOne(id) == null) {</b>
+<b class="nc">&nbsp;            throw new NotFoundException(&quot;Stocul cu ID-ul &quot; + id + &quot; nu exista.&quot;);</b>
+&nbsp;        }
+<b class="nc">&nbsp;        stocRepo.delete(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean areSuficient(Reteta reteta) {
+<b class="pc">&nbsp;        if (reteta == null || reteta.getIngrediente() == null || reteta.getIngrediente().isEmpty()) {</b>
+<b class="fc">&nbsp;            return false;</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        for (IngredientReteta ingredientReteta : reteta.getIngrediente()) {</b>
+<b class="fc">&nbsp;            String ingredient = ingredientReteta.getDenumire();</b>
+<b class="fc">&nbsp;            double necesar = ingredientReteta.getCantitate();</b>
+&nbsp;
+<b class="fc">&nbsp;            double disponibil = stocRepo.findAll().stream()</b>
+<b class="fc">&nbsp;                    .filter(stoc -&gt; stoc.getIngredient().equalsIgnoreCase(ingredient))</b>
+<b class="fc">&nbsp;                    .mapToDouble(Stoc::getCantitate)</b>
+<b class="fc">&nbsp;                    .sum();</b>
+&nbsp;
+<b class="fc">&nbsp;            if (disponibil &lt; necesar) {</b>
+<b class="fc">&nbsp;                return false;</b>
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void consuma(Reteta reteta) {
+<b class="fc">&nbsp;        if (reteta == null) {</b>
+<b class="fc">&nbsp;            throw new BusinessException(&quot;Reteta nu poate fi null.&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (!areSuficient(reteta)) {</b>
+<b class="fc">&nbsp;            throw new BusinessException(&quot;Stoc insuficient pentru reteta selectata.&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        for (IngredientReteta ingredientReteta : reteta.getIngrediente()) {</b>
+<b class="fc">&nbsp;            String ingredient = ingredientReteta.getDenumire();</b>
+<b class="fc">&nbsp;            double ramas = ingredientReteta.getCantitate();</b>
+&nbsp;
+<b class="fc">&nbsp;            List&lt;Stoc&gt; ingredienteStoc = stocRepo.findAll().stream()</b>
+<b class="fc">&nbsp;                    .filter(stoc -&gt; stoc.getIngredient().equalsIgnoreCase(ingredient))</b>
+<b class="fc">&nbsp;                    .toList();</b>
+&nbsp;
+<b class="fc">&nbsp;            if (ingredienteStoc.isEmpty()) {</b>
+<b class="fc">&nbsp;                throw new NotFoundException(&quot;Ingredientul &quot; + ingredient + &quot; nu exista in stoc.&quot;);</b>
+&nbsp;            }
+&nbsp;
+<b class="fc">&nbsp;            for (Stoc stoc : ingredienteStoc) {</b>
+<b class="fc">&nbsp;                if (ramas &lt;= 0) {</b>
+&nbsp;                    break;
+&nbsp;                }
+&nbsp;
+<b class="fc">&nbsp;                double deScazut = Math.min(stoc.getCantitate(), ramas);</b>
+<b class="fc">&nbsp;                stoc.setCantitate(stoc.getCantitate() - deScazut);</b>
+<b class="fc">&nbsp;                ramas -= deScazut;</b>
+<b class="fc">&nbsp;                validator.validate(stoc);</b>
+<b class="fc">&nbsp;                stocRepo.update(stoc);</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-18 16:46</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/Users/Next/Desktop/PPD/ExamenPractic/cmake-build-debug-visual-studio",
+	"dir-cur-src" : "C:/Users/Next/Desktop/PPD/ExamenPractic",
+	"dir-top-bld" : "C:/Users/Next/Desktop/PPD/ExamenPractic/cmake-build-debug-visual-studio",
+	"dir-top-src" : "C:/Users/Next/Desktop/PPD/ExamenPractic",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\Program Files (x86)\\Microsoft SDKs\\MPI\\Include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/Next/Desktop/PPD/ExamenPractic/cmake-build-debug-visual-studio/CMakeFiles/ExamenPractic.dir"
+}

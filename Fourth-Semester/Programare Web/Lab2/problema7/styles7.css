@@ -1,0 +1,53 @@
+ul{
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+ul li{
+    position: relative;
+    display: table;
+    left: 100px;
+    padding: 30px;
+    border: 2px solid black;
+    margin: 40px;
+    border-radius: 20px;
+    max-width: 80%;
+    background: lightseagreen
+}
+
+ul li::before{
+    position: absolute;
+    top:-20px;
+    left: -140px;
+    width: 128px;
+    height: 128px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+}
+
+ul li::after{
+    position: absolute;
+    top: 22px;
+    left: -10px;
+    width: 30px;
+    height: 18px;
+    box-shadow: -6px 4px 0px black;
+    transform: skew(-15deg, -15deg) rotate(45deg);
+    content: "";
+    background: lightseagreen;
+}
+
+.alice::before {
+    background-image: url(plozi.png);
+    background-size: 200px;
+    background-position: 20px 0px;
+}
+
+.bob::before{
+    background-image: url(plozi.png);
+    background-size: 200px;
+    background-position: -100px 0px;
+}
+

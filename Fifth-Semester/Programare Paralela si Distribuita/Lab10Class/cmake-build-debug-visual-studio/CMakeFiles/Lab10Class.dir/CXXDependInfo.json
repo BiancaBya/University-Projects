@@ -1,0 +1,18 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio",
+	"dir-cur-src" : "C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class",
+	"dir-top-bld" : "C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio",
+	"dir-top-src" : "C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/Lab10Class.dir"
+}

@@ -1,0 +1,25 @@
+﻿"Label","Mode","Procs","Timp executie (ms)"
+"seq numar","MPI",1,68.6057
+"seq random1","MPI",1,67.3608
+"seq random2","MPI",1,66.4388
+"v1 numar","MPI",5,3.7313
+"v1 random1","MPI",5,56.2438
+"v1 random1","MPI",9,56.4293
+"v1 random1","MPI",17,61.0292
+"v1 random2","MPI",9,320.926
+"v1 random2","MPI",17,325.0156
+"v1 random2","MPI",5,311.5533
+"v2 random1","MPI",4,54.1737
+"v2 random1","MPI",8,54.9298
+"v2 random1","MPI",16,60.6912
+"v2 random2","MPI",4,312.1682
+"v2 random2","MPI",8,316.0002
+"v2 random2","MPI",16,322.05
+"v2 numar","MPI",4,4.6929
+"v3 numar","MPI",5,2.976
+"v3 random1","MPI",5,70.1047
+"v3 random1","MPI",9,54.0966
+"v3 random1","MPI",17,57.2412
+"v3 random2","MPI",5,313.0871
+"v3 random2","MPI",9,316.8958
+"v3 random2","MPI",17,319.3324

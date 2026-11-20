@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Problema 3 Poze</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .div1 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        table {
+            width: 480px;
+            height: 480px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        table td {
+            width: 120px;
+            height: 120px;
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 0;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        td.revealed .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+        .flip-card-front {
+            background-color: white;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        .flip-card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <label id="label"></label>
+    <table>
+        <tr>
+            <td data-value="5"  data-img="https://play-lh.googleusercontent.com/8ySrSsFPK9pA5vO22g3wPWe-ykWf6LffI_fLQud5OoKrXNljmqJNVaB5MInsQp_twk8"></td>
+            <td data-value="2"  data-img="https://imaginidesktop3d.wordpress.com/wp-content/uploads/2014/06/www-imaginifrumoase-50.jpg?w=584"></td>
+            <td data-value="7"  data-img="https://media.wired.com/photos/65e8810cb8b2544099643c72/1:1/w_1888,h_1888,c_limit/dsadas.jpg"></td>
+            <td data-value="3"  data-img="https://images.gsp.ro/usr/thumbs/thumb_480_x_310/2018/01/29/878066-grumpy-cat1.jpg"></td>
+        </tr>
+        <tr>
+            <td data-value="1"  data-img="https://media.istockphoto.com/id/623368750/ro/fotografie/pisica-birma-sacr%C4%83-%C3%AEn-interior.jpg?s=612x612&w=0&k=20&c=imeVJRvhNLuU2hslaF1aFR1FOkguNhqeMhOWHD3hsRc="></td>
+            <td data-value="4"  data-img="https://www.printesaurbana.ro/wp-content/uploads/2014/07/20140724_105131.jpg"></td>
+            <td data-value="8"  data-img="https://content.imageresizer.com/images/memes/War-Cat-meme-88f6yf.jpg"></td>
+            <td data-value="6"  data-img="https://preview.redd.it/i1z7kignbbla1.jpg?width=640&crop=smart&auto=webp&s=b009a6a10be3fbe72c828c84b4970c6dda16ce43"></td>
+        </tr>
+        <tr>
+            <td data-value="6"  data-img="https://preview.redd.it/i1z7kignbbla1.jpg?width=640&crop=smart&auto=webp&s=b009a6a10be3fbe72c828c84b4970c6dda16ce43"></td>
+            <td data-value="2"  data-img="https://imaginidesktop3d.wordpress.com/wp-content/uploads/2014/06/www-imaginifrumoase-50.jpg?w=584"></td>
+            <td data-value="5"  data-img="https://play-lh.googleusercontent.com/8ySrSsFPK9pA5vO22g3wPWe-ykWf6LffI_fLQud5OoKrXNljmqJNVaB5MInsQp_twk8"></td>
+            <td data-value="7"  data-img="https://media.wired.com/photos/65e8810cb8b2544099643c72/1:1/w_1888,h_1888,c_limit/dsadas.jpg"></td>
+        </tr>
+        <tr>
+            <td data-value="3"  data-img="https://images.gsp.ro/usr/thumbs/thumb_480_x_310/2018/01/29/878066-grumpy-cat1.jpg"></td>
+            <td data-value="4"  data-img="https://www.printesaurbana.ro/wp-content/uploads/2014/07/20140724_105131.jpg"></td>
+            <td data-value="8"  data-img="https://content.imageresizer.com/images/memes/War-Cat-meme-88f6yf.jpg"></td>
+            <td data-value="1"  data-img="https://media.istockphoto.com/id/623368750/ro/fotografie/pisica-birma-sacr%C4%83-%C3%AEn-interior.jpg?s=612x612&w=0&k=20&c=imeVJRvhNLuU2hslaF1aFR1FOkguNhqeMhOWHD3hsRc="></td>
+        </tr>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/problema3_poze.js"></script>
+</body>
+</html>
+
+
+

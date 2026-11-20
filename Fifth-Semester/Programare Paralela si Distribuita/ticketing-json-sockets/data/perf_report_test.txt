@@ -1,0 +1,4 @@
+=== PERF REPORT @ 2026-01-30T15:44:32.961759900Z ===
+RESERVE | duration=68.44s completed=39 ok=39 failed=0 | throughput=0.57 req/s | avg=34.41 ms | p95=312.60 ms
+PAY | duration=68.44s completed=29 ok=14 failed=15 | throughput=0.42 req/s | avg=2.58 ms | p95=3.41 ms
+REFUND | duration=68.44s completed=3 ok=3 failed=0 | throughput=0.04 req/s | avg=2.85 ms | p95=3.69 ms

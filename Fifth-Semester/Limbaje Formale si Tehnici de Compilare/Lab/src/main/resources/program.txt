@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main() {
+
+    int a;
+    a = 232;
+    bb_b = 456;
+    real = 34.5;
+    cin >> b >> c;
+    cin >> a;
+    cdc = a / b;
+    cout << c << d;
+    cout << a;
+
+    if (a<=b)
+    {
+        a = a + 1;
+    }
+    while(a == b)
+    {
+        b=c;
+        d = 3;
+    }
+    return 0;
+}
+
+

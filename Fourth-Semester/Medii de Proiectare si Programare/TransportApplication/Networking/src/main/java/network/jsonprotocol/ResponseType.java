@@ -1,0 +1,16 @@
+package network.jsonprotocol;
+
+public enum ResponseType {
+    OK,
+    ERROR,
+    GET_RESERVATIONS_FOR_TRIP,
+    GET_TRIP_BY_DESTINATION_AND_TIME,
+    GET_ALL_RESERVATIONS,
+    FIND_CLIENT_BY_NAME,
+    SAVE_CLIENT,
+    SAVE_RESERVATION,
+
+    UPDATE_RESERVATION_ADDED,
+}
+
+

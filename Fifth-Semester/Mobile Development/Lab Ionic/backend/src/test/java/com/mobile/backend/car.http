@@ -1,0 +1,43 @@
+### Add Car True
+POST http://localhost:8080/api/cars
+Content-Type: application/json
+
+{
+  "model": "Aventador",
+  "manufacturingDate": "2025-10-11",
+  "owned": true
+}
+
+
+### Add Car False
+POST http://localhost:8080/api/cars
+Content-Type: application/json
+
+{
+  "model": "Huracan",
+  "manufacturingDate": "2024-10-11",
+  "owned": false
+}
+
+
+### Delete Car
+DELETE http://localhost:8080/api/cars/25
+
+
+### Update Car
+PUT http://localhost:8080/api/cars
+Content-Type: application/json
+
+{
+  "id": 5,
+  "model": "Aventador",
+  "manufacturingDate": "2025-10-11",
+  "owned": true
+}
+
+
+### Get All Cars
+GET http://localhost:8080/api/cars
+
+
+

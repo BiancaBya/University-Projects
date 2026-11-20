@@ -1,0 +1,21 @@
+# ninja log v6
+1	876	7885473375838499	build.ninja	ba7fe63a516226b5
+19	2157	7885473339862966	CMakeFiles/cuda_lab.dir/main.cu.obj	3486249a5d21226e
+2157	2333	7885473361240185	CMakeFiles/cuda_lab.dir/cmake_device_link.obj	6cd80307ee78a65d
+2333	2471	7885473363001742	cuda_lab.exe	2f14d4048d4ef8a8
+7	2935	7885469835322059	CMakeFiles/cuda_lab.dir/main_lab1.cu.obj	683b1975d8aee56
+44	3183	7895029714015755	CMakeFiles/cuda_lab.dir/main.cu.obj	3486249a5d21226e
+3183	3397	7895029745403818	CMakeFiles/cuda_lab.dir/cmake_device_link.obj	6cd80307ee78a65d
+3398	3612	7895029747542680	cuda_lab.exe	2f14d4048d4ef8a8
+52	3512	7899439739490956	CMakeFiles/cuda_lab.dir/main.cu.obj	3486249a5d21226e
+3513	3737	7899439774088826	CMakeFiles/cuda_lab.dir/cmake_device_link.obj	6cd80307ee78a65d
+3737	3974	7899439776337262	cuda_lab.exe	2f14d4048d4ef8a8
+5	2671	7899446441924706	CMakeFiles/cuda_lab.dir/main.cu.obj	3486249a5d21226e
+2672	2843	7899446468581444	CMakeFiles/cuda_lab.dir/cmake_device_link.obj	6cd80307ee78a65d
+2843	3004	7899446470293764	cuda_lab.exe	2f14d4048d4ef8a8
+4	2895	7899460578424598	CMakeFiles/cuda_lab.dir/main.cu.obj	3486249a5d21226e
+2895	3075	7899460607340814	CMakeFiles/cuda_lab.dir/cmake_device_link.obj	6cd80307ee78a65d
+3075	3232	7899460609137931	cuda_lab.exe	2f14d4048d4ef8a8
+4	3698	7899525677844969	CMakeFiles/cuda_lab.dir/main.cu.obj	3486249a5d21226e
+3699	3880	7899525714800507	CMakeFiles/cuda_lab.dir/cmake_device_link.obj	6cd80307ee78a65d
+3880	4010	7899525716604620	cuda_lab.exe	2f14d4048d4ef8a8

@@ -1,0 +1,172 @@
+/* ======================
+   General Root Styling
+   ====================== */
+.root {
+    /* Subtle dark gradient background */
+    -fx-background-color: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 12pt;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ======================
+   Labels
+   ====================== */
+.label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt;
+    /* Subtle drop shadow for text */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 2, 0, 1, 1);
+}
+
+/* ======================
+   TextFields
+   ====================== */
+.text-field {
+    -fx-background-color: #1f1f1f;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-background-radius: 4;
+    -fx-border-color: #0099cc;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-padding: 6;
+}
+
+/* ======================
+   Buttons
+   ====================== */
+.button {
+    -fx-background-color:
+            linear-gradient(to bottom, #009ffd, #2a2a72),
+            linear-gradient(#2a2a72, #009ffd);
+    -fx-background-radius: 4;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 2, 2);
+}
+
+/* ======================
+   ListView
+   ====================== */
+.list-view {
+    -fx-background-color: #1f1f1f;
+    -fx-control-inner-background: #1f1f1f;
+    -fx-control-inner-background-alt: derive(-fx-control-inner-background, 20%);
+    -fx-text-fill: #ffffff;
+    -fx-selection-bar: #0077be;
+    -fx-selection-bar-text: #ffffff;
+    -fx-cell-focus-inner-border: transparent;
+}
+
+
+.list-cell {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: transparent;
+    -fx-font-size: 12pt;
+}
+
+
+.list-cell:selected {
+    -fx-background-color: #0077be;
+    -fx-text-fill: #ffffff;
+}
+
+/* ======================
+   TableView
+   ====================== */
+.table-view {
+    -fx-background-color: #1f1f1f;
+    -fx-control-inner-background: #1f1f1f;
+    -fx-control-inner-background-alt: derive(-fx-control-inner-background, 20%);
+    -fx-table-cell-border-color: #2c2c2c;
+    -fx-table-header-border-color: #2c2c2c;
+    -fx-border-color: #2c2c2c;
+    -fx-selection-bar: #0077be;
+    -fx-selection-bar-text: #ffffff;
+    -fx-text-background-color: #ffffff;
+}
+
+
+
+
+.table-column-header {
+    -fx-background-color: linear-gradient(#2a2a72, #009ffd);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 8 0;
+}
+
+
+.table-cell {
+    -fx-text-fill: #ffffff;
+    -fx-alignment: center-left;
+}
+
+/* ======================
+   ComboBox
+   ====================== */
+.combo-box {
+    -fx-background-color: #1f1f1f;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-background-radius: 4;
+    -fx-border-color: #0099cc;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+}
+
+/* ======================
+   Other Controls
+   ====================== */
+.spinner, .date-picker {
+    -fx-background-color: #1f1f1f;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4;
+    -fx-border-color: #0099cc;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+}
+
+/* ======================
+   Hover & Focus Visuals
+   ====================== */
+.text-field:focused,
+.combo-box:focused,
+.spinner:focused,
+.date-picker:focused {
+    -fx-border-color: #00c0ff;
+    -fx-border-width: 2;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #00c0ff, #4a4aff);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 6, 0, 3, 3);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #0077be, #2a2a72);
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.3), 3, 0, 0, 1);
+}
+
+.list-view .scroll-bar {
+    -fx-background-color: #2f2f2f;
+}
+
+.list-view .scroll-bar .thumb {
+    -fx-background-color: #0099cc;
+    -fx-background-radius: 4;
+}
+
+.table-view .scroll-bar {
+    -fx-background-color: #2f2f2f;
+}
+
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #0099cc;
+    -fx-background-radius: 4;
+}

@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.ticketing'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2'
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.register('runServer', JavaExec) {
+    group = 'application'
+    description = 'Run the Ticketing Server'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.ticketing.server.ServerMain'
+    // Example args (override with: ./gradlew runServer --args="--port=5050 ...")
+    // args '--port=5050', '--threads=8', '--tPlataSec=5', '--checkIntervalSec=5', '--shutdownAfterSec=180'
+}
+
+tasks.register('runClient', JavaExec) {
+    group = 'application'
+    description = 'Run an interactive client'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.ticketing.client.ClientMain'
+}
+
+tasks.register('runSimulator', JavaExec) {
+    group = 'application'
+    description = 'Run the 4-client simulation'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.ticketing.sim.SimulatorMain'
+}

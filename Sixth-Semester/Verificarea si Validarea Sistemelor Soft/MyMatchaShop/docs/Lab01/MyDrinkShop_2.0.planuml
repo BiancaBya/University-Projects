@@ -1,0 +1,139 @@
+@startuml
+' Setări pentru vizibilitate maximă
+!theme plain
+left to right direction
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 60
+skinparam ranksep 100
+
+package "App / UI" {
+    class DrinkShopApp
+    class DrinkShopController
+}
+
+package "Application Services" {
+    class DrinkShopService
+    class ProductService
+    class OrderService
+    class RetetaService
+    class StocService
+    class DailyReportService
+    class CategorieService
+    class TipBauturaService
+    class CsvExporter
+    class ReceiptGenerator
+}
+
+package "Domain Model" {
+    class Product
+    class Order
+    class OrderItem
+    class Reteta
+    class Ingredient
+    class IngredientReteta
+    class Stoc
+    class CategorieBautura
+    class TipBautura
+}
+
+package "Validation" {
+    interface Validator<T> << interface >>
+    class ProductValidator
+    class OrderValidator
+    class OrderItemValidator
+    class RetetaValidator
+    class StocValidator
+    class CategorieValidator
+    class TipBauturaValidator
+    class ValidationException
+}
+
+package "Persistence" {
+    interface Repository<ID, E> << interface >>
+    class AbstractRepository<ID, E>
+    class FileAbstractRepository<ID, E>
+    class FileOrderRepository
+    class FileProductRepository
+    class FileRetetaRepository
+    class FileStocRepository
+    class FileCategorieRepository
+    class FileTipBauturaRepository
+    class FileIngredientRepository
+}
+
+' Repository hierarchy
+AbstractRepository -[#008200,dashed]-^ Repository
+FileAbstractRepository -[#000082,plain]-^ AbstractRepository
+FileOrderRepository -[#000082,plain]-^ FileAbstractRepository
+FileProductRepository -[#000082,plain]-^ FileAbstractRepository
+FileRetetaRepository -[#000082,plain]-^ FileAbstractRepository
+FileStocRepository -[#000082,plain]-^ FileAbstractRepository
+FileCategorieRepository -[#000082,plain]-^ FileAbstractRepository
+FileTipBauturaRepository -[#000082,plain]-^ FileAbstractRepository
+FileIngredientRepository -[#000082,plain]-^ FileAbstractRepository
+
+' Validators hierarchy
+ProductValidator -[#008200,dashed]-^ Validator
+OrderValidator -[#008200,dashed]-^ Validator
+OrderItemValidator -[#008200,dashed]-^ Validator
+RetetaValidator -[#008200,dashed]-^ Validator
+StocValidator -[#008200,dashed]-^ Validator
+CategorieValidator -[#008200,dashed]-^ Validator
+TipBauturaValidator -[#008200,dashed]-^ Validator
+
+OrderValidator "1" *-[#595959,plain]-> "itemValidator\n1" OrderItemValidator
+
+ProductValidator ..> ValidationException
+OrderValidator ..> ValidationException
+OrderItemValidator ..> ValidationException
+RetetaValidator ..> ValidationException
+StocValidator ..> ValidationException
+CategorieValidator ..> ValidationException
+TipBauturaValidator ..> ValidationException
+
+' App / UI relationships
+DrinkShopApp ..> DrinkShopController : starts
+DrinkShopController "1" *-[#595959,plain]-> "service\n1" DrinkShopService
+DrinkShopController "1" *-[#595959,plain]-> "currentOrder\n0..1" Order
+
+' DrinkShopService as facade
+DrinkShopService "1" *-[#595959,plain]-> "report\n1" DailyReportService
+DrinkShopService "1" *-[#595959,plain]-> "orderService\n1" OrderService
+DrinkShopService "1" *-[#595959,plain]-> "productService\n1" ProductService
+DrinkShopService "1" *-[#595959,plain]-> "retetaService\n1" RetetaService
+DrinkShopService "1" *-[#595959,plain]-> "stocService\n1" StocService
+DrinkShopService "1" *-[#595959,plain]-> "categorieService\n1" CategorieService
+DrinkShopService "1" *-[#595959,plain]-> "tipService\n1" TipBauturaService
+
+DrinkShopService ..> ReceiptGenerator : generates receipt
+
+' Service to repository relations
+DailyReportService "1" *-[#595959,plain]-> "repo\n1" Repository
+DailyReportService ..> CsvExporter : exports CSV
+
+OrderService "1" *-[#595959,plain]-> "orderRepo\n1" Repository
+ProductService "1" *-[#595959,plain]-> "productRepo\n1" Repository
+RetetaService "1" *-[#595959,plain]-> "retetaRepo\n1" Repository
+StocService "1" *-[#595959,plain]-> "stocRepo\n1" Repository
+CategorieService "1" *-[#595959,plain]-> "categorieRepo\n1" Repository
+TipBauturaService "1" *-[#595959,plain]-> "tipRepo\n1" Repository
+
+' File repositories extra dependencies
+FileOrderRepository "1" *-[#595959,plain]-> "productRepository\n1" Repository
+FileRetetaRepository "1" *-[#595959,plain]-> "ingredientRepository\n1" Repository
+FileStocRepository "1" *-[#595959,plain]-> "ingredientRepository\n1" Repository
+
+' Domain relationships
+Order "1" *-[#595959,plain]-> "items\n*" OrderItem
+OrderItem "1" *-[#595959,plain]-> "product\n1" Product
+
+Product "1" *-[#595959,plain]-> "categorie\n1" CategorieBautura
+Product "1" *-[#595959,plain]-> "tip\n1" TipBautura
+Product "1" *-[#595959,plain]-> "reteta\n0..1" Reteta
+
+Reteta "1" *-[#595959,plain]-> "ingredients\n*" IngredientReteta
+IngredientReteta "1" *-[#595959,plain]-> "ingredient\n1" Ingredient
+Stoc "1" *-[#595959,plain]-> "ingredient\n1" Ingredient
+
+@enduml

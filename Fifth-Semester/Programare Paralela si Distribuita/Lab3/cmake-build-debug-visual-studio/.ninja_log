@@ -1,0 +1,14 @@
+# ninja log v6
+2	165	7846484191958526	CMakeFiles/Lab3.dir/main.cpp.obj.ddi	fa06cb96d06c4792
+246	1557	7846484194393850	CMakeFiles/Lab3.dir/main.cpp.obj	2f794898b7503591
+2	30	7846484984597143	CMakeFiles/Lab3.dir/CXX.dd	4e24526f7ed1e01b
+2	30	7846484984597143	CMakeFiles/Lab3.dir/main.cpp.obj.modmap	4e24526f7ed1e01b
+2	30	7846484984597143	C:/Users/Next/Desktop/PPD/Lab3/cmake-build-debug-visual-studio/CMakeFiles/Lab3.dir/CXXModules.json	4e24526f7ed1e01b
+2158	2345	7846478618736350	Lab3.exe	525cf70591cd4121
+2	30	7846484984597143	CMakeFiles/Lab3.dir/Seq.cpp.obj.modmap	4e24526f7ed1e01b
+9	148	7846484192032883	CMakeFiles/Lab3.dir/Seq.cpp.obj.ddi	26b911827232613e
+250	1419	7846484194431848	CMakeFiles/Lab3.dir/Seq.cpp.obj	bfaab1a5fcab18f4
+1	37	7846490537746003	CMakeFiles/Lab3.dir/CXX.dd	da1d5949fe76b25
+1	37	7846490537746003	C:/Users/Next/Desktop/PPD/Lab3/cmake-build-debug-visual-studio/CMakeFiles/Lab3.dir/CXXModules.json	da1d5949fe76b25
+1	37	7846490537746003	CMakeFiles/Lab3.dir/main.cpp.obj.modmap	da1d5949fe76b25
+38	178	7846490538117626	Lab3.exe	525cf70591cd4121

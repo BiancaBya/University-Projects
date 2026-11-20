@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\Lab10Class.dir\\main.cpp.obj",
+            "outputs": [
+                "C:\\Users\\Next\\Desktop\\III Year\\Sem 1\\PPD\\Lab10Class\\cmake-build-debug-visual-studio\\vc140.pdb",
+                "CMakeFiles\\Lab10Class.dir\\main.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Problema 1</title>
+    </head>
+    <body>
+        <h1>Litsta 1</h1>
+        <select multiple id="lista1">
+            <option value="Catel">Catel</option>
+            <option value="Pisica">Pisica</option>
+            <option value="Pestisor">Pestisor</option>
+            <option value="Hamster">Hamster</option>
+        </select>
+
+        <h1>Litsta 2</h1>
+        <select multiple id="lista2">
+            <option value="OOP">OOP</option>
+            <option value="WEB">WEB</option>
+            <option value="SDA">SDA</option>
+            <option value="AI">AI</option>
+        </select>
+    </body>
+    <script>
+        function mutaElement(sursa, destinatie) {
+            const listaSursa = document.getElementById(sursa);
+            const listaDestinatie = document.getElementById(destinatie);
+            const optiuneSelectata = listaSursa.selectedOptions[0];
+            if (optiuneSelectata) {
+                listaSursa.removeChild(optiuneSelectata);
+                listaDestinatie.appendChild(optiuneSelectata);
+            }
+        }
+
+        document.getElementById("lista1").addEventListener("dblclick", function () {
+            mutaElement("lista1", "lista2");
+        });
+
+        document.getElementById("lista2").addEventListener("dblclick", function () {
+            mutaElement("lista2", "lista1");
+        });
+
+    </script>
+</html>
+

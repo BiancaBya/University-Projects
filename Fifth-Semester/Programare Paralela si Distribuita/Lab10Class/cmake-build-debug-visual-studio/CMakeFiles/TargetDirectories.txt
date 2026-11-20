@@ -1,0 +1,3 @@
+C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/Lab10Class.dir
+C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
+C:/Users/Next/Desktop/III Year/Sem 1/PPD/Lab10Class/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir

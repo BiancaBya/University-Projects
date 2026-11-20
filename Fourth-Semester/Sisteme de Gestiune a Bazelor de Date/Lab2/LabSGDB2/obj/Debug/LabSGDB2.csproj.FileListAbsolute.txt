@@ -1,0 +1,12 @@
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.csproj.AssemblyReference.cache
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.Properties.Resources.resources
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.UI.AddForm.resources
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.MainWindow.resources
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.UI.UpdateForm.resources
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.csproj.GenerateResource.cache
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.csproj.CoreCompileInputs.cache
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\bin\Debug\LabSGDB2.exe.config
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\bin\Debug\LabSGDB2.exe
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\bin\Debug\LabSGDB2.pdb
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.exe
+C:\Users\Next\Desktop\SGDB Visual Studio\LabSGDB2\LabSGDB2\obj\Debug\LabSGDB2.pdb
